@@ -1,0 +1,13 @@
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+tqdm
+matplotlib
+pyarrow
+scikit-learn
+ipython
+sentence-transformers
+faiss-cpu
+chromadb

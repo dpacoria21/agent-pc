@@ -1,0 +1,4 @@
+query,precision_at_k,recall_at_k,reciprocal_rank,average_similarity_score,diversity_by_tags,coverage_by_node_type
+greedy proof,0.0,0.0,0.0,0.371,0.417,0.167
+dp state transition,1.0,0.333,1.0,0.346,0.364,0.333
+edge cases implementation,0.833,0.278,1.0,0.314,0.4,0.333

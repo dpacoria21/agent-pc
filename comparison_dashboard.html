@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard comparativo - CP RAG local</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; color: #0f172a; background: #f8fafc; line-height: 1.45; }
+    h1 { font-size: 34px; margin-bottom: 4px; }
+    h2 { margin-top: 0; }
+    .summary, section { background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin: 20px 0; }
+    img { max-width: 100%; border-radius: 8px; }
+    code { background: #e2e8f0; padding: 2px 5px; border-radius: 4px; }
+    table { border-collapse: collapse; width: 100%; background: white; }
+    th, td { border: 1px solid #cbd5e1; padding: 8px; text-align: left; }
+    th { background: #e2e8f0; }
+  </style>
+</head>
+<body>
+  <h1>Dashboard comparativo - CP RAG local</h1>
+  <p>Generado: 2026-05-18T11:35:40</p>
+  <div class="summary">
+    <h2>Resumen verificable</h2>
+    <p><strong>Problemas:</strong> 43 | <strong>Page Nodes:</strong> 559 | <strong>Backend semantico:</strong> tfidf-svd-fallback</p>
+    <p>Este dashboard compara metodos de recuperacion, backends vectoriales y clasificacion textual de ideas. No implementa PageIndex tree-search ni ejecuta soluciones contra tests.</p>
+    <ul><li><code>local_matrix</code>: ok </li><li><code>faiss</code>: ok </li><li><code>chromadb</code>: ok </li></ul>
+    <p><strong>Problemas demo:</strong> ['codeforces_750_A', 'codeforces_1915_C', 'codeforces_192_A']</p><p><strong>Clasificador actual:</strong> {'UNKNOWN': 4, 'MATH': 2}</p><p><strong>Estrategia fina:</strong> {'BINARY_SEARCH': 3, 'MATH_FORMULA': 3}</p>
+  </div>
+  <div class="summary">
+    <h2>Metricas base</h2>
+    <table>
+      <thead><tr><th>Query</th><th>Precision@k</th><th>Recall@k</th><th>Reciprocal rank</th><th>Avg similarity</th></tr></thead>
+      <tbody><tr><td>greedy proof</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.371</td></tr><tr><td>dp state transition</td><td>1.0</td><td>0.333</td><td>1.0</td><td>0.346</td></tr><tr><td>edge cases implementation</td><td>0.833</td><td>0.278</td><td>1.0</td><td>0.314</td></tr></tbody>
+    </table>
+  </div>
+  <div class="summary">
+    <h2>Backends vectoriales sobre el mismo dataset</h2>
+    <table>
+      <thead><tr><th>Backend</th><th>Precision@k</th><th>Recall@k</th><th>Reciprocal rank</th><th>Latency ms/query</th></tr></thead>
+      <tbody><tr><td>chromadb</td><td>0.225</td><td>0.4583</td><td>0.4667</td><td>590.178</td></tr><tr><td>faiss</td><td>0.225</td><td>0.4583</td><td>0.4667</td><td>34.478</td></tr><tr><td>local_matrix</td><td>0.225</td><td>0.4583</td><td>0.4667</td><td>0.049</td></tr></tbody>
+    </table>
+  </div>
+  <div class="summary">
+    <h2>Comparacion explicita de resultados recuperados</h2>
+    <p>Esta tabla muestra el top-3 por backend para las queries de la demo binary/math. El grafico equivalente es <code>vector_backend_overlap.png</code>; para metodos del RAG base es <code>retrieval_method_overlap.png</code>.</p>
+    <table>
+      <thead><tr><th>Query demo</th><th>Backend</th><th>Rank</th><th>Problema recuperado</th><th>Node type</th><th>Score</th><th>Relevante</th></tr></thead>
+      <tbody><tr><td>binary_quadratic_time</td><td>local_matrix</td><td>1</td><td>codeforces_750_A</td><td>STATEMENT</td><td>0.549527</td><td>True</td></tr><tr><td>binary_quadratic_time</td><td>local_matrix</td><td>2</td><td>codeforces_750_A</td><td>CONSTRAINTS</td><td>0.523355</td><td>False</td></tr><tr><td>binary_quadratic_time</td><td>local_matrix</td><td>3</td><td>codeforces_750_A</td><td>EDITORIAL_FULL</td><td>0.362594</td><td>False</td></tr><tr><td>integer_square_root</td><td>local_matrix</td><td>1</td><td>codeforces_1915_C</td><td>EDITORIAL_FULL</td><td>0.671326</td><td>False</td></tr><tr><td>integer_square_root</td><td>local_matrix</td><td>2</td><td>codeforces_1915_C</td><td>OUTPUT</td><td>0.604894</td><td>False</td></tr><tr><td>integer_square_root</td><td>local_matrix</td><td>3</td><td>codeforces_1915_C</td><td>STATEMENT</td><td>0.29466</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>local_matrix</td><td>1</td><td>codeforces_192_A</td><td>EDITORIAL_FULL</td><td>0.879755</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>local_matrix</td><td>2</td><td>codeforces_192_A</td><td>COMMON_MISTAKES</td><td>0.524051</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>local_matrix</td><td>3</td><td>codeforces_192_A</td><td>OUTPUT</td><td>0.356074</td><td>True</td></tr><tr><td>binary_quadratic_time</td><td>faiss</td><td>1</td><td>codeforces_750_A</td><td>STATEMENT</td><td>0.549527</td><td>True</td></tr><tr><td>binary_quadratic_time</td><td>faiss</td><td>2</td><td>codeforces_750_A</td><td>CONSTRAINTS</td><td>0.523355</td><td>False</td></tr><tr><td>binary_quadratic_time</td><td>faiss</td><td>3</td><td>codeforces_750_A</td><td>EDITORIAL_FULL</td><td>0.362594</td><td>False</td></tr><tr><td>integer_square_root</td><td>faiss</td><td>1</td><td>codeforces_1915_C</td><td>EDITORIAL_FULL</td><td>0.671326</td><td>False</td></tr><tr><td>integer_square_root</td><td>faiss</td><td>2</td><td>codeforces_1915_C</td><td>OUTPUT</td><td>0.604894</td><td>False</td></tr><tr><td>integer_square_root</td><td>faiss</td><td>3</td><td>codeforces_1915_C</td><td>STATEMENT</td><td>0.29466</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>faiss</td><td>1</td><td>codeforces_192_A</td><td>EDITORIAL_FULL</td><td>0.879755</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>faiss</td><td>2</td><td>codeforces_192_A</td><td>COMMON_MISTAKES</td><td>0.524051</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>faiss</td><td>3</td><td>codeforces_192_A</td><td>OUTPUT</td><td>0.356074</td><td>True</td></tr><tr><td>binary_quadratic_time</td><td>chromadb</td><td>1</td><td>codeforces_750_A</td><td>STATEMENT</td><td>0.549527</td><td>True</td></tr><tr><td>binary_quadratic_time</td><td>chromadb</td><td>2</td><td>codeforces_750_A</td><td>CONSTRAINTS</td><td>0.523355</td><td>False</td></tr><tr><td>binary_quadratic_time</td><td>chromadb</td><td>3</td><td>codeforces_750_A</td><td>EDITORIAL_FULL</td><td>0.362594</td><td>False</td></tr><tr><td>integer_square_root</td><td>chromadb</td><td>1</td><td>codeforces_1915_C</td><td>EDITORIAL_FULL</td><td>0.671326</td><td>False</td></tr><tr><td>integer_square_root</td><td>chromadb</td><td>2</td><td>codeforces_1915_C</td><td>OUTPUT</td><td>0.604894</td><td>False</td></tr><tr><td>integer_square_root</td><td>chromadb</td><td>3</td><td>codeforces_1915_C</td><td>STATEMENT</td><td>0.29466</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>chromadb</td><td>1</td><td>codeforces_192_A</td><td>EDITORIAL_FULL</td><td>0.879755</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>chromadb</td><td>2</td><td>codeforces_192_A</td><td>COMMON_MISTAKES</td><td>0.524051</td><td>True</td></tr><tr><td>triangular_discriminant</td><td>chromadb</td><td>3</td><td>codeforces_192_A</td><td>OUTPUT</td><td>0.356074</td><td>True</td></tr></tbody>
+    </table>
+  </div>
+  <div class="summary">
+    <h2>Problemas demo: busqueda binaria vs formula directa</h2>
+    <p>Estos son los problemas usados para mostrar dos rutas de solucion posibles: una algoritmica por busqueda binaria y otra matematica por formula, raiz entera o discriminante.</p>
+    <table>
+      <thead><tr><th>ID</th><th>Problema</th><th>Dificultad</th><th>Estrategias aceptadas</th><th>Idea matematica</th></tr></thead>
+      <tbody><tr><td>codeforces_750_A</td><td>New Year and Hurry</td><td>800</td><td>[&quot;BINARY_SEARCH&quot;, &quot;MATH_FORMULA&quot;]</td><td>Core inequality: 5*x*(x+1)/2 &lt;= 240-k.</td></tr><tr><td>codeforces_1915_C</td><td>Can I Square?</td><td>800</td><td>[&quot;BINARY_SEARCH&quot;, &quot;MATH_FORMULA&quot;]</td><td>Core condition: exists integer r such that r*r equals the total sum.</td></tr><tr><td>codeforces_192_A</td><td>Funky Numbers</td><td>1300</td><td>[&quot;BINARY_SEARCH&quot;, &quot;MATH_FORMULA&quot;, &quot;PRECOMPUTE_ENUMERATION&quot;]</td><td>Triangular number: T_i = i*(i+1)/2.</td></tr></tbody>
+    </table>
+  </div>
+  <div class="summary">
+    <h2>Ideas simuladas y respuesta del clasificador</h2>
+    <p>Aqui se ve que el clasificador actual responde <code>UNKNOWN</code> o <code>MATH</code>, mientras que la capa fina esperada separa <code>BINARY_SEARCH</code> y <code>MATH_FORMULA</code>.</p>
+    <table>
+      <thead><tr><th>Estudiante</th><th>Problema</th><th>Idea recibida</th><th>Respuesta actual</th><th>Estrategia fina</th><th>Brecha detectada</th></tr></thead>
+      <tbody><tr><td>student_binary</td><td>New Year and Hurry</td><td>I will binary search the maximum x. The check is 5*x*(x+1)/2 &lt;= 240-k and x &lt;= n.</td><td>UNKNOWN</td><td>BINARY_SEARCH</td><td>current_heuristic_has_no_binary_search_class</td></tr><tr><td>student_binary</td><td>Can I Square?</td><td>I can binary search the integer root r and compare r*r with the sum to avoid floating point sqrt.</td><td>UNKNOWN</td><td>BINARY_SEARCH</td><td>current_heuristic_has_no_binary_search_class</td></tr><tr><td>student_binary</td><td>Funky Numbers</td><td>I will precompute triangular numbers and for each value binary search if n minus it is also triangular.</td><td>UNKNOWN</td><td>BINARY_SEARCH</td><td>current_heuristic_has_no_binary_search_class</td></tr><tr><td>student_formula</td><td>New Year and Hurry</td><td>I want to solve the quadratic formula for x^2+x-2*T &lt;= 0 and use sqrt(1+8*T).</td><td>MATH</td><td>MATH_FORMULA</td><td>current_heuristic_collapses_formula_to_math</td></tr><tr><td>student_formula</td><td>Can I Square?</td><td>I compute the integer sqrt of the total sum and check root*root == sum as the formula condition.</td><td>MATH</td><td>MATH_FORMULA</td><td>current_heuristic_collapses_formula_to_math</td></tr><tr><td>student_formula</td><td>Funky Numbers</td><td>For each triangular t, I test n-t with the discriminant 1+8*m being a perfect square.</td><td>UNKNOWN</td><td>MATH_FORMULA</td><td>current_heuristic_partial</td></tr></tbody>
+    </table>
+  </div>
+  <section><h2>Comparacion conceptual: RAG plano vs Page Index local</h2><img src="comparison_assets/page_index_comparison.png" alt="Comparacion conceptual: RAG plano vs Page Index local"></section>
+<section><h2>Metricas de retrieval sobre ground truth simulado</h2><img src="comparison_assets/rag_retrieval_metrics.png" alt="Metricas de retrieval sobre ground truth simulado"></section>
+<section><h2>Score por ranking y metodo</h2><img src="comparison_assets/retrieval_strategy_scores.png" alt="Score por ranking y metodo"></section>
+<section><h2>Overlap top-k entre metodos</h2><img src="comparison_assets/retrieval_method_overlap.png" alt="Overlap top-k entre metodos"></section>
+<section><h2>Score promedio por metodo</h2><img src="comparison_assets/retrieval_average_scores.png" alt="Score promedio por metodo"></section>
+<section><h2>FAISS vs ChromaDB vs matriz local</h2><img src="comparison_assets/vector_backend_metrics.png" alt="FAISS vs ChromaDB vs matriz local"></section>
+<section><h2>Latencia por backend vectorial</h2><img src="comparison_assets/vector_backend_latency.png" alt="Latencia por backend vectorial"></section>
+<section><h2>Overlap top-k entre backends vectoriales</h2><img src="comparison_assets/vector_backend_overlap.png" alt="Overlap top-k entre backends vectoriales"></section>
+<section><h2>Clasificacion actual vs estrategia fina</h2><img src="comparison_assets/math_binary_strategy_classification.png" alt="Clasificacion actual vs estrategia fina"></section>
+<section><h2>Estrategias detectadas por problema demo</h2><img src="comparison_assets/math_binary_problem_strategy_map.png" alt="Estrategias detectadas por problema demo"></section>
+</body>
+</html>

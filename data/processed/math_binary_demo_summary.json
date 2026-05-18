@@ -1,0 +1,25 @@
+{
+  "demo": "math_vs_binary_search",
+  "added_problem_ids": [
+    "codeforces_750_A",
+    "codeforces_1915_C",
+    "codeforces_192_A"
+  ],
+  "total_problems_after_update": 43,
+  "total_page_nodes_after_update": 559,
+  "simulated_students": [
+    "student_binary",
+    "student_formula"
+  ],
+  "simulated_ideas": 6,
+  "current_agent_observation": "The current heuristic separates broad MATH from UNKNOWN/IMPLEMENTATION, but it does not explicitly model BINARY_SEARCH vs MATH_FORMULA.",
+  "recommended_next_step": "Add an LLM or structured evaluator that outputs strategy_family, math_concepts, proof_gap, complexity_risk, and confidence.",
+  "outputs": {
+    "problems": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\math_binary_demo_problems.csv",
+    "nodes": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\math_binary_demo_page_nodes.csv",
+    "queries": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\math_binary_student_queries.csv",
+    "classification": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\math_binary_classification_report.csv",
+    "chart_classification": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\math_binary_strategy_classification.png",
+    "chart_problem_map": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\math_binary_problem_strategy_map.png"
+  }
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "backend":"local_matrix",
+    "query_id":"binary_quadratic_time",
+    "query":"binary search maximum x quadratic inequality contest time",
+    "precision_at_k":0.25,
+    "recall_at_k":1.0,
+    "reciprocal_rank":1.0,
+    "avg_score":0.3539,
+    "latency_ms_per_query":0.51,
+    "relevant_count":2
+  },
+  {
+    "backend":"local_matrix",
+    "query_id":"integer_square_root",
+    "query":"integer square root perfect square sum",
+    "precision_at_k":0.25,
+    "recall_at_k":0.6667,
+    "reciprocal_rank":0.3333,
+    "avg_score":0.3404,
+    "latency_ms_per_query":0.51,
+    "relevant_count":3
+  },
+  {
+    "backend":"local_matrix",
+    "query_id":"triangular_discriminant",
+    "query":"triangular numbers discriminant formula binary search",
+    "precision_at_k":0.625,
+    "recall_at_k":0.625,
+    "reciprocal_rank":1.0,
+    "avg_score":0.4053,
+    "latency_ms_per_query":0.51,
+    "relevant_count":8
+  },
+  {
+    "backend":"local_matrix",
+    "query_id":"dp_transition",
+    "query":"dp state transition editorial algorithm",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "avg_score":0.2244,
+    "latency_ms_per_query":0.51,
+    "relevant_count":0
+  },
+  {
+    "backend":"local_matrix",
+    "query_id":"greedy_proof_edges",
+    "query":"greedy proof edge cases common mistakes",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "avg_score":0.3969,
+    "latency_ms_per_query":0.51,
+    "relevant_count":0
+  },
+  {
+    "backend":"faiss",
+    "query_id":"binary_quadratic_time",
+    "query":"binary search maximum x quadratic inequality contest time",
+    "precision_at_k":0.25,
+    "recall_at_k":1.0,
+    "reciprocal_rank":1.0,
+    "avg_score":0.3539,
+    "latency_ms_per_query":7040.071,
+    "relevant_count":2
+  },
+  {
+    "backend":"faiss",
+    "query_id":"integer_square_root",
+    "query":"integer square root perfect square sum",
+    "precision_at_k":0.25,
+    "recall_at_k":0.6667,
+    "reciprocal_rank":0.3333,
+    "avg_score":0.3404,
+    "latency_ms_per_query":7040.071,
+    "relevant_count":3
+  },
+  {
+    "backend":"faiss",
+    "query_id":"triangular_discriminant",
+    "query":"triangular numbers discriminant formula binary search",
+    "precision_at_k":0.625,
+    "recall_at_k":0.625,
+    "reciprocal_rank":1.0,
+    "avg_score":0.4053,
+    "latency_ms_per_query":7040.071,
+    "relevant_count":8
+  },
+  {
+    "backend":"faiss",
+    "query_id":"dp_transition",
+    "query":"dp state transition editorial algorithm",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "avg_score":0.2244,
+    "latency_ms_per_query":7040.071,
+    "relevant_count":0
+  },
+  {
+    "backend":"faiss",
+    "query_id":"greedy_proof_edges",
+    "query":"greedy proof edge cases common mistakes",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "avg_score":0.3969,
+    "latency_ms_per_query":7040.071,
+    "relevant_count":0
+  },
+  {
+    "backend":"chromadb",
+    "query_id":"binary_quadratic_time",
+    "query":"binary search maximum x quadratic inequality contest time",
+    "precision_at_k":0.25,
+    "recall_at_k":1.0,
+    "reciprocal_rank":1.0,
+    "avg_score":0.3539,
+    "latency_ms_per_query":743.667,
+    "relevant_count":2
+  },
+  {
+    "backend":"chromadb",
+    "query_id":"integer_square_root",
+    "query":"integer square root perfect square sum",
+    "precision_at_k":0.25,
+    "recall_at_k":0.6667,
+    "reciprocal_rank":0.3333,
+    "avg_score":0.3404,
+    "latency_ms_per_query":743.667,
+    "relevant_count":3
+  },
+  {
+    "backend":"chromadb",
+    "query_id":"triangular_discriminant",
+    "query":"triangular numbers discriminant formula binary search",
+    "precision_at_k":0.625,
+    "recall_at_k":0.625,
+    "reciprocal_rank":1.0,
+    "avg_score":0.4053,
+    "latency_ms_per_query":743.667,
+    "relevant_count":8
+  },
+  {
+    "backend":"chromadb",
+    "query_id":"dp_transition",
+    "query":"dp state transition editorial algorithm",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "avg_score":0.2244,
+    "latency_ms_per_query":743.667,
+    "relevant_count":0
+  },
+  {
+    "backend":"chromadb",
+    "query_id":"greedy_proof_edges",
+    "query":"greedy proof edge cases common mistakes",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "avg_score":0.3969,
+    "latency_ms_per_query":743.667,
+    "relevant_count":0
+  }
+]

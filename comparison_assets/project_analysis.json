@@ -1,0 +1,1303 @@
+{
+  "workspace_files": [
+    "PROJECT_GUIDE.md",
+    "comparison_dashboard.html",
+    "data/processed/cp_page_nodes_dataset.csv",
+    "data/processed/cp_page_nodes_dataset.json",
+    "data/processed/cp_page_nodes_dataset.parquet",
+    "data/processed/cp_problems_dataset.csv",
+    "data/processed/cp_problems_dataset.json",
+    "data/processed/cp_problems_dataset.parquet",
+    "data/processed/first_run_quality_report.json",
+    "data/processed/first_run_summary.json",
+    "data/processed/math_binary_classification_report.csv",
+    "data/processed/math_binary_classification_report.json",
+    "data/processed/math_binary_classification_report.parquet",
+    "data/processed/math_binary_demo_page_nodes.csv",
+    "data/processed/math_binary_demo_page_nodes.json",
+    "data/processed/math_binary_demo_page_nodes.parquet",
+    "data/processed/math_binary_demo_problems.csv",
+    "data/processed/math_binary_demo_problems.json",
+    "data/processed/math_binary_demo_problems.parquet",
+    "data/processed/math_binary_demo_summary.json",
+    "data/processed/math_binary_student_queries.csv",
+    "data/raw/atcoder_merged_problems_raw.json",
+    "data/raw/atcoder_problem_models_raw.json",
+    "data/raw/atcoder_problems_raw.json",
+    "data/raw/codeforces_problemset_raw.json",
+    "requirements-local.txt",
+    "run_mingw64.sh",
+    "scripts/add_math_binary_demo.py",
+    "scripts/compare_vector_backends.py",
+    "scripts/extract_rag_metrics.py",
+    "scripts/generate_deck_diagrams.py",
+    "scripts/generate_presentation_evidence.py",
+    "scripts/run_all_local.py",
+    "src/cp_dataset_scraper.py",
+    "src/rag_cp_student_profile.py",
+    "src/search_chromadb.py",
+    "src/search_faiss.py",
+    "src/search_helpers.py",
+    "src/search_local.py"
+  ],
+  "python_modules": [
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\agent-pc\\src\\cp_dataset_scraper.py",
+      "lines": 1365,
+      "functions": [
+        {
+          "name": "deep_update",
+          "line": 195
+        },
+        {
+          "name": "apply_preset",
+          "line": 206
+        },
+        {
+          "name": "normalize_list",
+          "line": 216
+        },
+        {
+          "name": "normalize_tags",
+          "line": 235
+        },
+        {
+          "name": "infer_tags_from_text",
+          "line": 245
+        },
+        {
+          "name": "ensure_dirs",
+          "line": 263
+        },
+        {
+          "name": "stable_json_dumps",
+          "line": 270
+        },
+        {
+          "name": "clean_text",
+          "line": 274
+        },
+        {
+          "name": "first_nonempty",
+          "line": 285
+        },
+        {
+          "name": "save_raw_payload",
+          "line": 374
+        },
+        {
+          "name": "fetch_codeforces_problemset",
+          "line": 382
+        },
+        {
+          "name": "filter_codeforces_problems",
+          "line": 430
+        },
+        {
+          "name": "fetch_atcoder_metadata",
+          "line": 482
+        },
+        {
+          "name": "contest_prefix",
+          "line": 526
+        },
+        {
+          "name": "filter_atcoder_problems",
+          "line": 532
+        },
+        {
+          "name": "extract_constraints_from_text",
+          "line": 583
+        },
+        {
+          "name": "parse_sample_pairs",
+          "line": 592
+        },
+        {
+          "name": "scrape_codeforces_problem_statement",
+          "line": 605
+        },
+        {
+          "name": "find_codeforces_editorial_url",
+          "line": 674
+        },
+        {
+          "name": "scrape_codeforces_editorial",
+          "line": 695
+        },
+        {
+          "name": "choose_atcoder_language_container",
+          "line": 729
+        },
+        {
+          "name": "extract_atcoder_sections",
+          "line": 741
+        },
+        {
+          "name": "scrape_atcoder_problem_statement",
+          "line": 805
+        },
+        {
+          "name": "scrape_atcoder_editorials",
+          "line": 846
+        },
+        {
+          "name": "match_atcoder_editorial_for_problem",
+          "line": 875
+        },
+        {
+          "name": "codeforces_row_to_unified",
+          "line": 922
+        },
+        {
+          "name": "atcoder_row_to_unified",
+          "line": 964
+        },
+        {
+          "name": "build_codeforces_dataset",
+          "line": 1025
+        },
+        {
+          "name": "build_atcoder_dataset",
+          "line": 1045
+        },
+        {
+          "name": "subsection_by_keywords",
+          "line": 1074
+        },
+        {
+          "name": "build_page_nodes_dataset",
+          "line": 1083
+        },
+        {
+          "name": "serializable_df",
+          "line": 1142
+        },
+        {
+          "name": "save_outputs",
+          "line": 1152
+        },
+        {
+          "name": "build_cp_dataset",
+          "line": 1181
+        },
+        {
+          "name": "difficulty_bucket",
+          "line": 1215
+        },
+        {
+          "name": "flatten_counts",
+          "line": 1232
+        },
+        {
+          "name": "_display",
+          "line": 1240
+        },
+        {
+          "name": "dataset_quality_report",
+          "line": 1249
+        },
+        {
+          "name": "final_build_summary",
+          "line": 1305
+        },
+        {
+          "name": "load_processed_dataset",
+          "line": 1353
+        },
+        {
+          "name": "__post_init__",
+          "line": 299
+        },
+        {
+          "name": "cache_path",
+          "line": 303
+        },
+        {
+          "name": "allowed_by_robots",
+          "line": 307
+        },
+        {
+          "name": "_respect_delay",
+          "line": 322
+        },
+        {
+          "name": "get_text",
+          "line": 328
+        },
+        {
+          "name": "get_json",
+          "line": 364
+        },
+        {
+          "name": "find_section",
+          "line": 782
+        }
+      ],
+      "classes": [
+        {
+          "name": "CachedHttpClient",
+          "line": 293
+        }
+      ],
+      "important_assignments": [
+        {
+          "name": "CODEFORCES_API_URL",
+          "line": 30
+        },
+        {
+          "name": "ATCODER_PROBLEMS_URL",
+          "line": 31
+        },
+        {
+          "name": "ATCODER_MODELS_URL",
+          "line": 32
+        },
+        {
+          "name": "ATCODER_MERGED_PROBLEMS_URL",
+          "line": 33
+        },
+        {
+          "name": "TAG_GROUP_MAP",
+          "line": 146
+        },
+        {
+          "name": "PAGE_NODE_TYPES",
+          "line": 178
+        }
+      ],
+      "interesting_strings": [
+        {
+          "text": "Dataset builder for competitive-programming RAG prototypes.\n\nThe module focuses on metadata collection, optional respectful scraping,\nnormalization, Page Indexing, persistence, and quality reporting.\n\nIt intentionally does not create embedd"
+        },
+        {
+          "text": "cf_beginner_dp"
+        },
+        {
+          "text": "cf_intermediate_greedy_graphs"
+        },
+        {
+          "text": "mixed_dp_training"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "transition"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "prove"
+        },
+        {
+          "text": "transition"
+        }
+      ],
+      "imports": [
+        "IPython.display",
+        "__future__",
+        "bs4",
+        "copy",
+        "dataclasses",
+        "hashlib",
+        "json",
+        "matplotlib.pyplot",
+        "numpy",
+        "pandas",
+        "pathlib",
+        "random",
+        "re",
+        "requests",
+        "time",
+        "tqdm.auto",
+        "typing",
+        "urllib",
+        "urllib.parse"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\agent-pc\\src\\rag_cp_student_profile.py",
+      "lines": 1493,
+      "functions": [
+        {
+          "name": "display",
+          "line": 26
+        },
+        {
+          "name": "normalize_tags",
+          "line": 54
+        },
+        {
+          "name": "estimate_n_limit",
+          "line": 59
+        },
+        {
+          "name": "build_mock_sections",
+          "line": 71
+        },
+        {
+          "name": "build_mock_problem_dataset",
+          "line": 176
+        },
+        {
+          "name": "fetch_codeforces_problems",
+          "line": 192
+        },
+        {
+          "name": "get_problem_dataset",
+          "line": 245
+        },
+        {
+          "name": "create_page_nodes",
+          "line": 280
+        },
+        {
+          "name": "_clip_cosine",
+          "line": 347
+        },
+        {
+          "name": "encode_query_semantic",
+          "line": 350
+        },
+        {
+          "name": "semantic_scores_for_query",
+          "line": 360
+        },
+        {
+          "name": "semantic_search",
+          "line": 365
+        },
+        {
+          "name": "make_keyword_document",
+          "line": 380
+        },
+        {
+          "name": "keyword_scores_for_query",
+          "line": 394
+        },
+        {
+          "name": "keyword_search",
+          "line": 399
+        },
+        {
+          "name": "normalize_text",
+          "line": 414
+        },
+        {
+          "name": "query_tokens",
+          "line": 417
+        },
+        {
+          "name": "tag_matches_query",
+          "line": 420
+        },
+        {
+          "name": "infer_node_type_preferences",
+          "line": 431
+        },
+        {
+          "name": "metadata_bonus_for_row",
+          "line": 446
+        },
+        {
+          "name": "apply_retrieval_filters",
+          "line": 476
+        },
+        {
+          "name": "hybrid_search",
+          "line": 494
+        },
+        {
+          "name": "short_text",
+          "line": 541
+        },
+        {
+          "name": "explain_row_reason",
+          "line": 545
+        },
+        {
+          "name": "explain_retrieval",
+          "line": 563
+        },
+        {
+          "name": "pick_problem_by_tags",
+          "line": 629
+        },
+        {
+          "name": "make_idea_text",
+          "line": 640
+        },
+        {
+          "name": "simulate_student_data",
+          "line": 657
+        },
+        {
+          "name": "contains_any",
+          "line": 820
+        },
+        {
+          "name": "analyze_student_idea",
+          "line": 823
+        },
+        {
+          "name": "analyze_student_idea_with_llm",
+          "line": 876
+        },
+        {
+          "name": "clamp",
+          "line": 903
+        },
+        {
+          "name": "safe_mean",
+          "line": 906
+        },
+        {
+          "name": "get_user_frames",
+          "line": 910
+        },
+        {
+          "name": "tag_performance_for_user",
+          "line": 916
+        },
+        {
+          "name": "calculate_student_profile",
+          "line": 939
+        },
+        {
+          "name": "show_student_profile",
+          "line": 1063
+        },
+        {
+          "name": "vector_norm",
+          "line": 1116
+        },
+        {
+          "name": "get_problem_embedding",
+          "line": 1122
+        },
+        {
+          "name": "cosine_between",
+          "line": 1133
+        },
+        {
+          "name": "recommended_rating_for_user",
+          "line": 1141
+        },
+        {
+          "name": "weakness_tags_from_profile",
+          "line": 1152
+        },
+        {
+          "name": "explain_recommendation",
+          "line": 1158
+        },
+        {
+          "name": "recommend_problems",
+          "line": 1172
+        },
+        {
+          "name": "personalization_bonus_for_row",
+          "line": 1241
+        },
+        {
+          "name": "personalized_hybrid_search",
+          "line": 1257
+        },
+        {
+          "name": "compact_results",
+          "line": 1269
+        },
+        {
+          "name": "compare_retrieval_methods",
+          "line": 1276
+        },
+        {
+          "name": "precision_at_k",
+          "line": 1325
+        },
+        {
+          "name": "recall_at_k",
+          "line": 1331
+        },
+        {
+          "name": "reciprocal_rank",
+          "line": 1337
+        },
+        {
+          "name": "mean_reciprocal_rank",
+          "line": 1344
+        },
+        {
+          "name": "average_similarity_score",
+          "line": 1353
+        },
+        {
+          "name": "diversity_by_tags",
+          "line": 1358
+        },
+        {
+          "name": "coverage_by_node_type",
+          "line": 1366
+        },
+        {
+          "name": "expected_nodes_by_rule",
+          "line": 1372
+        },
+        {
+          "name": "evaluate_retrieval",
+          "line": 1418
+        },
+        {
+          "name": "run_demo",
+          "line": 1444
+        }
+      ],
+      "classes": [
+        {
+          "name": "Markdown",
+          "line": 23
+        }
+      ],
+      "important_assignments": [
+        {
+          "name": "RANDOM_SEED",
+          "line": 35
+        },
+        {
+          "name": "CODEFORCES_API_URL",
+          "line": 52
+        },
+        {
+          "name": "MOCK_PROBLEM_TEMPLATES",
+          "line": 149
+        },
+        {
+          "name": "problems_df",
+          "line": 252
+        },
+        {
+          "name": "NODE_SPECS",
+          "line": 271
+        },
+        {
+          "name": "page_nodes_df",
+          "line": 296
+        },
+        {
+          "name": "MODEL_NAME",
+          "line": 304
+        },
+        {
+          "name": "SEMANTIC_BACKEND",
+          "line": 307
+        },
+        {
+          "name": "APPROACH_TO_TAGS",
+          "line": 619
+        },
+        {
+          "name": "ideas_df",
+          "line": 888
+        },
+        {
+          "name": "ground_truth",
+          "line": 1391
+        },
+        {
+          "name": "retrieval_evaluation_df",
+          "line": 1439
+        },
+        {
+          "name": "demo_output",
+          "line": 1490
+        },
+        {
+          "name": "SEMANTIC_BACKEND",
+          "line": 326
+        },
+        {
+          "name": "plot_df",
+          "line": 591
+        },
+        {
+          "name": "tag_df",
+          "line": 927
+        },
+        {
+          "name": "SEMANTIC_BACKEND",
+          "line": 342
+        }
+      ],
+      "interesting_strings": [
+        {
+          "text": "greedy proof edge cases"
+        },
+        {
+          "text": "dp state transition"
+        },
+        {
+          "text": "I need help with dp transitions and greedy proof mistakes"
+        },
+        {
+          "text": "I cannot prove why sorting greedily is correct and I miss edge cases"
+        },
+        {
+          "text": "GREEDY"
+        },
+        {
+          "text": "DP"
+        },
+        {
+          "text": "greedy proof"
+        },
+        {
+          "text": "dp state transition"
+        },
+        {
+          "text": "I think sorting greedily works but I cannot prove it"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "Greedy Playlist"
+        },
+        {
+          "text": "Two Arrays Transition"
+        },
+        {
+          "text": "DP With Prefixes"
+        },
+        {
+          "text": "Greedy Fails"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "I cannot prove why sorting greedily is correct and I miss edge cases"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "I think there is a dp state, but I am not sure about the transition and base cases."
+        },
+        {
+          "text": "The implementation seems direct, but I cannot prove why the greedy choice is always valid."
+        },
+        {
+          "text": "Aquí se conectaría un LLM real. El prompt debería pedir JSON estricto con approach, reasoning_stage, risk_type, confidence y una explicación breve."
+        },
+        {
+          "text": "I have problems proving greedy solutions and handling edge cases"
+        },
+        {
+          "text": "I think sorting greedily works but I cannot prove it"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "For greedy solutions, try to prove that always choosing the locally best candidate is safe."
+        },
+        {
+          "text": "A frequent WA is using a greedy rule without proving the exchange step or tie handling."
+        },
+        {
+          "text": "Define a DP state that captures exactly the information needed for future transitions."
+        },
+        {
+          "text": "Initialize base cases, compute transitions, and check memory/time constraints."
+        },
+        {
+          "text": "Typical DP errors are wrong state definition, missing transition cases, and invalid base cases."
+        }
+      ],
+      "imports": [
+        "collections",
+        "datetime",
+        "json",
+        "math",
+        "matplotlib",
+        "matplotlib.pyplot",
+        "numpy",
+        "os",
+        "pandas",
+        "random",
+        "re",
+        "requests",
+        "sentence_transformers",
+        "sklearn.decomposition",
+        "sklearn.feature_extraction.text",
+        "sklearn.preprocessing",
+        "tqdm.auto",
+        "warnings"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\agent-pc\\scripts\\run_all_local.py",
+      "lines": 478,
+      "functions": [
+        {
+          "name": "run_command",
+          "line": 48
+        },
+        {
+          "name": "build_local_config",
+          "line": 53
+        },
+        {
+          "name": "write_lightweight_quality_files",
+          "line": 90
+        },
+        {
+          "name": "build_dataset",
+          "line": 153
+        },
+        {
+          "name": "add_math_binary_demo",
+          "line": 172
+        },
+        {
+          "name": "regenerate_assets",
+          "line": 177
+        },
+        {
+          "name": "prune_non_comparison_assets",
+          "line": 192
+        },
+        {
+          "name": "read_json",
+          "line": 201
+        },
+        {
+          "name": "esc",
+          "line": 207
+        },
+        {
+          "name": "short_cell",
+          "line": 211
+        },
+        {
+          "name": "build_comparison_dashboard",
+          "line": 218
+        },
+        {
+          "name": "main",
+          "line": 444
+        }
+      ],
+      "classes": [],
+      "important_assignments": [
+        {
+          "name": "ROOT",
+          "line": 21
+        },
+        {
+          "name": "SCRIPT_DIR",
+          "line": 22
+        },
+        {
+          "name": "SRC_DIR",
+          "line": 23
+        },
+        {
+          "name": "DATA_DIR",
+          "line": 29
+        },
+        {
+          "name": "PROCESSED_DIR",
+          "line": 30
+        },
+        {
+          "name": "ASSETS_DIR",
+          "line": 31
+        },
+        {
+          "name": "COMPARISON_PNGS",
+          "line": 32
+        },
+        {
+          "name": "search_rows_df",
+          "line": 275
+        }
+      ],
+      "interesting_strings": [
+        {
+          "text": "dp"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "</div>\n  <div class=\"summary\">\n    <h2>Metricas base</h2>\n    <table>\n      <thead><tr><th>Query</th><th>Precision@k</th><th>Recall@k</th><th>Reciprocal rank</th><th>Avg similarity</th></tr></thead>\n      <tbody>"
+        },
+        {
+          "text": "</tbody>\n    </table>\n  </div>\n  <div class=\"summary\">\n    <h2>Backends vectoriales sobre el mismo dataset</h2>\n    <table>\n      <thead><tr><th>Backend</th><th>Precision@k</th><th>Recall@k</th><th>Reciprocal rank</th><th>Latency ms/query</"
+        },
+        {
+          "text": "</tbody>\n    </table>\n  </div>\n  <div class=\"summary\">\n    <h2>Comparacion explicita de resultados recuperados</h2>\n    <p>Esta tabla muestra el top-3 por backend para las queries de la demo binary/math. El grafico equivalente es <code>vect"
+        },
+        {
+          "text": "query"
+        },
+        {
+          "text": "latency_ms_per_query"
+        },
+        {
+          "text": "query_id"
+        },
+        {
+          "text": "query_id"
+        }
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "cp_dataset_scraper",
+        "datetime",
+        "html",
+        "json",
+        "pandas",
+        "pathlib",
+        "subprocess",
+        "sys"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\agent-pc\\scripts\\extract_rag_metrics.py",
+      "lines": 112,
+      "functions": [],
+      "classes": [],
+      "important_assignments": [
+        {
+          "name": "ROOT",
+          "line": 13
+        },
+        {
+          "name": "SRC_DIR",
+          "line": 14
+        },
+        {
+          "name": "OUT",
+          "line": 18
+        },
+        {
+          "name": "plot_df",
+          "line": 32
+        }
+      ],
+      "interesting_strings": [
+        {
+          "text": "query"
+        },
+        {
+          "text": "query"
+        }
+      ],
+      "imports": [
+        "importlib",
+        "json",
+        "matplotlib",
+        "matplotlib.pyplot",
+        "os",
+        "pathlib",
+        "sys"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\agent-pc\\scripts\\generate_presentation_evidence.py",
+      "lines": 218,
+      "functions": [
+        {
+          "name": "parse_list",
+          "line": 15
+        },
+        {
+          "name": "save_bar",
+          "line": 30
+        },
+        {
+          "name": "save_pie",
+          "line": 45
+        },
+        {
+          "name": "inspect_python",
+          "line": 57
+        },
+        {
+          "name": "workspace_files",
+          "line": 98
+        }
+      ],
+      "classes": [],
+      "important_assignments": [
+        {
+          "name": "ROOT",
+          "line": 10
+        },
+        {
+          "name": "OUT",
+          "line": 11
+        }
+      ],
+      "interesting_strings": [
+        {
+          "text": "LLM API"
+        },
+        {
+          "text": "No se detecto una API real de LLM conectada; existe placeholder analyze_student_idea_with_llm."
+        },
+        {
+          "text": "query"
+        },
+        {
+          "text": "prove"
+        },
+        {
+          "text": "greedy"
+        },
+        {
+          "text": "dp"
+        },
+        {
+          "text": "llm"
+        },
+        {
+          "text": "prompt"
+        },
+        {
+          "text": "transition"
+        },
+        {
+          "text": "cosine"
+        }
+      ],
+      "imports": [
+        "ast",
+        "collections",
+        "json",
+        "matplotlib.pyplot",
+        "pandas",
+        "pathlib"
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asus\\Desktop\\agent-pc\\scripts\\generate_deck_diagrams.py",
+      "lines": 129,
+      "functions": [
+        {
+          "name": "box",
+          "line": 23
+        },
+        {
+          "name": "arrow",
+          "line": 36
+        },
+        {
+          "name": "setup",
+          "line": 41
+        },
+        {
+          "name": "save",
+          "line": 50
+        }
+      ],
+      "classes": [],
+      "important_assignments": [
+        {
+          "name": "ROOT",
+          "line": 7
+        },
+        {
+          "name": "OUT",
+          "line": 8
+        },
+        {
+          "name": "COLORS",
+          "line": 12
+        }
+      ],
+      "interesting_strings": [
+        {
+          "text": "semantic_score\ncosine similarity"
+        }
+      ],
+      "imports": [
+        "matplotlib.patches",
+        "matplotlib.pyplot",
+        "pathlib"
+      ]
+    }
+  ],
+  "datasets": {
+    "problems_shape": [
+      43,
+      32
+    ],
+    "nodes_shape": [
+      559,
+      21
+    ],
+    "source_counts": {
+      "codeforces": 23,
+      "atcoder": 20
+    },
+    "node_type_counts": {
+      "STATEMENT": 43,
+      "INPUT": 43,
+      "OUTPUT": 43,
+      "CONSTRAINTS": 43,
+      "EXAMPLES": 43,
+      "NOTES": 43,
+      "EDITORIAL_FULL": 43,
+      "EDITORIAL_OBSERVATION": 43,
+      "EDITORIAL_PROOF": 43,
+      "EDITORIAL_ALGORITHM": 43,
+      "EDITORIAL_COMPLEXITY": 43,
+      "IMPLEMENTATION_HINTS": 43,
+      "COMMON_MISTAKES": 43
+    },
+    "normalized_tag_counts": {
+      "greedy": 20,
+      "math": 11,
+      "techniques": 8,
+      "implementation_constructive": 7,
+      "strings": 3,
+      "data_structures": 2,
+      "dynamic_programming": 1
+    },
+    "original_tag_counts": {
+      "greedy": 20,
+      "math": 9,
+      "binary search": 5,
+      "implementation": 5,
+      "sortings": 4,
+      "brute force": 4,
+      "strings": 3,
+      "data structures": 2,
+      "games": 2,
+      "number theory": 1,
+      "dp": 1
+    },
+    "difficulty_min": 0.0,
+    "difficulty_max": 1300.0,
+    "statement_status": {
+      "skipped": 40,
+      "curated_paraphrase": 3
+    },
+    "editorial_status": {
+      "skipped": 40,
+      "curated_observation": 3
+    },
+    "non_empty_node_text": 68,
+    "empty_node_text": 491,
+    "example_problems": [
+      {
+        "global_problem_id": "codeforces_1358_A",
+        "source": "codeforces",
+        "title": "Park Lighting",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\", \"math\"]",
+        "normalized_tags": "[\"greedy\", \"math\"]"
+      },
+      {
+        "global_problem_id": "codeforces_2193_B",
+        "source": "codeforces",
+        "title": "Reverse a Permutation",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\"]",
+        "normalized_tags": "[\"greedy\"]"
+      },
+      {
+        "global_problem_id": "codeforces_2194_A",
+        "source": "codeforces",
+        "title": "Lawn Mower",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\", \"math\"]",
+        "normalized_tags": "[\"greedy\", \"math\"]"
+      },
+      {
+        "global_problem_id": "codeforces_1767_B",
+        "source": "codeforces",
+        "title": "Block Towers",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"data structures\", \"greedy\", \"sortings\"]",
+        "normalized_tags": "[\"data_structures\", \"greedy\", \"techniques\"]"
+      },
+      {
+        "global_problem_id": "codeforces_1768_A",
+        "source": "codeforces",
+        "title": "Greatest Convex",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\", \"math\", \"number theory\"]",
+        "normalized_tags": "[\"greedy\", \"math\"]"
+      },
+      {
+        "global_problem_id": "codeforces_2207_A",
+        "source": "codeforces",
+        "title": "1-1",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\", \"strings\"]",
+        "normalized_tags": "[\"greedy\", \"strings\"]"
+      },
+      {
+        "global_problem_id": "codeforces_2209_A",
+        "source": "codeforces",
+        "title": "Flip Flops",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\"]",
+        "normalized_tags": "[\"greedy\"]"
+      },
+      {
+        "global_problem_id": "codeforces_1592_A",
+        "source": "codeforces",
+        "title": "Gamer Hemose",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"binary search\", \"greedy\", \"math\", \"sortings\"]",
+        "normalized_tags": "[\"techniques\", \"greedy\", \"math\"]"
+      },
+      {
+        "global_problem_id": "codeforces_1660_A",
+        "source": "codeforces",
+        "title": "Vasya and Coins",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\", \"math\"]",
+        "normalized_tags": "[\"greedy\", \"math\"]"
+      },
+      {
+        "global_problem_id": "codeforces_1661_A",
+        "source": "codeforces",
+        "title": "Array Balancing",
+        "normalized_difficulty": 800.0,
+        "original_tags": "[\"greedy\", \"math\"]",
+        "normalized_tags": "[\"greedy\", \"math\"]"
+      }
+    ]
+  },
+  "implemented_components": {
+    "Page Index": true,
+    "Semantic Search": true,
+    "TF-IDF Search": true,
+    "Hybrid Search": true,
+    "Student Simulation": true,
+    "Student Profile": true,
+    "Recommendation": true,
+    "LLM API": false,
+    "FAISS": false,
+    "ChromaDB": false
+  },
+  "quality_report": {
+    "total_problems": 40,
+    "total_by_platform": {
+      "codeforces": 20,
+      "atcoder": 20
+    },
+    "difficulty_min": 0.0,
+    "difficulty_max": 800.0,
+    "statement_status": {
+      "skipped": 40
+    },
+    "editorial_status": {
+      "skipped": 40
+    },
+    "total_page_nodes": 520,
+    "node_type_distribution": {
+      "STATEMENT": 40,
+      "INPUT": 40,
+      "OUTPUT": 40,
+      "CONSTRAINTS": 40,
+      "EXAMPLES": 40,
+      "NOTES": 40,
+      "EDITORIAL_FULL": 40,
+      "EDITORIAL_OBSERVATION": 40,
+      "EDITORIAL_PROOF": 40,
+      "EDITORIAL_ALGORITHM": 40,
+      "EDITORIAL_COMPLEXITY": 40,
+      "IMPLEMENTATION_HINTS": 40,
+      "COMMON_MISTAKES": 40
+    },
+    "processed_files": [
+      "cp_page_nodes_dataset.csv",
+      "cp_page_nodes_dataset.json",
+      "cp_page_nodes_dataset.parquet",
+      "cp_problems_dataset.csv",
+      "cp_problems_dataset.json",
+      "cp_problems_dataset.parquet"
+    ]
+  },
+  "first_run_summary": {
+    "status": "ready_for_first_tests",
+    "mode": "small_metadata_first_run",
+    "platforms_used": [
+      "atcoder",
+      "codeforces"
+    ],
+    "requested_problem_count": 40,
+    "obtained_problem_count": 40,
+    "total_statements_downloaded": 0,
+    "total_editorials_downloaded": 0,
+    "note": "Statements/editorials largos fueron omitidos intencionalmente en esta primera corrida responsable; puedes activarlos luego desde CONFIG.",
+    "total_page_nodes": 520,
+    "paths": {
+      "problems_csv": "data\\processed\\cp_problems_dataset.csv",
+      "problems_parquet": "data\\processed\\cp_problems_dataset.parquet",
+      "problems_json": "data\\processed\\cp_problems_dataset.json",
+      "nodes_csv": "data\\processed\\cp_page_nodes_dataset.csv",
+      "nodes_parquet": "data\\processed\\cp_page_nodes_dataset.parquet",
+      "nodes_json": "data\\processed\\cp_page_nodes_dataset.json"
+    }
+  },
+  "limits": [
+    "El dataset procesado actual contiene metadatos y Page Nodes, pero statements/editoriales estan en estado skipped.",
+    "No se detectaron FAISS ni ChromaDB en archivos actuales.",
+    "No se detecto una API real de LLM conectada; existe placeholder analyze_student_idea_with_llm.",
+    "Las metricas de retrieval se calculan con ground truth simulado."
+  ]
+}

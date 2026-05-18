@@ -1,0 +1,29 @@
+[
+  {
+    "query":"greedy proof",
+    "precision_at_k":0.0,
+    "recall_at_k":0.0,
+    "reciprocal_rank":0.0,
+    "average_similarity_score":0.371,
+    "diversity_by_tags":0.417,
+    "coverage_by_node_type":0.167
+  },
+  {
+    "query":"dp state transition",
+    "precision_at_k":1.0,
+    "recall_at_k":0.333,
+    "reciprocal_rank":1.0,
+    "average_similarity_score":0.346,
+    "diversity_by_tags":0.364,
+    "coverage_by_node_type":0.333
+  },
+  {
+    "query":"edge cases implementation",
+    "precision_at_k":0.833,
+    "recall_at_k":0.278,
+    "reciprocal_rank":1.0,
+    "average_similarity_score":0.314,
+    "diversity_by_tags":0.4,
+    "coverage_by_node_type":0.333
+  }
+]

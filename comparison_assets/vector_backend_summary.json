@@ -1,0 +1,123 @@
+{
+  "nodes_indexed": 68,
+  "queries": [
+    {
+      "query_id": "binary_quadratic_time",
+      "query": "binary search maximum x quadratic inequality contest time",
+      "expected_problem_ids": [
+        "codeforces_750_A"
+      ],
+      "preferred_node_types": [
+        "STATEMENT",
+        "EDITORIAL_ALGORITHM",
+        "EDITORIAL_OBSERVATION",
+        "EDITORIAL_PROOF"
+      ]
+    },
+    {
+      "query_id": "integer_square_root",
+      "query": "integer square root perfect square sum",
+      "expected_problem_ids": [
+        "codeforces_1915_C"
+      ],
+      "preferred_node_types": [
+        "STATEMENT",
+        "EDITORIAL_ALGORITHM",
+        "COMMON_MISTAKES"
+      ]
+    },
+    {
+      "query_id": "triangular_discriminant",
+      "query": "triangular numbers discriminant formula binary search",
+      "expected_problem_ids": [
+        "codeforces_192_A"
+      ],
+      "preferred_node_types": [
+        "EDITORIAL_ALGORITHM",
+        "EDITORIAL_OBSERVATION",
+        "EDITORIAL_PROOF"
+      ]
+    },
+    {
+      "query_id": "dp_transition",
+      "query": "dp state transition editorial algorithm",
+      "expected_problem_ids": [],
+      "preferred_node_types": [
+        "EDITORIAL_ALGORITHM",
+        "EDITORIAL_OBSERVATION"
+      ],
+      "tag_hints": [
+        "dynamic_programming",
+        "dp"
+      ]
+    },
+    {
+      "query_id": "greedy_proof_edges",
+      "query": "greedy proof edge cases common mistakes",
+      "expected_problem_ids": [],
+      "preferred_node_types": [
+        "EDITORIAL_PROOF",
+        "COMMON_MISTAKES",
+        "EDITORIAL_OBSERVATION"
+      ],
+      "tag_hints": [
+        "greedy"
+      ]
+    }
+  ],
+  "top_k": 8,
+  "embedding": {
+    "embedding_backend": "tfidf_svd_normalized",
+    "tfidf_shape": [
+      68,
+      495
+    ],
+    "embedding_dim": 67,
+    "n_components": 67,
+    "normalization": "l2"
+  },
+  "backend_status": {
+    "local_matrix": {
+      "status": "ok",
+      "elapsed_seconds": 0.002550399978645146
+    },
+    "faiss": {
+      "status": "ok",
+      "elapsed_seconds": 35.200356299988925
+    },
+    "chromadb": {
+      "status": "ok",
+      "elapsed_seconds": 3.7183332000277005
+    }
+  },
+  "why_results_match": "All backends receive the same L2-normalized TF-IDF+SVD vectors and use cosine-equivalent similarity. Local matrix and FAISS IndexFlatIP are exact under this setup; ChromaDB also returns the same top-k on this small dataset. Differences should mainly appear with larger datasets, approximate indexes, different embedding models, filtering, persistence settings, or backend-specific indexing parameters.",
+  "strategy_classification": {
+    "chromadb": 1.0,
+    "current_heuristic": 0.0,
+    "faiss": 1.0,
+    "local_matrix": 1.0
+  },
+  "mean_metrics": {
+    "chromadb": {
+      "precision_at_k": 0.225,
+      "recall_at_k": 0.4583,
+      "reciprocal_rank": 0.4667,
+      "avg_score": 0.3442,
+      "latency_ms_per_query": 743.667
+    },
+    "faiss": {
+      "precision_at_k": 0.225,
+      "recall_at_k": 0.4583,
+      "reciprocal_rank": 0.4667,
+      "avg_score": 0.3442,
+      "latency_ms_per_query": 7040.071
+    },
+    "local_matrix": {
+      "precision_at_k": 0.225,
+      "recall_at_k": 0.4583,
+      "reciprocal_rank": 0.4667,
+      "avg_score": 0.3442,
+      "latency_ms_per_query": 0.51
+    }
+  }
+}

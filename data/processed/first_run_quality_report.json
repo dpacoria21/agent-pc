@@ -1,0 +1,39 @@
+{
+  "total_problems": 40,
+  "total_by_platform": {
+    "codeforces": 20,
+    "atcoder": 20
+  },
+  "difficulty_min": 0.0,
+  "difficulty_max": 800.0,
+  "statement_status": {
+    "skipped": 40
+  },
+  "editorial_status": {
+    "skipped": 40
+  },
+  "total_page_nodes": 520,
+  "node_type_distribution": {
+    "STATEMENT": 40,
+    "INPUT": 40,
+    "OUTPUT": 40,
+    "CONSTRAINTS": 40,
+    "EXAMPLES": 40,
+    "NOTES": 40,
+    "EDITORIAL_FULL": 40,
+    "EDITORIAL_OBSERVATION": 40,
+    "EDITORIAL_PROOF": 40,
+    "EDITORIAL_ALGORITHM": 40,
+    "EDITORIAL_COMPLEXITY": 40,
+    "IMPLEMENTATION_HINTS": 40,
+    "COMMON_MISTAKES": 40
+  },
+  "processed_files": [
+    "cp_page_nodes_dataset.csv",
+    "cp_page_nodes_dataset.json",
+    "cp_page_nodes_dataset.parquet",
+    "cp_problems_dataset.csv",
+    "cp_problems_dataset.json",
+    "cp_problems_dataset.parquet"
+  ]
+}
