@@ -349,9 +349,11 @@ class CachedHttpClient:
                 self._last_request_ts = time.time()
                 if response.status_code == 404:
                     return None, "missing"
-                response.raise_for_status()
                 response.encoding = response.encoding or "utf-8"
                 text = response.text
+                if not is_json and ("challenge-error-text" in text or "__cf_chl_" in text):
+                    return None, "access_challenge"
+                response.raise_for_status()
                 if use_cache:
                     path.write_text(text, encoding="utf-8")
                 return text, "downloaded"
@@ -369,6 +371,69 @@ class CachedHttpClient:
             return json.loads(text), status
         except Exception:
             return None, "parse_failed"
+
+    def post_json(
+        self,
+        url: str,
+        data: Dict[str, Any],
+        *,
+        referer: Optional[str] = None,
+        use_cache: Optional[bool] = None,
+    ) -> Tuple[Optional[Any], str]:
+        if use_cache is None:
+            use_cache = bool(self.config["scraping"].get("use_cache", True))
+        cache_data = {key: value for key, value in data.items() if key != "csrf_token"}
+        cache_key = f"POST {url} {stable_json_dumps(cache_data)}"
+        path = self.cache_path(cache_key, suffix=".json")
+        if use_cache and path.exists():
+            try:
+                return json.loads(path.read_text(encoding="utf-8", errors="ignore")), "cache"
+            except Exception:
+                return None, "parse_failed"
+
+        if not self.allowed_by_robots(url):
+            return None, "robots_disallowed"
+
+        max_retries = int(self.config["scraping"].get("max_retries", 2))
+        timeout = float(self.config["scraping"].get("timeout_seconds", 20))
+        headers = {
+            "Accept": "application/json, text/javascript, */*; q=0.01",
+            "X-Requested-With": "XMLHttpRequest",
+        }
+        if referer:
+            headers["Referer"] = referer
+        csrf = data.get("csrf_token")
+        if csrf:
+            headers["X-Csrf-Token"] = str(csrf)
+
+        last_status = "unavailable"
+        for attempt in range(max_retries + 1):
+            try:
+                self._respect_delay()
+                response = self.session.post(
+                    url,
+                    data=data,
+                    headers=headers,
+                    timeout=timeout,
+                    allow_redirects=False,
+                )
+                self._last_request_ts = time.time()
+                response.encoding = response.encoding or "utf-8"
+                text = response.text
+                if response.status_code in {301, 302, 303, 307, 308}:
+                    return None, "redirected"
+                if "challenge-error-text" in text or "__cf_chl_" in text:
+                    return None, "access_challenge"
+                response.raise_for_status()
+                payload = json.loads(text)
+                if use_cache:
+                    path.write_text(text, encoding="utf-8")
+                return payload, "downloaded"
+            except Exception as exc:
+                last_status = f"error:{type(exc).__name__}"
+                if attempt < max_retries:
+                    time.sleep(max(1.0, float(self.config["scraping"].get("request_delay_seconds", 1.5))))
+        return None, last_status
 
 
 def save_raw_payload(payload: Any, name: str, config: Dict[str, Any]) -> None:
@@ -421,6 +486,7 @@ def fetch_codeforces_problemset(config: Dict[str, Any], client: Optional[CachedH
                 "tags": normalize_list(problem.get("tags", [])),
                 "solvedCount": stats_map.get((contest_id, index), 0),
                 "url": f"https://codeforces.com/problemset/problem/{contest_id}/{index}" if contest_id and index else None,
+                "scrape_url": f"https://codeforces.com/contest/{contest_id}/problem/{index}" if contest_id and index else None,
                 "raw_metadata": problem,
             }
         )
@@ -671,11 +737,246 @@ def scrape_codeforces_problem_statement(
         }
 
 
+def find_codeforces_tutorial_url_from_problem_page(
+    problem_url: str,
+    client: CachedHttpClient,
+) -> Optional[str]:
+    """Find the official Tutorial/Editorial link shown in a Codeforces problem sidebar."""
+    if not problem_url:
+        return None
+    html, _ = client.get_text(problem_url)
+    if html is None:
+        return None
+    soup = BeautifulSoup(html, "html.parser")
+    candidates: List[str] = []
+
+    # Codeforces usually exposes the official blog under "Contest materials" on
+    # each problem page. Prefer links whose text says Tutorial/Editorial.
+    for link in soup.select("a[href]"):
+        href = link.get("href") or ""
+        text = clean_text(link.get_text(" ", strip=True)).lower()
+        if "/blog/entry/" not in href:
+            continue
+        if "tutorial" in text or "editorial" in text:
+            candidates.append(urljoin(problem_url, href))
+
+    # Fallback: keep blog links from the page, but only if there is a single
+    # obvious candidate. This avoids accidentally choosing unrelated comments.
+    if not candidates:
+        blog_links = [
+            urljoin(problem_url, link.get("href") or "")
+            for link in soup.select("a[href]")
+            if "/blog/entry/" in (link.get("href") or "")
+        ]
+        unique_blog_links = list(dict.fromkeys(blog_links))
+        if len(unique_blog_links) == 1:
+            candidates.append(unique_blog_links[0])
+
+    return candidates[0] if candidates else None
+
+
+def _codeforces_editorial_body_text(soup: BeautifulSoup) -> str:
+    body = soup.select_one(".ttypography") or soup.select_one(".blog-entry-content") or soup.body
+    return clean_text(body.get_text("\n", strip=True)) if body else ""
+
+
+def _extract_codeforces_csrf(soup: BeautifulSoup) -> str:
+    meta = soup.select_one('meta[name="X-Csrf-Token"]')
+    if meta and meta.get("content"):
+        return str(meta.get("content"))
+    token_node = soup.select_one(".csrf-token[data-csrf]")
+    if token_node and token_node.get("data-csrf"):
+        return str(token_node.get("data-csrf"))
+    hidden_input = soup.select_one('input[name="csrf_token"]')
+    if hidden_input and hidden_input.get("value"):
+        return str(hidden_input.get("value"))
+    return ""
+
+
+def _codeforces_tutorial_data_endpoint(blog_html: str, editorial_url: str) -> str:
+    match = re.search(r"Codeforces\.setupTutorials\(\s*['\"]([^'\"]+)['\"]", blog_html)
+    if match:
+        return urljoin(editorial_url, match.group(1))
+    return urljoin(editorial_url, "/data/problemTutorial")
+
+
+def extract_codeforces_blog_problem_section(
+    blog_soup: BeautifulSoup,
+    contest_id: Any,
+    problem_index: Any,
+    title: str = "",
+) -> Optional[BeautifulSoup]:
+    """Return the blog fragment for one problem, including hint spoilers."""
+    if not contest_id or not problem_index:
+        return None
+    problem_path = f"/contest/{contest_id}/problem/{problem_index}".lower()
+    title_key = _normalized_heading_key(title)
+    headings = blog_soup.select(".ttypography h1, .ttypography h2, .ttypography h3, .ttypography h4")
+
+    selected = None
+    for heading in headings:
+        hrefs = [str(link.get("href", "")).lower() for link in heading.select("a[href]")]
+        heading_key = _normalized_heading_key(heading.get_text(" ", strip=True))
+        if any(problem_path in href for href in hrefs):
+            selected = heading
+            break
+        if title_key and title_key in heading_key:
+            selected = heading
+            break
+
+    if selected is None:
+        return None
+
+    html_parts = [str(selected)]
+    for sibling in selected.next_siblings:
+        if getattr(sibling, "name", None) in {"h1", "h2", "h3", "h4"}:
+            break
+        html_parts.append(str(sibling))
+    return BeautifulSoup("\n".join(html_parts), "html.parser")
+
+
+def extract_codeforces_toggle_context(section_soup: Optional[BeautifulSoup]) -> Tuple[str, int]:
+    """Extract visible educational spoiler text such as Hint1/Hint2, excluding code."""
+    if section_soup is None:
+        return "", 0
+    blocks: List[str] = []
+    for spoiler in section_soup.select(".spoiler"):
+        title_node = spoiler.select_one(".spoiler-title")
+        content_node = spoiler.select_one(".spoiler-content")
+        spoiler_title = clean_text(title_node.get_text(" ", strip=True)) if title_node else "Spoiler"
+        if not content_node:
+            continue
+        lower_title = spoiler_title.lower()
+        if lower_title.startswith("code"):
+            continue
+        for placeholder in content_node.select(".problemTutorial"):
+            placeholder.decompose()
+        text = clean_text(content_node.get_text("\n", strip=True))
+        if not text or "tutorial is loading" in text.lower():
+            continue
+        blocks.append(f"{spoiler_title}:\n{text}")
+    return clean_text("\n\n".join(blocks)), len(blocks)
+
+
+def fetch_codeforces_problem_tutorial(
+    contest_id: Any,
+    problem_index: Any,
+    editorial_url: str,
+    blog_html: str,
+    blog_soup: BeautifulSoup,
+    client: CachedHttpClient,
+) -> Tuple[str, str]:
+    problem_code = f"{contest_id}{problem_index}".replace(" ", "")
+    if not contest_id or not problem_index:
+        return "", "missing_problem_code"
+    if f'problemcode="{problem_code}"'.lower() not in blog_html.lower():
+        return "", "problem_code_not_in_tutorial"
+
+    csrf = _extract_codeforces_csrf(blog_soup)
+    if not csrf:
+        return "", "missing_csrf"
+
+    endpoint = _codeforces_tutorial_data_endpoint(blog_html, editorial_url)
+    payload, status = client.post_json(
+        endpoint,
+        {"problemCode": problem_code, "csrf_token": csrf},
+        referer=editorial_url,
+    )
+    if payload is None:
+        return "", status
+    if str(payload.get("success", "")).lower() != "true":
+        return "", "missing"
+
+    tutorial_html = payload.get("html") or ""
+    if not tutorial_html:
+        return "", "missing"
+    tutorial_soup = BeautifulSoup(tutorial_html, "html.parser")
+    text = _codeforces_editorial_body_text(tutorial_soup)
+    return text, "downloaded" if text else "missing"
+
+
+def _normalized_heading_key(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(value or "").lower())
+
+
+def _looks_like_codeforces_problem_heading(line: str) -> bool:
+    line = clean_text(line)
+    if not line or len(line) > 120:
+        return False
+    lower = line.lower()
+    if lower in {"solution", "code", "tutorial", "hints", "hint", "proof", "analysis"}:
+        return False
+    if lower.startswith(("author:", "preparation:", "input", "output", "example", "note")):
+        return False
+    if re.match(r"^div\d?[a-z]?\d?[a-z]?\b", line, flags=re.IGNORECASE):
+        return True
+    if re.match(r"^[A-H][0-9]?\.\s+\S.{2,}$", line):
+        return True
+    if re.match(r"^(?:problem\s+)?[A-H][0-9]?\s*[-:]\s+\S.{2,}$", line, flags=re.IGNORECASE):
+        return True
+    return False
+
+
+def _trim_codeforces_code_spoiler(section_text: str) -> str:
+    lines = [clean_text(line) for line in section_text.splitlines() if clean_text(line)]
+    if not lines:
+        return ""
+    for idx, line in enumerate(lines):
+        if line.lower() == "code" and idx > 3:
+            before = "\n".join(lines[:idx])
+            if len(before.split()) >= 40:
+                return clean_text(before)
+    return clean_text("\n".join(lines))
+
+
+def extract_codeforces_editorial_section(full_text: str, problem_index: Any, title: str) -> str:
+    """Extract the section for a specific problem from a multi-problem CF tutorial."""
+    lines = [clean_text(line) for line in full_text.splitlines() if clean_text(line)]
+    if not lines:
+        return ""
+
+    title_key = _normalized_heading_key(title)
+    start_idx: Optional[int] = None
+
+    if title_key:
+        for idx, line in enumerate(lines):
+            line_key = _normalized_heading_key(line)
+            if title_key in line_key:
+                start_idx = idx
+                break
+
+    problem_index_text = str(problem_index or "").strip().lower()
+    if start_idx is None and problem_index_text:
+        for idx, line in enumerate(lines):
+            lower = line.lower().strip()
+            if lower.startswith((f"{problem_index_text}.", f"{problem_index_text} ", f"problem {problem_index_text}")):
+                start_idx = idx
+                break
+
+    if start_idx is None:
+        return ""
+
+    end_idx = len(lines)
+    for idx in range(start_idx + 1, len(lines)):
+        if idx <= start_idx + 3:
+            continue
+        if _looks_like_codeforces_problem_heading(lines[idx]):
+            end_idx = idx
+            break
+
+    return _trim_codeforces_code_spoiler("\n".join(lines[start_idx:end_idx]))
+
+
 def find_codeforces_editorial_url(
     contest_id: Any,
     client: CachedHttpClient,
     config: Dict[str, Any],
+    problem_url: Optional[str] = None,
 ) -> Optional[str]:
+    tutorial_url = find_codeforces_tutorial_url_from_problem_page(problem_url, client) if problem_url else None
+    if tutorial_url:
+        return tutorial_url
+
     contest_url = f"https://codeforces.com/contest/{contest_id}"
     html, status = client.get_text(contest_url)
     if html is None:
@@ -698,12 +999,13 @@ def scrape_codeforces_editorial(
     title: str,
     client: Optional[CachedHttpClient] = None,
     config: Optional[Dict[str, Any]] = None,
+    problem_url: Optional[str] = None,
 ) -> Dict[str, Any]:
     config = config or CONFIG
     if not config["scraping"].get("enabled", True) or not config["codeforces"].get("download_editorials", True):
         return {"official_editorial": "", "editorial_url": "", "editorial_status": "skipped"}
     client = client or CachedHttpClient(config)
-    editorial_url = find_codeforces_editorial_url(contest_id, client, config)
+    editorial_url = find_codeforces_editorial_url(contest_id, client, config, problem_url=problem_url)
     if not editorial_url:
         return {"official_editorial": "", "editorial_url": "", "editorial_status": "unavailable"}
     html, fetch_status = client.get_text(editorial_url)
@@ -711,17 +1013,47 @@ def scrape_codeforces_editorial(
         return {"official_editorial": "", "editorial_url": editorial_url, "editorial_status": "missing" if fetch_status == "missing" else "unavailable"}
     try:
         soup = BeautifulSoup(html, "html.parser")
-        body = soup.select_one(".ttypography") or soup.select_one(".blog-entry-content") or soup.body
-        text = clean_text(body.get_text("\n", strip=True)) if body else ""
-        problem_marker = str(problem_index).lower()
-        title_marker = (title or "").lower()
-        if text and (problem_marker in text.lower() or (title_marker and title_marker[:20] in text.lower())):
+        problem_code = f"{contest_id}{problem_index}".replace(" ", "")
+        problem_section = extract_codeforces_blog_problem_section(soup, contest_id, problem_index, title)
+        toggle_text, toggle_count = extract_codeforces_toggle_context(problem_section)
+        tutorial_text, tutorial_status = fetch_codeforces_problem_tutorial(
+            contest_id,
+            problem_index,
+            editorial_url,
+            html,
+            soup,
+            client,
+        )
+        if tutorial_text:
+            combined_text = clean_text("\n\n".join(part for part in [toggle_text, f"Solution:\n{tutorial_text}"] if part))
+            return {
+                "official_editorial": combined_text,
+                "editorial_url": editorial_url,
+                "editorial_status": tutorial_status,
+                "editorial_parse_method": "codeforces_ajax_problemTutorial",
+                "editorial_problem_code": problem_code,
+                "editorial_toggle_count": toggle_count,
+            }
+
+        text = _codeforces_editorial_body_text(soup)
+        section_text = extract_codeforces_editorial_section(text, problem_index, title)
+        if section_text and "tutorial is loading" not in section_text.lower():
+            text = section_text
             status = "downloaded"
         elif text:
+            # Keep the full tutorial as a fallback so the dataset is useful, but
+            # mark it honestly because the exact problem block was not isolated.
             status = "unmatched"
         else:
             status = "missing"
-        return {"official_editorial": text, "editorial_url": editorial_url, "editorial_status": status}
+        return {
+            "official_editorial": text,
+            "editorial_url": editorial_url,
+            "editorial_status": status,
+            "editorial_parse_method": "blog_section_fallback" if status == "downloaded" else "blog_full_fallback",
+            "editorial_problem_code": problem_code,
+            "editorial_toggle_count": toggle_count,
+        }
     except Exception as exc:
         return {"official_editorial": "", "editorial_url": editorial_url, "editorial_status": f"parse_failed:{type(exc).__name__}"}
 
@@ -955,6 +1287,9 @@ def codeforces_row_to_unified(row: pd.Series, scraped: Dict[str, Any], editorial
         "editorial_url": editorial.get("editorial_url", ""),
         "statement_status": scraped.get("statement_status", "skipped"),
         "editorial_status": editorial.get("editorial_status", "skipped"),
+        "editorial_parse_method": editorial.get("editorial_parse_method", ""),
+        "editorial_problem_code": editorial.get("editorial_problem_code", ""),
+        "editorial_toggle_count": editorial.get("editorial_toggle_count", 0),
         "parse_status": scraped.get("parse_status", "skipped"),
         "language": scraped.get("language", "en"),
         "raw_metadata": row.get("raw_metadata", {}),
@@ -1016,6 +1351,9 @@ def atcoder_row_to_unified(row: pd.Series, scraped: Dict[str, Any], editorial: D
         "editorial_url": editorial.get("editorial_url", ""),
         "statement_status": scraped.get("statement_status", "skipped"),
         "editorial_status": editorial.get("editorial_status", "skipped"),
+        "editorial_parse_method": editorial.get("editorial_parse_method", ""),
+        "editorial_problem_code": editorial.get("editorial_problem_code", ""),
+        "editorial_toggle_count": editorial.get("editorial_toggle_count", 0),
         "parse_status": scraped.get("parse_status", "skipped"),
         "language": scraped.get("language", config["atcoder"].get("preferred_language", "en")),
         "raw_metadata": row.get("raw_metadata", {}),
@@ -1030,12 +1368,20 @@ def build_codeforces_dataset(config: Dict[str, Any], client: CachedHttpClient) -
 
     rows = []
     for _, row in tqdm(filtered.iterrows(), total=len(filtered), desc="Codeforces problems"):
+        scrape_url = row.get("scrape_url") or row.get("url")
         if config["codeforces"].get("download_statements", True):
-            scraped = scrape_codeforces_problem_statement(row["url"], client=client, config=config)
+            scraped = scrape_codeforces_problem_statement(scrape_url, client=client, config=config)
         else:
             scraped = {"statement_status": "skipped", "parse_status": "skipped"}
         if config["codeforces"].get("download_editorials", True):
-            editorial = scrape_codeforces_editorial(row.get("contestId"), row.get("index"), row.get("name"), client=client, config=config)
+            editorial = scrape_codeforces_editorial(
+                row.get("contestId"),
+                row.get("index"),
+                row.get("name"),
+                client=client,
+                config=config,
+                problem_url=scrape_url,
+            )
         else:
             editorial = {"official_editorial": "", "editorial_url": "", "editorial_status": "skipped"}
         rows.append(codeforces_row_to_unified(row, scraped, editorial))

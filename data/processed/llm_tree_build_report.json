@@ -1,0 +1,43 @@
+{
+  "selected_problem_count": 3,
+  "tree_node_count": 16,
+  "edge_count": 5,
+  "client_available": false,
+  "statuses": [
+    {
+      "global_problem_id": "codeforces_2219_A",
+      "title": "Grid L",
+      "generation_status": "fallback_after_missing_api_key",
+      "generation_model": "gpt-4o-mini",
+      "node_count": 8,
+      "edge_count": 3,
+      "warning_count": 2
+    },
+    {
+      "global_problem_id": "codeforces_2219_B1",
+      "title": "Unique Values (Easy version)",
+      "generation_status": "fallback_after_missing_api_key",
+      "generation_model": "gpt-4o-mini",
+      "node_count": 4,
+      "edge_count": 1,
+      "warning_count": 2
+    },
+    {
+      "global_problem_id": "codeforces_2219_C",
+      "title": "Coloring a Red Black Tree",
+      "generation_status": "fallback_after_missing_api_key",
+      "generation_model": "gpt-4o-mini",
+      "node_count": 4,
+      "edge_count": 1,
+      "warning_count": 2
+    }
+  ],
+  "paths": {
+    "cp_llm_tree_nodes_dataset_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_llm_tree_nodes_dataset.csv",
+    "cp_llm_tree_nodes_dataset_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_llm_tree_nodes_dataset.json",
+    "cp_llm_tree_edges_dataset_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_llm_tree_edges_dataset.csv",
+    "cp_llm_tree_edges_dataset_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_llm_tree_edges_dataset.json",
+    "cp_llm_problem_analysis_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_llm_problem_analysis.json",
+    "llm_tree_build_report_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\llm_tree_build_report.json"
+  }
+}

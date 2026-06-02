@@ -1,0 +1,421 @@
+[
+  {
+    "problem_id": "codeforces_2219_A",
+    "title": "Grid L",
+    "main_topic": "implementation_constructive",
+    "difficulty_comment": "normalized_difficulty=1400.0",
+    "strategies": [
+      "binary_search",
+      "direct_formula",
+      "constructive",
+      "proof"
+    ],
+    "student_skills": [
+      "problem_understanding",
+      "mathematical_modeling",
+      "proof",
+      "algorithm_design",
+      "complexity_analysis",
+      "implementation",
+      "edge_cases"
+    ],
+    "nodes": [
+      {
+        "node_key": "problem",
+        "parent_node_key": "",
+        "node_type": "PROBLEM",
+        "title": "Grid L",
+        "summary": "A. Grid L\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nRoger has $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, each formed by joining two unit-length segments at a right angle.\nHe...",
+        "evidence_text": "Grid L",
+        "source_section": "metadata",
+        "skills": [
+          "problem_understanding",
+          "mathematical_modeling",
+          "proof",
+          "algorithm_design",
+          "complexity_analysis",
+          "implementation",
+          "edge_cases"
+        ],
+        "strategies": [
+          "binary_search",
+          "direct_formula",
+          "constructive",
+          "proof"
+        ],
+        "confidence": 0.72
+      },
+      {
+        "node_key": "understanding",
+        "parent_node_key": "problem",
+        "node_type": "UNDERSTANDING",
+        "title": "Problem understanding",
+        "summary": "Captures what is given, what must be produced, and the main input/output goal.",
+        "evidence_text": "Given $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+        "source_section": "statement",
+        "skills": [
+          "problem_understanding"
+        ],
+        "strategies": [],
+        "confidence": 0.68
+      },
+      {
+        "node_key": "math_model",
+        "parent_node_key": "problem",
+        "node_type": "MATHEMATICAL_MODEL",
+        "title": "Mathematical model",
+        "summary": "Represents the mathematical condition or formula behind the solution.",
+        "evidence_text": "$$$p+2q = m(n+1) + n(m+1)$$$ is quadratic on $$$m$$$ and $$$n$$$.",
+        "source_section": "official_editorial",
+        "skills": [
+          "mathematical_modeling"
+        ],
+        "strategies": [
+          "binary_search",
+          "direct_formula",
+          "constructive"
+        ],
+        "confidence": 0.66
+      },
+      {
+        "node_key": "observation",
+        "parent_node_key": "problem",
+        "node_type": "OBSERVATION",
+        "title": "Key observation",
+        "summary": "Core observation used to reduce the problem.",
+        "evidence_text": "The following is the key observation of the problem.",
+        "source_section": "official_editorial",
+        "skills": [
+          "mathematical_modeling",
+          "proof"
+        ],
+        "strategies": [
+          "binary_search",
+          "direct_formula",
+          "constructive",
+          "proof"
+        ],
+        "confidence": 0.64
+      },
+      {
+        "node_key": "proof",
+        "parent_node_key": "problem",
+        "node_type": "PROOF",
+        "title": "Correctness proof",
+        "summary": "Explains why the condition or algorithm is correct.",
+        "evidence_text": "(See tutorial for proof)",
+        "source_section": "official_editorial",
+        "skills": [
+          "proof"
+        ],
+        "strategies": [
+          "proof"
+        ],
+        "confidence": 0.63
+      },
+      {
+        "node_key": "algorithm",
+        "parent_node_key": "problem",
+        "node_type": "ALGORITHM",
+        "title": "Algorithmic plan",
+        "summary": "Steps needed to solve or check candidates.",
+        "evidence_text": "$$$ So we can iterate $$$n$$$ from $$$1$$$ to $$$\\left\\lfloor\\sqrt{p/2+q}\\right\\rfloor$$$ and, for each $$$n$$$, check if $$$ m = \\frac{p+2q-n}{2n+1} $$$ is a positive integer such that $$$\\vert m-n\\vert \\le p$$$.",
+        "source_section": "official_editorial",
+        "skills": [
+          "algorithm_design"
+        ],
+        "strategies": [
+          "binary_search",
+          "direct_formula",
+          "constructive",
+          "proof"
+        ],
+        "confidence": 0.62
+      },
+      {
+        "node_key": "complexity",
+        "parent_node_key": "algorithm",
+        "node_type": "COMPLEXITY",
+        "title": "Complexity",
+        "summary": "Estimated time complexity or bound used by the algorithm.",
+        "evidence_text": "We do so in $$$O(\\sqrt{p+2q})$$$.",
+        "source_section": "official_editorial",
+        "skills": [
+          "complexity_analysis"
+        ],
+        "strategies": [
+          "binary_search",
+          "direct_formula",
+          "constructive",
+          "proof"
+        ],
+        "confidence": 0.6
+      },
+      {
+        "node_key": "implementation",
+        "parent_node_key": "algorithm",
+        "node_type": "IMPLEMENTATION",
+        "title": "Implementation hints",
+        "summary": "Practical details needed to code the approach.",
+        "evidence_text": "Given $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+        "source_section": "official_editorial",
+        "skills": [
+          "implementation"
+        ],
+        "strategies": [
+          "binary_search",
+          "direct_formula",
+          "constructive",
+          "proof"
+        ],
+        "confidence": 0.55
+      }
+    ],
+    "edges": [
+      {
+        "source_node_key": "math_model",
+        "target_node_key": "algorithm",
+        "edge_type": "PREREQUISITE_OF",
+        "reason": "The algorithm depends on the mathematical condition extracted from the editorial.",
+        "confidence": 0.62
+      },
+      {
+        "source_node_key": "proof",
+        "target_node_key": "algorithm",
+        "edge_type": "SUPPORTS",
+        "reason": "The proof supports why the algorithmic plan is valid.",
+        "confidence": 0.58
+      },
+      {
+        "source_node_key": "algorithm",
+        "target_node_key": "implementation",
+        "edge_type": "IMPLEMENTATION_DEPENDS_ON",
+        "reason": "Implementation follows the algorithmic plan.",
+        "confidence": 0.56
+      }
+    ],
+    "warnings": [
+      "Generated with missing_api_key; review before using as ground truth."
+    ],
+    "_generation": {
+      "status": "fallback_after_missing_api_key",
+      "model": "gpt-4o-mini",
+      "error": "",
+      "warnings": [
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "problem_id": "codeforces_2219_B1",
+    "title": "Unique Values (Easy version)",
+    "main_topic": "techniques",
+    "difficulty_comment": "normalized_difficulty=1900.0",
+    "strategies": [
+      "binary_search",
+      "greedy",
+      "data_structure"
+    ],
+    "student_skills": [
+      "problem_understanding",
+      "implementation"
+    ],
+    "nodes": [
+      {
+        "node_key": "problem",
+        "parent_node_key": "",
+        "node_type": "PROBLEM",
+        "title": "Unique Values (Easy version)",
+        "summary": "B1. Unique Values (Easy version)\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nThe difference between the easy version and hard version is the maximum number of queries allowed. In this version,...",
+        "evidence_text": "Unique Values (Easy version)",
+        "source_section": "metadata",
+        "skills": [
+          "problem_understanding",
+          "implementation"
+        ],
+        "strategies": [
+          "binary_search",
+          "greedy",
+          "data_structure"
+        ],
+        "confidence": 0.72
+      },
+      {
+        "node_key": "understanding",
+        "parent_node_key": "problem",
+        "node_type": "UNDERSTANDING",
+        "title": "Problem understanding",
+        "summary": "Captures what is given, what must be produced, and the main input/output goal.",
+        "evidence_text": "B1. Unique Values (Easy version)\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nThe difference between the easy version and hard version is the maximum number of queries...",
+        "source_section": "statement",
+        "skills": [
+          "problem_understanding"
+        ],
+        "strategies": [],
+        "confidence": 0.68
+      },
+      {
+        "node_key": "algorithm",
+        "parent_node_key": "problem",
+        "node_type": "ALGORITHM",
+        "title": "Algorithmic plan",
+        "summary": "Steps needed to solve or check candidates.",
+        "evidence_text": "Solution:\nThere are many solutions that use $$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries. Here is one:\nNotice that if we query for the set $$$S$$$ and its complement $$$T$$$ (i.e. $$$T = \\{1, 2, \\ldots, 2 \\cdot n + 1\\} \\setminus S$$$) we...",
+        "source_section": "official_editorial",
+        "skills": [
+          "algorithm_design"
+        ],
+        "strategies": [
+          "binary_search",
+          "greedy",
+          "data_structure"
+        ],
+        "confidence": 0.62
+      },
+      {
+        "node_key": "implementation",
+        "parent_node_key": "algorithm",
+        "node_type": "IMPLEMENTATION",
+        "title": "Implementation hints",
+        "summary": "Practical details needed to code the approach.",
+        "evidence_text": "There is a secret array $$$a$$$ of length $$$2n+1$$$, whose elements are integers from $$$1$$$ to $$$n$$$.",
+        "source_section": "official_editorial",
+        "skills": [
+          "implementation"
+        ],
+        "strategies": [
+          "binary_search",
+          "greedy",
+          "data_structure"
+        ],
+        "confidence": 0.55
+      }
+    ],
+    "edges": [
+      {
+        "source_node_key": "algorithm",
+        "target_node_key": "implementation",
+        "edge_type": "IMPLEMENTATION_DEPENDS_ON",
+        "reason": "Implementation follows the algorithmic plan.",
+        "confidence": 0.56
+      }
+    ],
+    "warnings": [
+      "Generated with missing_api_key; review before using as ground truth."
+    ],
+    "_generation": {
+      "status": "fallback_after_missing_api_key",
+      "model": "gpt-4o-mini",
+      "error": "",
+      "warnings": [
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "problem_id": "codeforces_2219_C",
+    "title": "Coloring a Red Black Tree",
+    "main_topic": "graphs",
+    "difficulty_comment": "normalized_difficulty=2300.0",
+    "strategies": [
+      "dynamic_programming",
+      "tree_algorithm",
+      "greedy"
+    ],
+    "student_skills": [
+      "problem_understanding",
+      "algorithm_design"
+    ],
+    "nodes": [
+      {
+        "node_key": "problem",
+        "parent_node_key": "",
+        "node_type": "PROBLEM",
+        "title": "Coloring a Red Black Tree",
+        "summary": "C. Coloring a Red Black Tree\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nYou are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where...",
+        "evidence_text": "Coloring a Red Black Tree",
+        "source_section": "metadata",
+        "skills": [
+          "problem_understanding",
+          "algorithm_design"
+        ],
+        "strategies": [
+          "dynamic_programming",
+          "tree_algorithm",
+          "greedy"
+        ],
+        "confidence": 0.72
+      },
+      {
+        "node_key": "understanding",
+        "parent_node_key": "problem",
+        "node_type": "UNDERSTANDING",
+        "title": "Problem understanding",
+        "summary": "Captures what is given, what must be produced, and the main input/output goal.",
+        "evidence_text": "You are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where $$$s_i = 1$$$ means that the $$$i$$$-th node is colored red and $$$s_i = 0$$$ means that the $$$i$$$-th node is colored black.",
+        "source_section": "statement",
+        "skills": [
+          "problem_understanding"
+        ],
+        "strategies": [],
+        "confidence": 0.68
+      },
+      {
+        "node_key": "algorithm",
+        "parent_node_key": "problem",
+        "node_type": "ALGORITHM",
+        "title": "Algorithmic plan",
+        "summary": "Steps needed to solve or check candidates.",
+        "evidence_text": "Hint1:\nThink of some kind of subtree DP.\n\nSolution:\nIn this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation.\nFirstly, let's split the...",
+        "source_section": "official_editorial",
+        "skills": [
+          "algorithm_design"
+        ],
+        "strategies": [
+          "dynamic_programming",
+          "tree_algorithm",
+          "greedy"
+        ],
+        "confidence": 0.62
+      },
+      {
+        "node_key": "implementation",
+        "parent_node_key": "algorithm",
+        "node_type": "IMPLEMENTATION",
+        "title": "Implementation hints",
+        "summary": "Practical details needed to code the approach.",
+        "evidence_text": "Hint1:\nThink of some kind of subtree DP.\n\nSolution:\nIn this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation.\nFirstly, let's split the...",
+        "source_section": "official_editorial",
+        "skills": [
+          "implementation"
+        ],
+        "strategies": [
+          "dynamic_programming",
+          "tree_algorithm",
+          "greedy"
+        ],
+        "confidence": 0.55
+      }
+    ],
+    "edges": [
+      {
+        "source_node_key": "algorithm",
+        "target_node_key": "implementation",
+        "edge_type": "IMPLEMENTATION_DEPENDS_ON",
+        "reason": "Implementation follows the algorithmic plan.",
+        "confidence": 0.56
+      }
+    ],
+    "warnings": [
+      "Generated with missing_api_key; review before using as ground truth."
+    ],
+    "_generation": {
+      "status": "fallback_after_missing_api_key",
+      "model": "gpt-4o-mini",
+      "error": "",
+      "warnings": [
+        "missing_api_key"
+      ]
+    }
+  }
+]

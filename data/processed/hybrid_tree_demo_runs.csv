@@ -1,0 +1,5 @@
+query_id,query,stage,approaches,enough_information,elapsed_seconds,top_result
+grid_l_proof,I understand the grid equation but I cannot prove why the construction condition is sufficient,PROOF,"[""FORMULA"", ""CONSTRUCTIVE""]",True,0.1693,content::codeforces_2219_A_09_EDITORIAL_PROOF
+unique_values_formula,I need a formula or binary search style strategy for the Unique Values interactive math problem,ALGORITHM,"[""BINARY_SEARCH"", ""FORMULA"", ""MATH""]",True,0.1367,problem::codeforces_2219_B1
+tree_mex_implementation,"I get wrong answer on tree implementation, maybe edge cases or data structure update is wrong",EDGE_CASES,"[""GRAPH""]",True,0.1658,problem::codeforces_2219_D
+weird_chessboard_proof,I need the proof idea for a constructive math pattern on a chessboard,PROOF,"[""MATH"", ""CONSTRUCTIVE""]",True,0.2245,problem::codeforces_2219_E

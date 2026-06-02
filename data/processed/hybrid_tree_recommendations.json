@@ -1,0 +1,186 @@
+[
+  {
+    "query_id":"grid_l_proof",
+    "query":"I understand the grid equation but I cannot prove why the construction condition is sufficient",
+    "global_problem_id":"codeforces_2219_A",
+    "title":"Grid L",
+    "normalized_difficulty":1400.0,
+    "tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "recommendation_score":0.844701,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
+  },
+  {
+    "query_id":"grid_l_proof",
+    "query":"I understand the grid equation but I cannot prove why the construction condition is sufficient",
+    "global_problem_id":"codeforces_2219_B1",
+    "title":"Unique Values (Easy version)",
+    "normalized_difficulty":1900.0,
+    "tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "recommendation_score":0.663692,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas techniques, implementation_constructive, interactive.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1"
+  },
+  {
+    "query_id":"unique_values_formula",
+    "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
+    "global_problem_id":"codeforces_2219_B1",
+    "title":"Unique Values (Easy version)",
+    "normalized_difficulty":1900.0,
+    "tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "recommendation_score":1.313641,
+    "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas techniques, implementation_constructive, interactive.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1"
+  },
+  {
+    "query_id":"unique_values_formula",
+    "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
+    "global_problem_id":"codeforces_2219_C",
+    "title":"Coloring a Red Black Tree",
+    "normalized_difficulty":2300.0,
+    "tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "recommendation_score":0.7425,
+    "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas graphs, dynamic_programming, greedy.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C"
+  },
+  {
+    "query_id":"unique_values_formula",
+    "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
+    "global_problem_id":"codeforces_2219_A",
+    "title":"Grid L",
+    "normalized_difficulty":1400.0,
+    "tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "recommendation_score":0.67125,
+    "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
+  },
+  {
+    "query_id":"tree_mex_implementation",
+    "query":"I get wrong answer on tree implementation, maybe edge cases or data structure update is wrong",
+    "global_problem_id":"codeforces_2219_D",
+    "title":"MEX Replacement on Tree",
+    "normalized_difficulty":2700.0,
+    "tags":[
+      "data_structures",
+      "implementation_constructive",
+      "math",
+      "graphs"
+    ],
+    "recommendation_score":0.944454,
+    "reason":"Recomendado porque recupero nodos relevantes para edge_cases y coincide con temas data_structures, implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/D"
+  },
+  {
+    "query_id":"tree_mex_implementation",
+    "query":"I get wrong answer on tree implementation, maybe edge cases or data structure update is wrong",
+    "global_problem_id":"codeforces_2219_C",
+    "title":"Coloring a Red Black Tree",
+    "normalized_difficulty":2300.0,
+    "tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "recommendation_score":0.601333,
+    "reason":"Recomendado porque recupero nodos relevantes para edge_cases y coincide con temas graphs, dynamic_programming, greedy.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C"
+  },
+  {
+    "query_id":"weird_chessboard_proof",
+    "query":"I need the proof idea for a constructive math pattern on a chessboard",
+    "global_problem_id":"codeforces_2219_E",
+    "title":"Weird Chessboard",
+    "normalized_difficulty":3500.0,
+    "tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "recommendation_score":1.158772,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/E"
+  },
+  {
+    "query_id":"weird_chessboard_proof",
+    "query":"I need the proof idea for a constructive math pattern on a chessboard",
+    "global_problem_id":"codeforces_2219_A",
+    "title":"Grid L",
+    "normalized_difficulty":1400.0,
+    "tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "recommendation_score":0.98341,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
+  },
+  {
+    "query_id":"weird_chessboard_proof",
+    "query":"I need the proof idea for a constructive math pattern on a chessboard",
+    "global_problem_id":"codeforces_2219_C",
+    "title":"Coloring a Red Black Tree",
+    "normalized_difficulty":2300.0,
+    "tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "recommendation_score":0.866,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas graphs, dynamic_programming, greedy.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C"
+  },
+  {
+    "query_id":"weird_chessboard_proof",
+    "query":"I need the proof idea for a constructive math pattern on a chessboard",
+    "global_problem_id":"codeforces_2219_B1",
+    "title":"Unique Values (Easy version)",
+    "normalized_difficulty":1900.0,
+    "tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "recommendation_score":0.834333,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas techniques, implementation_constructive, interactive.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1"
+  },
+  {
+    "query_id":"weird_chessboard_proof",
+    "query":"I need the proof idea for a constructive math pattern on a chessboard",
+    "global_problem_id":"codeforces_2219_D",
+    "title":"MEX Replacement on Tree",
+    "normalized_difficulty":2700.0,
+    "tags":[
+      "data_structures",
+      "implementation_constructive",
+      "math",
+      "graphs"
+    ],
+    "recommendation_score":0.802667,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas data_structures, implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/D"
+  }
+]

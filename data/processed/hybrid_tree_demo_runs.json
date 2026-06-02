@@ -1,0 +1,50 @@
+[
+  {
+    "query_id":"grid_l_proof",
+    "query":"I understand the grid equation but I cannot prove why the construction condition is sufficient",
+    "stage":"PROOF",
+    "approaches":[
+      "FORMULA",
+      "CONSTRUCTIVE"
+    ],
+    "enough_information":true,
+    "elapsed_seconds":0.1693,
+    "top_result":"content::codeforces_2219_A_09_EDITORIAL_PROOF"
+  },
+  {
+    "query_id":"unique_values_formula",
+    "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
+    "stage":"ALGORITHM",
+    "approaches":[
+      "BINARY_SEARCH",
+      "FORMULA",
+      "MATH"
+    ],
+    "enough_information":true,
+    "elapsed_seconds":0.1367,
+    "top_result":"problem::codeforces_2219_B1"
+  },
+  {
+    "query_id":"tree_mex_implementation",
+    "query":"I get wrong answer on tree implementation, maybe edge cases or data structure update is wrong",
+    "stage":"EDGE_CASES",
+    "approaches":[
+      "GRAPH"
+    ],
+    "enough_information":true,
+    "elapsed_seconds":0.1658,
+    "top_result":"problem::codeforces_2219_D"
+  },
+  {
+    "query_id":"weird_chessboard_proof",
+    "query":"I need the proof idea for a constructive math pattern on a chessboard",
+    "stage":"PROOF",
+    "approaches":[
+      "MATH",
+      "CONSTRUCTIVE"
+    ],
+    "enough_information":true,
+    "elapsed_seconds":0.2245,
+    "top_result":"problem::codeforces_2219_E"
+  }
+]

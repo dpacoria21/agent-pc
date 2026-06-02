@@ -1,0 +1,79 @@
+
+    <!doctype html><html><head><meta charset="utf-8"><title>Hybrid Tree Search CP RAG</title>
+    <style>
+    body{font-family:Arial, sans-serif; margin:28px; color:#111827; background:#f8fafc;}
+    h1,h2{margin-bottom:8px}
+    .card{background:white; border:1px solid #e5e7eb; border-radius:8px; padding:18px; margin:16px 0;}
+    img{max-width:100%; border:1px solid #e5e7eb; background:white}
+    table{border-collapse:collapse; width:100%; font-size:13px}
+    th,td{border:1px solid #e5e7eb; padding:8px; vertical-align:top}
+    th{background:#eef2ff; text-align:left}
+    code{background:#e5e7eb; padding:2px 4px; border-radius:4px}
+    </style>
+    </head>
+    <body>
+    <h1>Prototipo CP RAG: Hybrid Tree Search local</h1>
+    <div class="card">
+      <h2>Resumen</h2>
+      <pre>{
+  &quot;problems&quot;: 7,
+  &quot;page_nodes&quot;: 91,
+  &quot;tree_nodes&quot;: 133,
+  &quot;chunks&quot;: 181,
+  &quot;queries&quot;: 4,
+  &quot;embedding&quot;: {
+    &quot;embedding_backend&quot;: &quot;tfidf_svd_l2&quot;,
+    &quot;chunks_indexed&quot;: 181,
+    &quot;embedding_dim&quot;: 96
+  },
+  &quot;tree_paths&quot;: {
+    &quot;parquet&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_nodes_dataset.parquet&quot;,
+    &quot;csv&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_nodes_dataset.csv&quot;,
+    &quot;json&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_nodes_dataset.json&quot;
+  },
+  &quot;chunk_paths&quot;: {
+    &quot;parquet&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_chunks_dataset.parquet&quot;,
+    &quot;csv&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_chunks_dataset.csv&quot;,
+    &quot;json&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_chunks_dataset.json&quot;
+  },
+  &quot;result_paths&quot;: {
+    &quot;parquet&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.parquet&quot;,
+    &quot;csv&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.csv&quot;,
+    &quot;json&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.json&quot;
+  },
+  &quot;recommendation_paths&quot;: {
+    &quot;parquet&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.parquet&quot;,
+    &quot;csv&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.csv&quot;,
+    &quot;json&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.json&quot;
+  },
+  &quot;run_paths&quot;: {
+    &quot;parquet&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_demo_runs.parquet&quot;,
+    &quot;csv&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_demo_runs.csv&quot;,
+    &quot;json&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_demo_runs.json&quot;
+  },
+  &quot;architecture_image&quot;: &quot;C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\hybrid_tree_architecture.png&quot;
+}</pre>
+    </div>
+    <div class="card">
+      <h2>Arquitectura</h2>
+      <img src="comparison_assets/hybrid_tree_architecture.png" alt="Arquitectura Hybrid Tree Search">
+    </div>
+    <div class="card">
+      <h2>Estructura del arbol</h2>
+      <img src="comparison_assets/hybrid_tree_structure.png" alt="Estructura del arbol">
+    </div>
+    <div class="card">
+      <h2>Componentes del score</h2>
+      <img src="comparison_assets/hybrid_tree_score_components.png" alt="Score components">
+    </div>
+    <div class="card">
+      <h2>Recomendaciones</h2>
+      <img src="comparison_assets/hybrid_tree_recommendations.png" alt="Recomendaciones">
+      <table><thead><tr><th>query_id</th><th>global_problem_id</th><th>title</th><th>recommendation_score</th><th>reason</th></tr></thead><tbody><tr><td>grid_l_proof</td><td>codeforces_2219_A</td><td>Grid L</td><td>0.844701</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.</td></tr><tr><td>grid_l_proof</td><td>codeforces_2219_B1</td><td>Unique Values (Easy version)</td><td>0.663692</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas techniques, implementation_constructive, interactive.</td></tr><tr><td>unique_values_formula</td><td>codeforces_2219_B1</td><td>Unique Values (Easy version)</td><td>1.313641</td><td>Recomendado porque recupero nodos relevantes para algorithm y coincide con temas techniques, implementation_constructive, interactive.</td></tr><tr><td>unique_values_formula</td><td>codeforces_2219_C</td><td>Coloring a Red Black Tree</td><td>0.7425</td><td>Recomendado porque recupero nodos relevantes para algorithm y coincide con temas graphs, dynamic_programming, greedy.</td></tr><tr><td>unique_values_formula</td><td>codeforces_2219_A</td><td>Grid L</td><td>0.67125</td><td>Recomendado porque recupero nodos relevantes para algorithm y coincide con temas implementation_constructive, math.</td></tr><tr><td>tree_mex_implementation</td><td>codeforces_2219_D</td><td>MEX Replacement on Tree</td><td>0.944454</td><td>Recomendado porque recupero nodos relevantes para edge_cases y coincide con temas data_structures, implementation_constructive, math.</td></tr><tr><td>tree_mex_implementation</td><td>codeforces_2219_C</td><td>Coloring a Red Black Tree</td><td>0.601333</td><td>Recomendado porque recupero nodos relevantes para edge_cases y coincide con temas graphs, dynamic_programming, greedy.</td></tr><tr><td>weird_chessboard_proof</td><td>codeforces_2219_E</td><td>Weird Chessboard</td><td>1.158772</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.</td></tr><tr><td>weird_chessboard_proof</td><td>codeforces_2219_A</td><td>Grid L</td><td>0.98341</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.</td></tr><tr><td>weird_chessboard_proof</td><td>codeforces_2219_C</td><td>Coloring a Red Black Tree</td><td>0.866</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas graphs, dynamic_programming, greedy.</td></tr><tr><td>weird_chessboard_proof</td><td>codeforces_2219_B1</td><td>Unique Values (Easy version)</td><td>0.834333</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas techniques, implementation_constructive, interactive.</td></tr><tr><td>weird_chessboard_proof</td><td>codeforces_2219_D</td><td>MEX Replacement on Tree</td><td>0.802667</td><td>Recomendado porque recupero nodos relevantes para proof y coincide con temas data_structures, implementation_constructive, math.</td></tr></tbody></table>
+    </div>
+    <div class="card">
+      <h2>Top nodos recuperados</h2>
+      <table><thead><tr><th>query_id</th><th>rank</th><th>node_type</th><th>title</th><th>hybrid_score</th><th>value_score</th><th>guided_score</th><th>metadata_bonus</th><th>reason</th></tr></thead><tbody><tr><td>grid_l_proof</td><td>1</td><td>EDITORIAL_PROOF</td><td>Grid L - Editorial Proof</td><td>0.844701</td><td>0.291949</td><td>0.930769</td><td>0.31</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; su tipo EDITORIAL_PROOF encaja con la etapa PROOF; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>2</td><td>PROBLEM</td><td>Grid L</td><td>0.749353</td><td>0.822133</td><td>0.156923</td><td>0.18</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>3</td><td>EDITORIAL_OBSERVATION</td><td>Unique Values (Easy version) - Editorial Observation</td><td>0.663692</td><td>0.0</td><td>0.930769</td><td>0.31</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_OBSERVATION encaja con la etapa PROOF; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>4</td><td>EDITORIAL_OBSERVATION</td><td>Grid L - Editorial Observation</td><td>0.663692</td><td>0.0</td><td>0.930769</td><td>0.31</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_OBSERVATION encaja con la etapa PROOF; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>5</td><td>EDITORIAL_PROOF</td><td>Unique Values (Easy version) - Editorial Proof</td><td>0.576</td><td>0.0</td><td>0.7</td><td>0.31</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_PROOF encaja con la etapa PROOF; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>6</td><td>EDITORIAL_FULL</td><td>Grid L - Editorial Full</td><td>0.557032</td><td>0.345982</td><td>0.427692</td><td>0.18</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>7</td><td>EDITORIAL_REASONING</td><td>Editorial Reasoning</td><td>0.522754</td><td>0.505683</td><td>0.076923</td><td>0.18</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>8</td><td>EDITORIAL_COMPLEXITY</td><td>Grid L - Editorial Complexity</td><td>0.470228</td><td>0.177687</td><td>0.473846</td><td>0.18</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>9</td><td>EDITORIAL_ALGORITHM</td><td>Grid L - Editorial Algorithm</td><td>0.389292</td><td>0.0</td><td>0.550769</td><td>0.18</td><td>coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>10</td><td>STATEMENT</td><td>Grid L - Statement</td><td>0.352408</td><td>0.157382</td><td>0.196923</td><td>0.18</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>11</td><td>IMPLEMENTATION_HINTS</td><td>Unique Values (Easy version) - Implementation Hints</td><td>0.313292</td><td>0.0</td><td>0.350769</td><td>0.18</td><td>coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>grid_l_proof</td><td>12</td><td>EDITORIAL_FULL</td><td>Unique Values (Easy version) - Editorial Full</td><td>0.313292</td><td>0.0</td><td>0.350769</td><td>0.18</td><td>coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>1</td><td>PROBLEM</td><td>Unique Values (Easy version)</td><td>1.313641</td><td>1.158453</td><td>0.83</td><td>0.28</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>2</td><td>STATEMENT</td><td>Unique Values (Easy version) - Statement</td><td>0.91066</td><td>0.522274</td><td>0.8075</td><td>0.28</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>3</td><td>EDITORIAL_OBSERVATION</td><td>Unique Values (Easy version) - Editorial Observation</td><td>0.90875</td><td>0.0</td><td>1.3125</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_OBSERVATION encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>4</td><td>UNDERSTANDING</td><td>Understanding</td><td>0.84922</td><td>0.496726</td><td>0.6875</td><td>0.28</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>5</td><td>EDITORIAL_ALGORITHM</td><td>Unique Values (Easy version) - Editorial Algorithm</td><td>0.8375</td><td>0.0</td><td>1.125</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_ALGORITHM encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>6</td><td>EDITORIAL_COMPLEXITY</td><td>Unique Values (Easy version) - Editorial Complexity</td><td>0.8375</td><td>0.0</td><td>1.125</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_COMPLEXITY encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>7</td><td>EDITORIAL_FULL</td><td>Unique Values (Easy version) - Editorial Full</td><td>0.817038</td><td>0.294658</td><td>0.9325</td><td>0.28</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>8</td><td>NOTES</td><td>Unique Values (Easy version) - Notes</td><td>0.807266</td><td>0.278896</td><td>0.9325</td><td>0.28</td><td>recibio score vectorial desde chunks similares; coincide con la intencion detectada de la query; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>9</td><td>EDITORIAL_OBSERVATION</td><td>Coloring a Red Black Tree - Editorial Observation</td><td>0.7425</td><td>0.0</td><td>0.875</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_OBSERVATION encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>10</td><td>EDITORIAL_ALGORITHM</td><td>Coloring a Red Black Tree - Editorial Algorithm</td><td>0.695</td><td>0.0</td><td>0.75</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_ALGORITHM encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>11</td><td>EDITORIAL_ALGORITHM</td><td>Grid L - Editorial Algorithm</td><td>0.67125</td><td>0.0</td><td>0.6875</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_ALGORITHM encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr><tr><td>unique_values_formula</td><td>12</td><td>EDITORIAL_COMPLEXITY</td><td>Grid L - Editorial Complexity</td><td>0.67125</td><td>0.0</td><td>0.6875</td><td>0.41</td><td>coincide con la intencion detectada de la query; su tipo EDITORIAL_COMPLEXITY encaja con la etapa ALGORITHM; recibio bonus por metadata/tags/filtros</td></tr></tbody></table>
+    </div>
+    </body></html>
+    

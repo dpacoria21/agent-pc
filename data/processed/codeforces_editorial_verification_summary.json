@@ -1,0 +1,17 @@
+{
+  "requested_count": 7,
+  "found_count": 7,
+  "verified_count": 7,
+  "downloaded_count": 7,
+  "failed_count": 0,
+  "problems_dataset": {
+    "cp_problems_dataset_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_problems_dataset.csv",
+    "cp_problems_dataset_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_problems_dataset.json",
+    "cp_problems_dataset_parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_problems_dataset.parquet",
+    "cp_page_nodes_dataset_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_page_nodes_dataset.csv",
+    "cp_page_nodes_dataset_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_page_nodes_dataset.json",
+    "cp_page_nodes_dataset_parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_page_nodes_dataset.parquet"
+  },
+  "verification_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\codeforces_editorial_verification.csv",
+  "verification_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\codeforces_editorial_verification.json"
+}

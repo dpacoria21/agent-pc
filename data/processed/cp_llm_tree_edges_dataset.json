@@ -1,0 +1,62 @@
+[
+  {
+    "edge_id":"edge::codeforces_2219_A::1::PREREQUISITE_OF",
+    "global_problem_id":"codeforces_2219_A",
+    "source_tree_node_id":"llm::codeforces_2219_A::math_model",
+    "target_tree_node_id":"llm::codeforces_2219_A::algorithm",
+    "source_node_key":"math_model",
+    "target_node_key":"algorithm",
+    "edge_type":"PREREQUISITE_OF",
+    "reason":"The algorithm depends on the mathematical condition extracted from the editorial.",
+    "confidence":0.62,
+    "generation_status":"fallback_after_missing_api_key"
+  },
+  {
+    "edge_id":"edge::codeforces_2219_A::2::SUPPORTS",
+    "global_problem_id":"codeforces_2219_A",
+    "source_tree_node_id":"llm::codeforces_2219_A::proof",
+    "target_tree_node_id":"llm::codeforces_2219_A::algorithm",
+    "source_node_key":"proof",
+    "target_node_key":"algorithm",
+    "edge_type":"SUPPORTS",
+    "reason":"The proof supports why the algorithmic plan is valid.",
+    "confidence":0.58,
+    "generation_status":"fallback_after_missing_api_key"
+  },
+  {
+    "edge_id":"edge::codeforces_2219_A::3::IMPLEMENTATION_DEPENDS_ON",
+    "global_problem_id":"codeforces_2219_A",
+    "source_tree_node_id":"llm::codeforces_2219_A::algorithm",
+    "target_tree_node_id":"llm::codeforces_2219_A::implementation",
+    "source_node_key":"algorithm",
+    "target_node_key":"implementation",
+    "edge_type":"IMPLEMENTATION_DEPENDS_ON",
+    "reason":"Implementation follows the algorithmic plan.",
+    "confidence":0.56,
+    "generation_status":"fallback_after_missing_api_key"
+  },
+  {
+    "edge_id":"edge::codeforces_2219_B1::1::IMPLEMENTATION_DEPENDS_ON",
+    "global_problem_id":"codeforces_2219_B1",
+    "source_tree_node_id":"llm::codeforces_2219_B1::algorithm",
+    "target_tree_node_id":"llm::codeforces_2219_B1::implementation",
+    "source_node_key":"algorithm",
+    "target_node_key":"implementation",
+    "edge_type":"IMPLEMENTATION_DEPENDS_ON",
+    "reason":"Implementation follows the algorithmic plan.",
+    "confidence":0.56,
+    "generation_status":"fallback_after_missing_api_key"
+  },
+  {
+    "edge_id":"edge::codeforces_2219_C::1::IMPLEMENTATION_DEPENDS_ON",
+    "global_problem_id":"codeforces_2219_C",
+    "source_tree_node_id":"llm::codeforces_2219_C::algorithm",
+    "target_tree_node_id":"llm::codeforces_2219_C::implementation",
+    "source_node_key":"algorithm",
+    "target_node_key":"implementation",
+    "edge_type":"IMPLEMENTATION_DEPENDS_ON",
+    "reason":"Implementation follows the algorithmic plan.",
+    "confidence":0.56,
+    "generation_status":"fallback_after_missing_api_key"
+  }
+]

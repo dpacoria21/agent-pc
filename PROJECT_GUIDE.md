@@ -1,10 +1,10 @@
 # CP RAG local: guia unica de funcionamiento, comparacion y presentacion
 
-Este proyecto es un prototipo local de RAG educativo para programacion competitiva. Su objetivo actual no es implementar PageIndex Hybrid Tree Search, sino servir como contraste tecnico antes de construir una version real basada en el tutorial de PageIndex:
+Este proyecto es un prototipo local de RAG educativo para programacion competitiva. Actualmente tiene dos capas: un baseline local con Page Nodes planos y un prototipo local inspirado en PageIndex Hybrid Tree Search. La meta siguiente es convertirlo en una implementacion modular donde cada fase pueda desarrollarse, probarse y defenderse por separado antes de integrar PageIndex real:
 
 https://docs.pageindex.ai/tutorials/tree-search/hybrid
 
-Segun ese tutorial, Hybrid Tree Search combina busqueda basada en valor sobre nodos con busqueda guiada por LLM, usa chunks asociados a nodos, agrega scores por nodo, mantiene una cola de nodos unicos y permite que un agente decida si ya tiene suficiente informacion. Este prototipo local todavia no hace eso. Aqui se documenta exactamente que hace, que compara y donde estan sus limitaciones.
+Segun ese tutorial, Hybrid Tree Search combina busqueda basada en valor sobre nodos con busqueda guiada por LLM, usa chunks asociados a nodos, agrega scores por nodo, mantiene una cola de nodos unicos y permite que un agente decida si ya tiene suficiente informacion. Este repositorio ya simula esa arquitectura localmente sin API externa; todavia falta reemplazar la parte guiada por reglas por consultas reales al GPT/API y despues por PageIndex real.
 
 ## 1. Estructura limpia del proyecto
 
@@ -16,7 +16,17 @@ agent-pc/
   run_mingw64.sh
 
   src/
+    dataset/
+      schema.py
+      quality_report.py
+    llm/
+      gpt_client.py
+      prompts.py
+      structured_outputs.py
+    indexing/
+      llm_tree_builder.py
     cp_dataset_scraper.py
+    hybrid_tree_search.py
     rag_cp_student_profile.py
     search_helpers.py
     search_local.py
@@ -24,7 +34,11 @@ agent-pc/
     search_chromadb.py
 
   scripts/
+    run_phase2_dataset_contract.py
+    run_phase3_llm_tree_builder.py
     run_all_local.py
+    run_hybrid_tree_prototype.py
+    verify_codeforces_editorials.py
     add_math_binary_demo.py
     extract_rag_metrics.py
     compare_vector_backends.py
@@ -37,6 +51,10 @@ agent-pc/
     processed/
 
   comparison_assets/
+    hybrid_tree_architecture.png
+    hybrid_tree_structure.png
+    hybrid_tree_score_components.png
+    hybrid_tree_recommendations.png
     page_index_comparison.png
     rag_retrieval_metrics.png
     retrieval_strategy_scores.png
@@ -79,6 +97,25 @@ data/processed/
 ```
 
 Abre `comparison_dashboard.html` para mostrar solo graficos comparativos.
+
+Para ejecutar el nuevo prototipo local inspirado en PageIndex Hybrid Tree Search:
+
+```powershell
+cd C:\Users\Asus\Desktop\agent-pc
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_hybrid_tree_prototype.py
+```
+
+Salida principal:
+
+```text
+data/processed/cp_tree_nodes_dataset.csv
+data/processed/cp_tree_chunks_dataset.csv
+data/processed/hybrid_tree_search_results.csv
+data/processed/hybrid_tree_recommendations.csv
+data/processed/hybrid_tree_demo_runs.csv
+hybrid_tree_dashboard.html
+comparison_assets/hybrid_tree_architecture.png
+```
 
 En el dashboard, las secciones clave para tu pregunta son:
 
@@ -144,6 +181,183 @@ SEMANTIC_BACKEND = "tfidf-svd-fallback"
 Frase para presentacion:
 
 > En el baseline uso matrices en memoria: TF-IDF, SVD, normalizacion y similitud coseno contra los Page Nodes. Luego agrego dos motores vectoriales, FAISS y ChromaDB, usando los mismos embeddings para comparar backend, latencia y consistencia de ranking.
+
+## 3.2 Prototipo Hybrid Tree Search local
+
+Archivo principal:
+
+```text
+src/hybrid_tree_search.py
+```
+
+Runner:
+
+```text
+scripts/run_hybrid_tree_prototype.py
+```
+
+Este modulo implementa una version local e interpretable inspirada en PageIndex Hybrid Tree Search. No llama al servicio de PageIndex ni a un LLM externo. La idea es dejar un prototipo funcional que puedas presentar y luego reemplazar por PageIndex real.
+
+Flujo:
+
+```text
+1. cp_problems_dataset + cp_page_nodes_dataset
+2. build_tree_nodes(...)
+   root -> platform -> topic -> difficulty bucket -> problem -> section group -> content node
+3. build_tree_chunks(...)
+   divide node_text en chunks asociados al nodo
+4. Value Search
+   TF-IDF + SVD + L2 normalization + cosine similarity sobre chunks
+5. Node scoring
+   agrega scores de chunks al nodo y propaga score hacia ancestros
+6. Guided Search
+   analiza query: etapa, enfoque, riesgos y node_type esperado
+7. Hybrid Queue
+   combina nodos de value search y guided search, elimina duplicados y rerankea
+8. Recommendation
+   agrega scores por problema y genera razones interpretables
+```
+
+Componentes de score:
+
+```text
+hybrid_score = alpha * value_score
+             + (1 - alpha) * guided_score
+             + metadata_bonus
+```
+
+Donde:
+
+```text
+value_score       = similitud coseno de chunks agregada al nodo
+guided_score      = coincidencia entre query intent, node_type, tags y resumen
+metadata_bonus    = filtros por tags, dificultad y etapa pedagogica
+```
+
+Las queries demo actuales son:
+
+```text
+grid_l_proof
+unique_values_formula
+tree_mex_implementation
+weird_chessboard_proof
+```
+
+En la ultima ejecucion:
+
+```text
+problems:   7
+page_nodes: 91
+tree_nodes: 133
+chunks:     181
+embedding:  TF-IDF + SVD + L2
+```
+
+Resultados esperados:
+
+```text
+grid_l_proof              -> codeforces_2219_A
+unique_values_formula     -> codeforces_2219_B1
+tree_mex_implementation   -> codeforces_2219_D
+weird_chessboard_proof    -> codeforces_2219_E
+```
+
+Esta implementacion sigue la intuicion de PageIndex: recuperar nodos, no solo chunks. La diferencia es que aqui el "LLM tree search" esta simulado con reglas de intencion para poder ejecutar todo localmente sin API key.
+
+## 3.3 Como obtiene editoriales de Codeforces
+
+Antes las editoriales quedaban vacias porque el scraper buscaba texto directamente dentro del blog. En Codeforces, muchos blogs oficiales solo dejan un placeholder:
+
+```text
+Tutorial is loading...
+```
+
+La solucion real se carga despues con JavaScript desde un endpoint interno de la pagina. El flujo corregido en `src/cp_dataset_scraper.py` es:
+
+```text
+1. Tomar el problema desde la API de Codeforces.
+2. Usar la URL de scraping:
+   https://codeforces.com/contest/{contestId}/problem/{index}
+3. Buscar en el bloque Contest materials el enlace Tutorial.
+4. Abrir el blog oficial, por ejemplo:
+   https://codeforces.com/blog/entry/152936
+5. Detectar el problemCode del spoiler:
+   2219A, 750A, 1915C, etc.
+6. Leer el token CSRF publico de la pagina.
+7. Hacer la misma llamada AJAX que hace Codeforces:
+   POST /data/problemTutorial
+   problemCode={contestId}{index}
+8. Parsear el HTML devuelto y guardarlo en official_editorial.
+9. Construir nodos EDITORIAL_FULL, EDITORIAL_PROOF,
+   EDITORIAL_ALGORITHM y EDITORIAL_COMPLEXITY desde ese texto.
+```
+
+Funciones involucradas:
+
+```python
+find_codeforces_tutorial_url_from_problem_page(...)
+find_codeforces_editorial_url(...)
+fetch_codeforces_problem_tutorial(...)
+scrape_codeforces_editorial(...)
+```
+
+Ejemplo del caso que viste en el navegador:
+
+```text
+Problema:  https://codeforces.com/problemset/problem/2219/A
+Scraping:  https://codeforces.com/contest/2219/problem/A
+Tutorial:  https://codeforces.com/blog/entry/152936
+AJAX:      /data/problemTutorial
+Code:      2219A
+```
+
+Esto no intenta evadir restricciones ni acceder a contenido privado. Solo reproduce la ruta publica que la pagina usa para mostrar el tutorial, con cache, delay y manejo de errores. Si Codeforces responde con challenge, redireccion, robots disallowed o bloqueo temporal, el dataset deja `editorial_status` como `access_challenge`, `unavailable`, `redirected` o estado equivalente, y el proceso continua sin romper el pipeline.
+
+Para probar pocas editoriales sin hacer scraping grande:
+
+```bash
+./run_mingw64.sh --max-cf 3 --max-atcoder 0 --with-content --request-delay 1.5
+```
+
+Para verificar explicitamente que cada problema de Codeforces recibe su propia editorial, usa:
+
+```powershell
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\verify_codeforces_editorials.py --request-delay 1.5 --timeout 25
+```
+
+O desde MinGW64:
+
+```bash
+/c/Users/Asus/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe scripts/verify_codeforces_editorials.py --request-delay 1.5 --timeout 25
+```
+
+La prueba por defecto revisa:
+
+```text
+2219A, 2219B1, 2219C, 2219D, 2219E, 2220A, 2220B
+```
+
+Salida principal:
+
+```text
+data/processed/codeforces_editorial_verification.csv
+data/processed/codeforces_editorial_verification.json
+data/processed/codeforces_editorial_verification_summary.json
+```
+
+Campos importantes del reporte:
+
+```text
+problem_code
+editorial_status
+editorial_parse_method
+editorial_text_chars
+editorial_toggle_count
+problem_code_ok
+verified
+```
+
+En la ultima verificacion limpia, los 7 problemas fueron `verified=True`, todos con `editorial_parse_method=codeforces_ajax_problemTutorial`. Eso significa que el scraper no se quedo en el texto superficial del blog, sino que entro al contenido cargado por los toggles/spoilers de Codeforces.
 
 ## 4. Como genera los Page Nodes
 
@@ -537,34 +751,33 @@ Lectura para defensa:
 
 > El prototipo actual detecta algunas senales matematicas generales, pero no distingue todavia estrategia algoritmica por busqueda binaria frente a estrategia matematica por formula. Esa es una deficiencia concreta y medible.
 
-## 8. Deficiencias frente a PageIndex Hybrid Tree Search
+## 8. Brechas frente a PageIndex Hybrid Tree Search real
 
-| Aspecto | Prototipo local actual | PageIndex Hybrid Tree Search esperado |
-|---|---|---|
-| Estructura | DataFrame plano de Page Nodes | Arbol de nodos |
-| Retrieval | Ranking global sobre todos los nodos | Recorrido/seleccion de nodos |
-| Vector store | Tiene ejemplos con FAISS y ChromaDB, pero como ranking vectorial plano | Puede usar valor por chunks asociados a nodos |
-| Agregacion chunk->node | No existe | Score de nodo agregado desde chunks |
-| LLM tree search | No existe | Rama complementaria guiada por LLM |
-| Cola de nodos unicos | No existe | Si existe en el enfoque hibrido |
-| Early stopping | No existe | El agente puede terminar al reunir suficiente informacion |
-| Evaluacion | Ground truth simulado | Requiere evaluacion real por queries y tareas |
-| Estudiante | Sesiones simuladas | Debe integrarse con memoria real |
+El repositorio ahora tiene dos niveles: baseline plano y prototipo local con arbol. Aun asi, el prototipo local no reemplaza a PageIndex real porque la rama guiada por LLM esta simulada con reglas.
 
-Deficiencias principales del prototipo:
+| Aspecto | Baseline plano | Prototipo tree local | PageIndex Hybrid Tree Search real |
+|---|---|---|---|
+| Estructura | Page Nodes planos | Arbol local `root -> platform -> topic -> difficulty -> problem -> section -> content` | Arbol PageIndex gestionado por su framework |
+| Chunks | Nodos completos | Chunks asociados a nodos | Chunks asociados a nodos |
+| Value search | Coseno sobre nodos | Coseno sobre chunks + propagacion a nodos | Value-based tree search |
+| Guided search | Heuristica simple | Intent classifier por reglas | LLM tree search |
+| Cola hibrida | No | Deduplicacion y reranking local | Cola hibrida de nodos unicos |
+| Early stopping | No | `enough_information` heuristico | Decision del agente/LLM |
+| Student model | Simulado | Metadata y perfiles locales | Integracion con memoria/agente |
+| Evaluacion | Ground truth pequeno | Demos y scores locales | Evaluacion experimental completa |
 
-1. La busqueda es plana, no jerarquica.
-2. El Page Index local es una segmentacion por secciones, no un tree-search.
-3. No hay value prediction por nodo.
-4. No hay LLM que explore el arbol.
-5. No hay mecanismo de cola ni terminacion temprana.
-6. La clasificacion de ideas es heuristica y fragil.
-7. Las metricas usan ground truth simulado.
-8. No valida soluciones como juez online.
+Brechas que quedan:
 
-Nota despues de agregar FAISS y ChromaDB:
+1. Falta usar GPT para construir arboles semanticamente ricos desde las editoriales.
+2. Falta usar GPT para analizar ideas del estudiante.
+3. Falta reemplazar el guided search por LLM-guided tree search.
+4. Falta adaptar el tree index al formato final de PageIndex.
+5. Falta una evaluacion comparativa fuerte con ground truth manual.
+6. Falta validar recomendaciones con perfiles reales o simulaciones mas rigurosas.
 
-> Aunque ahora existen ejemplos con FAISS y ChromaDB, eso no convierte el sistema en PageIndex Hybrid Tree Search. FAISS y ChromaDB solo cambian el motor de busqueda vectorial; todavia no hay arbol real, value-based tree search, LLM tree search, cola de nodos ni early stopping.
+Nota sobre FAISS y ChromaDB:
+
+> FAISS y ChromaDB solo cambian el motor vectorial. La mejora pedagogica no viene de usar otra base vectorial, sino de tener mejor estructura, mejor analisis de la idea del estudiante y mejor politica de recuperacion/recomendacion.
 
 ## 9. Implementacion comparativa con FAISS y ChromaDB
 
@@ -876,13 +1089,11 @@ Objetivos del analisis:
    - salida actual: UNKNOWN/MATH;
    - salida fina esperada: BINARY_SEARCH/MATH_FORMULA.
 
-6. Identificar deficiencias frente a PageIndex Hybrid Tree Search:
-   - no hay arbol real;
-   - no hay value-based tree search;
-   - no hay agregacion chunk->node;
-   - no hay LLM tree search;
-   - no hay cola de nodos unicos;
-   - no hay early stopping;
+6. Identificar brechas frente a PageIndex Hybrid Tree Search:
+   - el baseline plano no tiene arbol;
+   - el prototipo tree local si agrega chunks a nodos, pero no usa PageIndex real;
+   - el guided search local aun usa reglas, no LLM;
+   - el early stopping es heuristico;
    - no hay evaluacion real con usuarios;
    - no hay juez online ni ejecucion de codigo.
 
@@ -908,4 +1119,516 @@ Entrega:
 
 ## 11. Como defenderlo en una frase
 
-> Este prototipo no pretende ser todavia PageIndex Hybrid Tree Search. Es un baseline local interpretable: convierte problemas en Page Nodes, compara retrieval semantico, keyword, hibrido, personalizado, FAISS y ChromaDB, y muestra una deficiencia clara en el analisis de ideas cuando debe distinguir busqueda binaria de formula matematica. Esa brecha justifica la siguiente implementacion con tree-search hibrido real.
+> Este prototipo ya tiene un baseline plano y una simulacion local tipo Hybrid Tree Search: extrae problemas y editoriales reales, construye Page Nodes, genera un arbol de recuperacion, compara backends vectoriales y produce recomendaciones interpretables. La siguiente fase es reemplazar las reglas por GPT para construir arboles semanticos y analizar ideas del estudiante, antes de integrar PageIndex real.
+
+## 12. Roadmap modular del proyecto
+
+La fase 1 ya esta lista: extraccion responsable de problemas Codeforces y editoriales oficiales. A partir de ahora el proyecto debe crecer por modulos, no como un unico notebook/script. Cada modulo debe tener entrada, salida, validacion y demo.
+
+### 12.1 Estado actual
+
+| Fase | Modulo | Estado | Resultado |
+|---|---|---|---|
+| 1 | Extraccion Codeforces + editoriales | Listo | `cp_problems_dataset`, `cp_page_nodes_dataset`, verificacion 7/7 editoriales |
+| 2 | Contrato de dataset y calidad | Implementado | `dataset_contract_report.json`, `dataset_quality_report.json`, `dataset_contract_issues.csv` |
+| 3 | Estructuracion semantica con GPT | Implementado base | `cp_llm_problem_analysis.json`, `cp_llm_tree_nodes_dataset`, `cp_llm_tree_edges_dataset` |
+| 4 | Tree Index local/PageIndex-ready | Parcial | Existe `hybrid_tree_search.py`, falta formato compatible final |
+| 5 | Retrieval hibrido real | Parcial | Existe simulacion local; falta GPT-guided search y PageIndex real |
+| 6 | Analisis de ideas del estudiante | Pendiente critico | Falta usar GPT para clasificar enfoque, etapa, riesgos y feedback |
+| 7 | Recomendador adaptativo | Parcial | Existe scoring local, falta personalizacion con analisis LLM |
+| 8 | Evaluacion experimental | Parcial | Hay metricas basicas, falta ground truth fuerte y ablation study |
+| 9 | Demo/presentacion | Parcial | Hay dashboards e imagenes, falta demo narrativa final |
+
+### 12.2 Estructura modular recomendada
+
+No es necesario mover todo de golpe. La migracion puede ser gradual desde los archivos actuales hacia esta estructura:
+
+```text
+src/
+  ingestion/
+    codeforces_scraper.py
+    atcoder_scraper.py
+    editorial_scraper.py
+
+  dataset/
+    schema.py
+    quality_report.py
+    normalization.py
+
+  llm/
+    gpt_client.py
+    prompts.py
+    structured_outputs.py
+
+  indexing/
+    page_nodes.py
+    llm_tree_builder.py
+    tree_schema.py
+    pageindex_adapter.py
+
+  retrieval/
+    local_tree_search.py
+    pageindex_hybrid_search.py
+    vector_backends.py
+    reranker.py
+
+  student_model/
+    idea_analyzer.py
+    profile_builder.py
+    recommendation_engine.py
+
+  evaluation/
+    retrieval_metrics.py
+    recommendation_metrics.py
+    student_analysis_metrics.py
+    ablation.py
+
+  reporting/
+    dashboards.py
+    architecture_diagrams.py
+```
+
+Mapeo desde lo que existe hoy:
+
+| Archivo actual | Modulo futuro |
+|---|---|
+| `src/cp_dataset_scraper.py` | `ingestion/`, `dataset/`, `indexing/page_nodes.py` |
+| `src/hybrid_tree_search.py` | `indexing/tree_schema.py`, `retrieval/local_tree_search.py` |
+| `src/search_local.py`, `search_faiss.py`, `search_chromadb.py` | `retrieval/vector_backends.py` |
+| `src/rag_cp_student_profile.py` | `student_model/`, `retrieval/`, `evaluation/` |
+| `scripts/verify_codeforces_editorials.py` | `evaluation/dataset_quality.py` |
+| `scripts/run_hybrid_tree_prototype.py` | `scripts/run_phase_4_tree_search.py` |
+
+### 12.3 Fase 2: contrato del dataset
+
+Objetivo:
+
+```text
+Congelar la forma minima que todo modulo posterior puede asumir.
+```
+
+Entradas:
+
+```text
+data/processed/cp_problems_dataset.csv
+data/processed/cp_page_nodes_dataset.csv
+```
+
+Salidas:
+
+```text
+data/processed/dataset_contract_report.json
+data/processed/dataset_quality_report.json
+```
+
+Validaciones:
+
+```text
+- cada problema tiene global_problem_id unico;
+- cada problema Codeforces tiene editorial_status;
+- cada editorial descargada tiene editorial_problem_code correcto;
+- cada Page Node tiene parent/global_problem_id;
+- cada nodo editorial importante no esta vacio;
+- no aparece "Tutorial is loading..." en official_editorial.
+```
+
+Esta fase evita que el resto del sistema falle por columnas faltantes o parseos incompletos.
+
+Implementacion actual:
+
+```text
+src/dataset/schema.py
+src/dataset/quality_report.py
+scripts/run_phase2_dataset_contract.py
+```
+
+Comando:
+
+```powershell
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase2_dataset_contract.py --fail-on-error
+```
+
+Ultima ejecucion:
+
+```text
+contract_status: passed
+problem_count: 7
+page_node_count: 91
+severity_counts: {}
+```
+
+### 12.4 Fase 3: estructuracion semantica con GPT
+
+Esta sera la primera fase que usa tu API de GPT.
+
+Objetivo:
+
+```text
+Convertir cada problema + editorial en una estructura pedagogica tipo arbol.
+```
+
+Entrada por problema:
+
+```text
+title
+statement
+constraints
+samples
+official_editorial
+rating
+tags
+```
+
+Salida esperada:
+
+```text
+data/processed/cp_llm_problem_analysis.json
+data/processed/cp_llm_tree_nodes_dataset.json
+```
+
+El GPT no debe inventar soluciones. Debe estructurar lo que ya existe:
+
+```json
+{
+  "problem_id": "codeforces_2219_A",
+  "main_topic": "math_constructive",
+  "strategies": ["direct_formula", "bounded_search"],
+  "student_skills": ["proof", "mathematical_modeling", "implementation"],
+  "tree": {
+    "title": "Grid L",
+    "children": [
+      {
+        "type": "MATHEMATICAL_MODEL",
+        "title": "Edge count equation",
+        "evidence": "p+2q = m(n+1)+n(m+1)"
+      },
+      {
+        "type": "PROOF",
+        "title": "Necessity and sufficiency",
+        "children": [
+          {"type": "PROOF_STEP", "title": "Necessity"},
+          {"type": "PROOF_STEP", "title": "Sufficiency"}
+        ]
+      },
+      {
+        "type": "ALGORITHM",
+        "title": "Iterate bounded n and compute m"
+      }
+    ]
+  }
+}
+```
+
+Prompt base para esta fase:
+
+```text
+Actua como experto en programacion competitiva e IA educativa.
+Recibiras el statement y editorial oficial de un problema.
+Tu tarea es estructurar el contenido en un arbol pedagogico JSON.
+
+Reglas:
+- No inventes contenido que no este en el statement o editorial.
+- Separa observacion, modelo matematico, prueba, algoritmo, complejidad, implementacion y errores comunes.
+- Incluye evidence_text corto para cada nodo.
+- Marca confidence entre 0 y 1.
+- Si una seccion no aparece, usa null o lista vacia.
+- Devuelve solo JSON valido.
+```
+
+Esta fase es importante porque PageIndex Hybrid Tree Search funciona mejor cuando el arbol tiene nodos semanticamente utiles, no solo secciones fijas.
+
+Implementacion actual:
+
+```text
+src/llm/gpt_client.py
+src/llm/prompts.py
+src/llm/structured_outputs.py
+src/indexing/llm_tree_builder.py
+scripts/run_phase3_llm_tree_builder.py
+```
+
+Comando:
+
+```powershell
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase3_llm_tree_builder.py --limit 3
+```
+
+Para usar GPT real, define antes:
+
+```powershell
+$env:OPENAI_API_KEY="tu_api_key"
+$env:OPENAI_MODEL="gpt-4o-mini"
+```
+
+Si no hay `OPENAI_API_KEY`, el modulo usa fallback heuristico con el mismo formato de salida. Esto permite probar el pipeline completo sin bloquear la demo.
+
+Ultima ejecucion local:
+
+```text
+selected_problem_count: 3
+tree_node_count: 16
+edge_count: 5
+client_available: false
+generation_status: fallback_after_missing_api_key
+```
+
+Esto significa que la infraestructura de Fase 3 ya esta lista, pero esa corrida no uso GPT real porque la key no estaba disponible en el entorno de terminal.
+
+### 12.5 Fase 4: Tree Index compatible con PageIndex
+
+Objetivo:
+
+```text
+Transformar el JSON estructurado por GPT en nodos listos para busqueda jerarquica.
+```
+
+Salida:
+
+```text
+data/processed/cp_tree_nodes_dataset.csv
+data/processed/cp_tree_chunks_dataset.csv
+data/processed/cp_tree_edges_dataset.csv
+```
+
+Campos minimos:
+
+```text
+tree_node_id
+parent_tree_node_id
+global_problem_id
+node_type
+title
+summary
+node_text
+evidence_text
+depth
+order
+metadata
+```
+
+Aqui tambien se agregan relaciones tipo grafo:
+
+```text
+SAME_STRATEGY
+PREREQUISITE_OF
+ALTERNATIVE_APPROACH
+SAME_PROOF_PATTERN
+SAME_COMMON_MISTAKE
+```
+
+Aunque PageIndex trabaja con arbol, estas relaciones cruzadas pueden guardarse como metadata adicional para reranking y analisis, sin romper la estructura principal.
+
+### 12.6 Fase 5: retrieval hibrido
+
+Objetivo:
+
+```text
+Comparar tres niveles de retrieval.
+```
+
+Niveles:
+
+| Nivel | Metodo | Uso |
+|---|---|---|
+| Baseline | Page Nodes planos + cosine/TF-IDF | Control experimental |
+| Tree local | `hybrid_tree_search.py` | Simulacion interpretable sin API |
+| PageIndex real | Hybrid Tree Search oficial | Propuesta final |
+
+El flujo recomendado:
+
+```text
+query del estudiante
+-> metadata filter
+-> candidate problem selection
+-> tree search
+-> reranking pedagogico
+-> contexto recuperado
+```
+
+Metricas:
+
+```text
+precision@k
+recall@k
+MRR
+node_type_coverage
+problem_hit_rate
+strategy_match_rate
+latency
+```
+
+### 12.7 Fase 6: analisis de ideas del estudiante con GPT
+
+Esta es la fase mas importante para tu tesis.
+
+Objetivo:
+
+```text
+Analizar una idea escrita por el estudiante y convertirla en senales pedagogicas.
+```
+
+Entrada:
+
+```text
+problem_id
+problem_statement
+retrieved_context
+student_idea
+attempt_history opcional
+```
+
+Salida:
+
+```json
+{
+  "detected_approach": "BINARY_SEARCH",
+  "reasoning_stage": "HYPOTHESIS",
+  "idea_quality": "PARTIAL",
+  "risk_type": ["WRONG_PROOF", "EDGE_CASES"],
+  "missing_concepts": ["sufficiency proof"],
+  "next_hint_level": 2,
+  "feedback": "Tu idea de acotar la busqueda va bien, pero aun falta justificar..."
+}
+```
+
+Este modulo debe comparar:
+
+```text
+heuristica actual vs GPT analyzer vs ground truth manual
+```
+
+Metricas:
+
+```text
+accuracy de approach
+accuracy de reasoning_stage
+F1 de risk_type
+agreement con evaluador humano
+calidad de hint
+```
+
+### 12.8 Fase 7: recomendador adaptativo
+
+Objetivo:
+
+```text
+Recomendar el siguiente problema o el siguiente nodo de ayuda.
+```
+
+Usa:
+
+```text
+perfil del estudiante
+debilidades detectadas
+historial de intentos
+analisis GPT de ideas
+retrieval tree search
+dificultad objetivo
+```
+
+Salida:
+
+```text
+problem_id
+recommendation_score
+reason
+target_skill
+expected_difficulty
+suggested_hint_policy
+```
+
+La razon debe ser explicable:
+
+```text
+Recomendado porque el estudiante falla en pruebas de suficiencia y este problema contiene una prueba constructiva en dificultad cercana.
+```
+
+### 12.9 Fase 8: evaluacion experimental
+
+Objetivo:
+
+```text
+Probar que la propuesta mejora algo medible.
+```
+
+Comparaciones:
+
+```text
+Flat Page Nodes
+Flat Page Nodes + metadata
+Tree local
+Tree local + GPT idea analysis
+PageIndex Hybrid Tree Search
+```
+
+Ground truth inicial:
+
+```text
+10 queries de prueba
+10 ideas de estudiante
+10 recomendaciones esperadas
+```
+
+Tablas necesarias:
+
+```text
+retrieval_results_by_method.csv
+student_idea_eval.csv
+recommendation_eval.csv
+ablation_summary.csv
+```
+
+### 12.10 Fase 9: demo final
+
+Objetivo:
+
+```text
+Tener una ejecucion unica para exposicion en vivo.
+```
+
+Comando esperado:
+
+```powershell
+python scripts/run_full_thesis_demo.py
+```
+
+Debe mostrar:
+
+```text
+1. dataset cargado;
+2. problema seleccionado;
+3. idea del estudiante;
+4. analisis GPT;
+5. nodos recuperados;
+6. recomendacion;
+7. graficos;
+8. explicacion final.
+```
+
+### 12.11 Orden recomendado de desarrollo
+
+No implementes todo al mismo tiempo. El orden correcto es:
+
+```text
+1. Fase 2: contrato y calidad del dataset.
+2. Fase 3: GPT estructura 3 problemas en arbol JSON.
+3. Fase 4: convertir esos JSON en tree_nodes/tree_chunks.
+4. Fase 6: GPT analiza ideas de estudiante para esos mismos 3 problemas.
+5. Fase 5: comparar retrieval plano vs tree local.
+6. Fase 7: recomendacion adaptativa usando el analisis GPT.
+7. Fase 8: metricas y ablation.
+8. Fase 9: demo final.
+```
+
+El minimo producto funcional para la siguiente iteracion es:
+
+```text
+3 problemas Codeforces con editorial real
+3 arboles generados por GPT
+6 ideas simuladas de estudiantes
+comparacion heuristica vs GPT
+retrieval tree local
+dashboard con resultados
+```
+
+Ese alcance es pequeno, defendible y suficiente para validar si el enfoque de arbol + analisis de ideas tiene sentido antes de escalar a cientos de problemas.

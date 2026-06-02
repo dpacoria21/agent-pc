@@ -1,0 +1,760 @@
+[
+  {
+    "tree_node_id":"llm::codeforces_2219_A::problem",
+    "parent_tree_node_id":"",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"problem",
+    "parent_node_key":"",
+    "node_type":"PROBLEM",
+    "title":"Grid L",
+    "summary":"A. Grid L\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nRoger has $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, each formed by joining two unit-length segments at a right angle.\nHe...",
+    "evidence_text":"Grid L",
+    "node_text":"A. Grid L\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nRoger has $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, each formed by joining two unit-length segments at a right angle.\nHe...\n\nGrid L",
+    "source_section":"metadata",
+    "skills":[
+      "problem_understanding",
+      "mathematical_modeling",
+      "proof",
+      "algorithm_design",
+      "complexity_analysis",
+      "implementation",
+      "edge_cases"
+    ],
+    "strategies":[
+      "binary_search",
+      "direct_formula",
+      "constructive",
+      "proof"
+    ],
+    "confidence":0.72,
+    "depth":0,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::understanding",
+    "parent_tree_node_id":"llm::codeforces_2219_A::problem",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"understanding",
+    "parent_node_key":"problem",
+    "node_type":"UNDERSTANDING",
+    "title":"Problem understanding",
+    "summary":"Captures what is given, what must be produced, and the main input\/output goal.",
+    "evidence_text":"Given $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+    "node_text":"Captures what is given, what must be produced, and the main input\/output goal.\n\nGiven $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+    "source_section":"statement",
+    "skills":[
+      "problem_understanding"
+    ],
+    "strategies":[
+
+    ],
+    "confidence":0.68,
+    "depth":1,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::math_model",
+    "parent_tree_node_id":"llm::codeforces_2219_A::problem",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"math_model",
+    "parent_node_key":"problem",
+    "node_type":"MATHEMATICAL_MODEL",
+    "title":"Mathematical model",
+    "summary":"Represents the mathematical condition or formula behind the solution.",
+    "evidence_text":"$$$p+2q = m(n+1) + n(m+1)$$$ is quadratic on $$$m$$$ and $$$n$$$.",
+    "node_text":"Represents the mathematical condition or formula behind the solution.\n\n$$$p+2q = m(n+1) + n(m+1)$$$ is quadratic on $$$m$$$ and $$$n$$$.",
+    "source_section":"official_editorial",
+    "skills":[
+      "mathematical_modeling"
+    ],
+    "strategies":[
+      "binary_search",
+      "direct_formula",
+      "constructive"
+    ],
+    "confidence":0.66,
+    "depth":1,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::observation",
+    "parent_tree_node_id":"llm::codeforces_2219_A::problem",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"observation",
+    "parent_node_key":"problem",
+    "node_type":"OBSERVATION",
+    "title":"Key observation",
+    "summary":"Core observation used to reduce the problem.",
+    "evidence_text":"The following is the key observation of the problem.",
+    "node_text":"Core observation used to reduce the problem.\n\nThe following is the key observation of the problem.",
+    "source_section":"official_editorial",
+    "skills":[
+      "mathematical_modeling",
+      "proof"
+    ],
+    "strategies":[
+      "binary_search",
+      "direct_formula",
+      "constructive",
+      "proof"
+    ],
+    "confidence":0.64,
+    "depth":1,
+    "order":4,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::proof",
+    "parent_tree_node_id":"llm::codeforces_2219_A::problem",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"proof",
+    "parent_node_key":"problem",
+    "node_type":"PROOF",
+    "title":"Correctness proof",
+    "summary":"Explains why the condition or algorithm is correct.",
+    "evidence_text":"(See tutorial for proof)",
+    "node_text":"Explains why the condition or algorithm is correct.\n\n(See tutorial for proof)",
+    "source_section":"official_editorial",
+    "skills":[
+      "proof"
+    ],
+    "strategies":[
+      "proof"
+    ],
+    "confidence":0.63,
+    "depth":1,
+    "order":5,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::algorithm",
+    "parent_tree_node_id":"llm::codeforces_2219_A::problem",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"algorithm",
+    "parent_node_key":"problem",
+    "node_type":"ALGORITHM",
+    "title":"Algorithmic plan",
+    "summary":"Steps needed to solve or check candidates.",
+    "evidence_text":"$$$ So we can iterate $$$n$$$ from $$$1$$$ to $$$\\left\\lfloor\\sqrt{p\/2+q}\\right\\rfloor$$$ and, for each $$$n$$$, check if $$$ m = \\frac{p+2q-n}{2n+1} $$$ is a positive integer such that $$$\\vert m-n\\vert \\le p$$$.",
+    "node_text":"Steps needed to solve or check candidates.\n\n$$$ So we can iterate $$$n$$$ from $$$1$$$ to $$$\\left\\lfloor\\sqrt{p\/2+q}\\right\\rfloor$$$ and, for each $$$n$$$, check if $$$ m = \\frac{p+2q-n}{2n+1} $$$ is a positive integer such that $$$\\vert m-n\\vert \\le p$$$.",
+    "source_section":"official_editorial",
+    "skills":[
+      "algorithm_design"
+    ],
+    "strategies":[
+      "binary_search",
+      "direct_formula",
+      "constructive",
+      "proof"
+    ],
+    "confidence":0.62,
+    "depth":1,
+    "order":6,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::complexity",
+    "parent_tree_node_id":"llm::codeforces_2219_A::algorithm",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"complexity",
+    "parent_node_key":"algorithm",
+    "node_type":"COMPLEXITY",
+    "title":"Complexity",
+    "summary":"Estimated time complexity or bound used by the algorithm.",
+    "evidence_text":"We do so in $$$O(\\sqrt{p+2q})$$$.",
+    "node_text":"Estimated time complexity or bound used by the algorithm.\n\nWe do so in $$$O(\\sqrt{p+2q})$$$.",
+    "source_section":"official_editorial",
+    "skills":[
+      "complexity_analysis"
+    ],
+    "strategies":[
+      "binary_search",
+      "direct_formula",
+      "constructive",
+      "proof"
+    ],
+    "confidence":0.6,
+    "depth":2,
+    "order":7,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_A::implementation",
+    "parent_tree_node_id":"llm::codeforces_2219_A::algorithm",
+    "global_problem_id":"codeforces_2219_A",
+    "node_key":"implementation",
+    "parent_node_key":"algorithm",
+    "node_type":"IMPLEMENTATION",
+    "title":"Implementation hints",
+    "summary":"Practical details needed to code the approach.",
+    "evidence_text":"Given $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+    "node_text":"Practical details needed to code the approach.\n\nGiven $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+    "source_section":"official_editorial",
+    "skills":[
+      "implementation"
+    ],
+    "strategies":[
+      "binary_search",
+      "direct_formula",
+      "constructive",
+      "proof"
+    ],
+    "confidence":0.55,
+    "depth":2,
+    "order":8,
+    "source":"codeforces",
+    "normalized_difficulty":1400.0,
+    "normalized_tags":[
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "implementation_constructive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"implementation_constructive",
+      "difficulty_comment":"normalized_difficulty=1400.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_B1::problem",
+    "parent_tree_node_id":"",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_key":"problem",
+    "parent_node_key":"",
+    "node_type":"PROBLEM",
+    "title":"Unique Values (Easy version)",
+    "summary":"B1. Unique Values (Easy version)\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nThe difference between the easy version and hard version is the maximum number of queries allowed. In this version,...",
+    "evidence_text":"Unique Values (Easy version)",
+    "node_text":"B1. Unique Values (Easy version)\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nThe difference between the easy version and hard version is the maximum number of queries allowed. In this version,...\n\nUnique Values (Easy version)",
+    "source_section":"metadata",
+    "skills":[
+      "problem_understanding",
+      "implementation"
+    ],
+    "strategies":[
+      "binary_search",
+      "greedy",
+      "data_structure"
+    ],
+    "confidence":0.72,
+    "depth":0,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":1900.0,
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"techniques",
+      "difficulty_comment":"normalized_difficulty=1900.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_B1::understanding",
+    "parent_tree_node_id":"llm::codeforces_2219_B1::problem",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_key":"understanding",
+    "parent_node_key":"problem",
+    "node_type":"UNDERSTANDING",
+    "title":"Problem understanding",
+    "summary":"Captures what is given, what must be produced, and the main input\/output goal.",
+    "evidence_text":"B1. Unique Values (Easy version)\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nThe difference between the easy version and hard version is the maximum number of queries...",
+    "node_text":"Captures what is given, what must be produced, and the main input\/output goal.\n\nB1. Unique Values (Easy version)\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nThe difference between the easy version and hard version is the maximum number of queries...",
+    "source_section":"statement",
+    "skills":[
+      "problem_understanding"
+    ],
+    "strategies":[
+
+    ],
+    "confidence":0.68,
+    "depth":1,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":1900.0,
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"techniques",
+      "difficulty_comment":"normalized_difficulty=1900.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_B1::algorithm",
+    "parent_tree_node_id":"llm::codeforces_2219_B1::problem",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_key":"algorithm",
+    "parent_node_key":"problem",
+    "node_type":"ALGORITHM",
+    "title":"Algorithmic plan",
+    "summary":"Steps needed to solve or check candidates.",
+    "evidence_text":"Solution:\nThere are many solutions that use $$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries. Here is one:\nNotice that if we query for the set $$$S$$$ and its complement $$$T$$$ (i.e. $$$T = \\{1, 2, \\ldots, 2 \\cdot n + 1\\} \\setminus S$$$) we...",
+    "node_text":"Steps needed to solve or check candidates.\n\nSolution:\nThere are many solutions that use $$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries. Here is one:\nNotice that if we query for the set $$$S$$$ and its complement $$$T$$$ (i.e. $$$T = \\{1, 2, \\ldots, 2 \\cdot n + 1\\} \\setminus S$$$) we...",
+    "source_section":"official_editorial",
+    "skills":[
+      "algorithm_design"
+    ],
+    "strategies":[
+      "binary_search",
+      "greedy",
+      "data_structure"
+    ],
+    "confidence":0.62,
+    "depth":1,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":1900.0,
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"techniques",
+      "difficulty_comment":"normalized_difficulty=1900.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_B1::implementation",
+    "parent_tree_node_id":"llm::codeforces_2219_B1::algorithm",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_key":"implementation",
+    "parent_node_key":"algorithm",
+    "node_type":"IMPLEMENTATION",
+    "title":"Implementation hints",
+    "summary":"Practical details needed to code the approach.",
+    "evidence_text":"There is a secret array $$$a$$$ of length $$$2n+1$$$, whose elements are integers from $$$1$$$ to $$$n$$$.",
+    "node_text":"Practical details needed to code the approach.\n\nThere is a secret array $$$a$$$ of length $$$2n+1$$$, whose elements are integers from $$$1$$$ to $$$n$$$.",
+    "source_section":"official_editorial",
+    "skills":[
+      "implementation"
+    ],
+    "strategies":[
+      "binary_search",
+      "greedy",
+      "data_structure"
+    ],
+    "confidence":0.55,
+    "depth":2,
+    "order":4,
+    "source":"codeforces",
+    "normalized_difficulty":1900.0,
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "implementation_constructive",
+      "interactive",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"techniques",
+      "difficulty_comment":"normalized_difficulty=1900.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_C::problem",
+    "parent_tree_node_id":"",
+    "global_problem_id":"codeforces_2219_C",
+    "node_key":"problem",
+    "parent_node_key":"",
+    "node_type":"PROBLEM",
+    "title":"Coloring a Red Black Tree",
+    "summary":"C. Coloring a Red Black Tree\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nYou are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where...",
+    "evidence_text":"Coloring a Red Black Tree",
+    "node_text":"C. Coloring a Red Black Tree\ntime limit per test\n2 seconds\nmemory limit per test\n256 megabytes\ninput\nstandard input\noutput\nstandard output\n\nYou are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where...\n\nColoring a Red Black Tree",
+    "source_section":"metadata",
+    "skills":[
+      "problem_understanding",
+      "algorithm_design"
+    ],
+    "strategies":[
+      "dynamic_programming",
+      "tree_algorithm",
+      "greedy"
+    ],
+    "confidence":0.72,
+    "depth":0,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":2300.0,
+    "normalized_tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "topic_group":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"graphs",
+      "difficulty_comment":"normalized_difficulty=2300.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_C::understanding",
+    "parent_tree_node_id":"llm::codeforces_2219_C::problem",
+    "global_problem_id":"codeforces_2219_C",
+    "node_key":"understanding",
+    "parent_node_key":"problem",
+    "node_type":"UNDERSTANDING",
+    "title":"Problem understanding",
+    "summary":"Captures what is given, what must be produced, and the main input\/output goal.",
+    "evidence_text":"You are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where $$$s_i = 1$$$ means that the $$$i$$$-th node is colored red and $$$s_i = 0$$$ means that the $$$i$$$-th node is colored black.",
+    "node_text":"Captures what is given, what must be produced, and the main input\/output goal.\n\nYou are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where $$$s_i = 1$$$ means that the $$$i$$$-th node is colored red and $$$s_i = 0$$$ means that the $$$i$$$-th node is colored black.",
+    "source_section":"statement",
+    "skills":[
+      "problem_understanding"
+    ],
+    "strategies":[
+
+    ],
+    "confidence":0.68,
+    "depth":1,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":2300.0,
+    "normalized_tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "topic_group":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"graphs",
+      "difficulty_comment":"normalized_difficulty=2300.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_C::algorithm",
+    "parent_tree_node_id":"llm::codeforces_2219_C::problem",
+    "global_problem_id":"codeforces_2219_C",
+    "node_key":"algorithm",
+    "parent_node_key":"problem",
+    "node_type":"ALGORITHM",
+    "title":"Algorithmic plan",
+    "summary":"Steps needed to solve or check candidates.",
+    "evidence_text":"Hint1:\nThink of some kind of subtree DP.\n\nSolution:\nIn this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation.\nFirstly, let's split the...",
+    "node_text":"Steps needed to solve or check candidates.\n\nHint1:\nThink of some kind of subtree DP.\n\nSolution:\nIn this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation.\nFirstly, let's split the...",
+    "source_section":"official_editorial",
+    "skills":[
+      "algorithm_design"
+    ],
+    "strategies":[
+      "dynamic_programming",
+      "tree_algorithm",
+      "greedy"
+    ],
+    "confidence":0.62,
+    "depth":1,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":2300.0,
+    "normalized_tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "topic_group":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"graphs",
+      "difficulty_comment":"normalized_difficulty=2300.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  },
+  {
+    "tree_node_id":"llm::codeforces_2219_C::implementation",
+    "parent_tree_node_id":"llm::codeforces_2219_C::algorithm",
+    "global_problem_id":"codeforces_2219_C",
+    "node_key":"implementation",
+    "parent_node_key":"algorithm",
+    "node_type":"IMPLEMENTATION",
+    "title":"Implementation hints",
+    "summary":"Practical details needed to code the approach.",
+    "evidence_text":"Hint1:\nThink of some kind of subtree DP.\n\nSolution:\nIn this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation.\nFirstly, let's split the...",
+    "node_text":"Practical details needed to code the approach.\n\nHint1:\nThink of some kind of subtree DP.\n\nSolution:\nIn this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation.\nFirstly, let's split the...",
+    "source_section":"official_editorial",
+    "skills":[
+      "implementation"
+    ],
+    "strategies":[
+      "dynamic_programming",
+      "tree_algorithm",
+      "greedy"
+    ],
+    "confidence":0.55,
+    "depth":2,
+    "order":4,
+    "source":"codeforces",
+    "normalized_difficulty":2300.0,
+    "normalized_tags":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "topic_group":[
+      "graphs",
+      "dynamic_programming",
+      "greedy",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C",
+    "generation_status":"fallback_after_missing_api_key",
+    "generation_model":"gpt-4o-mini",
+    "metadata":{
+      "main_topic":"graphs",
+      "difficulty_comment":"normalized_difficulty=2300.0",
+      "warnings":[
+        "Generated with missing_api_key; review before using as ground truth.",
+        "missing_api_key"
+      ]
+    }
+  }
+]

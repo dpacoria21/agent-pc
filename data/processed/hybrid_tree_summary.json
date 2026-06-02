@@ -1,0 +1,38 @@
+{
+  "problems": 7,
+  "page_nodes": 91,
+  "tree_nodes": 133,
+  "chunks": 181,
+  "queries": 4,
+  "embedding": {
+    "embedding_backend": "tfidf_svd_l2",
+    "chunks_indexed": 181,
+    "embedding_dim": 96
+  },
+  "tree_paths": {
+    "parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_nodes_dataset.parquet",
+    "csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_nodes_dataset.csv",
+    "json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_nodes_dataset.json"
+  },
+  "chunk_paths": {
+    "parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_chunks_dataset.parquet",
+    "csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_chunks_dataset.csv",
+    "json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_tree_chunks_dataset.json"
+  },
+  "result_paths": {
+    "parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.parquet",
+    "csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.csv",
+    "json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.json"
+  },
+  "recommendation_paths": {
+    "parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.parquet",
+    "csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.csv",
+    "json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.json"
+  },
+  "run_paths": {
+    "parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_demo_runs.parquet",
+    "csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_demo_runs.csv",
+    "json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_demo_runs.json"
+  },
+  "architecture_image": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\hybrid_tree_architecture.png"
+}

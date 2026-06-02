@@ -1,0 +1,1631 @@
+[
+  {
+    "chunk_id":"chunk::topic_codeforces_implementation_constructive::0",
+    "tree_node_id":"topic::codeforces::implementation_constructive",
+    "global_problem_id":"",
+    "node_role":"TOPIC",
+    "node_type":"TOPIC",
+    "chunk_text":"implementation constructive",
+    "chunk_word_count":2
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_A::0",
+    "tree_node_id":"problem::codeforces_2219_A",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Grid L A. Grid L time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output Roger has $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, each formed by joining two unit-length segments at a right angle. He wants to use all of these pieces, with no piece left unused, to form a grid of dimensions $$$n \\times m$$$. Given $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_A::72",
+    "tree_node_id":"problem::codeforces_2219_A",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$. Hint1: We want an easy to check condition on $$$m$$$, $$$n$$$, $$$p$$$, $$$q$$$ that is equivalent to being able to fill the grid. Hint2 (strong spoiler): You can fill the $$$m\\times n$$$ grid if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p\\ge \\vert m-n\\vert$$$. (See tutorial for proof) Hint3: $$$p+2q = m(n+1) + n(m+1)$$$ is",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_A::144",
+    "tree_node_id":"problem::codeforces_2219_A",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$p+2q = m(n+1)+n(m+1)$$$ and $$$p\\ge \\vert m-n\\vert$$$. (See tutorial for proof) Hint3: $$$p+2q = m(n+1) + n(m+1)$$$ is quadratic on $$$m$$$ and $$$n$$$. If you assume $$$m\\ge n$$$, can you say anything on the size of $$$n$$$? Solution: The following is the key observation of the problem. Claim. We can fill an $$$m\\times n$$$ grid using $$$p$$$ segments and $$$q$$$ L's if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p \\ge \\vert m-n\\vert$$$. Proof. Necessity is clear: $$$p+2q = m(n+1)+n(m+1)$$$ follows from looking at the total number of edges, and",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_A::216",
+    "tree_node_id":"problem::codeforces_2219_A",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"m-n\\vert$$$. Proof. Necessity is clear: $$$p+2q = m(n+1)+n(m+1)$$$ follows from looking at the total number of edges, and $$$p\\ge \\vert m-n\\vert$$$ follows from comparing the number of horizontal edges and vertical edges. Let us prove sufficiency. Note that two segments can form an L, so since $$$$$$m-n\\equiv m+n\\equiv 2mn+m+n\\equiv 2q+p\\equiv p\\pmod 2,$$$$$$ we may assume WLOG that $$$p=m-n$$$. Now we can just use the following explicit construction. To not bore you all with a written description, we show the construction for $$$m=4$$$, $$$n=6$$$, which clearly generalizes. So we just need",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_A::288",
+    "tree_node_id":"problem::codeforces_2219_A",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"with a written description, we show the construction for $$$m=4$$$, $$$n=6$$$, which clearly generalizes. So we just need to find a pair $$$(m,n)$$$ satisfying the above conditions. We do so in $$$O(\\sqrt{p+2q})$$$. Assume that $$$m\\ge n$$$. Then we have that $$$ p+2q = m(n+1)+n(m+1) \\ge 2n(n+1) \\implies n \\le \\sqrt{p\/2+q}. $$$ So we can iterate $$$n$$$ from $$$1$$$ to $$$\\left\\lfloor\\sqrt{p\/2+q}\\right\\rfloor$$$ and, for each $$$n$$$, check if $$$ m = \\frac{p+2q-n}{2n+1} $$$ is a positive integer such that $$$\\vert m-n\\vert \\le p$$$. If it is, we print $$$m$$$ and $$$n$$$. If",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_A::360",
+    "tree_node_id":"problem::codeforces_2219_A",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"a positive integer such that $$$\\vert m-n\\vert \\le p$$$. If it is, we print $$$m$$$ and $$$n$$$. If no $$$n$$$ works, then we print $$$-1$$$. Extra. Can you solve the problem faster?",
+    "chunk_word_count":32
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_B1::0",
+    "tree_node_id":"problem::codeforces_2219_B1",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Unique Values (Easy version) B1. Unique Values (Easy version) time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output The difference between the easy version and hard version is the maximum number of queries allowed. In this version, it is 66. There is a secret array $$$a$$$ of length $$$2n+1$$$, whose elements are integers from $$$1$$$ to $$$n$$$. Each value appears exactly twice, except for one value, which appears exactly three times. Your goal is to find the three positions of the",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_B1::72",
+    "tree_node_id":"problem::codeforces_2219_B1",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"for one value, which appears exactly three times. Your goal is to find the three positions of the value that appears three times. To do this, you may ask the following query at most 66 times: Choose an integer $$$k$$$ and an array $$$s$$$ of $$$k$$$ distinct indices between $$$1$$$ and $$$2n+1$$$. You will receive the number of different values among $$$a_{s_1}, a_{s_2}, \\ldots, a_{s_k}$$$ that appear exactly once, or, in other words, the count of values that are not repeated. For example, if the values $$$a_{s_1}, \\ldots, a_{s_k}$$$ are",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_B1::144",
+    "tree_node_id":"problem::codeforces_2219_B1",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"words, the count of values that are not repeated. For example, if the values $$$a_{s_1}, \\ldots, a_{s_k}$$$ are $$$\\{2, 1, 2, 3, 2, 3, 6, 7\\}$$$, the answer to the query will be 3, as 1, 6, 7 are the only values that appear exactly once. 3 appears 2 times and 2 appears 3 times, which is more than once, so they are not counted. Solution: There are many solutions that use $$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries. Here is one: Notice that if we query for the",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_B1::216",
+    "tree_node_id":"problem::codeforces_2219_B1",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries. Here is one: Notice that if we query for the set $$$S$$$ and its complement $$$T$$$ (i.e. $$$T = \\{1, 2, \\ldots, 2 \\cdot n + 1\\} \\setminus S$$$) we can know how many of the three special indices are in $$$S$$$ and how many in $$$T$$$. If the answer for both queries is the same, we know that $$$S$$$ has either 0 or 3 of the special indices, and looking at the parity of $$$|S| - query(S)$$$ (This is the number",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_B1::288",
+    "tree_node_id":"problem::codeforces_2219_B1",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"3 of the special indices, and looking at the parity of $$$|S| - query(S)$$$ (This is the number of repeated elements), $$$S$$$ will have 3 of the special indices if this count is odd. If the answer for the two queries is different, we know that $$$S$$$ will have exactly one of the special indices iff $$$query(S) \\gt query(T)$$$ since it has one more unique value. With this in mind, we can run 3 binary searches. The first one looks for any index that is special, the following ones do",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_B1::360",
+    "tree_node_id":"problem::codeforces_2219_B1",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"run 3 binary searches. The first one looks for any index that is special, the following ones do the same but ignore indices that were found previously.",
+    "chunk_word_count":27
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::0",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Coloring a Red Black Tree C. Coloring a Red Black Tree time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output You are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where $$$s_i = 1$$$ means that the $$$i$$$-th node is colored red and $$$s_i = 0$$$ means that the $$$i$$$-th node is colored black. You are allowed to perform the following operation: Select a node $$$a$$$ ($$$1 \\le a \\le",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::72",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"colored black. You are allowed to perform the following operation: Select a node $$$a$$$ ($$$1 \\le a \\le n$$$). A neighbor $$$b$$$ of $$$a$$$ is selected uniformly at random. Recolor node $$$a$$$ with the color of $$$b$$$. Note that this changes the color of the vertex you selected, not the one that was uniformly chosen. You want to color all the nodes in the tree red by performing the operation any number of times (possibly zero). Please compute the minimum expected number of operations needed to do so if you",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::144",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"of times (possibly zero). Please compute the minimum expected number of operations needed to do so if you perform them optimally. There will be at least one red node initially. Hint1: Think of some kind of subtree DP. Solution: In this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation. Firstly, let's split the tree using the red nodes as breakpoints. We will consider all black only connected components and the adjacent nodes of these components. We",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::216",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"as breakpoints. We will consider all black only connected components and the adjacent nodes of these components. We now have independent trees where the red nodes are always leaves. Consider the following subtree $$$dp$$$ (rooting the trees in black nodes): $$$dp_{i, 0}$$$ = minimum expected number of operations to color the subtree of node $$$i$$$ if node $$$i$$$ is colored before its parent. $$$dp_{i, 1}$$$ = minimum expected number of operations to color the subtree of node $$$i$$$ if node $$$i$$$ is colored after its parent. $$$dp_{i, 0} = 0$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::288",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"color the subtree of node $$$i$$$ if node $$$i$$$ is colored after its parent. $$$dp_{i, 0} = 0$$$ if $$$i$$$ is a red leaf. $$$dp_{i, 1} = \\inf$$$ if $$$i$$$ is a red leaf. $$$dp_{i, 0} = \\inf$$$ if $$$i$$$ is a black leaf. $$$dp_{i, 1} = 1$$$ if $$$i$$$ is a black leaf (it only has one neighbor, its parent, and thus only needs one operation). the answer is $$$dp_{root, 0}$$$. The transitions are: sort all children of $$$i$$$ by $$$dp_{child_{j}, 1} - dp_{child_{j}, 0}$$$ (notice that we need",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::360",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"The transitions are: sort all children of $$$i$$$ by $$$dp_{child_{j}, 1} - dp_{child_{j}, 0}$$$ (notice that we need doubles!). for $$$dp_{i, 0}$$$, consider all no empty prefixes of the sorted childs, consider $$$dp_{child_{j}, 0}$$$ as the cost of coloring the subtree of $$$child_j$$$ if it is in the prefix and $$$dp_{child_{j}, 1}$$$ if it is not, coloring the node $$$i$$$ costs $$$\\frac{\\#children + 1}{size Of Prefix}$$$ + cost of coloring the subtrees of the children nodes. For $$$dp_{i, 1}$$$ is similar, but you can now consider the empty prefix and",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_C::432",
+    "tree_node_id":"problem::codeforces_2219_C",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"of the children nodes. For $$$dp_{i, 1}$$$ is similar, but you can now consider the empty prefix and the cost of coloring the node $$$i$$$ is $$$\\frac{\\#children + 1}{size Of Prefix + 1}$$$ + cost of coloring the subtrees of the children nodes.",
+    "chunk_word_count":43
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::0",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"MEX Replacement on Tree D. MEX Replacement on Tree time limit per test 3.5 seconds memory limit per test 256 megabytes input standard input output standard output You are given a tree rooted at $$$1$$$ with $$$n$$$ vertices and a permutation $$$p$$$ of length $$$n$$$ consisting of integers $$$0, 1, \\ldots, n - 1$$$, where $$$p_v$$$ represents the weight of vertex $$$v$$$. Let $$$S_v$$$ denote the set of weights written on the vertices belonging to the path from $$$1$$$ to $$$v$$$. Define a function $$$f$$$ as $$$f(v) = \\mathrm{MEX}(S_v)$$$, that",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::72",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"vertices belonging to the path from $$$1$$$ to $$$v$$$. Define a function $$$f$$$ as $$$f(v) = \\mathrm{MEX}(S_v)$$$, that is, the $$$\\mathrm{MEX}$$$ over the set consisting of the weights of vertices on the simple path between the root and $$$v$$$ (inclusive), where $$$\\operatorname{MEX}$$$ of a collection of integers $$$c_1, c_2, \\ldots, c_k$$$ is defined as the smallest non-negative integer $$$x$$$ which does not occur in the collection $$$c$$$. Also, given the following operation: Choose an integer $$$v$$$ ($$$1 \\leq v \\leq n$$$) and assign $$$f(v)$$$ to $$$p_v$$$. Your goal is to",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::144",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Choose an integer $$$v$$$ ($$$1 \\leq v \\leq n$$$) and assign $$$f(v)$$$ to $$$p_v$$$. Your goal is to find the maximum value of $$$\\sum\\limits_{v = 1}^n f(v)$$$ after performing the above operation no more than once (possibly zero). Hint1: Having a good visual image of the problem in mind may help. That is, for each vertex, thinking there is an array of infinite slot, and some of them are occupied by token, and the operation correspond to moving certain token to the first hole. Hint2: Draw some small cases! What",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::216",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"and the operation correspond to moving certain token to the first hole. Hint2: Draw some small cases! What would these infinite arrays change when doing operation on root? Hint3: Doing operation on vertex with $$$p_v \\lt f(v)$$$ is useless. Consider the rest situations. Hint4: when doing operation on $$$v$$$, how would $$$f(x)$$$ change if $$$x$$$ is in subtree of $$$v$$$? Hint5: There are two cases, $$$f(x) = f(v)$$$ and $$$f(x) \\gt f(v)$$$. Hint6: Solve https:\/\/judge.yosupo.jp\/problem\/vertex_add_subtree_sum Solution: Root out the simple case: It's obvious that applying the operation on $$$v$$$ where",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::288",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Hint6: Solve https:\/\/judge.yosupo.jp\/problem\/vertex_add_subtree_sum Solution: Root out the simple case: It's obvious that applying the operation on $$$v$$$ where $$$p_v \\lt f(v)$$$ is useless, since it would decrease $$$f(x)$$$ for every $$$x$$$ in $$$v$$$'s subtree. So from now on, we assume $$$p_v \\gt f(v)$$$. Rephrase of operation (kind of) : To understand how the $$$f(x)$$$ would change, I would like to introduce an intuitive way to think about the $$$\\mathrm{MEX}$$$ function first. Given a set of integers, imagine there is an array with infinite empty slots, indexed from $$$0$$$. Then for",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::360",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"a set of integers, imagine there is an array with infinite empty slots, indexed from $$$0$$$. Then for each element $$$\\mathrm{val}$$$ in the set, we fill the $$$\\mathrm{val}$$$-th slot with a token, and then we can think of the $$$\\mathrm{MEX}$$$ function as finding the first hole starting from the $$$0$$$-th slot. Then you can imagine there is an array $$$a_x$$$ with infinite slots for each vertex $$$x$$$ containing all elements on the path from $$$1$$$ to $$$x$$$, and think of the operation as picking up the token at the $$$p_v$$$-th",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::432",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"path from $$$1$$$ to $$$x$$$, and think of the operation as picking up the token at the $$$p_v$$$-th slot and moving it to the first hole of $$$a_v$$$(that is, $$$f(v)$$$) for each array $$$a_x$$$ where $$$x$$$ is in $$$v$$$'s subtree. Further analysis: After doing such a rephrase and playing with it a bit on paper, you would probably notice there are a few cases: for $$$a_x$$$ with its $$$f(v)$$$-th slot being empty, moving a token from $$$p_v$$$ to $$$f(v)$$$ would fill the first hole and create a hole at $$$f(v)$$$,",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::504",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"moving a token from $$$p_v$$$ to $$$f(v)$$$ would fill the first hole and create a hole at $$$f(v)$$$, so the new first hole would be the second hole of the original $$$a_x$$$ if it is less than $$$p_v$$$ or $$$p_v$$$ otherwise. for $$$a_x$$$ with its $$$f(v)$$$-th slot having a token in it, moving a token from $$$p_v$$$ to $$$f(v)$$$ would make the $$$f(v)$$$-th slot have $$$2$$$ tokens and create a hole at $$$f(v)$$$, so the new first hole would remain unchanged if $$$f(x) \\lt p_v$$$ or $$$p_v$$$ otherwise. So in",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::576",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$f(v)$$$, so the new first hole would remain unchanged if $$$f(x) \\lt p_v$$$ or $$$p_v$$$ otherwise. So in conclusion, for the first case $$$f(x)$$$ would become $$$\\mathrm{min}(g(x), p_v)$$$ after doing operation on $$$v$$$, where $$$g(x)$$$ is almost the same as $$$f(x)$$$ but it finds second $$$\\mathrm{MEX}$$$. And for the second case $$$f(x)$$$ would become $$$\\mathrm{min}(f(x), p_v)$$$ after doing operation on $$$v$$$. Then we can consider processing $$$v$$$ in decreasing order of $$$p_v$$$, and maintain the sum of $$$g(x)$$$ for $$$g(x) \\lt p_v$$$ the number of vertices with $$$g(x) \\ge p_v$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::648",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"and maintain the sum of $$$g(x)$$$ for $$$g(x) \\lt p_v$$$ the number of vertices with $$$g(x) \\ge p_v$$$ the sum of $$$f(x)$$$ for $$$f(x) \\lt p_v$$$ the number of vertices with $$$f(x) \\ge p_v$$$ under every subtree in $$$O(n\\lg n)$$$. Which is a standard [Vertex Add Subtree Sum Problem](https:\/\/judge.yosupo.jp\/problem\/vertex_add_subtree_sum) and can be solved by fenwick tree + euler tour trick. For the query part, case $$$1$$$ is just querying for data $$$1, 2$$$ for $$$v$$$'s subtree; case $$$2$$$ would happen if and only if there exists some vertex $$$x$$$ with",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_D::720",
+    "tree_node_id":"problem::codeforces_2219_D",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"2$$$ for $$$v$$$'s subtree; case $$$2$$$ would happen if and only if there exists some vertex $$$x$$$ with $$$p_x = f(v)$$$ under $$$v$$$'s subtree, then we just change the contribution of $$$x$$$'s subtree from data $$$1, 2$$$ to data $$$3, 4$$$. And we can check whether $$$v$$$ is $$$x$$$'s ancestor using the time stamp of two vertices.",
+    "chunk_word_count":57
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::0",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Weird Chessboard E. Weird Chessboard time limit per test 5 seconds memory limit per test 256 megabytes input standard input output standard output Consider a chessboard (a grid) of size $$$n \\times n$$$. You want to place as many chess pieces on this board as possible. These pieces behave in the following way: if we denote the top-left cell by $$$(1,1)$$$, then a piece placed in cell $$$(i,j)$$$ can attack every cell $$$(x,y)$$$ such that $$$x \\ge i$$$ and $$$y \\ge j$$$, except for $$$(i,j)$$$ itself. For example, on a",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::72",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$(x,y)$$$ such that $$$x \\ge i$$$ and $$$y \\ge j$$$, except for $$$(i,j)$$$ itself. For example, on a $$$10 \\times 10$$$ board, a piece placed at $$$(3,4)$$$ can attack the cells highlighted below: Given a chessboard with some pieces placed on it, we say that a cell is good if the number of pieces that attack that cell is even. Construct a configuration of pieces such that every cell is good, regardless of whether the cell itself contains a piece or not, and the board contains at least $$$\\lfloor \\frac{n^2}{10}",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::144",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"of whether the cell itself contains a piece or not, and the board contains at least $$$\\lfloor \\frac{n^2}{10} \\rfloor \\cdot 3$$$ pieces. Hint1: Can you rewrite the condition on the board to something simpler? Hint2: Label the board $$$v_{i,j}$$$ where $$$v_{0,0}$$$ is the top left cell. We work mod $$$2$$$. A board $$$v_{i,j}$$$ is valid if and only if $$$v_{i,j}+v_{i+1,j}+v_{i,j+1}=0$$$ and all entries above the secondary diagonal are zero. Hint3: Warm up: try to get a construction of density $$$1\/4$$$. Hint4: The next few hints get quite spoilery. If you",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::216",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"try to get a construction of density $$$1\/4$$$. Hint4: The next few hints get quite spoilery. If you don't want to see them yet but are stuck, consider coding some kind of heuristic (say, simulated annealing or A*) and running it on small values of $$$n$$$ to see what the result looks like. Hint5: Prove that the density is at most $$$1\/3$$$. Hint6: Consider the grid $$$w_{i,j}$$$ with $$$w_{i,j}=1$$$ when $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j\\pmod 3$$$, and $$$w_{i,j}=0$$$ otherwise. Hint7: This grid is almost valid: $$$v_{i,j}+v_{i+1,j}+v_{i,j+1}=1$$$ only for very few",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::288",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"and $$$i\\not\\equiv j\\pmod 3$$$, and $$$w_{i,j}=0$$$ otherwise. Hint7: This grid is almost valid: $$$v_{i,j}+v_{i+1,j}+v_{i,j+1}=1$$$ only for very few concrete positions $$$(i,j)$$$. Try to fix the issues at those positions in a way that does not disturb much of the grid. Hint8: For each position $$$(i_0, j_0)$$$ on the diagonal where $$$w_{i_0,j_0} = 0$$$, we want to add a pattern to the grid that fixes the issues there. Hint9: For each such $$$(i_0,j_0)$$$, flip $$$w_{i_0,j_0}$$$ and add a Pascal triangle mod $$$2$$$ to the grid. Hint10: To implement this in $$$O(n^2)$$$,",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::360",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"flip $$$w_{i_0,j_0}$$$ and add a Pascal triangle mod $$$2$$$ to the grid. Hint10: To implement this in $$$O(n^2)$$$, instead of adding each pascal independently, try to compute the sum of all of the pascals directly. Solution: We label the grid $$$v_{i, j}$$$ with $$$v_{0, 0}$$$ being the top left corner. From now on, we work modulo $$$2$$$ when operating with $$$v$$$. Claim. A filling of the grid is valid if and only if $$$v_{i, j}=0$$$ whenever $$$i+j \\lt n-1$$$, and $$$v_{i, j}+v_{i+1, j}+v_{i, j+1}=0$$$ for all $$$0\\le i,j \\lt n-1$$$.",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::432",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"if $$$v_{i, j}=0$$$ whenever $$$i+j \\lt n-1$$$, and $$$v_{i, j}+v_{i+1, j}+v_{i, j+1}=0$$$ for all $$$0\\le i,j \\lt n-1$$$. We are going to restrict ourselves to fillings where $$$v_{i, n-i-1} = 1$$$ for all $$$i$$$. It is easy to see that any optimal filling must be of this kind. We will define a preliminary filling $$$w_{i,j}$$$ as 1 if $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j \\pmod 3$$$, 0 otherwise. The idea is that $$$w$$$ has density $$$1\/3$$$, and only fails to be valid at a few points, namely near the diagonal. We",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::504",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"has density $$$1\/3$$$, and only fails to be valid at a few points, namely near the diagonal. We will fix $$$w$$$ in a way that leaves a chunk of the grid unchanged. We introduce what we do with a motivating example in the $$$n=16$$$ case. The first figure is the original $$$w$$$. We look at position $$$(9,6)$$$. There are three issues around this position: $$$$$$ w_{9, 6} = 0, $$$$$$ $$$$$$ w_{9, 6} + w_{9, 5} + w_{10, 5} = 1, $$$$$$ $$$$$$ w_{9, 6} + w_{8, 6} + w_{8,",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::576",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"6} + w_{9, 5} + w_{10, 5} = 1, $$$$$$ $$$$$$ w_{9, 6} + w_{8, 6} + w_{8, 7} = 1. $$$$$$ To fix these issues, we add the pattern in the second figure to $$$w$$$. This pattern comes from the well-known Pascal triangle, considered mod $$$2$$$, plus flipping position $$$w_{9, 6}$$$. Formally, the pattern in the second figure is given by $$$u_{9,6} = 1$$$ and $$$$$$ u_{9+i+1, 6+j} \\equiv \\binom{i}{j} \\pmod{2}\\ \\forall i,j\\ge 0. $$$$$$ The rightmost figure is $$$u+w$$$, where the three issues around $$$w_{9, 6}$$$ are now",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::648",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"\\forall i,j\\ge 0. $$$$$$ The rightmost figure is $$$u+w$$$, where the three issues around $$$w_{9, 6}$$$ are now fixed. The key observation is that our transformation only affects the region of the board below the diagonal, and below and to the left of $$$(9,6)$$$. In general, we will do as follows: iterate over the points $$$(i_0, j_0)$$$ of the diagonal with $$$w_{i_0, j_0} = 0$$$. For each we do as follows. If $$$i_0 \\ge j_0$$$, as in the example, we flip $$$w_{i_0, j_0}$$$ and add to $$$w$$$ the pattern $$$$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::720",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$i_0 \\ge j_0$$$, as in the example, we flip $$$w_{i_0, j_0}$$$ and add to $$$w$$$ the pattern $$$$$$ u_{i_0+1+a, j_0+b} = \\binom{a}{b}\\pmod 2 $$$$$$ for each $$$a,b$$$ with $$$0\\le b\\le a$$$ for which $$$(i_0+1+a, j_0+b)$$$ lies in the grid. If $$$i_0 \\lt j_0$$$, we add a similar pattern above and to the right of $$$(i_0, j_0)$$$. Formally, if $$$i_0 \\lt j_0$$$, we flip $$$w_{i_0, j_0}$$$ and add to $$$w$$$ the pattern $$$$$$ u_{i_0+a, j_0+1+b} = \\binom{b}{a}\\pmod 2 $$$$$$ for each $$$0\\le a\\le b$$$ for which $$$(i_0+a, j_0+1+b)$$$ lies in the",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::792",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"u_{i_0+a, j_0+1+b} = \\binom{b}{a}\\pmod 2 $$$$$$ for each $$$0\\le a\\le b$$$ for which $$$(i_0+a, j_0+1+b)$$$ lies in the grid. After the procedure is over, $$$w$$$ is a valid grid. Note that naively implementing the above is $$$O(n^3)$$$, which won't pass. We take care of implementation at the end of the solution. Claim. After the process, $$$w$$$ has density at least $$$0.3$$$. Proof. We actually do not have a formal proof of this fact. We instead give the intuition behind the claim and an heuristic \"proof\". By our construction, the cells",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::864",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"fact. We instead give the intuition behind the claim and an heuristic \"proof\". By our construction, the cells $$$(i,j)$$$ with $$$i,j\\ge n\/2$$$ have been left unchanged, so the density is still $$$2\/3$$$ among those cells. For the rest of cells with $$$i+j\\ge n-1$$$, one can a priori guess the density will be at least around $$$1\/2$$$. Hence, the final density should be around $$$$$$ \\frac{1}{2}\\cdot \\frac{\\frac{1}{2} + \\frac{2}{3}}{2} = \\frac{7}{24} \\approx 0.292. $$$$$$ In practise, the final density happens to be slightly larger than $$$7\/24$$$, of about $$$3\/10$$$. The following",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::936",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$$$$ In practise, the final density happens to be slightly larger than $$$7\/24$$$, of about $$$3\/10$$$. The following figures showcase our construction for $$$N = 512$$$ and $$$N = 700$$$. In the middle square, as said, we get $$$2\/3$$$ density. The bottom left and top right triangles expand following a fractal. First, let us look at the $$$512$$$ (power of two) case. Here, the density should be exactly $$$0.3$$$. Why? If $$$d$$$ is the density of the bottom-left (or top right) triangles, then we should have something like $$$$$$ f",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::1008",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"is the density of the bottom-left (or top right) triangles, then we should have something like $$$$$$ f = \\frac{1}{4}\\left(f + f + \\frac{2}{3} + \\frac{1}{4}(f + f + 0 + f)\\right), $$$$$$ where the first two summands are for to left and top subtriangles, the third summand is for the central triangle, and the final summand is for the bottom right subtriangle. Solving the equation yields $$$f = 8\/15$$$. Thus, the density of the whole grid is $$$$$$ \\frac{1}{2}\\left(f + \\frac{2}{3}\\right) = \\frac{10}{30}. $$$$$$ In the $$$n = 700$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::1080",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"density of the whole grid is $$$$$$ \\frac{1}{2}\\left(f + \\frac{2}{3}\\right) = \\frac{10}{30}. $$$$$$ In the $$$n = 700$$$ (not power of two) case, the fractal gets cut off. However, intuitively, the density should be larger than $$$0.3$$$, since the extra part that you gain between $$$n = 512$$$ and $$$n = 700$$$ is very dense. This also holds in practise: our construction is denser than $$$0.3$$$ whenever $$$n$$$ is far from being a power of two. Finally, let us look at implementation. We already said the naive $$$O(n^3)$$$ will not",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::1152",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"a power of two. Finally, let us look at implementation. We already said the naive $$$O(n^3)$$$ will not pass, we will do the job in $$$O(n^2)$$$. Define a vector $$$s$$$ which is $$$1$$$ at positions $$$(i_0+1,j_0)$$$ where $$$(i_0,j_0)$$$ is a zero on the diagonal with $$$i_0\\ge j_0$$$, and at positions $$$(i_0,j_0+1)$$$ where $$$(i_0,j_0)$$$ is a zero on the diagonal with $$$i_0 \\gt j_0$$$, and let $$$s$$$ be $$$0$$$ everywhere else. Note that these points where $$$s$$$ is $$$1$$$ are the peaks of the pascal triangles we're adding to $$$w$$$ in",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::1224",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"these points where $$$s$$$ is $$$1$$$ are the peaks of the pascal triangles we're adding to $$$w$$$ in our construction. Now, we propagate in $$$s$$$ the Pascal triangle recurrence downward and to the left from the position $$$(i_0+1,j_0)$$$ with lowest $$$i_0$$$, and upward to the right from the position $$$(i_0, j_0+1)$$$ with highest $$$i_0$$$. After this is done, $$$s$$$ is exactly the same as the sum of all the $$$u$$$ vectors we're adding in our construction. Thus adding $$$s$$$ to $$$w$$$ and flipping the zeros on the diagonal of $$$w$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2219_E::1296",
+    "tree_node_id":"problem::codeforces_2219_E",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"adding in our construction. Thus adding $$$s$$$ to $$$w$$$ and flipping the zeros on the diagonal of $$$w$$$ results in our construction, and is $$$O(n^2)$$$.",
+    "chunk_word_count":25
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_A::0",
+    "tree_node_id":"problem::codeforces_2220_A",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Blocked A. Blocked time limit per test 1 second memory limit per test 256 megabytes input standard input output standard output Given an array $$$a$$$ of integers of size $$$n$$$, we say that a position $$$1 \\le i \\le n$$$ is blocked if $$$a_i$$$ can be expressed as the sum of a subset of $$$a_1, a_2, \\ldots, a_{i-1}$$$ (i.e. there exist $$$1 \\le j_1 \\lt j_2 \\lt \\ldots \\lt j_k \\le i-1$$$ such that $$$a_{j_1} + a_{j_2} + \\ldots + a_{j_k} = a_i$$$). Reorder $$$a$$$ so that no position is",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_A::72",
+    "tree_node_id":"problem::codeforces_2220_A",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"such that $$$a_{j_1} + a_{j_2} + \\ldots + a_{j_k} = a_i$$$). Reorder $$$a$$$ so that no position is blocked or report that it is impossible. For example, reordering the array [$$$3, 2, 5$$$] to [$$$2, 3, 5$$$] makes position $$$3$$$ blocked, since we can express $$$5 = 2 + 3$$$, but if we reorder it to [$$$3, 5, 2$$$], no position is blocked. Hint1: What happens when there are two equal elements? Solution: If there are two equal elements in $$$a$$$, one of them will be blocked . Otherwise, sort",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_A::144",
+    "tree_node_id":"problem::codeforces_2220_A",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Solution: If there are two equal elements in $$$a$$$, one of them will be blocked . Otherwise, sort $$$a$$$ decreasing.",
+    "chunk_word_count":20
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_B::0",
+    "tree_node_id":"problem::codeforces_2220_B",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"OIE Excursion B. OIE Excursion time limit per test 1 second memory limit per test 256 megabytes input standard input output standard output Hector is on an excursion with the Spanish Olympiad in Informatics, visiting A Coruña, but he is desperate to sneak away to meet his friends Gustavo, Esomer, and Dani. To do so, he must cross a path guarded by $$$n$$$ volunteers standing in a row, numbered from $$$1$$$ to $$$n$$$; the $$$i$$$-th volunteer watches over position $$$i$$$. Each volunteer has an internal timer. Initially (at second $$$0$$$),",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_B::72",
+    "tree_node_id":"problem::codeforces_2220_B",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"$$$n$$$; the $$$i$$$-th volunteer watches over position $$$i$$$. Each volunteer has an internal timer. Initially (at second $$$0$$$), the $$$i$$$-th volunteer's timer has a value $$$a_i$$$. Every second, all timers increase by $$$1$$$. Once a timer reaches $$$m$$$, it wraps around to $$$0$$$. Specifically, at second $$$x$$$, the $$$i$$$-th volunteer's timer shows the value $$$(a_i + x) \\pmod m$$$. The $$$i$$$-th volunteer is only watching over position $$$i$$$ when their timer is exactly $$$0$$$. At any other time, they are distracted and will not notice Hector. Hector starts at position",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_B::144",
+    "tree_node_id":"problem::codeforces_2220_B",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"exactly $$$0$$$. At any other time, they are distracted and will not notice Hector. Hector starts at position $$$0$$$, to the left of all volunteers. To escape, he must reach position $$$n+1$$$. In the end of each second, Hector can choose to stay in his current position, move one position to the left, or move one position to the right. Note that Hector can't go to the left of position $$$0$$$. Hector is caught if and only if, at the beginning of a second, he is at position $$$i$$$ ($$$1",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_B::216",
+    "tree_node_id":"problem::codeforces_2220_B",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"is caught if and only if, at the beginning of a second, he is at position $$$i$$$ ($$$1 \\le i \\le n$$$) and the $$$i$$$-th volunteer's timer is $$$0$$$. Determine whether there exists a strategy for Hector to pass all volunteers and escape without being caught. Solution: If there exists a contiguous subarray of equal values with length ≥ m, it is impossible to escape. This is because crossing such a block requires at least m seconds, and each position will look in direction 0 at least once in any",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_B::288",
+    "tree_node_id":"problem::codeforces_2220_B",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"requires at least m seconds, and each position will look in direction 0 at least once in any m consecutive seconds. Otherwise, escape is possible. We can think of the array as consecutive blocks of equal values, each of length < m. For each block, there exists a window of time shorter than m during which none of its positions are looking at 0. By waiting outside the block until this safe window, Hector can cross it without being caught. Since two consecutive blocks have different values, their dangerous moments",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_2220_B::360",
+    "tree_node_id":"problem::codeforces_2220_B",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"window, Hector can cross it without being caught. Since two consecutive blocks have different values, their dangerous moments never coincide, and this strategy can be repeated for all blocks.",
+    "chunk_word_count":29
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2219_A_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"A. Grid L time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output Roger has $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, each formed by joining two unit-length segments at a right angle. He wants to use all of these pieces, with no piece left unused, to form a grid of dimensions $$$n \\times m$$$. Given $$$p$$$ and $$$q$$$, determine whether there exist positive integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2219_A_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"integers $$$n$$$ and $$$m$$$ such that an $$$n \\times m$$$ grid can be formed using exactly $$$p$$$ unit-length segments and $$$q$$$ L-shaped pieces, possibly rotating them, and provide any valid $$$n$$$ and $$$m$$$.",
+    "chunk_word_count":33
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2219_B1_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"B1. Unique Values (Easy version) time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output The difference between the easy version and hard version is the maximum number of queries allowed. In this version, it is 66. There is a secret array $$$a$$$ of length $$$2n+1$$$, whose elements are integers from $$$1$$$ to $$$n$$$. Each value appears exactly twice, except for one value, which appears exactly three times. Your goal is to find the three positions of the value that appears three",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2219_B1_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"appears exactly three times. Your goal is to find the three positions of the value that appears three times. To do this, you may ask the following query at most 66 times: Choose an integer $$$k$$$ and an array $$$s$$$ of $$$k$$$ distinct indices between $$$1$$$ and $$$2n+1$$$. You will receive the number of different values among $$$a_{s_1}, a_{s_2}, \\ldots, a_{s_k}$$$ that appear exactly once, or, in other words, the count of values that are not repeated. For example, if the values $$$a_{s_1}, \\ldots, a_{s_k}$$$ are $$$\\{2, 1, 2, 3,",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_01_STATEMENT::144",
+    "tree_node_id":"content::codeforces_2219_B1_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"values that are not repeated. For example, if the values $$$a_{s_1}, \\ldots, a_{s_k}$$$ are $$$\\{2, 1, 2, 3, 2, 3, 6, 7\\}$$$, the answer to the query will be 3, as 1, 6, 7 are the only values that appear exactly once. 3 appears 2 times and 2 appears 3 times, which is more than once, so they are not counted.",
+    "chunk_word_count":61
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2219_C_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"C. Coloring a Red Black Tree time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output You are given a tree of $$$n$$$ nodes numbered from 1 to $$$n$$$ and a binary string $$$s$$$ of length $$$n$$$ where $$$s_i = 1$$$ means that the $$$i$$$-th node is colored red and $$$s_i = 0$$$ means that the $$$i$$$-th node is colored black. You are allowed to perform the following operation: Select a node $$$a$$$ ($$$1 \\le a \\le n$$$). A neighbor $$$b$$$ of",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2219_C_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"to perform the following operation: Select a node $$$a$$$ ($$$1 \\le a \\le n$$$). A neighbor $$$b$$$ of $$$a$$$ is selected uniformly at random. Recolor node $$$a$$$ with the color of $$$b$$$. Note that this changes the color of the vertex you selected, not the one that was uniformly chosen. You want to color all the nodes in the tree red by performing the operation any number of times (possibly zero). Please compute the minimum expected number of operations needed to do so if you perform them optimally. There will",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_01_STATEMENT::144",
+    "tree_node_id":"content::codeforces_2219_C_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"compute the minimum expected number of operations needed to do so if you perform them optimally. There will be at least one red node initially.",
+    "chunk_word_count":25
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2219_D_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"D. MEX Replacement on Tree time limit per test 3.5 seconds memory limit per test 256 megabytes input standard input output standard output You are given a tree rooted at $$$1$$$ with $$$n$$$ vertices and a permutation $$$p$$$ of length $$$n$$$ consisting of integers $$$0, 1, \\ldots, n - 1$$$, where $$$p_v$$$ represents the weight of vertex $$$v$$$. Let $$$S_v$$$ denote the set of weights written on the vertices belonging to the path from $$$1$$$ to $$$v$$$. Define a function $$$f$$$ as $$$f(v) = \\mathrm{MEX}(S_v)$$$, that is, the $$$\\mathrm{MEX}$$$ over",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2219_D_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"path from $$$1$$$ to $$$v$$$. Define a function $$$f$$$ as $$$f(v) = \\mathrm{MEX}(S_v)$$$, that is, the $$$\\mathrm{MEX}$$$ over the set consisting of the weights of vertices on the simple path between the root and $$$v$$$ (inclusive), where $$$\\operatorname{MEX}$$$ of a collection of integers $$$c_1, c_2, \\ldots, c_k$$$ is defined as the smallest non-negative integer $$$x$$$ which does not occur in the collection $$$c$$$. Also, given the following operation: Choose an integer $$$v$$$ ($$$1 \\leq v \\leq n$$$) and assign $$$f(v)$$$ to $$$p_v$$$. Your goal is to find the maximum value",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_01_STATEMENT::144",
+    "tree_node_id":"content::codeforces_2219_D_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"($$$1 \\leq v \\leq n$$$) and assign $$$f(v)$$$ to $$$p_v$$$. Your goal is to find the maximum value of $$$\\sum\\limits_{v = 1}^n f(v)$$$ after performing the above operation no more than once (possibly zero).",
+    "chunk_word_count":34
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2219_E_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"E. Weird Chessboard time limit per test 5 seconds memory limit per test 256 megabytes input standard input output standard output Consider a chessboard (a grid) of size $$$n \\times n$$$. You want to place as many chess pieces on this board as possible. These pieces behave in the following way: if we denote the top-left cell by $$$(1,1)$$$, then a piece placed in cell $$$(i,j)$$$ can attack every cell $$$(x,y)$$$ such that $$$x \\ge i$$$ and $$$y \\ge j$$$, except for $$$(i,j)$$$ itself. For example, on a $$$10 \\times",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2219_E_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"that $$$x \\ge i$$$ and $$$y \\ge j$$$, except for $$$(i,j)$$$ itself. For example, on a $$$10 \\times 10$$$ board, a piece placed at $$$(3,4)$$$ can attack the cells highlighted below: Given a chessboard with some pieces placed on it, we say that a cell is good if the number of pieces that attack that cell is even. Construct a configuration of pieces such that every cell is good, regardless of whether the cell itself contains a piece or not, and the board contains at least $$$\\lfloor \\frac{n^2}{10} \\rfloor \\cdot",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_01_STATEMENT::144",
+    "tree_node_id":"content::codeforces_2219_E_01_STATEMENT",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"the cell itself contains a piece or not, and the board contains at least $$$\\lfloor \\frac{n^2}{10} \\rfloor \\cdot 3$$$ pieces.",
+    "chunk_word_count":20
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2220_A_01_STATEMENT",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"A. Blocked time limit per test 1 second memory limit per test 256 megabytes input standard input output standard output Given an array $$$a$$$ of integers of size $$$n$$$, we say that a position $$$1 \\le i \\le n$$$ is blocked if $$$a_i$$$ can be expressed as the sum of a subset of $$$a_1, a_2, \\ldots, a_{i-1}$$$ (i.e. there exist $$$1 \\le j_1 \\lt j_2 \\lt \\ldots \\lt j_k \\le i-1$$$ such that $$$a_{j_1} + a_{j_2} + \\ldots + a_{j_k} = a_i$$$). Reorder $$$a$$$ so that no position is blocked",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2220_A_01_STATEMENT",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"that $$$a_{j_1} + a_{j_2} + \\ldots + a_{j_k} = a_i$$$). Reorder $$$a$$$ so that no position is blocked or report that it is impossible. For example, reordering the array [$$$3, 2, 5$$$] to [$$$2, 3, 5$$$] makes position $$$3$$$ blocked, since we can express $$$5 = 2 + 3$$$, but if we reorder it to [$$$3, 5, 2$$$], no position is blocked.",
+    "chunk_word_count":62
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_2220_B_01_STATEMENT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"B. OIE Excursion time limit per test 1 second memory limit per test 256 megabytes input standard input output standard output Hector is on an excursion with the Spanish Olympiad in Informatics, visiting A Coruña, but he is desperate to sneak away to meet his friends Gustavo, Esomer, and Dani. To do so, he must cross a path guarded by $$$n$$$ volunteers standing in a row, numbered from $$$1$$$ to $$$n$$$; the $$$i$$$-th volunteer watches over position $$$i$$$. Each volunteer has an internal timer. Initially (at second $$$0$$$), the $$$i$$$-th",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_01_STATEMENT::72",
+    "tree_node_id":"content::codeforces_2220_B_01_STATEMENT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"$$$i$$$-th volunteer watches over position $$$i$$$. Each volunteer has an internal timer. Initially (at second $$$0$$$), the $$$i$$$-th volunteer's timer has a value $$$a_i$$$. Every second, all timers increase by $$$1$$$. Once a timer reaches $$$m$$$, it wraps around to $$$0$$$. Specifically, at second $$$x$$$, the $$$i$$$-th volunteer's timer shows the value $$$(a_i + x) \\pmod m$$$. The $$$i$$$-th volunteer is only watching over position $$$i$$$ when their timer is exactly $$$0$$$. At any other time, they are distracted and will not notice Hector. Hector starts at position $$$0$$$, to",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_01_STATEMENT::144",
+    "tree_node_id":"content::codeforces_2220_B_01_STATEMENT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"At any other time, they are distracted and will not notice Hector. Hector starts at position $$$0$$$, to the left of all volunteers. To escape, he must reach position $$$n+1$$$. In the end of each second, Hector can choose to stay in his current position, move one position to the left, or move one position to the right. Note that Hector can't go to the left of position $$$0$$$. Hector is caught if and only if, at the beginning of a second, he is at position $$$i$$$ ($$$1 \\le i",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_01_STATEMENT::216",
+    "tree_node_id":"content::codeforces_2220_B_01_STATEMENT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"if and only if, at the beginning of a second, he is at position $$$i$$$ ($$$1 \\le i \\le n$$$) and the $$$i$$$-th volunteer's timer is $$$0$$$. Determine whether there exists a strategy for Hector to pass all volunteers and escape without being caught.",
+    "chunk_word_count":44
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2219_A_02_INPUT",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 100$$$). The description of the test cases follows. The first line of each test case contains two integers $$$p$$$ and $$$q$$$ ($$$1 \\le p, q \\le 10^8$$$).",
+    "chunk_word_count":48
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2219_B1_02_INPUT",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 500$$$). The description of the test cases follows. The first line of each test case contains a single integer $$$n$$$ ($$$2 \\le n \\le 1000$$$). The array $$$a$$$ is fixed for the test case and does not change during the interaction. In other words, the interactor is not adaptive . It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^4$$$.",
+    "chunk_word_count":89
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2219_C_02_INPUT",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 1000$$$). The description of the test cases follows. The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$). The second line contains a binary string $$$s$$$ of size $$$n$$$. The following $$$n-1$$$ lines each contain two integers, the $$$i$$$-th of them contains $$$u_i$$$ and $$$v_i$$$ ($$$1 \\le u_i, v_i \\le n$$$), which means that there is an edge between nodes $$$u_i$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_02_INPUT::72",
+    "tree_node_id":"content::codeforces_2219_C_02_INPUT",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"and $$$v_i$$$ ($$$1 \\le u_i, v_i \\le n$$$), which means that there is an edge between nodes $$$u_i$$$ and $$$v_i$$$. It is guaranteed that the given graph is a tree, there is at least one red node, and the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$.",
+    "chunk_word_count":52
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2219_D_02_INPUT",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 2 \\cdot 10^4$$$). The description of the test cases follows. The first line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of vertices of the tree. The second line of each test case contains $$$n$$$ integers $$$p_1, p_2, \\ldots, p_n$$$ ($$$0 \\le p_i \\le n - 1$$$) — the elements of array $$$p$$$. It is guaranteed that every",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_02_INPUT::72",
+    "tree_node_id":"content::codeforces_2219_D_02_INPUT",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"($$$0 \\le p_i \\le n - 1$$$) — the elements of array $$$p$$$. It is guaranteed that every integer from $$$0$$$ to $$$n - 1$$$ appears exactly once in $$$p$$$. Then $$$n - 1$$$ lines follow, each line contains two integers $$$x_i$$$ and $$$y_i$$$ ($$$1 \\le x_i, y_i \\le n$$$), indicating an edge between vertices $$$x_i$$$ and $$$y_i$$$. It is guaranteed that these edges form a tree. It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$.",
+    "chunk_word_count":85
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2219_E_02_INPUT",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 50$$$). The description of the test cases follows. The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 5000$$$). It is guaranteed that the sum of $$$n^2$$$ over all test cases is at most $$$25\\,000\\,000 = 5000^2$$$.",
+    "chunk_word_count":63
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2220_A_02_INPUT",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 400$$$). The description of the test cases follows. The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 200$$$). The second line contains $$$n$$$ integers, denoting the array $$$a$$$ ($$$\\textbf{1} \\le a_i \\le 100$$$).",
+    "chunk_word_count":60
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_02_INPUT::0",
+    "tree_node_id":"content::codeforces_2220_B_02_INPUT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Input Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 10^4$$$). The description of the test cases follows. Each test case consists of two lines: The first line contains two integers $$$n$$$ and $$$m$$$ ($$$2 \\le n \\le 2 \\cdot 10^5$$$, $$$2 \\le m \\le 10^9$$$) — the number of volunteers and the cycle length of the timers. The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i \\lt m$$$), where $$$a_i$$$ represents the initial value",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_02_INPUT::72",
+    "tree_node_id":"content::codeforces_2220_B_02_INPUT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i \\lt m$$$), where $$$a_i$$$ represents the initial value of the $$$i$$$-th volunteer's timer at $$$t=0$$$. It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$.",
+    "chunk_word_count":43
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_2219_A_03_OUTPUT",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Output For each test case, print any valid $$$n$$$ and $$$m$$$ such that it's possible to construct $$$n \\times m$$$ using all pieces. If there are no such $$$n$$$ and $$$m$$$, print $$$-1$$$.",
+    "chunk_word_count":33
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_2219_C_03_OUTPUT",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Output For each test case, output a single real number representing the minimum expected number of operations. Your answer is considered correct if its absolute or relative error does not exceed $$$10^{-6}$$$. Formally, let your answer be $$$x$$$, and the jury's answer be $$$y$$$. Your answer is accepted if and only if $$$\\frac{|x - y|}{\\max{(1, |y|)}} \\le 10^{-6}$$$.",
+    "chunk_word_count":58
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_2219_D_03_OUTPUT",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Output For each test case, output a single line containing an integer: the maximum value of $$$\\sum\\limits_{v = 1}^n f(v)$$$ after performing the above operation no more than once (possibly zero).",
+    "chunk_word_count":31
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_2219_E_03_OUTPUT",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Output For each test case, print $$$n$$$ lines. In the $$$i$$$-th line, print $$$n$$$ integers separated by spaces, where a $$$1$$$ represents that there is a piece in that cell, and a $$$0$$$ represents that there is not. The $$$j$$$-th integer in the $$$i$$$-th line corresponds to cell $$$(i,j)$$$.",
+    "chunk_word_count":49
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_2220_A_03_OUTPUT",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Output For each test case, print any order of $$$a$$$ such that no position is blocked if it exists, otherwise print $$$-1$$$.",
+    "chunk_word_count":22
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_2220_B_03_OUTPUT",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Output For each test case, print a line containing either \" YES \" or \" NO \", representing whether Hector can escape. You can output the answer in any case (upper or lower). For example, the strings \" yEs \", \" yes \", \" Yes \", and \" YES \" will be recognized as positive responses.",
+    "chunk_word_count":56
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2219_A_05_EXAMPLES",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"7\\n1 2\\n1 3\\n5 1\\n2 5\\n2 10\\n100000000 100000000\\n1 1\", \"output\": \"-1\\n1 2\\n1 2\\n2 2\\n2 4\\n-1\\n-1\", \"sample_index\": 1}]",
+    "chunk_word_count":17
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2219_B1_05_EXAMPLES",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"1\\n2\\n\\n0\\n\\n2\\n\\n2\\n\\n0\\n\\n1\", \"output\": \"? 2 1 2\\n\\n? 2 1 4\\n\\n? 2 1 5\\n\\n? 5 1 2 3 4 5\\n\\n? 4 1 2 3 4\\n\\n! 1 2 3\", \"sample_index\": 1}]",
+    "chunk_word_count":29
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2219_C_05_EXAMPLES",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"3\\n3\\n101\\n1 2\\n2 3\\n5\\n10010\\n1 2\\n2 3\\n3 4\\n2 5\\n3\\n010\\n1 2\\n2 3\", \"output\": \"1.00000000000000000000\\n4.50000000000000000000\\n2.00000000000000000000\", \"sample_index\": 1}]",
+    "chunk_word_count":14
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2219_D_05_EXAMPLES",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"7\\n1\\n0\\n3\\n1 0 2\\n1 2\\n1 3\\n6\\n1 4 5 2 0 3\\n1 4\\n1 5\\n6 2\\n2 5\\n2 3\\n5\\n1 2 3 0 4\\n1 2\\n2 3\\n3 4\\n4 5\\n10\\n9 8 7 1 3 2 5 4 6 0\\n6 10\\n3 1\\n8 7\\n4 2\\n2 8\\n7 5\\n10 9\\n3 9\\n6 4\\n9\\n8 4 0 6 5 7 3 1 2\\n8 3\\n4 2\\n4 6\\n9 3\\n7 6\\n1 5\\n8 5\\n9 2\\n7\\n1 5 2 3 6 0 4\\n7 6\\n4 3\\n7 2\\n5 1\\n2 4\\n6 5\", \"output\": \"1\\n4\\n12\\n9\\n30\\n26\\n17\", \"sample_index\": 1}]",
+    "chunk_word_count":74
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2219_E_05_EXAMPLES",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"1\\n3\", \"output\": \"0 0 1 \\n0 1 1 \\n1 0 1\", \"sample_index\": 1}]",
+    "chunk_word_count":14
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2220_A_05_EXAMPLES",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"4\\n3\\n1 5 9\\n4\\n1 3 3 2\\n3\\n1 2 3\\n1\\n1\", \"output\": \"5 9 1\\n-1\\n3 1 2\\n1\", \"sample_index\": 1}]",
+    "chunk_word_count":17
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_2220_B_05_EXAMPLES",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"input\": \"6\\n8 5\\n0 4 0 2 1 0 0 3\\n6 2\\n1 0 1 0 1 0\\n6 2\\n1 1 1 1 0 1\\n2 10\\n6 9\\n2 2\\n0 1\\n5 1000000000\\n1 2 3 4 999999999\", \"output\": \"YES\\nYES\\nNO\\nYES\\nYES\\nYES\", \"sample_index\": 1}]",
+    "chunk_word_count":35
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2219_A_06_NOTES",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note Here are the constructions for examples 2, 3, and 4. We use a different color for different L-shaped pieces, black for all unit-length segments.",
+    "chunk_word_count":25
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2219_B1_06_NOTES",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note The secret array is $$$a = [1, 1, 1, 2, 2]$$$. In the first query, we ask for the number of values that appear exactly once in $$$[a_1, a_2] = [1, 1]$$$, since value 1 is repeated, the answer is 0. In the second query, we ask for the number of values that appear exactly once in $$$[a_1, a_4] = [1, 2]$$$, since values 1 and 2 appear exactly once, the answer is 2. In the fourth query, we ask for the number of values that appear exactly once",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_06_NOTES::72",
+    "tree_node_id":"content::codeforces_2219_B1_06_NOTES",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"answer is 2. In the fourth query, we ask for the number of values that appear exactly once in $$$[a_1, a_2, a_3, a_4, a_5] = [1, 1, 1, 2, 2]$$$, since values 1 and 2 are repeated, the answer is 0. At the end, we print that the indices of the value repeated three times are 1, 2 and 3.",
+    "chunk_word_count":60
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2219_C_06_NOTES",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note In the first test case, there is only one node colored in black, which has only two red colored neighbors, thus, if we first apply the operation to the second node, we will have a red colored tree in just one operation.",
+    "chunk_word_count":43
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2219_D_06_NOTES",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note In the first example, not doing any operation is optimal, so the answer is $$$1$$$. In the second example, we have $$$f(1) = \\mathrm{MEX}(\\{p_1\\}) = \\mathrm{MEX}(\\{1\\}) = 0$$$ $$$f(2) = \\mathrm{MEX}(\\{p_1, p_2\\}) = \\mathrm{MEX}(\\{1, 0\\}) = 2$$$ $$$f(3) = \\mathrm{MEX}(\\{p_1, p_3\\}) = \\mathrm{MEX}(\\{1, 2\\}) = 0$$$ And we have the following options: Doing nothing would lead to $$$\\sum\\limits_{v = 1}^n f(v) = 2$$$ Doing operation on vertex $$$1$$$ would assign $$$f(1) = 0$$$ to $$$p_1$$$, change $$$f(1), f(2), f(3)$$$ to $$$1$$$, which leads to $$$\\sum\\limits_{v = 1}^n f(v) =",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_06_NOTES::72",
+    "tree_node_id":"content::codeforces_2219_D_06_NOTES",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"= 0$$$ to $$$p_1$$$, change $$$f(1), f(2), f(3)$$$ to $$$1$$$, which leads to $$$\\sum\\limits_{v = 1}^n f(v) = 3$$$ Doing operation on vertex $$$2$$$ would assign $$$f(2) = 2$$$ to $$$p_2$$$, change $$$f(2)$$$ to $$$0$$$, which leads to $$$\\sum\\limits_{v = 1}^n f(v) = 0$$$ Doing operation on vertex $$$3$$$ would assign $$$f(3) = 0$$$ to $$$p_3$$$, change $$$f(3)$$$ to $$$2$$$, which leads to $$$\\sum\\limits_{v = 1}^n f(v) = 4$$$ So the answer is $$$4$$$, by doing operation on vertex $$$3$$$.",
+    "chunk_word_count":80
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2219_E_06_NOTES",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note This example is a chessboard of dimensions $$$3 \\times 3$$$ where every cell is good . Cell $$$(3, 3)$$$ is good because the cells with pieces $$$(1, 3), (2, 3), (2, 2), (3, 1)$$$ attack it, and this count is 4, which is even. Cell $$$(1, 3)$$$ is good because no piece attacks it, so the count of pieces that attack this cell is 0. Cell $$$(3, 2)$$$ is good , and notice that it is required for that cell to be good even though it does not have",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_06_NOTES::72",
+    "tree_node_id":"content::codeforces_2219_E_06_NOTES",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"and notice that it is required for that cell to be good even though it does not have a piece.",
+    "chunk_word_count":20
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2220_A_06_NOTES",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note In the third test case, the array [$$$3, 1, 2$$$] has no position blocked: Position $$$1$$$ is not blocked since $$$3$$$ can't be expressed as the sum of a subset of []. Position $$$2$$$ is not blocked since $$$1$$$ can't be expressed as the sum of a subset of [$$$3$$$]. Position $$$3$$$ is not blocked since $$$2$$$ can't be expressed as the sum of a subset of [$$$3, 1$$$].",
+    "chunk_word_count":70
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_06_NOTES::0",
+    "tree_node_id":"content::codeforces_2220_B_06_NOTES",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Note Case 1: Hector can move right every second without waiting or moving left and escape, because there is no $$$i$$$ such that $$$(a_i + i) \\pmod m = 0$$$. Case 2: One possible strategy is to wait for one second at the starting position and then move right every second without further waiting or moving left.",
+    "chunk_word_count":57
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2219_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Hint1: We want an easy to check condition on $$$m$$$, $$$n$$$, $$$p$$$, $$$q$$$ that is equivalent to being able to fill the grid. Hint2 (strong spoiler): You can fill the $$$m\\times n$$$ grid if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p\\ge \\vert m-n\\vert$$$. (See tutorial for proof) Hint3: $$$p+2q = m(n+1) + n(m+1)$$$ is quadratic on $$$m$$$ and $$$n$$$. If you assume $$$m\\ge n$$$, can you say anything on the size of $$$n$$$? Solution: The following is the key observation of the problem. Claim. We can fill an $$$m\\times",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_07_EDITORIAL_FULL::72",
+    "tree_node_id":"content::codeforces_2219_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"of $$$n$$$? Solution: The following is the key observation of the problem. Claim. We can fill an $$$m\\times n$$$ grid using $$$p$$$ segments and $$$q$$$ L's if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p \\ge \\vert m-n\\vert$$$. Proof. Necessity is clear: $$$p+2q = m(n+1)+n(m+1)$$$ follows from looking at the total number of edges, and $$$p\\ge \\vert m-n\\vert$$$ follows from comparing the number of horizontal edges and vertical edges. Let us prove sufficiency. Note that two segments can form an L, so since $$$$$$m-n\\equiv m+n\\equiv 2mn+m+n\\equiv 2q+p\\equiv p\\pmod 2,$$$$$$ we",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_07_EDITORIAL_FULL::144",
+    "tree_node_id":"content::codeforces_2219_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"sufficiency. Note that two segments can form an L, so since $$$$$$m-n\\equiv m+n\\equiv 2mn+m+n\\equiv 2q+p\\equiv p\\pmod 2,$$$$$$ we may assume WLOG that $$$p=m-n$$$. Now we can just use the following explicit construction. To not bore you all with a written description, we show the construction for $$$m=4$$$, $$$n=6$$$, which clearly generalizes. So we just need to find a pair $$$(m,n)$$$ satisfying the above conditions. We do so in $$$O(\\sqrt{p+2q})$$$. Assume that $$$m\\ge n$$$. Then we have that $$$ p+2q = m(n+1)+n(m+1) \\ge 2n(n+1) \\implies n \\le \\sqrt{p\/2+q}. $$$ So we",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_07_EDITORIAL_FULL::216",
+    "tree_node_id":"content::codeforces_2219_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"n$$$. Then we have that $$$ p+2q = m(n+1)+n(m+1) \\ge 2n(n+1) \\implies n \\le \\sqrt{p\/2+q}. $$$ So we can iterate $$$n$$$ from $$$1$$$ to $$$\\left\\lfloor\\sqrt{p\/2+q}\\right\\rfloor$$$ and, for each $$$n$$$, check if $$$ m = \\frac{p+2q-n}{2n+1} $$$ is a positive integer such that $$$\\vert m-n\\vert \\le p$$$. If it is, we print $$$m$$$ and $$$n$$$. If no $$$n$$$ works, then we print $$$-1$$$. Extra. Can you solve the problem faster?",
+    "chunk_word_count":69
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2219_B1_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Solution: There are many solutions that use $$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries. Here is one: Notice that if we query for the set $$$S$$$ and its complement $$$T$$$ (i.e. $$$T = \\{1, 2, \\ldots, 2 \\cdot n + 1\\} \\setminus S$$$) we can know how many of the three special indices are in $$$S$$$ and how many in $$$T$$$. If the answer for both queries is the same, we know that $$$S$$$ has either 0 or 3 of the special indices, and looking at the parity of",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_07_EDITORIAL_FULL::72",
+    "tree_node_id":"content::codeforces_2219_B1_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"know that $$$S$$$ has either 0 or 3 of the special indices, and looking at the parity of $$$|S| - query(S)$$$ (This is the number of repeated elements), $$$S$$$ will have 3 of the special indices if this count is odd. If the answer for the two queries is different, we know that $$$S$$$ will have exactly one of the special indices iff $$$query(S) \\gt query(T)$$$ since it has one more unique value. With this in mind, we can run 3 binary searches. The first one looks for any index",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_07_EDITORIAL_FULL::144",
+    "tree_node_id":"content::codeforces_2219_B1_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"value. With this in mind, we can run 3 binary searches. The first one looks for any index that is special, the following ones do the same but ignore indices that were found previously.",
+    "chunk_word_count":34
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2219_C_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Hint1: Think of some kind of subtree DP. Solution: In this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation. Firstly, let's split the tree using the red nodes as breakpoints. We will consider all black only connected components and the adjacent nodes of these components. We now have independent trees where the red nodes are always leaves. Consider the following subtree $$$dp$$$ (rooting the trees in black nodes): $$$dp_{i, 0}$$$ = minimum expected number of operations",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_07_EDITORIAL_FULL::72",
+    "tree_node_id":"content::codeforces_2219_C_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"the following subtree $$$dp$$$ (rooting the trees in black nodes): $$$dp_{i, 0}$$$ = minimum expected number of operations to color the subtree of node $$$i$$$ if node $$$i$$$ is colored before its parent. $$$dp_{i, 1}$$$ = minimum expected number of operations to color the subtree of node $$$i$$$ if node $$$i$$$ is colored after its parent. $$$dp_{i, 0} = 0$$$ if $$$i$$$ is a red leaf. $$$dp_{i, 1} = \\inf$$$ if $$$i$$$ is a red leaf. $$$dp_{i, 0} = \\inf$$$ if $$$i$$$ is a black leaf. $$$dp_{i, 1} = 1$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_07_EDITORIAL_FULL::144",
+    "tree_node_id":"content::codeforces_2219_C_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"is a red leaf. $$$dp_{i, 0} = \\inf$$$ if $$$i$$$ is a black leaf. $$$dp_{i, 1} = 1$$$ if $$$i$$$ is a black leaf (it only has one neighbor, its parent, and thus only needs one operation). the answer is $$$dp_{root, 0}$$$. The transitions are: sort all children of $$$i$$$ by $$$dp_{child_{j}, 1} - dp_{child_{j}, 0}$$$ (notice that we need doubles!). for $$$dp_{i, 0}$$$, consider all no empty prefixes of the sorted childs, consider $$$dp_{child_{j}, 0}$$$ as the cost of coloring the subtree of $$$child_j$$$ if it is in the",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_07_EDITORIAL_FULL::216",
+    "tree_node_id":"content::codeforces_2219_C_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"childs, consider $$$dp_{child_{j}, 0}$$$ as the cost of coloring the subtree of $$$child_j$$$ if it is in the prefix and $$$dp_{child_{j}, 1}$$$ if it is not, coloring the node $$$i$$$ costs $$$\\frac{\\#children + 1}{size Of Prefix}$$$ + cost of coloring the subtrees of the children nodes. For $$$dp_{i, 1}$$$ is similar, but you can now consider the empty prefix and the cost of coloring the node $$$i$$$ is $$$\\frac{\\#children + 1}{size Of Prefix + 1}$$$ + cost of coloring the subtrees of the children nodes.",
+    "chunk_word_count":85
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Hint1: Having a good visual image of the problem in mind may help. That is, for each vertex, thinking there is an array of infinite slot, and some of them are occupied by token, and the operation correspond to moving certain token to the first hole. Hint2: Draw some small cases! What would these infinite arrays change when doing operation on root? Hint3: Doing operation on vertex with $$$p_v \\lt f(v)$$$ is useless. Consider the rest situations. Hint4: when doing operation on $$$v$$$, how would $$$f(x)$$$ change if $$$x$$$ is",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::72",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"useless. Consider the rest situations. Hint4: when doing operation on $$$v$$$, how would $$$f(x)$$$ change if $$$x$$$ is in subtree of $$$v$$$? Hint5: There are two cases, $$$f(x) = f(v)$$$ and $$$f(x) \\gt f(v)$$$. Hint6: Solve https:\/\/judge.yosupo.jp\/problem\/vertex_add_subtree_sum Solution: Root out the simple case: It's obvious that applying the operation on $$$v$$$ where $$$p_v \\lt f(v)$$$ is useless, since it would decrease $$$f(x)$$$ for every $$$x$$$ in $$$v$$$'s subtree. So from now on, we assume $$$p_v \\gt f(v)$$$. Rephrase of operation (kind of) : To understand how the $$$f(x)$$$ would change,",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::144",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"we assume $$$p_v \\gt f(v)$$$. Rephrase of operation (kind of) : To understand how the $$$f(x)$$$ would change, I would like to introduce an intuitive way to think about the $$$\\mathrm{MEX}$$$ function first. Given a set of integers, imagine there is an array with infinite empty slots, indexed from $$$0$$$. Then for each element $$$\\mathrm{val}$$$ in the set, we fill the $$$\\mathrm{val}$$$-th slot with a token, and then we can think of the $$$\\mathrm{MEX}$$$ function as finding the first hole starting from the $$$0$$$-th slot. Then you can imagine there",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::216",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"the $$$\\mathrm{MEX}$$$ function as finding the first hole starting from the $$$0$$$-th slot. Then you can imagine there is an array $$$a_x$$$ with infinite slots for each vertex $$$x$$$ containing all elements on the path from $$$1$$$ to $$$x$$$, and think of the operation as picking up the token at the $$$p_v$$$-th slot and moving it to the first hole of $$$a_v$$$(that is, $$$f(v)$$$) for each array $$$a_x$$$ where $$$x$$$ is in $$$v$$$'s subtree. Further analysis: After doing such a rephrase and playing with it a bit on paper, you",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::288",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"$$$v$$$'s subtree. Further analysis: After doing such a rephrase and playing with it a bit on paper, you would probably notice there are a few cases: for $$$a_x$$$ with its $$$f(v)$$$-th slot being empty, moving a token from $$$p_v$$$ to $$$f(v)$$$ would fill the first hole and create a hole at $$$f(v)$$$, so the new first hole would be the second hole of the original $$$a_x$$$ if it is less than $$$p_v$$$ or $$$p_v$$$ otherwise. for $$$a_x$$$ with its $$$f(v)$$$-th slot having a token in it, moving a token from",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::360",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"or $$$p_v$$$ otherwise. for $$$a_x$$$ with its $$$f(v)$$$-th slot having a token in it, moving a token from $$$p_v$$$ to $$$f(v)$$$ would make the $$$f(v)$$$-th slot have $$$2$$$ tokens and create a hole at $$$f(v)$$$, so the new first hole would remain unchanged if $$$f(x) \\lt p_v$$$ or $$$p_v$$$ otherwise. So in conclusion, for the first case $$$f(x)$$$ would become $$$\\mathrm{min}(g(x), p_v)$$$ after doing operation on $$$v$$$, where $$$g(x)$$$ is almost the same as $$$f(x)$$$ but it finds second $$$\\mathrm{MEX}$$$. And for the second case $$$f(x)$$$ would become $$$\\mathrm{min}(f(x), p_v)$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::432",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"same as $$$f(x)$$$ but it finds second $$$\\mathrm{MEX}$$$. And for the second case $$$f(x)$$$ would become $$$\\mathrm{min}(f(x), p_v)$$$ after doing operation on $$$v$$$. Then we can consider processing $$$v$$$ in decreasing order of $$$p_v$$$, and maintain the sum of $$$g(x)$$$ for $$$g(x) \\lt p_v$$$ the number of vertices with $$$g(x) \\ge p_v$$$ the sum of $$$f(x)$$$ for $$$f(x) \\lt p_v$$$ the number of vertices with $$$f(x) \\ge p_v$$$ under every subtree in $$$O(n\\lg n)$$$. Which is a standard [Vertex Add Subtree Sum Problem](https:\/\/judge.yosupo.jp\/problem\/vertex_add_subtree_sum) and can be solved by fenwick tree",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::504",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"$$$O(n\\lg n)$$$. Which is a standard [Vertex Add Subtree Sum Problem](https:\/\/judge.yosupo.jp\/problem\/vertex_add_subtree_sum) and can be solved by fenwick tree + euler tour trick. For the query part, case $$$1$$$ is just querying for data $$$1, 2$$$ for $$$v$$$'s subtree; case $$$2$$$ would happen if and only if there exists some vertex $$$x$$$ with $$$p_x = f(v)$$$ under $$$v$$$'s subtree, then we just change the contribution of $$$x$$$'s subtree from data $$$1, 2$$$ to data $$$3, 4$$$. And we can check whether $$$v$$$ is $$$x$$$'s ancestor using the time stamp of two",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_07_EDITORIAL_FULL::576",
+    "tree_node_id":"content::codeforces_2219_D_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"data $$$3, 4$$$. And we can check whether $$$v$$$ is $$$x$$$'s ancestor using the time stamp of two vertices.",
+    "chunk_word_count":19
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Hint1: Can you rewrite the condition on the board to something simpler? Hint2: Label the board $$$v_{i,j}$$$ where $$$v_{0,0}$$$ is the top left cell. We work mod $$$2$$$. A board $$$v_{i,j}$$$ is valid if and only if $$$v_{i,j}+v_{i+1,j}+v_{i,j+1}=0$$$ and all entries above the secondary diagonal are zero. Hint3: Warm up: try to get a construction of density $$$1\/4$$$. Hint4: The next few hints get quite spoilery. If you don't want to see them yet but are stuck, consider coding some kind of heuristic (say, simulated annealing or A*) and running",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::72",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"them yet but are stuck, consider coding some kind of heuristic (say, simulated annealing or A*) and running it on small values of $$$n$$$ to see what the result looks like. Hint5: Prove that the density is at most $$$1\/3$$$. Hint6: Consider the grid $$$w_{i,j}$$$ with $$$w_{i,j}=1$$$ when $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j\\pmod 3$$$, and $$$w_{i,j}=0$$$ otherwise. Hint7: This grid is almost valid: $$$v_{i,j}+v_{i+1,j}+v_{i,j+1}=1$$$ only for very few concrete positions $$$(i,j)$$$. Try to fix the issues at those positions in a way that does not disturb much of the grid.",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::144",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"to fix the issues at those positions in a way that does not disturb much of the grid. Hint8: For each position $$$(i_0, j_0)$$$ on the diagonal where $$$w_{i_0,j_0} = 0$$$, we want to add a pattern to the grid that fixes the issues there. Hint9: For each such $$$(i_0,j_0)$$$, flip $$$w_{i_0,j_0}$$$ and add a Pascal triangle mod $$$2$$$ to the grid. Hint10: To implement this in $$$O(n^2)$$$, instead of adding each pascal independently, try to compute the sum of all of the pascals directly. Solution: We label the grid",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::216",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"pascal independently, try to compute the sum of all of the pascals directly. Solution: We label the grid $$$v_{i, j}$$$ with $$$v_{0, 0}$$$ being the top left corner. From now on, we work modulo $$$2$$$ when operating with $$$v$$$. Claim. A filling of the grid is valid if and only if $$$v_{i, j}=0$$$ whenever $$$i+j \\lt n-1$$$, and $$$v_{i, j}+v_{i+1, j}+v_{i, j+1}=0$$$ for all $$$0\\le i,j \\lt n-1$$$. We are going to restrict ourselves to fillings where $$$v_{i, n-i-1} = 1$$$ for all $$$i$$$. It is easy to see that",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::288",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"restrict ourselves to fillings where $$$v_{i, n-i-1} = 1$$$ for all $$$i$$$. It is easy to see that any optimal filling must be of this kind. We will define a preliminary filling $$$w_{i,j}$$$ as 1 if $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j \\pmod 3$$$, 0 otherwise. The idea is that $$$w$$$ has density $$$1\/3$$$, and only fails to be valid at a few points, namely near the diagonal. We will fix $$$w$$$ in a way that leaves a chunk of the grid unchanged. We introduce what we do with a motivating",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::360",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"a way that leaves a chunk of the grid unchanged. We introduce what we do with a motivating example in the $$$n=16$$$ case. The first figure is the original $$$w$$$. We look at position $$$(9,6)$$$. There are three issues around this position: $$$$$$ w_{9, 6} = 0, $$$$$$ $$$$$$ w_{9, 6} + w_{9, 5} + w_{10, 5} = 1, $$$$$$ $$$$$$ w_{9, 6} + w_{8, 6} + w_{8, 7} = 1. $$$$$$ To fix these issues, we add the pattern in the second figure to $$$w$$$. This pattern comes from",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::432",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"To fix these issues, we add the pattern in the second figure to $$$w$$$. This pattern comes from the well-known Pascal triangle, considered mod $$$2$$$, plus flipping position $$$w_{9, 6}$$$. Formally, the pattern in the second figure is given by $$$u_{9,6} = 1$$$ and $$$$$$ u_{9+i+1, 6+j} \\equiv \\binom{i}{j} \\pmod{2}\\ \\forall i,j\\ge 0. $$$$$$ The rightmost figure is $$$u+w$$$, where the three issues around $$$w_{9, 6}$$$ are now fixed. The key observation is that our transformation only affects the region of the board below the diagonal, and below and to",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::504",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"is that our transformation only affects the region of the board below the diagonal, and below and to the left of $$$(9,6)$$$. In general, we will do as follows: iterate over the points $$$(i_0, j_0)$$$ of the diagonal with $$$w_{i_0, j_0} = 0$$$. For each we do as follows. If $$$i_0 \\ge j_0$$$, as in the example, we flip $$$w_{i_0, j_0}$$$ and add to $$$w$$$ the pattern $$$$$$ u_{i_0+1+a, j_0+b} = \\binom{a}{b}\\pmod 2 $$$$$$ for each $$$a,b$$$ with $$$0\\le b\\le a$$$ for which $$$(i_0+1+a, j_0+b)$$$ lies in the grid. If",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::576",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"2 $$$$$$ for each $$$a,b$$$ with $$$0\\le b\\le a$$$ for which $$$(i_0+1+a, j_0+b)$$$ lies in the grid. If $$$i_0 \\lt j_0$$$, we add a similar pattern above and to the right of $$$(i_0, j_0)$$$. Formally, if $$$i_0 \\lt j_0$$$, we flip $$$w_{i_0, j_0}$$$ and add to $$$w$$$ the pattern $$$$$$ u_{i_0+a, j_0+1+b} = \\binom{b}{a}\\pmod 2 $$$$$$ for each $$$0\\le a\\le b$$$ for which $$$(i_0+a, j_0+1+b)$$$ lies in the grid. After the procedure is over, $$$w$$$ is a valid grid. Note that naively implementing the above is $$$O(n^3)$$$, which won't pass.",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::648",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"is over, $$$w$$$ is a valid grid. Note that naively implementing the above is $$$O(n^3)$$$, which won't pass. We take care of implementation at the end of the solution. Claim. After the process, $$$w$$$ has density at least $$$0.3$$$. Proof. We actually do not have a formal proof of this fact. We instead give the intuition behind the claim and an heuristic \"proof\". By our construction, the cells $$$(i,j)$$$ with $$$i,j\\ge n\/2$$$ have been left unchanged, so the density is still $$$2\/3$$$ among those cells. For the rest of cells",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::720",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"have been left unchanged, so the density is still $$$2\/3$$$ among those cells. For the rest of cells with $$$i+j\\ge n-1$$$, one can a priori guess the density will be at least around $$$1\/2$$$. Hence, the final density should be around $$$$$$ \\frac{1}{2}\\cdot \\frac{\\frac{1}{2} + \\frac{2}{3}}{2} = \\frac{7}{24} \\approx 0.292. $$$$$$ In practise, the final density happens to be slightly larger than $$$7\/24$$$, of about $$$3\/10$$$. The following figures showcase our construction for $$$N = 512$$$ and $$$N = 700$$$. In the middle square, as said, we get $$$2\/3$$$ density.",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::792",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"for $$$N = 512$$$ and $$$N = 700$$$. In the middle square, as said, we get $$$2\/3$$$ density. The bottom left and top right triangles expand following a fractal. First, let us look at the $$$512$$$ (power of two) case. Here, the density should be exactly $$$0.3$$$. Why? If $$$d$$$ is the density of the bottom-left (or top right) triangles, then we should have something like $$$$$$ f = \\frac{1}{4}\\left(f + f + \\frac{2}{3} + \\frac{1}{4}(f + f + 0 + f)\\right), $$$$$$ where the first two summands are for",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::864",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"+ \\frac{2}{3} + \\frac{1}{4}(f + f + 0 + f)\\right), $$$$$$ where the first two summands are for to left and top subtriangles, the third summand is for the central triangle, and the final summand is for the bottom right subtriangle. Solving the equation yields $$$f = 8\/15$$$. Thus, the density of the whole grid is $$$$$$ \\frac{1}{2}\\left(f + \\frac{2}{3}\\right) = \\frac{10}{30}. $$$$$$ In the $$$n = 700$$$ (not power of two) case, the fractal gets cut off. However, intuitively, the density should be larger than $$$0.3$$$, since the extra",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::936",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"case, the fractal gets cut off. However, intuitively, the density should be larger than $$$0.3$$$, since the extra part that you gain between $$$n = 512$$$ and $$$n = 700$$$ is very dense. This also holds in practise: our construction is denser than $$$0.3$$$ whenever $$$n$$$ is far from being a power of two. Finally, let us look at implementation. We already said the naive $$$O(n^3)$$$ will not pass, we will do the job in $$$O(n^2)$$$. Define a vector $$$s$$$ which is $$$1$$$ at positions $$$(i_0+1,j_0)$$$ where $$$(i_0,j_0)$$$ is a",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::1008",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"the job in $$$O(n^2)$$$. Define a vector $$$s$$$ which is $$$1$$$ at positions $$$(i_0+1,j_0)$$$ where $$$(i_0,j_0)$$$ is a zero on the diagonal with $$$i_0\\ge j_0$$$, and at positions $$$(i_0,j_0+1)$$$ where $$$(i_0,j_0)$$$ is a zero on the diagonal with $$$i_0 \\gt j_0$$$, and let $$$s$$$ be $$$0$$$ everywhere else. Note that these points where $$$s$$$ is $$$1$$$ are the peaks of the pascal triangles we're adding to $$$w$$$ in our construction. Now, we propagate in $$$s$$$ the Pascal triangle recurrence downward and to the left from the position $$$(i_0+1,j_0)$$$ with lowest",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_07_EDITORIAL_FULL::1080",
+    "tree_node_id":"content::codeforces_2219_E_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"propagate in $$$s$$$ the Pascal triangle recurrence downward and to the left from the position $$$(i_0+1,j_0)$$$ with lowest $$$i_0$$$, and upward to the right from the position $$$(i_0, j_0+1)$$$ with highest $$$i_0$$$. After this is done, $$$s$$$ is exactly the same as the sum of all the $$$u$$$ vectors we're adding in our construction. Thus adding $$$s$$$ to $$$w$$$ and flipping the zeros on the diagonal of $$$w$$$ results in our construction, and is $$$O(n^2)$$$.",
+    "chunk_word_count":75
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2220_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Hint1: What happens when there are two equal elements? Solution: If there are two equal elements in $$$a$$$, one of them will be blocked . Otherwise, sort $$$a$$$ decreasing.",
+    "chunk_word_count":29
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_2220_B_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Solution: If there exists a contiguous subarray of equal values with length ≥ m, it is impossible to escape. This is because crossing such a block requires at least m seconds, and each position will look in direction 0 at least once in any m consecutive seconds. Otherwise, escape is possible. We can think of the array as consecutive blocks of equal values, each of length < m. For each block, there exists a window of time shorter than m during which none of its positions are looking at 0.",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_07_EDITORIAL_FULL::72",
+    "tree_node_id":"content::codeforces_2220_B_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"exists a window of time shorter than m during which none of its positions are looking at 0. By waiting outside the block until this safe window, Hector can cross it without being caught. Since two consecutive blocks have different values, their dangerous moments never coincide, and this strategy can be repeated for all blocks.",
+    "chunk_word_count":55
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_08_EDITORIAL_OBSERVATION::0",
+    "tree_node_id":"content::codeforces_2219_A_08_EDITORIAL_OBSERVATION",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "chunk_text":"Solution: The following is the key observation of the problem.",
+    "chunk_word_count":10
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_08_EDITORIAL_OBSERVATION::0",
+    "tree_node_id":"content::codeforces_2219_B1_08_EDITORIAL_OBSERVATION",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "chunk_text":"Here is one: Notice that if we query for the set $$$S$$$ and its complement $$$T$$$ (i.e. $$$T = \\{1, 2, \\ldots, 2 \\cdot n + 1\\} \\setminus S$$$) we can know how many of the three special indices are in $$$S$$$ and how many in $$$T$$$.",
+    "chunk_word_count":47
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_08_EDITORIAL_OBSERVATION::0",
+    "tree_node_id":"content::codeforces_2219_C_08_EDITORIAL_OBSERVATION",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "chunk_text":"The transitions are: sort all children of $$$i$$$ by $$$dp_{child_{j}, 1} - dp_{child_{j}, 0}$$$ (notice that we need doubles!). for $$$dp_{i, 0}$$$, consider all no empty prefixes of the sorted childs, consider $$$dp_{child_{j}, 0}$$$ as the cost of coloring the subtree of $$$child_j$$$ if it is in the prefix and $$$dp_{child_{j}, 1}$$$ if it is not, coloring the node $$$i$$$ costs $$$\\frac{\\#children + 1}{size Of Prefix}$$$ + cost of coloring the subtrees of the children nodes.",
+    "chunk_word_count":76
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_08_EDITORIAL_OBSERVATION::0",
+    "tree_node_id":"content::codeforces_2219_D_08_EDITORIAL_OBSERVATION",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "chunk_text":"Further analysis: After doing such a rephrase and playing with it a bit on paper, you would probably notice there are a few cases: for $$$a_x$$$ with its $$$f(v)$$$-th slot being empty, moving a token from $$$p_v$$$ to $$$f(v)$$$ would fill the first hole and create a hole at $$$f(v)$$$, so the new first hole would be the second hole of the original $$$a_x$$$ if it is less than $$$p_v$$$ or $$$p_v$$$ otherwise. for $$$a_x$$$ with its $$$f(v)$$$-th slot having a token in it, moving a token from $$$p_v$$$ to",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_08_EDITORIAL_OBSERVATION::72",
+    "tree_node_id":"content::codeforces_2219_D_08_EDITORIAL_OBSERVATION",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "chunk_text":"otherwise. for $$$a_x$$$ with its $$$f(v)$$$-th slot having a token in it, moving a token from $$$p_v$$$ to $$$f(v)$$$ would make the $$$f(v)$$$-th slot have $$$2$$$ tokens and create a hole at $$$f(v)$$$, so the new first hole would remain unchanged if $$$f(x) \\lt p_v$$$ or $$$p_v$$$ otherwise.",
+    "chunk_word_count":48
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_08_EDITORIAL_OBSERVATION::0",
+    "tree_node_id":"content::codeforces_2219_E_08_EDITORIAL_OBSERVATION",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "chunk_text":"The key observation is that our transformation only affects the region of the board below the diagonal, and below and to the left of $$$(9,6)$$$. We instead give the intuition behind the claim and an heuristic \"proof\".",
+    "chunk_word_count":37
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_09_EDITORIAL_PROOF::0",
+    "tree_node_id":"content::codeforces_2219_A_09_EDITORIAL_PROOF",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_PROOF",
+    "chunk_text":"Hint2 (strong spoiler): You can fill the $$$m\\times n$$$ grid if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p\\ge \\vert m-n\\vert$$$. (See tutorial for proof) Proof. Let us prove sufficiency.",
+    "chunk_word_count":30
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_09_EDITORIAL_PROOF::0",
+    "tree_node_id":"content::codeforces_2219_E_09_EDITORIAL_PROOF",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_PROOF",
+    "chunk_text":"Hint5: Prove that the density is at most $$$1\/3$$$. Proof. We actually do not have a formal proof of this fact. We instead give the intuition behind the claim and an heuristic \"proof\".",
+    "chunk_word_count":33
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2219_A_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Solution: The following is the key observation of the problem.",
+    "chunk_word_count":10
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2219_B1_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Solution: There are many solutions that use $$$6 \\cdot \\log_2(2 \\cdot n + 1)$$$ queries.",
+    "chunk_word_count":15
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2219_C_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Solution: In this solution, I will use without mentioning the fact that the expected value of a geometric distribution is $$$\\frac{1}{p}$$$ and linearity of expectation. The transitions are: sort all children of $$$i$$$ by $$$dp_{child_{j}, 1} - dp_{child_{j}, 0}$$$ (notice that we need doubles!). for $$$dp_{i, 0}$$$, consider all no empty prefixes of the sorted childs, consider $$$dp_{child_{j}, 0}$$$ as the cost of coloring the subtree of $$$child_j$$$ if it is in the prefix and $$$dp_{child_{j}, 1}$$$ if it is not, coloring the node $$$i$$$ costs $$$\\frac{\\#children + 1}{size Of",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_C_10_EDITORIAL_ALGORITHM::72",
+    "tree_node_id":"content::codeforces_2219_C_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2219_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"the prefix and $$$dp_{child_{j}, 1}$$$ if it is not, coloring the node $$$i$$$ costs $$$\\frac{\\#children + 1}{size Of Prefix}$$$ + cost of coloring the subtrees of the children nodes.",
+    "chunk_word_count":29
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2219_D_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Solution: Root out the simple case: It's obvious that applying the operation on $$$v$$$ where $$$p_v \\lt f(v)$$$ is useless, since it would decrease $$$f(x)$$$ for every $$$x$$$ in $$$v$$$'s subtree.",
+    "chunk_word_count":31
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2219_E_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Hint10: To implement this in $$$O(n^2)$$$, instead of adding each pascal independently, try to compute the sum of all of the pascals directly. Solution: We label the grid $$$v_{i, j}$$$ with $$$v_{0, 0}$$$ being the top left corner. We take care of implementation at the end of the solution.",
+    "chunk_word_count":49
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2220_A_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Solution: If there are two equal elements in $$$a$$$, one of them will be blocked . Otherwise, sort $$$a$$$ decreasing.",
+    "chunk_word_count":20
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_2220_B_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"Solution: If there exists a contiguous subarray of equal values with length ≥ m, it is impossible to escape.",
+    "chunk_word_count":19
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_11_EDITORIAL_COMPLEXITY::0",
+    "tree_node_id":"content::codeforces_2219_A_11_EDITORIAL_COMPLEXITY",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "chunk_text":"Hint2 (strong spoiler): You can fill the $$$m\\times n$$$ grid if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p\\ge \\vert m-n\\vert$$$. (See tutorial for proof) We can fill an $$$m\\times n$$$ grid using $$$p$$$ segments and $$$q$$$ L's if and only if $$$p+2q = m(n+1)+n(m+1)$$$ and $$$p \\ge \\vert m-n\\vert$$$. We do so in $$$O(\\sqrt{p+2q})$$$.",
+    "chunk_word_count":55
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_11_EDITORIAL_COMPLEXITY::0",
+    "tree_node_id":"content::codeforces_2219_D_11_EDITORIAL_COMPLEXITY",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "chunk_text":"Then we can consider processing $$$v$$$ in decreasing order of $$$p_v$$$, and maintain the sum of $$$g(x)$$$ for $$$g(x) \\lt p_v$$$ the number of vertices with $$$g(x) \\ge p_v$$$ the sum of $$$f(x)$$$ for $$$f(x) \\lt p_v$$$ the number of vertices with $$$f(x) \\ge p_v$$$ under every subtree in $$$O(n\\lg n)$$$. And we can check whether $$$v$$$ is $$$x$$$'s ancestor using the time stamp of two vertices.",
+    "chunk_word_count":67
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_11_EDITORIAL_COMPLEXITY::0",
+    "tree_node_id":"content::codeforces_2219_E_11_EDITORIAL_COMPLEXITY",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "chunk_text":"Hint10: To implement this in $$$O(n^2)$$$, instead of adding each pascal independently, try to compute the sum of all of the pascals directly. Note that naively implementing the above is $$$O(n^3)$$$, which won't pass. We already said the naive $$$O(n^3)$$$ will not pass, we will do the job in $$$O(n^2)$$$. Thus adding $$$s$$$ to $$$w$$$ and flipping the zeros on the diagonal of $$$w$$$ results in our construction, and is $$$O(n^2)$$$.",
+    "chunk_word_count":71
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_11_EDITORIAL_COMPLEXITY::0",
+    "tree_node_id":"content::codeforces_2220_B_11_EDITORIAL_COMPLEXITY",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "chunk_text":"For each block, there exists a window of time shorter than m during which none of its positions are looking at 0.",
+    "chunk_word_count":22
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_2219_A_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"Note that two segments can form an L, so since $$$$$$m-n\\equiv m+n\\equiv 2mn+m+n\\equiv 2q+p\\equiv p\\pmod 2,$$$$$$ we may assume WLOG that $$$p=m-n$$$.",
+    "chunk_word_count":22
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_B1_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_2219_B1_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2219_B1",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"The first one looks for any index that is special, the following ones do the same but ignore indices that were found previously. Note The secret array is $$$a = [1, 1, 1, 2, 2]$$$.",
+    "chunk_word_count":35
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_2219_D_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"That is, for each vertex, thinking there is an array of infinite slot, and some of them are occupied by token, and the operation correspond to moving certain token to the first hole. Hint2: Draw some small cases! What would these infinite arrays change when doing operation on root? Given a set of integers, imagine there is an array with infinite empty slots, indexed from $$$0$$$. Then you can imagine there is an array $$$a_x$$$ with infinite slots for each vertex $$$x$$$ containing all elements on the path from $$$1$$$",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_D_12_IMPLEMENTATION_HINTS::72",
+    "tree_node_id":"content::codeforces_2219_D_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2219_D",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"an array $$$a_x$$$ with infinite slots for each vertex $$$x$$$ containing all elements on the path from $$$1$$$ to $$$x$$$, and think of the operation as picking up the token at the $$$p_v$$$-th slot and moving it to the first hole of $$$a_v$$$(that is, $$$f(v)$$$) for each array $$$a_x$$$ where $$$x$$$ is in $$$v$$$'s subtree.",
+    "chunk_word_count":55
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_2219_E_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"We work mod $$$2$$$. Hint6: Consider the grid $$$w_{i,j}$$$ with $$$w_{i,j}=1$$$ when $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j\\pmod 3$$$, and $$$w_{i,j}=0$$$ otherwise. Hint9: For each such $$$(i_0,j_0)$$$, flip $$$w_{i_0,j_0}$$$ and add a Pascal triangle mod $$$2$$$ to the grid. Hint10: To implement this in $$$O(n^2)$$$, instead of adding each pascal independently, try to compute the sum of all of the pascals directly. From now on, we work modulo $$$2$$$ when operating with $$$v$$$. We will define a preliminary filling $$$w_{i,j}$$$ as 1 if $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j \\pmod 3$$$, 0",
+    "chunk_word_count":90
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_12_IMPLEMENTATION_HINTS::72",
+    "tree_node_id":"content::codeforces_2219_E_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"We will define a preliminary filling $$$w_{i,j}$$$ as 1 if $$$i+j\\ge n-1$$$ and $$$i\\not\\equiv j \\pmod 3$$$, 0 otherwise. This pattern comes from the well-known Pascal triangle, considered mod $$$2$$$, plus flipping position $$$w_{9, 6}$$$. Formally, the pattern in the second figure is given by $$$u_{9,6} = 1$$$ and $$$$$$ u_{9+i+1, 6+j} \\equiv \\binom{i}{j} \\pmod{2}\\ \\forall i,j\\ge 0. $$$$$$ The rightmost figure is $$$u+w$$$, where the three issues around $$$w_{9, 6}$$$ are now fixed.",
+    "chunk_word_count":74
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_A_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_2220_A_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2220_A",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"Note In the third test case, the array [$$$3, 1, 2$$$] has no position blocked: Position $$$1$$$ is not blocked since $$$3$$$ can't be expressed as the sum of a subset of [].",
+    "chunk_word_count":33
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2220_B_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_2220_B_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_2220_B",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"Solution: If there exists a contiguous subarray of equal values with length ≥ m, it is impossible to escape. We can think of the array as consecutive blocks of equal values, each of length < m. Note Case 1: Hector can move right every second without waiting or moving left and escape, because there is no $$$i$$$ such that $$$(a_i + i) \\pmod m = 0$$$.",
+    "chunk_word_count":66
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_A_13_COMMON_MISTAKES::0",
+    "tree_node_id":"content::codeforces_2219_A_13_COMMON_MISTAKES",
+    "global_problem_id":"codeforces_2219_A",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "chunk_text":"Necessity is clear: $$$p+2q = m(n+1)+n(m+1)$$$ follows from looking at the total number of edges, and $$$p\\ge \\vert m-n\\vert$$$ follows from comparing the number of horizontal edges and vertical edges.",
+    "chunk_word_count":30
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_2219_E_13_COMMON_MISTAKES::0",
+    "tree_node_id":"content::codeforces_2219_E_13_COMMON_MISTAKES",
+    "global_problem_id":"codeforces_2219_E",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "chunk_text":"Solution: We label the grid $$$v_{i, j}$$$ with $$$v_{0, 0}$$$ being the top left corner.",
+    "chunk_word_count":15
+  }
+]
