@@ -98,6 +98,59 @@ data/processed/
 
 Abre `comparison_dashboard.html` para mostrar solo graficos comparativos.
 
+## 2.1 Orden actual de fases
+
+Este es el orden recomendado para ejecutar el prototipo completo desde cero o para una demo en vivo. Cada fase deja archivos verificables en `data/processed/` o `comparison_assets/`.
+
+```powershell
+cd C:\Users\Asus\Desktop\agent-pc
+
+# Fase 1: extraccion/verificacion de problemas y editoriales de Codeforces
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\verify_codeforces_editorials.py --fresh
+
+# Fase 2: contrato y calidad del dataset
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase2_dataset_contract.py --fail-on-error
+
+# Fase 3: arbol pedagogico con GPT si hay API key, o fallback local
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase3_llm_tree_builder.py --limit 3
+
+# Fase 4: export PageIndex-ready: nodes, edges y chunks
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase4_tree_index.py
+
+# Fase 5: retrieval y comparacion local / FAISS / ChromaDB
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase5_retrieval_evaluation.py
+
+# Fase 6: analisis de ideas de estudiantes
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase6_student_idea_analysis.py
+
+# Fase 7: perfiles y recomendaciones adaptativas
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase7_adaptive_recommendations.py
+
+# Fase 8: evaluacion automatica tipo LLM-as-a-judge
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_phase8_rag_judge_evaluation.py
+```
+
+Para ejecutar todo en una sola orden:
+
+```powershell
+C:\Users\Asus\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe scripts\run_all_local.py --skip-dataset --llm-limit 3
+```
+
+La tabla final estilo articulo queda en:
+
+```text
+data/processed/rag_judge_summary_table.csv
+comparison_assets/rag_judge_summary_table.png
+```
+
+La tabla resume:
+
+- `Faithfulness`: cuanto de la respuesta esta soportado por el contexto recuperado.
+- `Answer Relevancy`: cuanto responde la salida a la idea/query del estudiante.
+- `Context Precision`: proporcion del contexto top-k que corresponde al problema esperado.
+- `Strategy Classification`: si el sistema distingue la estrategia esperada, por ejemplo `BINARY_SEARCH` vs `MATH_FORMULA`.
+- `Recommendation Fit`: si la recomendacion coincide con la debilidad o estrategia objetivo del estudiante.
+
 Para ejecutar el nuevo prototipo local inspirado en PageIndex Hybrid Tree Search:
 
 ```powershell

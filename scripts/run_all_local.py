@@ -24,8 +24,6 @@ SRC_DIR = ROOT / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
-import cp_dataset_scraper as cpds
-
 DATA_DIR = ROOT / "data"
 PROCESSED_DIR = DATA_DIR / "processed"
 ASSETS_DIR = ROOT / "comparison_assets"
@@ -42,6 +40,8 @@ COMPARISON_PNGS = {
     "vector_backend_overlap.png",
     "strategy_prediction_by_model.png",
     "strategy_accuracy_by_model.png",
+    "rag_judge_summary_table.png",
+    "rag_judge_metric_distribution.png",
 }
 
 
@@ -51,6 +51,8 @@ def run_command(args: list[str], timeout: int = 600) -> None:
 
 
 def build_local_config(max_cf: int, max_atcoder: int, with_content: bool, request_delay: float) -> dict:
+    import cp_dataset_scraper as cpds
+
     cfg = copy.deepcopy(cpds.CONFIG)
     cfg["platforms"] = ["codeforces", "atcoder"]
 
@@ -152,7 +154,7 @@ def write_lightweight_quality_files(result: dict, mode: str) -> None:
 
 def build_dataset(max_cf: int, max_atcoder: int, with_content: bool, request_delay: float) -> None:
     mode = "content_enabled" if with_content else "metadata_only"
-    print(f"\n[1/7] Building dataset ({mode})...")
+    print(f"\n[1/10] Building dataset ({mode})...")
     cfg = build_local_config(max_cf, max_atcoder, with_content, request_delay)
     result = cpds.build_cp_dataset(cfg)
     write_lightweight_quality_files(result, mode)
@@ -170,32 +172,52 @@ def build_dataset(max_cf: int, max_atcoder: int, with_content: bool, request_del
 
 
 def add_math_binary_demo() -> None:
-    print("\n[2/7] Adding math-vs-binary-search demo problems...")
+    print("\n[2/10] Adding math-vs-binary-search demo problems...")
     run_command([sys.executable, str(SCRIPT_DIR / "add_math_binary_demo.py")], timeout=180)
 
 
+def run_numbered_phases(llm_limit: int) -> None:
+    print("\n[3/10] Phase 2: validating dataset contract...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase2_dataset_contract.py"), "--fail-on-error"], timeout=240)
+
+    print("\n[4/10] Phase 3: building GPT/fallback pedagogical tree...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase3_llm_tree_builder.py"), "--limit", str(llm_limit)], timeout=600)
+
+    print("\n[5/10] Phase 4: exporting PageIndex-ready tree files...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase4_tree_index.py")], timeout=240)
+
+    print("\n[6/10] Phase 5: running retrieval comparison...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase5_retrieval_evaluation.py")], timeout=900)
+
+    print("\n[7/10] Phase 6: analyzing student ideas...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase6_student_idea_analysis.py")], timeout=240)
+
+    print("\n[8/10] Phase 7: building profiles and recommendations...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase7_adaptive_recommendations.py")], timeout=240)
+
+    print("\n[9/10] Phase 8: generating RAG judge table...")
+    run_command([sys.executable, str(SCRIPT_DIR / "run_phase8_rag_judge_evaluation.py")], timeout=240)
+
+
 def regenerate_assets() -> None:
-    print("\n[3/7] Generating dataset evidence charts...")
+    print("\n[10/10] Generating dataset evidence charts...")
     run_command([sys.executable, str(SCRIPT_DIR / "generate_presentation_evidence.py")], timeout=240)
 
-    print("\n[4/7] Extracting RAG metrics from the local Python prototype...")
+    print("\n[10/10] Extracting RAG metrics from the local Python prototype...")
     run_command([sys.executable, str(SCRIPT_DIR / "extract_rag_metrics.py")], timeout=600)
 
-    print("\n[5/7] Comparing local, FAISS, and ChromaDB vector backends...")
-    run_command([sys.executable, str(SCRIPT_DIR / "compare_vector_backends.py")], timeout=600)
-
-    print("\n[6/7] Generating diagrams...")
+    print("\n[10/10] Generating diagrams...")
     run_command([sys.executable, str(SCRIPT_DIR / "generate_deck_diagrams.py")], timeout=240)
     prune_non_comparison_assets()
 
 
 def prune_non_comparison_assets() -> None:
-    """Keep the visual output focused on comparison evidence."""
-    for path in ASSETS_DIR.glob("*.png"):
-        if path.name not in COMPARISON_PNGS:
-            path.unlink()
-    for path in ASSETS_DIR.glob("*.md"):
-        path.unlink()
+    """Legacy hook kept for compatibility.
+
+    Earlier versions deleted non-comparison PNGs. The project now keeps all
+    generated evidence because several diagrams are reused in the thesis deck.
+    """
+    return None
 
 
 def read_json(path: Path) -> dict:
@@ -216,7 +238,7 @@ def short_cell(value, limit: int = 120) -> str:
 
 
 def build_comparison_dashboard() -> None:
-    print("\n[7/7] Writing comparison dashboard...")
+    print("\n[10/10] Writing comparison dashboard...")
     ASSETS_DIR.mkdir(exist_ok=True)
     problems = pd.read_csv(PROCESSED_DIR / "cp_problems_dataset.csv")
     nodes = pd.read_csv(PROCESSED_DIR / "cp_page_nodes_dataset.csv")
@@ -239,6 +261,10 @@ def build_comparison_dashboard() -> None:
     strategy_results = (
         pd.read_csv(strategy_results_path) if strategy_results_path.exists() else pd.DataFrame()
     )
+    judge_summary_path = PROCESSED_DIR / "rag_judge_summary_table.csv"
+    judge_scores_path = PROCESSED_DIR / "rag_judge_interaction_scores.csv"
+    judge_summary = pd.read_csv(judge_summary_path) if judge_summary_path.exists() else pd.DataFrame()
+    judge_scores = pd.read_csv(judge_scores_path) if judge_scores_path.exists() else pd.DataFrame()
 
     metrics_rows = rag_summary.get("metrics", [])
     metrics_table = "".join(
@@ -341,6 +367,20 @@ def build_comparison_dashboard() -> None:
             for _, row in strategy_results.iterrows()
         )
 
+    if judge_summary.empty:
+        judge_rows = "<tr><td colspan='5'>No hay tabla de juez RAG.</td></tr>"
+    else:
+        judge_rows = "".join(
+            "<tr>"
+            f"<td>{esc(row['Metrica'])}</td>"
+            f"<td>{esc(row['Umbral'])}</td>"
+            f"<td>{esc(row['Promedio'])}</td>"
+            f"<td>{esc(row['Desviacion estandar'])}</td>"
+            f"<td>{esc(row['% >= umbral'])}</td>"
+            "</tr>"
+            for _, row in judge_summary.iterrows()
+        )
+
     html_cards = "\n".join(
         f'<section><h2>{title}</h2><img src="comparison_assets/{img}" alt="{title}"></section>'
         for title, img in [
@@ -356,6 +396,8 @@ def build_comparison_dashboard() -> None:
             ("Exactitud binary/formula por modelo", "strategy_accuracy_by_model.png"),
             ("Clasificacion actual vs estrategia fina", "math_binary_strategy_classification.png"),
             ("Estrategias detectadas por problema demo", "math_binary_problem_strategy_map.png"),
+            ("Tabla final LLM-as-a-judge", "rag_judge_summary_table.png"),
+            ("Distribucion de metricas del juez RAG", "rag_judge_metric_distribution.png"),
         ]
         if (ASSETS_DIR / img).exists()
     )
@@ -384,8 +426,17 @@ def build_comparison_dashboard() -> None:
     <h2>Resumen verificable</h2>
     <p><strong>Problemas:</strong> {len(problems)} | <strong>Page Nodes:</strong> {len(nodes)} | <strong>Backend semantico:</strong> {rag_summary.get('semantic_backend', 'unknown')}</p>
     <p>Este dashboard compara metodos de recuperacion, backends vectoriales y clasificacion textual de ideas. No implementa PageIndex tree-search ni ejecuta soluciones contra tests.</p>
+    <p><strong>Interacciones evaluadas por juez RAG:</strong> {len(judge_scores)}</p>
     <ul>{backend_status_html}</ul>
     {math_summary}
+  </div>
+  <div class="summary">
+    <h2>Tabla final de evaluacion automatica del chatbot RAG</h2>
+    <p>Resume respuestas generadas, contexto recuperado y recomendaciones personalizadas. En esta version es un juez heuristico reproducible; puede reemplazarse por GPT usando el mismo contrato de metricas.</p>
+    <table>
+      <thead><tr><th>Metrica</th><th>Umbral</th><th>Promedio</th><th>Desviacion estandar</th><th>% &gt;= umbral</th></tr></thead>
+      <tbody>{judge_rows}</tbody>
+    </table>
   </div>
   <div class="summary">
     <h2>Metricas base</h2>
@@ -448,6 +499,7 @@ def main() -> None:
     parser.add_argument("--max-atcoder", type=int, default=20, help="Max AtCoder problems.")
     parser.add_argument("--with-content", action="store_true", help="Download statements/editorials when available.")
     parser.add_argument("--request-delay", type=float, default=1.0, help="Delay between external requests.")
+    parser.add_argument("--llm-limit", type=int, default=3, help="Problems analyzed in Phase 3.")
     parser.add_argument(
         "--skip-math-binary-demo",
         action="store_true",
@@ -458,13 +510,14 @@ def main() -> None:
     if not args.skip_dataset:
         build_dataset(args.max_cf, args.max_atcoder, args.with_content, args.request_delay)
     else:
-        print("[1/7] Skipping dataset build; reusing data/processed.")
+        print("[1/10] Skipping dataset build; reusing data/processed.")
 
     if args.skip_math_binary_demo:
-        print("[2/7] Skipping math-vs-binary-search demo.")
+        print("[2/10] Skipping math-vs-binary-search demo.")
     else:
         add_math_binary_demo()
 
+    run_numbered_phases(args.llm_limit)
     regenerate_assets()
     build_comparison_dashboard()
 

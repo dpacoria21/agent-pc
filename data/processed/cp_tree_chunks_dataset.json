@@ -531,6 +531,51 @@
     "chunk_word_count":29
   },
   {
+    "chunk_id":"chunk::problem_codeforces_750_A::0",
+    "tree_node_id":"problem::codeforces_750_A",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"New Year and Hurry Given a limited amount of contest time, each solved problem i costs 5*i minutes. Find the maximum number of first problems that can be solved without exceeding the remaining time. The cumulative time is triangular. A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n. Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "chunk_word_count":81
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_1915_C::0",
+    "tree_node_id":"problem::codeforces_1915_C",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Can I Square? Given numbers in a test case, decide whether their sum can be represented as the area of an integer-sided square. Compute the total sum. A formula route uses integer square root and verifies root*root == sum. A binary-search route searches r and compares r*r against the sum. Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "chunk_word_count":63
+  },
+  {
+    "chunk_id":"chunk::problem_codeforces_192_A::0",
+    "tree_node_id":"problem::codeforces_192_A",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "chunk_text":"Funky Numbers Decide whether a number can be written as the sum of two triangular numbers. Generate triangular numbers up to n and test complements with a set or binary search. A formula-oriented route tests if m is triangular using discriminant 1+8*m being a perfect square. Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "chunk_word_count":60
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_1915_C_01_STATEMENT",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"Given numbers in a test case, decide whether their sum can be represented as the area of an integer-sided square.",
+    "chunk_word_count":20
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_192_A_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_192_A_01_STATEMENT",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"Decide whether a number can be written as the sum of two triangular numbers.",
+    "chunk_word_count":14
+  },
+  {
     "chunk_id":"chunk::content_codeforces_2219_A_01_STATEMENT::0",
     "tree_node_id":"content::codeforces_2219_A_01_STATEMENT",
     "global_problem_id":"codeforces_2219_A",
@@ -711,6 +756,24 @@
     "chunk_word_count":44
   },
   {
+    "chunk_id":"chunk::content_codeforces_750_A_01_STATEMENT::0",
+    "tree_node_id":"content::codeforces_750_A_01_STATEMENT",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "chunk_text":"Given a limited amount of contest time, each solved problem i costs 5*i minutes. Find the maximum number of first problems that can be solved without exceeding the remaining time.",
+    "chunk_word_count":30
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_02_INPUT::0",
+    "tree_node_id":"content::codeforces_1915_C_02_INPUT",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"Several test cases with an array of positive integers.",
+    "chunk_word_count":9
+  },
+  {
     "chunk_id":"chunk::content_codeforces_2219_A_02_INPUT::0",
     "tree_node_id":"content::codeforces_2219_A_02_INPUT",
     "global_problem_id":"codeforces_2219_A",
@@ -801,6 +864,33 @@
     "chunk_word_count":43
   },
   {
+    "chunk_id":"chunk::content_codeforces_750_A_02_INPUT::0",
+    "tree_node_id":"content::codeforces_750_A_02_INPUT",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "chunk_text":"n is the number of available problems; k is the time already reserved.",
+    "chunk_word_count":13
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_1915_C_03_OUTPUT",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"YES if the sum is a perfect square; otherwise NO.",
+    "chunk_word_count":10
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_192_A_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_192_A_03_OUTPUT",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"YES if n = T_a + T_b for some triangular numbers; otherwise NO.",
+    "chunk_word_count":13
+  },
+  {
     "chunk_id":"chunk::content_codeforces_2219_A_03_OUTPUT::0",
     "tree_node_id":"content::codeforces_2219_A_03_OUTPUT",
     "global_problem_id":"codeforces_2219_A",
@@ -853,6 +943,60 @@
     "node_type":"OUTPUT",
     "chunk_text":"Output For each test case, print a line containing either \" YES \" or \" NO \", representing whether Hector can escape. You can output the answer in any case (upper or lower). For example, the strings \" yEs \", \" yes \", \" Yes \", and \" YES \" will be recognized as positive responses.",
     "chunk_word_count":56
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_750_A_03_OUTPUT::0",
+    "tree_node_id":"content::codeforces_750_A_03_OUTPUT",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "chunk_text":"Maximum x such that x <= n and the cumulative time fits.",
+    "chunk_word_count":12
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_04_CONSTRAINTS::0",
+    "tree_node_id":"content::codeforces_1915_C_04_CONSTRAINTS",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"CONSTRAINTS",
+    "chunk_text":"The sum should be handled with integer arithmetic.",
+    "chunk_word_count":8
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_192_A_04_CONSTRAINTS::0",
+    "tree_node_id":"content::codeforces_192_A_04_CONSTRAINTS",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"CONSTRAINTS",
+    "chunk_text":"n is large enough that naive unbounded enumeration is not ideal.",
+    "chunk_word_count":11
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_750_A_04_CONSTRAINTS::0",
+    "tree_node_id":"content::codeforces_750_A_04_CONSTRAINTS",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"CONSTRAINTS",
+    "chunk_text":"Small n, k within the contest time window.",
+    "chunk_word_count":8
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_1915_C_05_EXAMPLES",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "chunk_word_count":8
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_192_A_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_192_A_05_EXAMPLES",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "chunk_word_count":8
   },
   {
     "chunk_id":"chunk::content_codeforces_2219_A_05_EXAMPLES::0",
@@ -916,6 +1060,24 @@
     "node_type":"EXAMPLES",
     "chunk_text":"[{\"input\": \"6\\n8 5\\n0 4 0 2 1 0 0 3\\n6 2\\n1 0 1 0 1 0\\n6 2\\n1 1 1 1 0 1\\n2 10\\n6 9\\n2 2\\n0 1\\n5 1000000000\\n1 2 3 4 999999999\", \"output\": \"YES\\nYES\\nNO\\nYES\\nYES\\nYES\", \"sample_index\": 1}]",
     "chunk_word_count":35
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_750_A_05_EXAMPLES::0",
+    "tree_node_id":"content::codeforces_750_A_05_EXAMPLES",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "chunk_text":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "chunk_word_count":8
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_06_NOTES::0",
+    "tree_node_id":"content::codeforces_1915_C_06_NOTES",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "chunk_text":"Core condition: exists integer r such that r*r equals the total sum.",
+    "chunk_word_count":12
   },
   {
     "chunk_id":"chunk::content_codeforces_2219_A_06_NOTES::0",
@@ -1006,6 +1168,24 @@
     "node_type":"NOTES",
     "chunk_text":"Note Case 1: Hector can move right every second without waiting or moving left and escape, because there is no $$$i$$$ such that $$$(a_i + i) \\pmod m = 0$$$. Case 2: One possible strategy is to wait for one second at the starting position and then move right every second without further waiting or moving left.",
     "chunk_word_count":57
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_1915_C_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Compute the total sum. A formula route uses integer square root and verifies root*root == sum. A binary-search route searches r and compares r*r against the sum. Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "chunk_word_count":40
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_192_A_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_192_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"Generate triangular numbers up to n and test complements with a set or binary search. A formula-oriented route tests if m is triangular using discriminant 1+8*m being a perfect square. Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "chunk_word_count":44
   },
   {
     "chunk_id":"chunk::content_codeforces_2219_A_07_EDITORIAL_FULL::0",
@@ -1359,6 +1539,15 @@
     "chunk_word_count":55
   },
   {
+    "chunk_id":"chunk::content_codeforces_750_A_07_EDITORIAL_FULL::0",
+    "tree_node_id":"content::codeforces_750_A_07_EDITORIAL_FULL",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "chunk_text":"The cumulative time is triangular. A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n. Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "chunk_word_count":47
+  },
+  {
     "chunk_id":"chunk::content_codeforces_2219_A_08_EDITORIAL_OBSERVATION::0",
     "tree_node_id":"content::codeforces_2219_A_08_EDITORIAL_OBSERVATION",
     "global_problem_id":"codeforces_2219_A",
@@ -1503,6 +1692,15 @@
     "chunk_word_count":19
   },
   {
+    "chunk_id":"chunk::content_codeforces_750_A_10_EDITORIAL_ALGORITHM::0",
+    "tree_node_id":"content::codeforces_750_A_10_EDITORIAL_ALGORITHM",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "chunk_text":"A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n.",
+    "chunk_word_count":28
+  },
+  {
     "chunk_id":"chunk::content_codeforces_2219_A_11_EDITORIAL_COMPLEXITY::0",
     "tree_node_id":"content::codeforces_2219_A_11_EDITORIAL_COMPLEXITY",
     "global_problem_id":"codeforces_2219_A",
@@ -1611,6 +1809,33 @@
     "chunk_word_count":66
   },
   {
+    "chunk_id":"chunk::content_codeforces_750_A_12_IMPLEMENTATION_HINTS::0",
+    "tree_node_id":"content::codeforces_750_A_12_IMPLEMENTATION_HINTS",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "chunk_text":"Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "chunk_word_count":14
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_1915_C_13_COMMON_MISTAKES::0",
+    "tree_node_id":"content::codeforces_1915_C_13_COMMON_MISTAKES",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "chunk_text":"Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "chunk_word_count":13
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_192_A_13_COMMON_MISTAKES::0",
+    "tree_node_id":"content::codeforces_192_A_13_COMMON_MISTAKES",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "chunk_text":"Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "chunk_word_count":14
+  },
+  {
     "chunk_id":"chunk::content_codeforces_2219_A_13_COMMON_MISTAKES::0",
     "tree_node_id":"content::codeforces_2219_A_13_COMMON_MISTAKES",
     "global_problem_id":"codeforces_2219_A",
@@ -1627,5 +1852,14 @@
     "node_type":"COMMON_MISTAKES",
     "chunk_text":"Solution: We label the grid $$$v_{i, j}$$$ with $$$v_{0, 0}$$$ being the top left corner.",
     "chunk_word_count":15
+  },
+  {
+    "chunk_id":"chunk::content_codeforces_750_A_13_COMMON_MISTAKES::0",
+    "tree_node_id":"content::codeforces_750_A_13_COMMON_MISTAKES",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "chunk_text":"Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "chunk_word_count":14
   }
 ]

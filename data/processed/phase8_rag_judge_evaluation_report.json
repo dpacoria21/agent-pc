@@ -1,0 +1,14 @@
+{
+  "phase": "phase8_rag_judge_evaluation",
+  "status": "ok",
+  "interaction_count": 6,
+  "summary_rows": 5,
+  "outputs": {
+    "scores_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\rag_judge_interaction_scores.csv",
+    "summary_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\rag_judge_summary_table.csv",
+    "scores_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\rag_judge_interaction_scores.json",
+    "summary_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\rag_judge_summary_table.json",
+    "summary_table_png": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\rag_judge_summary_table.png",
+    "metric_distribution_png": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\rag_judge_metric_distribution.png"
+  }
+}

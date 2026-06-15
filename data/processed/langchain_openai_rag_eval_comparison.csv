@@ -1,0 +1,5 @@
+Modo de indice,Metrica,Umbral,Promedio,Desviacion estandar,% >= umbral
+Page Nodes,Faithfulness,0.75,0.53,0.283,25 %
+Page Nodes,Answer Relevancy,0.75,0.54,0.29,25 %
+PageIndex Chunks,Faithfulness,0.75,0.43,0.282,12 %
+PageIndex Chunks,Answer Relevancy,0.75,0.54,0.289,38 %

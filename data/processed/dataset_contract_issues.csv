@@ -1,1 +1,5 @@
 severity,dataset,check,message,row_id
+warning,problems,short_editorial,Downloaded editorial is unusually short,codeforces_2065_H
+warning,problems,short_editorial,Downloaded editorial is unusually short,codeforces_2065_G
+warning,problems,short_editorial,Downloaded editorial is unusually short,codeforces_1999_G2
+warning,problems,short_editorial,Downloaded editorial is unusually short,codeforces_1999_G1

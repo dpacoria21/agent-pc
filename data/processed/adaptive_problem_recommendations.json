@@ -1,0 +1,138 @@
+[
+  {
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_192_A",
+    "title":"Funky Numbers",
+    "normalized_difficulty":1300.0,
+    "detected_problem_strategies":[
+      "BINARY_SEARCH",
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.9259,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A"
+  },
+  {
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_2219_A",
+    "title":"Grid L",
+    "normalized_difficulty":1400.0,
+    "detected_problem_strategies":[
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.874,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
+  },
+  {
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_750_A",
+    "title":"New Year and Hurry",
+    "normalized_difficulty":800.0,
+    "detected_problem_strategies":[
+      "BINARY_SEARCH",
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.7899,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A"
+  },
+  {
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_1915_C",
+    "title":"Can I Square?",
+    "normalized_difficulty":800.0,
+    "detected_problem_strategies":[
+      "BINARY_SEARCH",
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.781,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C"
+  },
+  {
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_2220_B",
+    "title":"OIE Excursion",
+    "normalized_difficulty":1200.0,
+    "detected_problem_strategies":[
+      "GREEDY"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.4992,
+    "reason":"Recomendado como practica de transferencia; no coincide directamente con MATH_FORMULA, pero mantiene dificultad razonable.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2220\/B"
+  },
+  {
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_192_A",
+    "title":"Funky Numbers",
+    "normalized_difficulty":1300.0,
+    "detected_problem_strategies":[
+      "BINARY_SEARCH",
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.9259,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A"
+  },
+  {
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_2219_A",
+    "title":"Grid L",
+    "normalized_difficulty":1400.0,
+    "detected_problem_strategies":[
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.874,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
+  },
+  {
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_750_A",
+    "title":"New Year and Hurry",
+    "normalized_difficulty":800.0,
+    "detected_problem_strategies":[
+      "BINARY_SEARCH",
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.7899,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A"
+  },
+  {
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_1915_C",
+    "title":"Can I Square?",
+    "normalized_difficulty":800.0,
+    "detected_problem_strategies":[
+      "BINARY_SEARCH",
+      "MATH_FORMULA"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.781,
+    "reason":"Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement\/editorial.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C"
+  },
+  {
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_2220_B",
+    "title":"OIE Excursion",
+    "normalized_difficulty":1200.0,
+    "detected_problem_strategies":[
+      "GREEDY"
+    ],
+    "target_strategy":"MATH_FORMULA",
+    "recommendation_score":0.4992,
+    "reason":"Recomendado como practica de transferencia; no coincide directamente con MATH_FORMULA, pero mantiene dificultad razonable.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/2220\/B"
+  }
+]

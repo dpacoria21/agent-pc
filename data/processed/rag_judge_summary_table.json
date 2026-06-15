@@ -1,0 +1,37 @@
+[
+  {
+    "Metrica":"Faithfulness",
+    "Umbral":"0.80",
+    "Promedio":"0.95",
+    "Desviacion estandar":"0.004",
+    "% >= umbral":"100 %"
+  },
+  {
+    "Metrica":"Answer Relevancy",
+    "Umbral":"0.85",
+    "Promedio":"0.87",
+    "Desviacion estandar":"0.005",
+    "% >= umbral":"100 %"
+  },
+  {
+    "Metrica":"Context Precision",
+    "Umbral":"0.70",
+    "Promedio":"1.00",
+    "Desviacion estandar":"0.000",
+    "% >= umbral":"100 %"
+  },
+  {
+    "Metrica":"Strategy Classification",
+    "Umbral":"0.80",
+    "Promedio":"1.00",
+    "Desviacion estandar":"0.000",
+    "% >= umbral":"100 %"
+  },
+  {
+    "Metrica":"Recommendation Fit",
+    "Umbral":"0.75",
+    "Promedio":"0.92",
+    "Desviacion estandar":"0.000",
+    "% >= umbral":"100 %"
+  }
+]

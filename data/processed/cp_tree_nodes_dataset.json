@@ -392,6 +392,62 @@
     }
   },
   {
+    "tree_node_id":"difficulty::codeforces::techniques::800-1199",
+    "parent_tree_node_id":"topic::codeforces::techniques",
+    "global_problem_id":"",
+    "node_role":"DIFFICULTY_BUCKET",
+    "node_type":"DIFFICULTY_BUCKET",
+    "title":"Difficulty 800-1199",
+    "summary":"Problems with normalized difficulty in 800-1199.",
+    "node_text":"800-1199",
+    "depth":3,
+    "order":8,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+
+    ],
+    "normalized_tags":[
+      "techniques"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"",
+    "metadata":{
+      "difficulty_bucket":"800-1199"
+    }
+  },
+  {
+    "tree_node_id":"difficulty::codeforces::techniques::1200-1599",
+    "parent_tree_node_id":"topic::codeforces::techniques",
+    "global_problem_id":"",
+    "node_role":"DIFFICULTY_BUCKET",
+    "node_type":"DIFFICULTY_BUCKET",
+    "title":"Difficulty 1200-1599",
+    "summary":"Problems with normalized difficulty in 1200-1599.",
+    "node_text":"1200-1599",
+    "depth":3,
+    "order":10,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+
+    ],
+    "normalized_tags":[
+      "techniques"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"",
+    "metadata":{
+      "difficulty_bucket":"1200-1599"
+    }
+  },
+  {
     "tree_node_id":"problem::codeforces_2219_A",
     "parent_tree_node_id":"difficulty::codeforces::implementation_constructive::1200-1599",
     "global_problem_id":"codeforces_2219_A",
@@ -643,6 +699,170 @@
     }
   },
   {
+    "tree_node_id":"problem::codeforces_750_A",
+    "parent_tree_node_id":"difficulty::codeforces::techniques::800-1199",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "title":"New Year and Hurry",
+    "summary":"New Year and Hurry Given a limited amount of contest time, each solved problem i costs 5*i minutes. Find the maximum number of first problems that can be solved without exceeding the remaining time. The cumulative time is triangular. A binary-search solution checks whether a...",
+    "node_text":"New Year and Hurry\n\nGiven a limited amount of contest time, each solved problem i costs 5*i minutes. Find the maximum number of first problems that can be solved without exceeding the remaining time.\n\nThe cumulative time is triangular. A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n. Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "depth":4,
+    "order":8,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "rating":800.0,
+      "editorial_status":"curated_observation",
+      "editorial_parse_method":null
+    }
+  },
+  {
+    "tree_node_id":"problem::codeforces_1915_C",
+    "parent_tree_node_id":"difficulty::codeforces::techniques::800-1199",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "title":"Can I Square?",
+    "summary":"Can I Square? Given numbers in a test case, decide whether their sum can be represented as the area of an integer-sided square. Compute the total sum. A formula route uses integer square root and verifies root*root == sum. A binary-search route searches r and...",
+    "node_text":"Can I Square?\n\nGiven numbers in a test case, decide whether their sum can be represented as the area of an integer-sided square.\n\nCompute the total sum. A formula route uses integer square root and verifies root*root == sum. A binary-search route searches r and compares r*r against the sum. Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "depth":4,
+    "order":9,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "rating":800.0,
+      "editorial_status":"curated_observation",
+      "editorial_parse_method":null
+    }
+  },
+  {
+    "tree_node_id":"problem::codeforces_192_A",
+    "parent_tree_node_id":"difficulty::codeforces::techniques::1200-1599",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"PROBLEM",
+    "node_type":"PROBLEM",
+    "title":"Funky Numbers",
+    "summary":"Funky Numbers Decide whether a number can be written as the sum of two triangular numbers. Generate triangular numbers up to n and test complements with a set or binary search. A formula-oriented route tests if m is triangular using discriminant 1+8*m being a perfect...",
+    "node_text":"Funky Numbers\n\nDecide whether a number can be written as the sum of two triangular numbers.\n\nGenerate triangular numbers up to n and test complements with a set or binary search. A formula-oriented route tests if m is triangular using discriminant 1+8*m being a perfect square. Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "depth":4,
+    "order":10,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "rating":1300.0,
+      "editorial_status":"curated_observation",
+      "editorial_parse_method":null
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "parent_tree_node_id":"problem::codeforces_1915_C",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"SECTION_GROUP",
+    "node_type":"UNDERSTANDING",
+    "title":"Understanding",
+    "summary":"Understanding nodes for Can I Square?.",
+    "node_text":"",
+    "depth":5,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "parent_tree_node_id":"problem::codeforces_192_A",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"SECTION_GROUP",
+    "node_type":"UNDERSTANDING",
+    "title":"Understanding",
+    "summary":"Understanding nodes for Funky Numbers.",
+    "node_text":"",
+    "depth":5,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+
+    }
+  },
+  {
     "tree_node_id":"group::codeforces_2219_A::UNDERSTANDING",
     "parent_tree_node_id":"problem::codeforces_2219_A",
     "global_problem_id":"codeforces_2219_A",
@@ -875,6 +1095,102 @@
       "greedy"
     ],
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2220\/B",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "parent_tree_node_id":"problem::codeforces_750_A",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"SECTION_GROUP",
+    "node_type":"UNDERSTANDING",
+    "title":"Understanding",
+    "summary":"Understanding nodes for New Year and Hurry.",
+    "node_text":"",
+    "depth":5,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_1915_C::EDITORIAL_REASONING",
+    "parent_tree_node_id":"problem::codeforces_1915_C",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"SECTION_GROUP",
+    "node_type":"EDITORIAL_REASONING",
+    "title":"Editorial Reasoning",
+    "summary":"Editorial Reasoning nodes for Can I Square?.",
+    "node_text":"",
+    "depth":5,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_192_A::EDITORIAL_REASONING",
+    "parent_tree_node_id":"problem::codeforces_192_A",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"SECTION_GROUP",
+    "node_type":"EDITORIAL_REASONING",
+    "title":"Editorial Reasoning",
+    "summary":"Editorial Reasoning nodes for Funky Numbers.",
+    "node_text":"",
+    "depth":5,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
     "metadata":{
 
     }
@@ -1117,6 +1433,102 @@
     }
   },
   {
+    "tree_node_id":"group::codeforces_750_A::EDITORIAL_REASONING",
+    "parent_tree_node_id":"problem::codeforces_750_A",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"SECTION_GROUP",
+    "node_type":"EDITORIAL_REASONING",
+    "title":"Editorial Reasoning",
+    "summary":"Editorial Reasoning nodes for New Year and Hurry.",
+    "node_text":"",
+    "depth":5,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_1915_C::IMPLEMENTATION_RISKS",
+    "parent_tree_node_id":"problem::codeforces_1915_C",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"SECTION_GROUP",
+    "node_type":"IMPLEMENTATION_RISKS",
+    "title":"Implementation Risks",
+    "summary":"Implementation Risks nodes for Can I Square?.",
+    "node_text":"",
+    "depth":5,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_192_A::IMPLEMENTATION_RISKS",
+    "parent_tree_node_id":"problem::codeforces_192_A",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"SECTION_GROUP",
+    "node_type":"IMPLEMENTATION_RISKS",
+    "title":"Implementation Risks",
+    "summary":"Implementation Risks nodes for Funky Numbers.",
+    "node_text":"",
+    "depth":5,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+
+    }
+  },
+  {
     "tree_node_id":"group::codeforces_2219_A::IMPLEMENTATION_RISKS",
     "parent_tree_node_id":"problem::codeforces_2219_A",
     "global_problem_id":"codeforces_2219_A",
@@ -1351,6 +1763,104 @@
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2220\/B",
     "metadata":{
 
+    }
+  },
+  {
+    "tree_node_id":"group::codeforces_750_A::IMPLEMENTATION_RISKS",
+    "parent_tree_node_id":"problem::codeforces_750_A",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"SECTION_GROUP",
+    "node_type":"IMPLEMENTATION_RISKS",
+    "title":"Implementation Risks",
+    "summary":"Implementation Risks nodes for New Year and Hurry.",
+    "node_text":"",
+    "depth":5,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_01_STATEMENT",
+    "parent_tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "title":"Can I Square? - Statement",
+    "summary":"Given numbers in a test case, decide whether their sum can be represented as the area of an integer-sided square.",
+    "node_text":"Given numbers in a test case, decide whether their sum can be represented as the area of an integer-sided square.",
+    "depth":6,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::01_STATEMENT",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_01_STATEMENT",
+    "parent_tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "title":"Funky Numbers - Statement",
+    "summary":"Decide whether a number can be written as the sum of two triangular numbers.",
+    "node_text":"Decide whether a number can be written as the sum of two triangular numbers.",
+    "depth":6,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::01_STATEMENT",
+      "parent_problem_node":"problem::codeforces_192_A"
     }
   },
   {
@@ -1598,6 +2108,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_01_STATEMENT",
+    "parent_tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"STATEMENT",
+    "title":"New Year and Hurry - Statement",
+    "summary":"Given a limited amount of contest time, each solved problem i costs 5*i minutes. Find the maximum number of first problems that can be solved without exceeding the remaining time.",
+    "node_text":"Given a limited amount of contest time, each solved problem i costs 5*i minutes. Find the maximum number of first problems that can be solved without exceeding the remaining time.",
+    "depth":6,
+    "order":1,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::01_STATEMENT",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_02_INPUT",
+    "parent_tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "title":"Can I Square? - Input",
+    "summary":"Several test cases with an array of positive integers.",
+    "node_text":"Several test cases with an array of positive integers.",
+    "depth":6,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::02_INPUT",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_02_INPUT",
+    "parent_tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "title":"Funky Numbers - Input",
+    "summary":"A single integer n.",
+    "node_text":"A single integer n.",
+    "depth":6,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::02_INPUT",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_02_INPUT",
     "parent_tree_node_id":"group::codeforces_2219_A::UNDERSTANDING",
     "global_problem_id":"codeforces_2219_A",
@@ -1839,6 +2448,105 @@
     "metadata":{
       "page_node_id":"codeforces_2220_B::02_INPUT",
       "parent_problem_node":"problem::codeforces_2220_B"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_750_A_02_INPUT",
+    "parent_tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"INPUT",
+    "title":"New Year and Hurry - Input",
+    "summary":"n is the number of available problems; k is the time already reserved.",
+    "node_text":"n is the number of available problems; k is the time already reserved.",
+    "depth":6,
+    "order":2,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::02_INPUT",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_03_OUTPUT",
+    "parent_tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "title":"Can I Square? - Output",
+    "summary":"YES if the sum is a perfect square; otherwise NO.",
+    "node_text":"YES if the sum is a perfect square; otherwise NO.",
+    "depth":6,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::03_OUTPUT",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_03_OUTPUT",
+    "parent_tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "title":"Funky Numbers - Output",
+    "summary":"YES if n = T_a + T_b for some triangular numbers; otherwise NO.",
+    "node_text":"YES if n = T_a + T_b for some triangular numbers; otherwise NO.",
+    "depth":6,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::03_OUTPUT",
+      "parent_problem_node":"problem::codeforces_192_A"
     }
   },
   {
@@ -2086,6 +2794,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_03_OUTPUT",
+    "parent_tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"OUTPUT",
+    "title":"New Year and Hurry - Output",
+    "summary":"Maximum x such that x <= n and the cumulative time fits.",
+    "node_text":"Maximum x such that x <= n and the cumulative time fits.",
+    "depth":6,
+    "order":3,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::03_OUTPUT",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_04_CONSTRAINTS",
+    "parent_tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"CONSTRAINTS",
+    "title":"Can I Square? - Constraints",
+    "summary":"The sum should be handled with integer arithmetic.",
+    "node_text":"The sum should be handled with integer arithmetic.",
+    "depth":6,
+    "order":4,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::04_CONSTRAINTS",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_04_CONSTRAINTS",
+    "parent_tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"CONSTRAINTS",
+    "title":"Funky Numbers - Constraints",
+    "summary":"n is large enough that naive unbounded enumeration is not ideal.",
+    "node_text":"n is large enough that naive unbounded enumeration is not ideal.",
+    "depth":6,
+    "order":4,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::04_CONSTRAINTS",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_04_CONSTRAINTS",
     "parent_tree_node_id":"group::codeforces_2219_A::UNDERSTANDING",
     "global_problem_id":"codeforces_2219_A",
@@ -2327,6 +3134,105 @@
     "metadata":{
       "page_node_id":"codeforces_2220_B::04_CONSTRAINTS",
       "parent_problem_node":"problem::codeforces_2220_B"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_750_A_04_CONSTRAINTS",
+    "parent_tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"CONSTRAINTS",
+    "title":"New Year and Hurry - Constraints",
+    "summary":"Small n, k within the contest time window.",
+    "node_text":"Small n, k within the contest time window.",
+    "depth":6,
+    "order":4,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::04_CONSTRAINTS",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_05_EXAMPLES",
+    "parent_tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "title":"Can I Square? - Examples",
+    "summary":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "node_text":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "depth":6,
+    "order":5,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::05_EXAMPLES",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_05_EXAMPLES",
+    "parent_tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "title":"Funky Numbers - Examples",
+    "summary":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "node_text":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "depth":6,
+    "order":5,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::05_EXAMPLES",
+      "parent_problem_node":"problem::codeforces_192_A"
     }
   },
   {
@@ -2574,6 +3480,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_05_EXAMPLES",
+    "parent_tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EXAMPLES",
+    "title":"New Year and Hurry - Examples",
+    "summary":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "node_text":"[{\"note\": \"Paraphrased demo sample omitted; see source URL.\"}]",
+    "depth":6,
+    "order":5,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::05_EXAMPLES",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_06_NOTES",
+    "parent_tree_node_id":"group::codeforces_1915_C::UNDERSTANDING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "title":"Can I Square? - Notes",
+    "summary":"Core condition: exists integer r such that r*r equals the total sum.",
+    "node_text":"Core condition: exists integer r such that r*r equals the total sum.",
+    "depth":6,
+    "order":6,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::06_NOTES",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_06_NOTES",
+    "parent_tree_node_id":"group::codeforces_192_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "title":"Funky Numbers - Notes",
+    "summary":"Triangular number: T_i = i*(i+1)\/2.",
+    "node_text":"Triangular number: T_i = i*(i+1)\/2.",
+    "depth":6,
+    "order":6,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::06_NOTES",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_06_NOTES",
     "parent_tree_node_id":"group::codeforces_2219_A::UNDERSTANDING",
     "global_problem_id":"codeforces_2219_A",
@@ -2815,6 +3820,105 @@
     "metadata":{
       "page_node_id":"codeforces_2220_B::06_NOTES",
       "parent_problem_node":"problem::codeforces_2220_B"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_750_A_06_NOTES",
+    "parent_tree_node_id":"group::codeforces_750_A::UNDERSTANDING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"NOTES",
+    "title":"New Year and Hurry - Notes",
+    "summary":"Core inequality: 5*x*(x+1)\/2 <= 240-k.",
+    "node_text":"Core inequality: 5*x*(x+1)\/2 <= 240-k.",
+    "depth":6,
+    "order":6,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::06_NOTES",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_07_EDITORIAL_FULL",
+    "parent_tree_node_id":"group::codeforces_1915_C::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "title":"Can I Square? - Editorial Full",
+    "summary":"Compute the total sum. A formula route uses integer square root and verifies root*root == sum. A binary-search route searches r and compares r*r against the sum. Common mistakes: using imprecise floating point sqrt...",
+    "node_text":"Compute the total sum. A formula route uses integer square root and verifies root*root == sum. A binary-search route searches r and compares r*r against the sum. Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "depth":6,
+    "order":7,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::07_EDITORIAL_FULL",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_07_EDITORIAL_FULL",
+    "parent_tree_node_id":"group::codeforces_192_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "title":"Funky Numbers - Editorial Full",
+    "summary":"Generate triangular numbers up to n and test complements with a set or binary search. A formula-oriented route tests if m is triangular using discriminant 1+8*m being a perfect square. Common mistakes: not limiting...",
+    "node_text":"Generate triangular numbers up to n and test complements with a set or binary search. A formula-oriented route tests if m is triangular using discriminant 1+8*m being a perfect square. Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "depth":6,
+    "order":7,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::07_EDITORIAL_FULL",
+      "parent_problem_node":"problem::codeforces_192_A"
     }
   },
   {
@@ -3062,6 +4166,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_07_EDITORIAL_FULL",
+    "parent_tree_node_id":"group::codeforces_750_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_FULL",
+    "title":"New Year and Hurry - Editorial Full",
+    "summary":"The cumulative time is triangular. A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n. Common...",
+    "node_text":"The cumulative time is triangular. A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n. Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "depth":6,
+    "order":7,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::07_EDITORIAL_FULL",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_08_EDITORIAL_OBSERVATION",
+    "parent_tree_node_id":"group::codeforces_1915_C::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "title":"Can I Square? - Editorial Observation",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":8,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::08_EDITORIAL_OBSERVATION",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_08_EDITORIAL_OBSERVATION",
+    "parent_tree_node_id":"group::codeforces_192_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "title":"Funky Numbers - Editorial Observation",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":8,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::08_EDITORIAL_OBSERVATION",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_08_EDITORIAL_OBSERVATION",
     "parent_tree_node_id":"group::codeforces_2219_A::EDITORIAL_REASONING",
     "global_problem_id":"codeforces_2219_A",
@@ -3303,6 +4506,105 @@
     "metadata":{
       "page_node_id":"codeforces_2220_B::08_EDITORIAL_OBSERVATION",
       "parent_problem_node":"problem::codeforces_2220_B"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_750_A_08_EDITORIAL_OBSERVATION",
+    "parent_tree_node_id":"group::codeforces_750_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_OBSERVATION",
+    "title":"New Year and Hurry - Editorial Observation",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":8,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::08_EDITORIAL_OBSERVATION",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_09_EDITORIAL_PROOF",
+    "parent_tree_node_id":"group::codeforces_1915_C::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_PROOF",
+    "title":"Can I Square? - Editorial Proof",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":9,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::09_EDITORIAL_PROOF",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_09_EDITORIAL_PROOF",
+    "parent_tree_node_id":"group::codeforces_192_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_PROOF",
+    "title":"Funky Numbers - Editorial Proof",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":9,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::09_EDITORIAL_PROOF",
+      "parent_problem_node":"problem::codeforces_192_A"
     }
   },
   {
@@ -3550,6 +4852,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_09_EDITORIAL_PROOF",
+    "parent_tree_node_id":"group::codeforces_750_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_PROOF",
+    "title":"New Year and Hurry - Editorial Proof",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":9,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::09_EDITORIAL_PROOF",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_10_EDITORIAL_ALGORITHM",
+    "parent_tree_node_id":"group::codeforces_1915_C::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "title":"Can I Square? - Editorial Algorithm",
+    "summary":"Compute the total sum.",
+    "node_text":"Compute the total sum.",
+    "depth":6,
+    "order":10,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::10_EDITORIAL_ALGORITHM",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_10_EDITORIAL_ALGORITHM",
+    "parent_tree_node_id":"group::codeforces_192_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "title":"Funky Numbers - Editorial Algorithm",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":10,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::10_EDITORIAL_ALGORITHM",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_10_EDITORIAL_ALGORITHM",
     "parent_tree_node_id":"group::codeforces_2219_A::EDITORIAL_REASONING",
     "global_problem_id":"codeforces_2219_A",
@@ -3791,6 +5192,105 @@
     "metadata":{
       "page_node_id":"codeforces_2220_B::10_EDITORIAL_ALGORITHM",
       "parent_problem_node":"problem::codeforces_2220_B"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_750_A_10_EDITORIAL_ALGORITHM",
+    "parent_tree_node_id":"group::codeforces_750_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_ALGORITHM",
+    "title":"New Year and Hurry - Editorial Algorithm",
+    "summary":"A binary-search solution checks whether a candidate x fits. A formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n.",
+    "node_text":"A binary-search solution checks whether a candidate x fits.\n\nA formula solution solves x^2 + x - 2*T <= 0, where T=(240-k)\/5, then caps the result by n.",
+    "depth":6,
+    "order":10,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::10_EDITORIAL_ALGORITHM",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_11_EDITORIAL_COMPLEXITY",
+    "parent_tree_node_id":"group::codeforces_1915_C::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "title":"Can I Square? - Editorial Complexity",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":11,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::11_EDITORIAL_COMPLEXITY",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_11_EDITORIAL_COMPLEXITY",
+    "parent_tree_node_id":"group::codeforces_192_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "title":"Funky Numbers - Editorial Complexity",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":11,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::11_EDITORIAL_COMPLEXITY",
+      "parent_problem_node":"problem::codeforces_192_A"
     }
   },
   {
@@ -4038,6 +5538,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_11_EDITORIAL_COMPLEXITY",
+    "parent_tree_node_id":"group::codeforces_750_A::EDITORIAL_REASONING",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"EDITORIAL_COMPLEXITY",
+    "title":"New Year and Hurry - Editorial Complexity",
+    "summary":"The cumulative time is triangular.",
+    "node_text":"The cumulative time is triangular.",
+    "depth":6,
+    "order":11,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::11_EDITORIAL_COMPLEXITY",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_12_IMPLEMENTATION_HINTS",
+    "parent_tree_node_id":"group::codeforces_1915_C::IMPLEMENTATION_RISKS",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "title":"Can I Square? - Implementation Hints",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":12,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::12_IMPLEMENTATION_HINTS",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_12_IMPLEMENTATION_HINTS",
+    "parent_tree_node_id":"group::codeforces_192_A::IMPLEMENTATION_RISKS",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "title":"Funky Numbers - Implementation Hints",
+    "summary":"",
+    "node_text":"",
+    "depth":6,
+    "order":12,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::12_IMPLEMENTATION_HINTS",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_12_IMPLEMENTATION_HINTS",
     "parent_tree_node_id":"group::codeforces_2219_A::IMPLEMENTATION_RISKS",
     "global_problem_id":"codeforces_2219_A",
@@ -4282,6 +5881,105 @@
     }
   },
   {
+    "tree_node_id":"content::codeforces_750_A_12_IMPLEMENTATION_HINTS",
+    "parent_tree_node_id":"group::codeforces_750_A::IMPLEMENTATION_RISKS",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"IMPLEMENTATION_HINTS",
+    "title":"New Year and Hurry - Implementation Hints",
+    "summary":"Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "node_text":"Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "depth":6,
+    "order":12,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::12_IMPLEMENTATION_HINTS",
+      "parent_problem_node":"problem::codeforces_750_A"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_1915_C_13_COMMON_MISTAKES",
+    "parent_tree_node_id":"group::codeforces_1915_C::IMPLEMENTATION_RISKS",
+    "global_problem_id":"codeforces_1915_C",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "title":"Can I Square? - Common Mistakes",
+    "summary":"Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "node_text":"Common mistakes: using imprecise floating point sqrt or overflowing r*r in other languages.",
+    "depth":6,
+    "order":13,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/1915\/C",
+    "metadata":{
+      "page_node_id":"codeforces_1915_C::13_COMMON_MISTAKES",
+      "parent_problem_node":"problem::codeforces_1915_C"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_192_A_13_COMMON_MISTAKES",
+    "parent_tree_node_id":"group::codeforces_192_A::IMPLEMENTATION_RISKS",
+    "global_problem_id":"codeforces_192_A",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "title":"Funky Numbers - Common Mistakes",
+    "summary":"Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "node_text":"Common mistakes: not limiting generated triangular numbers or confusing square numbers with triangular numbers.",
+    "depth":6,
+    "order":13,
+    "source":"codeforces",
+    "normalized_difficulty":1300.0,
+    "difficulty_bucket":"1200-1599",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A",
+    "metadata":{
+      "page_node_id":"codeforces_192_A::13_COMMON_MISTAKES",
+      "parent_problem_node":"problem::codeforces_192_A"
+    }
+  },
+  {
     "tree_node_id":"content::codeforces_2219_A_13_COMMON_MISTAKES",
     "parent_tree_node_id":"group::codeforces_2219_A::IMPLEMENTATION_RISKS",
     "global_problem_id":"codeforces_2219_A",
@@ -4523,6 +6221,41 @@
     "metadata":{
       "page_node_id":"codeforces_2220_B::13_COMMON_MISTAKES",
       "parent_problem_node":"problem::codeforces_2220_B"
+    }
+  },
+  {
+    "tree_node_id":"content::codeforces_750_A_13_COMMON_MISTAKES",
+    "parent_tree_node_id":"group::codeforces_750_A::IMPLEMENTATION_RISKS",
+    "global_problem_id":"codeforces_750_A",
+    "node_role":"CONTENT",
+    "node_type":"COMMON_MISTAKES",
+    "title":"New Year and Hurry - Common Mistakes",
+    "summary":"Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "node_text":"Common mistakes: forgetting the cap by n or using floating point without flooring carefully.",
+    "depth":6,
+    "order":13,
+    "source":"codeforces",
+    "normalized_difficulty":800.0,
+    "difficulty_bucket":"800-1199",
+    "original_tags":[
+      "binary search",
+      "brute force",
+      "implementation",
+      "math"
+    ],
+    "normalized_tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "topic_group":[
+      "techniques",
+      "math"
+    ],
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A",
+    "metadata":{
+      "page_node_id":"codeforces_750_A::13_COMMON_MISTAKES",
+      "parent_problem_node":"problem::codeforces_750_A"
     }
   }
 ]

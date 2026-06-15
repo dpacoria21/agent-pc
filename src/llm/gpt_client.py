@@ -12,6 +12,8 @@ import os
 from dataclasses import dataclass
 from typing import Any
 
+from llm.env_config import DEFAULT_OPENAI_MODEL, resolve_openai_settings
+
 
 @dataclass
 class GPTResult:
@@ -25,9 +27,10 @@ class GPTResult:
 
 class GPTClient:
     def __init__(self, model: str | None = None, api_key: str | None = None, base_url: str | None = None) -> None:
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY", "")
-        self.model = model or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
-        self.base_url = base_url or os.getenv("OPENAI_BASE_URL", "")
+        settings = resolve_openai_settings(requested_model=model or DEFAULT_OPENAI_MODEL)
+        self.api_key = api_key or settings.api_key
+        self.model = model or settings.model
+        self.base_url = base_url or settings.base_url
         self._client = None
         self._import_error = ""
 
@@ -152,4 +155,3 @@ class GPTClient:
                 if text:
                     parts.append(text)
         return "\n".join(parts)
-

@@ -8,7 +8,7 @@
       "CONSTRUCTIVE"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.1693,
+    "elapsed_seconds":0.3602,
     "top_result":"content::codeforces_2219_A_09_EDITORIAL_PROOF"
   },
   {
@@ -21,7 +21,7 @@
       "MATH"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.1367,
+    "elapsed_seconds":0.3369,
     "top_result":"problem::codeforces_2219_B1"
   },
   {
@@ -32,7 +32,7 @@
       "GRAPH"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.1658,
+    "elapsed_seconds":0.3417,
     "top_result":"problem::codeforces_2219_D"
   },
   {
@@ -44,7 +44,7 @@
       "CONSTRUCTIVE"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.2245,
+    "elapsed_seconds":0.3075,
     "top_result":"problem::codeforces_2219_E"
   }
 ]

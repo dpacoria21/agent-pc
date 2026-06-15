@@ -1,0 +1,150 @@
+[
+  {
+    "idea_id":"idea_1",
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_750_A",
+    "problem_title":"New Year and Hurry",
+    "idea_text":"I will binary search the maximum x. The check is 5*x*(x+1)\/2 <= 240-k and x <= n.",
+    "detected_approach":"BINARY_SEARCH",
+    "reasoning_stage":"ALGORITHM",
+    "risk_types":[
+      "UNKNOWN"
+    ],
+    "primary_risk_type":"UNKNOWN",
+    "math_concepts":[
+      "triangular_numbers",
+      "monotonic_predicate"
+    ],
+    "idea_quality":"GOOD",
+    "idea_quality_score":0.84,
+    "expected_strategy":"BINARY_SEARCH",
+    "strategy_match":true,
+    "confidence":0.93,
+    "feedback":"La idea identifica una busqueda sobre respuesta; conviene explicitar la monotonicidad del predicado.",
+    "analyzer":"heuristic_student_model_v1"
+  },
+  {
+    "idea_id":"idea_2",
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_1915_C",
+    "problem_title":"Can I Square?",
+    "idea_text":"I can binary search the integer root r and compare r*r with the sum to avoid floating point sqrt.",
+    "detected_approach":"BINARY_SEARCH",
+    "reasoning_stage":"ALGORITHM",
+    "risk_types":[
+      "FLOAT_PRECISION",
+      "OVERFLOW"
+    ],
+    "primary_risk_type":"FLOAT_PRECISION",
+    "math_concepts":[
+      "integer_sqrt",
+      "perfect_square",
+      "monotonic_predicate"
+    ],
+    "idea_quality":"GOOD",
+    "idea_quality_score":0.88,
+    "expected_strategy":"BINARY_SEARCH",
+    "strategy_match":true,
+    "confidence":0.93,
+    "feedback":"La idea identifica una busqueda sobre respuesta; conviene explicitar la monotonicidad del predicado.",
+    "analyzer":"heuristic_student_model_v1"
+  },
+  {
+    "idea_id":"idea_3",
+    "student_id":"student_binary",
+    "global_problem_id":"codeforces_192_A",
+    "problem_title":"Funky Numbers",
+    "idea_text":"I will precompute triangular numbers and for each value binary search if n minus it is also triangular.",
+    "detected_approach":"BINARY_SEARCH",
+    "reasoning_stage":"ALGORITHM",
+    "risk_types":[
+      "UNKNOWN"
+    ],
+    "primary_risk_type":"UNKNOWN",
+    "math_concepts":[
+      "triangular_numbers",
+      "monotonic_predicate"
+    ],
+    "idea_quality":"PARTIAL",
+    "idea_quality_score":0.74,
+    "expected_strategy":"BINARY_SEARCH",
+    "strategy_match":true,
+    "confidence":0.93,
+    "feedback":"La idea identifica una busqueda sobre respuesta; conviene explicitar la monotonicidad del predicado.",
+    "analyzer":"heuristic_student_model_v1"
+  },
+  {
+    "idea_id":"idea_4",
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_750_A",
+    "problem_title":"New Year and Hurry",
+    "idea_text":"I want to solve the quadratic formula for x^2+x-2*T <= 0 and use sqrt(1+8*T).",
+    "detected_approach":"MATH_FORMULA",
+    "reasoning_stage":"DEBUGGING",
+    "risk_types":[
+      "WA",
+      "FLOAT_PRECISION"
+    ],
+    "primary_risk_type":"WA",
+    "math_concepts":[
+      "quadratic_formula",
+      "integer_sqrt"
+    ],
+    "idea_quality":"PARTIAL",
+    "idea_quality_score":0.7,
+    "expected_strategy":"MATH_FORMULA",
+    "strategy_match":true,
+    "confidence":0.93,
+    "feedback":"La idea usa una ruta matematica; conviene justificar redondeo, raiz entera y limites.",
+    "analyzer":"heuristic_student_model_v1"
+  },
+  {
+    "idea_id":"idea_5",
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_1915_C",
+    "problem_title":"Can I Square?",
+    "idea_text":"I compute the integer sqrt of the total sum and check root*root == sum as the formula condition.",
+    "detected_approach":"MATH_FORMULA",
+    "reasoning_stage":"ALGORITHM",
+    "risk_types":[
+      "FLOAT_PRECISION"
+    ],
+    "primary_risk_type":"FLOAT_PRECISION",
+    "math_concepts":[
+      "integer_sqrt",
+      "perfect_square"
+    ],
+    "idea_quality":"GOOD",
+    "idea_quality_score":0.88,
+    "expected_strategy":"MATH_FORMULA",
+    "strategy_match":true,
+    "confidence":0.93,
+    "feedback":"La idea usa una ruta matematica; conviene justificar redondeo, raiz entera y limites.",
+    "analyzer":"heuristic_student_model_v1"
+  },
+  {
+    "idea_id":"idea_6",
+    "student_id":"student_formula",
+    "global_problem_id":"codeforces_192_A",
+    "problem_title":"Funky Numbers",
+    "idea_text":"For each triangular t, I test n-t with the discriminant 1+8*m being a perfect square.",
+    "detected_approach":"MATH_FORMULA",
+    "reasoning_stage":"UNDERSTANDING",
+    "risk_types":[
+      "UNKNOWN"
+    ],
+    "primary_risk_type":"UNKNOWN",
+    "math_concepts":[
+      "triangular_numbers",
+      "quadratic_formula",
+      "perfect_square"
+    ],
+    "idea_quality":"PARTIAL",
+    "idea_quality_score":0.64,
+    "expected_strategy":"MATH_FORMULA",
+    "strategy_match":true,
+    "confidence":0.93,
+    "feedback":"La idea usa una ruta matematica; conviene justificar redondeo, raiz entera y limites.",
+    "analyzer":"heuristic_student_model_v1"
+  }
+]

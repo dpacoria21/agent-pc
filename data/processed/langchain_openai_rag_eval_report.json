@@ -1,0 +1,13 @@
+{
+  "model": "gpt-5.4-nano",
+  "key_source": "OPENAI_API_KEY",
+  "queries": 8,
+  "top_k": 5,
+  "nodes_indexed": 1464,
+  "total_elapsed_seconds": 66.263,
+  "index_source": "pageindex_chunks",
+  "retrieval_units_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_chunks.csv",
+  "results_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\langchain_openai_rag_eval_results_pageindex_chunks.csv",
+  "summary_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\langchain_openai_rag_eval_summary_pageindex_chunks.csv",
+  "summary_png": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\langchain_openai_rag_eval_summary_pageindex_chunks.png"
+}

@@ -1,0 +1,21 @@
+{
+  "phase": "phase4_tree_index",
+  "status": "ok",
+  "problem_count": 80,
+  "page_node_count": 1040,
+  "llm_node_count": 60,
+  "pageindex_ready_node_count": 1190,
+  "pageindex_ready_edge_count": 1233,
+  "pageindex_ready_chunk_count": 1572,
+  "outputs": {
+    "cp_pageindex_ready_nodes_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_nodes.csv",
+    "cp_pageindex_ready_nodes_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_nodes.json",
+    "cp_pageindex_ready_nodes_parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_nodes.parquet",
+    "cp_pageindex_ready_edges_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_edges.csv",
+    "cp_pageindex_ready_edges_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_edges.json",
+    "cp_pageindex_ready_edges_parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_edges.parquet",
+    "cp_pageindex_ready_chunks_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_chunks.csv",
+    "cp_pageindex_ready_chunks_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_chunks.json",
+    "cp_pageindex_ready_chunks_parquet": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_chunks.parquet"
+  }
+}

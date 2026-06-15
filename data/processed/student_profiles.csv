@@ -1,0 +1,3 @@
+student_id,total_ideas,dominant_approach,approach_distribution,risk_distribution,math_concepts,strategy_accuracy,avg_idea_quality_score,autonomy_score,proof_skill_score,implementation_skill_score,strategy_skill_score,weak_skills
+student_binary,3,BINARY_SEARCH,"{""BINARY_SEARCH"": 3}","{""UNKNOWN"": 2, ""FLOAT_PRECISION"": 1, ""OVERFLOW"": 1}","{""triangular_numbers"": 2, ""monotonic_predicate"": 3, ""integer_sqrt"": 1, ""perfect_square"": 1}",1.0,0.82,82.8,66.0,52,100.0,"[""numeric_implementation""]"
+student_formula,3,MATH_FORMULA,"{""MATH_FORMULA"": 3}","{""WA"": 1, ""FLOAT_PRECISION"": 2, ""UNKNOWN"": 1}","{""quadratic_formula"": 2, ""integer_sqrt"": 2, ""perfect_square"": 2, ""triangular_numbers"": 1}",1.0,0.74,79.4,66.0,54,100.0,"[""numeric_implementation""]"

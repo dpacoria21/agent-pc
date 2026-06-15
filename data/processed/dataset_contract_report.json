@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "problem_count": 7,
-  "page_node_count": 91,
+  "problem_count": 80,
+  "page_node_count": 1040,
   "required_problem_columns": [
     "global_problem_id",
     "source",
@@ -59,6 +59,37 @@
     "language",
     "raw_metadata"
   ],
-  "severity_counts": {},
-  "issues": []
+  "severity_counts": {
+    "warning": 4
+  },
+  "issues": [
+    {
+      "severity": "warning",
+      "dataset": "problems",
+      "check": "short_editorial",
+      "message": "Downloaded editorial is unusually short",
+      "row_id": "codeforces_2065_H"
+    },
+    {
+      "severity": "warning",
+      "dataset": "problems",
+      "check": "short_editorial",
+      "message": "Downloaded editorial is unusually short",
+      "row_id": "codeforces_2065_G"
+    },
+    {
+      "severity": "warning",
+      "dataset": "problems",
+      "check": "short_editorial",
+      "message": "Downloaded editorial is unusually short",
+      "row_id": "codeforces_1999_G2"
+    },
+    {
+      "severity": "warning",
+      "dataset": "problems",
+      "check": "short_editorial",
+      "message": "Downloaded editorial is unusually short",
+      "row_id": "codeforces_1999_G1"
+    }
+  ]
 }

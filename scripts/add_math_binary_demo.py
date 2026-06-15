@@ -379,6 +379,9 @@ def add_demo_problems() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     # Keep the public dataset schema clean; accepted_strategies is saved only in
     # the demo report and raw_metadata, not in the main problems table.
     demo_for_main = demo_df.drop(columns=["accepted_strategies"])
+    for column in problems.columns:
+        if column not in demo_for_main.columns:
+            demo_for_main[column] = ""
     demo_for_main = demo_for_main[problems.columns]
 
     ids = set(demo_for_main["global_problem_id"])

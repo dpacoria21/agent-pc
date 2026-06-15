@@ -1,0 +1,40 @@
+{
+  "phase": "phase5_retrieval_evaluation",
+  "status": "ok",
+  "hybrid_result_rows": 48,
+  "backend_metric_rows": 15,
+  "strategy_classification_rows": 24,
+  "mean_backend_metrics": {
+    "chromadb": {
+      "precision_at_k": 0.225,
+      "recall_at_k": 0.4583,
+      "reciprocal_rank": 0.3667,
+      "latency_ms_per_query": 509.122
+    },
+    "faiss": {
+      "precision_at_k": 0.225,
+      "recall_at_k": 0.4583,
+      "reciprocal_rank": 0.3667,
+      "latency_ms_per_query": 15.086
+    },
+    "local_matrix": {
+      "precision_at_k": 0.225,
+      "recall_at_k": 0.4583,
+      "reciprocal_rank": 0.3667,
+      "latency_ms_per_query": 0.056
+    }
+  },
+  "strategy_accuracy": {
+    "chromadb": 1.0,
+    "current_heuristic": 0.0,
+    "faiss": 1.0,
+    "local_matrix": 1.0
+  },
+  "outputs": {
+    "hybrid_results": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_search_results.csv",
+    "hybrid_recommendations": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\hybrid_tree_recommendations.csv",
+    "backend_metrics": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\vector_backend_metrics.csv",
+    "backend_results": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\vector_backend_results.csv",
+    "strategy_classification": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\strategy_classification_by_model.csv"
+  }
+}

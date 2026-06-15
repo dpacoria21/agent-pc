@@ -1,82 +1,94 @@
 {
   "contract_status": "passed",
-  "problem_count": 7,
-  "page_node_count": 91,
-  "nonempty_page_node_count": 67,
+  "problem_count": 80,
+  "page_node_count": 1040,
+  "nonempty_page_node_count": 719,
   "source_counts": {
-    "codeforces": 7
+    "codeforces": 80
   },
   "difficulty_buckets": {
     "0-799": 0,
-    "800-1199": 1,
-    "1200-1599": 2,
-    "1600-1999": 1,
-    "2000-2399": 1,
+    "800-1199": 37,
+    "1200-1599": 15,
+    "1600-1999": 22,
+    "2000-2399": 4,
     "2400+": 2
   },
   "top_normalized_tags": {
-    "math": 5,
-    "implementation_constructive": 4,
-    "greedy": 3,
-    "techniques": 2,
-    "graphs": 2,
-    "interactive": 1,
-    "dynamic_programming": 1,
-    "data_structures": 1
+    "implementation_constructive": 47,
+    "math": 39,
+    "techniques": 28,
+    "data_structures": 24,
+    "greedy": 24,
+    "dynamic_programming": 11,
+    "graphs": 8,
+    "strings": 8,
+    "ternary_search": 2,
+    "interactive": 2,
+    "graph_matchings": 1
   },
   "top_topic_groups": {
-    "math": 5,
-    "implementation_constructive": 4,
-    "greedy": 3,
-    "techniques": 2,
-    "graphs": 2,
-    "interactive": 1,
-    "dynamic_programming": 1,
-    "data_structures": 1
+    "implementation_constructive": 47,
+    "math": 39,
+    "techniques": 28,
+    "data_structures": 24,
+    "greedy": 24,
+    "dynamic_programming": 11,
+    "graphs": 8,
+    "strings": 8,
+    "ternary_search": 2,
+    "interactive": 2,
+    "graph_matchings": 1
   },
   "statement_status_counts": {
-    "downloaded": 7
+    "downloaded": 80
   },
   "editorial_status_counts": {
-    "downloaded": 7
+    "downloaded": 77,
+    "unmatched": 3
   },
   "editorial_parse_method_counts": {
-    "codeforces_ajax_problemTutorial": 7
+    "blog_section_fallback": 62,
+    "codeforces_ajax_problemTutorial": 15,
+    "blog_full_fallback": 3
   },
   "statement_download_rate": 1.0,
-  "editorial_download_rate": 1.0,
-  "avg_statement_chars": 1019.71,
-  "avg_editorial_chars": 2304.43,
+  "editorial_download_rate": 0.9625,
+  "avg_statement_chars": 859.56,
+  "avg_editorial_chars": 1038.41,
   "node_type_counts": {
-    "STATEMENT": 7,
-    "INPUT": 7,
-    "OUTPUT": 7,
-    "CONSTRAINTS": 7,
-    "EXAMPLES": 7,
-    "NOTES": 7,
-    "EDITORIAL_FULL": 7,
-    "EDITORIAL_OBSERVATION": 7,
-    "EDITORIAL_PROOF": 7,
-    "EDITORIAL_ALGORITHM": 7,
-    "EDITORIAL_COMPLEXITY": 7,
-    "IMPLEMENTATION_HINTS": 7,
-    "COMMON_MISTAKES": 7
+    "STATEMENT": 80,
+    "INPUT": 80,
+    "OUTPUT": 80,
+    "CONSTRAINTS": 80,
+    "EXAMPLES": 80,
+    "NOTES": 80,
+    "EDITORIAL_FULL": 80,
+    "EDITORIAL_OBSERVATION": 80,
+    "EDITORIAL_PROOF": 80,
+    "EDITORIAL_ALGORITHM": 80,
+    "EDITORIAL_COMPLEXITY": 80,
+    "IMPLEMENTATION_HINTS": 80,
+    "COMMON_MISTAKES": 80
   },
   "nonempty_node_type_counts": {
-    "STATEMENT": 7,
-    "INPUT": 7,
-    "EXAMPLES": 7,
-    "NOTES": 7,
-    "EDITORIAL_FULL": 7,
-    "EDITORIAL_ALGORITHM": 7,
-    "OUTPUT": 6,
-    "IMPLEMENTATION_HINTS": 6,
-    "EDITORIAL_OBSERVATION": 5,
-    "EDITORIAL_COMPLEXITY": 4,
-    "EDITORIAL_PROOF": 2,
-    "COMMON_MISTAKES": 2
+    "STATEMENT": 80,
+    "INPUT": 80,
+    "CONSTRAINTS": 80,
+    "EXAMPLES": 80,
+    "EDITORIAL_FULL": 80,
+    "OUTPUT": 78,
+    "NOTES": 65,
+    "EDITORIAL_ALGORITHM": 63,
+    "IMPLEMENTATION_HINTS": 43,
+    "EDITORIAL_COMPLEXITY": 27,
+    "EDITORIAL_PROOF": 20,
+    "EDITORIAL_OBSERVATION": 17,
+    "COMMON_MISTAKES": 6
   },
-  "editorial_related_node_count": 49,
-  "nonempty_editorial_related_node_count": 33,
-  "issues_by_severity": {}
+  "editorial_related_node_count": 560,
+  "nonempty_editorial_related_node_count": 256,
+  "issues_by_severity": {
+    "warning": 4
+  }
 }

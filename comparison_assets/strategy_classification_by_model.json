@@ -98,11 +98,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":5,
+    "binary_score":4,
     "formula_score":12,
     "top_problem_ids":"[\"codeforces_750_A\", \"codeforces_750_A\", \"codeforces_1915_C\"]",
     "top_node_types":"[\"EDITORIAL_ALGORITHM\", \"EDITORIAL_FULL\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.667352, 0.555344, 0.340918]"
+    "top_scores":"[0.678393, 0.541463, 0.336306]"
   },
   {
     "model":"local_matrix",
@@ -117,7 +117,7 @@
     "formula_score":9,
     "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.890407, 0.496004, 0.370921]"
+    "top_scores":"[0.827428, 0.561879, 0.441701]"
   },
   {
     "model":"local_matrix",
@@ -132,7 +132,7 @@
     "formula_score":6,
     "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_192_A\", \"codeforces_192_A\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"OUTPUT\"]",
-    "top_scores":"[0.87182, 0.631417, 0.42892]"
+    "top_scores":"[0.860413, 0.635832, 0.467406]"
   },
   {
     "model":"local_matrix",
@@ -143,11 +143,11 @@
     "expected_strategy":"MATH_FORMULA",
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
-    "binary_score":1,
+    "binary_score":0,
     "formula_score":18,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_ALGORITHM\"]",
-    "top_scores":"[0.636689, 0.60849, 0.394872]"
+    "top_problem_ids":"[\"codeforces_2219_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
+    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_FULL\", \"COMMON_MISTAKES\"]",
+    "top_scores":"[0.562974, 0.371254, 0.298519]"
   },
   {
     "model":"local_matrix",
@@ -159,10 +159,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":7,
+    "formula_score":11,
     "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_ALGORITHM\", \"NOTES\"]",
-    "top_scores":"[0.868388, 0.401669, 0.380778]"
+    "top_scores":"[0.829468, 0.418174, 0.386759]"
   },
   {
     "model":"local_matrix",
@@ -175,9 +175,9 @@
     "is_correct":true,
     "binary_score":1,
     "formula_score":8,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"STATEMENT\"]",
-    "top_scores":"[0.715364, 0.534127, 0.230172]"
+    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_192_A\"]",
+    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"COMMON_MISTAKES\"]",
+    "top_scores":"[0.688852, 0.617239, 0.209414]"
   },
   {
     "model":"faiss",
@@ -188,11 +188,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":5,
+    "binary_score":4,
     "formula_score":12,
     "top_problem_ids":"[\"codeforces_750_A\", \"codeforces_750_A\", \"codeforces_1915_C\"]",
     "top_node_types":"[\"EDITORIAL_ALGORITHM\", \"EDITORIAL_FULL\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.667351, 0.555344, 0.340918]"
+    "top_scores":"[0.678393, 0.541463, 0.336306]"
   },
   {
     "model":"faiss",
@@ -207,7 +207,7 @@
     "formula_score":9,
     "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.890406, 0.496004, 0.370921]"
+    "top_scores":"[0.827428, 0.561879, 0.441701]"
   },
   {
     "model":"faiss",
@@ -222,7 +222,7 @@
     "formula_score":6,
     "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_192_A\", \"codeforces_192_A\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"OUTPUT\"]",
-    "top_scores":"[0.87182, 0.631417, 0.42892]"
+    "top_scores":"[0.860413, 0.635832, 0.467406]"
   },
   {
     "model":"faiss",
@@ -233,11 +233,11 @@
     "expected_strategy":"MATH_FORMULA",
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
-    "binary_score":1,
+    "binary_score":0,
     "formula_score":18,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_ALGORITHM\"]",
-    "top_scores":"[0.636689, 0.60849, 0.394872]"
+    "top_problem_ids":"[\"codeforces_2219_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
+    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_FULL\", \"COMMON_MISTAKES\"]",
+    "top_scores":"[0.562974, 0.371254, 0.298519]"
   },
   {
     "model":"faiss",
@@ -249,10 +249,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":7,
+    "formula_score":11,
     "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_ALGORITHM\", \"NOTES\"]",
-    "top_scores":"[0.868388, 0.401669, 0.380778]"
+    "top_scores":"[0.829468, 0.418174, 0.386759]"
   },
   {
     "model":"faiss",
@@ -265,9 +265,9 @@
     "is_correct":true,
     "binary_score":1,
     "formula_score":8,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"STATEMENT\"]",
-    "top_scores":"[0.715364, 0.534127, 0.230172]"
+    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_192_A\"]",
+    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"COMMON_MISTAKES\"]",
+    "top_scores":"[0.688852, 0.617239, 0.209414]"
   },
   {
     "model":"chromadb",
@@ -278,11 +278,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":5,
+    "binary_score":4,
     "formula_score":12,
     "top_problem_ids":"[\"codeforces_750_A\", \"codeforces_750_A\", \"codeforces_1915_C\"]",
     "top_node_types":"[\"EDITORIAL_ALGORITHM\", \"EDITORIAL_FULL\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.667352, 0.555344, 0.340918]"
+    "top_scores":"[0.678393, 0.541463, 0.336306]"
   },
   {
     "model":"chromadb",
@@ -297,7 +297,7 @@
     "formula_score":9,
     "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.890407, 0.496004, 0.370921]"
+    "top_scores":"[0.827429, 0.561879, 0.441701]"
   },
   {
     "model":"chromadb",
@@ -312,7 +312,7 @@
     "formula_score":6,
     "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_192_A\", \"codeforces_192_A\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"OUTPUT\"]",
-    "top_scores":"[0.87182, 0.631417, 0.42892]"
+    "top_scores":"[0.860413, 0.635832, 0.467406]"
   },
   {
     "model":"chromadb",
@@ -323,11 +323,11 @@
     "expected_strategy":"MATH_FORMULA",
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
-    "binary_score":1,
+    "binary_score":0,
     "formula_score":18,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_ALGORITHM\"]",
-    "top_scores":"[0.636689, 0.608489, 0.394872]"
+    "top_problem_ids":"[\"codeforces_2219_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
+    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_FULL\", \"COMMON_MISTAKES\"]",
+    "top_scores":"[0.562974, 0.371254, 0.298519]"
   },
   {
     "model":"chromadb",
@@ -339,10 +339,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":7,
+    "formula_score":11,
     "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
     "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_ALGORITHM\", \"NOTES\"]",
-    "top_scores":"[0.868388, 0.401669, 0.380778]"
+    "top_scores":"[0.829468, 0.418174, 0.386759]"
   },
   {
     "model":"chromadb",
@@ -355,8 +355,8 @@
     "is_correct":true,
     "binary_score":1,
     "formula_score":8,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"STATEMENT\"]",
-    "top_scores":"[0.715364, 0.534127, 0.230173]"
+    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_192_A\"]",
+    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"COMMON_MISTAKES\"]",
+    "top_scores":"[0.688852, 0.61724, 0.209414]"
   }
 ]

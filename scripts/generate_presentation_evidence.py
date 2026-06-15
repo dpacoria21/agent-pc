@@ -111,10 +111,23 @@ def workspace_files():
     return sorted(files)
 
 
+def read_json_or_empty(*candidates):
+    for path in candidates:
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
+    return {}
+
+
 problems = pd.read_csv(ROOT / "data/processed/cp_problems_dataset.csv")
 nodes = pd.read_csv(ROOT / "data/processed/cp_page_nodes_dataset.csv")
-quality = json.loads((ROOT / "data/processed/first_run_quality_report.json").read_text(encoding="utf-8"))
-summary = json.loads((ROOT / "data/processed/first_run_summary.json").read_text(encoding="utf-8"))
+quality = read_json_or_empty(
+    ROOT / "data/processed/first_run_quality_report.json",
+    ROOT / "data/processed/dataset_quality_report.json",
+)
+summary = read_json_or_empty(
+    ROOT / "data/processed/first_run_summary.json",
+    ROOT / "data/processed/dataset_contract_report.json",
+)
 
 normalized_tag_counter = Counter()
 original_tag_counter = Counter()
@@ -154,9 +167,10 @@ implemented = {
     "Student Simulation": True,
     "Student Profile": True,
     "Recommendation": True,
-    "LLM API": False,
-    "FAISS": False,
-    "ChromaDB": False,
+    "LLM API": (ROOT / "data/processed/cp_llm_tree_nodes_dataset.csv").exists(),
+    "FAISS": (ROOT / "comparison_assets/vector_backend_metrics.csv").exists(),
+    "ChromaDB": (ROOT / "comparison_assets/vector_backend_metrics.csv").exists(),
+    "RAG Judge": (ROOT / "data/processed/rag_judge_summary_table.csv").exists(),
 }
 save_bar(
     {key: int(value) for key, value in implemented.items()},

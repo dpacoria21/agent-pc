@@ -1,0 +1,7 @@
+student_id,global_problem_id,problem_title,query_step,created_second,idea_text
+student_binary,codeforces_750_A,New Year and Hurry,1,80,I will binary search the maximum x. The check is 5*x*(x+1)/2 <= 240-k and x <= n.
+student_binary,codeforces_1915_C,Can I Square?,2,140,I can binary search the integer root r and compare r*r with the sum to avoid floating point sqrt.
+student_binary,codeforces_192_A,Funky Numbers,3,260,I will precompute triangular numbers and for each value binary search if n minus it is also triangular.
+student_formula,codeforces_750_A,New Year and Hurry,1,70,I want to solve the quadratic formula for x^2+x-2*T <= 0 and use sqrt(1+8*T).
+student_formula,codeforces_1915_C,Can I Square?,2,130,I compute the integer sqrt of the total sum and check root*root == sum as the formula condition.
+student_formula,codeforces_192_A,Funky Numbers,3,250,"For each triangular t, I test n-t with the discriminant 1+8*m being a perfect square."

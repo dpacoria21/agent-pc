@@ -12,3 +12,7 @@ sentence-transformers
 faiss-cpu
 chromadb
 openai
+python-dotenv
+langchain-core
+langchain-openai
+streamlit

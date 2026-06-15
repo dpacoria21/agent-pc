@@ -1,0 +1,32 @@
+{
+  "phase": "phase7_adaptive_recommendations",
+  "status": "ok",
+  "profile_rows": 2,
+  "recommendation_rows": 10,
+  "students": [
+    "student_binary",
+    "student_formula"
+  ],
+  "top_recommendations": [
+    {
+      "student_id": "student_binary",
+      "global_problem_id": "codeforces_192_A",
+      "title": "Funky Numbers",
+      "recommendation_score": 0.9259,
+      "reason": "Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement/editorial."
+    },
+    {
+      "student_id": "student_formula",
+      "global_problem_id": "codeforces_192_A",
+      "title": "Funky Numbers",
+      "recommendation_score": 0.9259,
+      "reason": "Recomendado porque trabaja MATH_FORMULA, con dificultad cercana a 1300 y evidencia en el statement/editorial."
+    }
+  ],
+  "outputs": {
+    "student_profiles_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\student_profiles.csv",
+    "student_profiles_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\student_profiles.json",
+    "adaptive_problem_recommendations_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\adaptive_problem_recommendations.csv",
+    "adaptive_problem_recommendations_json": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\adaptive_problem_recommendations.json"
+  }
+}

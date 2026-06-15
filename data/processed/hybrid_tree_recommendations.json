@@ -9,7 +9,7 @@
       "implementation_constructive",
       "math"
     ],
-    "recommendation_score":0.844701,
+    "recommendation_score":0.823504,
     "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
   },
@@ -30,6 +30,36 @@
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1"
   },
   {
+    "query_id":"grid_l_proof",
+    "query":"I understand the grid equation but I cannot prove why the construction condition is sufficient",
+    "global_problem_id":"codeforces_192_A",
+    "title":"Funky Numbers",
+    "normalized_difficulty":1300.0,
+    "tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "recommendation_score":0.576,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas techniques, implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A"
+  },
+  {
+    "query_id":"grid_l_proof",
+    "query":"I understand the grid equation but I cannot prove why the construction condition is sufficient",
+    "global_problem_id":"codeforces_750_A",
+    "title":"New Year and Hurry",
+    "normalized_difficulty":800.0,
+    "tags":[
+      "techniques",
+      "implementation_constructive",
+      "math"
+    ],
+    "recommendation_score":0.576,
+    "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas techniques, implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/750\/A"
+  },
+  {
     "query_id":"unique_values_formula",
     "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
     "global_problem_id":"codeforces_2219_B1",
@@ -41,39 +71,24 @@
       "interactive",
       "math"
     ],
-    "recommendation_score":1.313641,
+    "recommendation_score":1.085767,
     "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas techniques, implementation_constructive, interactive.",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/B1"
   },
   {
     "query_id":"unique_values_formula",
     "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
-    "global_problem_id":"codeforces_2219_C",
-    "title":"Coloring a Red Black Tree",
-    "normalized_difficulty":2300.0,
+    "global_problem_id":"codeforces_192_A",
+    "title":"Funky Numbers",
+    "normalized_difficulty":1300.0,
     "tags":[
-      "graphs",
-      "dynamic_programming",
-      "greedy",
-      "math"
-    ],
-    "recommendation_score":0.7425,
-    "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas graphs, dynamic_programming, greedy.",
-    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/C"
-  },
-  {
-    "query_id":"unique_values_formula",
-    "query":"I need a formula or binary search style strategy for the Unique Values interactive math problem",
-    "global_problem_id":"codeforces_2219_A",
-    "title":"Grid L",
-    "normalized_difficulty":1400.0,
-    "tags":[
+      "techniques",
       "implementation_constructive",
       "math"
     ],
-    "recommendation_score":0.67125,
-    "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas implementation_constructive, math.",
-    "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
+    "recommendation_score":0.856871,
+    "reason":"Recomendado porque recupero nodos relevantes para algorithm y coincide con temas techniques, implementation_constructive, math.",
+    "url":"https:\/\/codeforces.com\/problemset\/problem\/192\/A"
   },
   {
     "query_id":"tree_mex_implementation",
@@ -87,7 +102,7 @@
       "math",
       "graphs"
     ],
-    "recommendation_score":0.944454,
+    "recommendation_score":0.964414,
     "reason":"Recomendado porque recupero nodos relevantes para edge_cases y coincide con temas data_structures, implementation_constructive, math.",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/D"
   },
@@ -117,7 +132,7 @@
       "implementation_constructive",
       "math"
     ],
-    "recommendation_score":1.158772,
+    "recommendation_score":1.210523,
     "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/E"
   },
@@ -131,7 +146,7 @@
       "implementation_constructive",
       "math"
     ],
-    "recommendation_score":0.98341,
+    "recommendation_score":0.971076,
     "reason":"Recomendado porque recupero nodos relevantes para proof y coincide con temas implementation_constructive, math.",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2219\/A"
   },

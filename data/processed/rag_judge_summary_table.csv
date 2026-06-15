@@ -1,0 +1,6 @@
+Metrica,Umbral,Promedio,Desviacion estandar,% >= umbral
+Faithfulness,0.80,0.95,0.004,100 %
+Answer Relevancy,0.85,0.87,0.005,100 %
+Context Precision,0.70,1.00,0.000,100 %
+Strategy Classification,0.80,1.00,0.000,100 %
+Recommendation Fit,0.75,0.92,0.000,100 %

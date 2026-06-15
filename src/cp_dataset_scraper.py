@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import html as html_lib
 import json
 import random
 import re
@@ -275,11 +276,86 @@ def clean_text(text: Any) -> str:
     if text is None or (isinstance(text, float) and np.isnan(text)):
         return ""
     text = str(text)
+    text = normalize_math_text(text)
     text = text.replace("\xa0", " ")
     text = re.sub(r"\r\n?", "\n", text)
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+def normalize_math_text(text: Any) -> str:
+    """Normalize common contest math markup into model-friendly Markdown LaTeX."""
+    if text is None:
+        return ""
+    value = html_lib.unescape(str(text))
+    replacements = {
+        "\u00a0": " ",
+        "\u2212": "-",
+        "\u2013": "-",
+        "\u2014": "-",
+        "\u2026": "...",
+        "â‰¤": "<=",
+        "â‰¥": ">=",
+        "âˆ’": "-",
+        "â€¦": "...",
+        "â€”": "-",
+        "â€“": "-",
+    }
+    for src, dst in replacements.items():
+        value = value.replace(src, dst)
+    value = re.sub(r"\{\\color\{[^{}]+\}\{([^{}]+)\}\}", r"\1", value)
+    value = re.sub(r"\${6}\s*(.*?)\s*\${6}", lambda m: f"$${m.group(1).strip()}$$", value, flags=re.S)
+    value = re.sub(r"\${3}\s*(.*?)\s*\${3}", lambda m: f"${m.group(1).strip()}$", value, flags=re.S)
+    return space_inline_math(value)
+
+
+def space_inline_math(text: str) -> str:
+    """Add spaces around inline math spans without changing their content."""
+    pieces: list[str] = []
+    last = 0
+    for match in re.finditer(r"\$[^$\n]+\$", text):
+        before = text[last : match.start()]
+        math = match.group(0)
+        if before and before[-1].isalnum():
+            before += " "
+        if match.end() < len(text) and text[match.end()].isalnum():
+            math += " "
+        pieces.append(before)
+        pieces.append(math)
+        last = match.end()
+    pieces.append(text[last:])
+    return "".join(pieces)
+
+
+def html_to_text_preserving_math(node: Any, separator: str = "\n") -> str:
+    """Extract readable text while preserving LaTeX-like math fragments."""
+    if node is None:
+        return ""
+    soup = BeautifulSoup(str(node), "html.parser")
+    for script in soup.select("script"):
+        script_type = str(script.get("type", "")).lower()
+        if "math/tex" in script_type or "text/tex" in script_type:
+            content = clean_text(script.string or script.get_text(" ", strip=True))
+            if content:
+                script.replace_with(f" ${content}$ ")
+            else:
+                script.decompose()
+        else:
+            script.decompose()
+    for img in soup.select("img"):
+        alt = clean_text(img.get("alt", ""))
+        title = clean_text(img.get("title", ""))
+        replacement = alt or title
+        if replacement:
+            img.replace_with(f" {replacement} ")
+        else:
+            img.decompose()
+    for annotation in soup.select("annotation"):
+        content = clean_text(annotation.get_text(" ", strip=True))
+        if content:
+            annotation.replace_with(f" ${content}$ ")
+    return clean_text(soup.get_text(separator, strip=True))
 
 
 def first_nonempty(*values: Any) -> Any:
@@ -650,7 +726,12 @@ def extract_constraints_from_text(text: str) -> str:
     lines = [line.strip() for line in (text or "").splitlines() if line.strip()]
     candidates = []
     for line in lines:
-        if re.search(r"(\d+\s*(<=|≤|<)\s*[a-zA-Z]|[a-zA-Z]\s*(<=|≤|<)\s*\d+|constraints?)", line, re.I):
+        if re.search(
+            r"(\d+\s*(<=|>=|<|>|\\leq|\\geq|\\le|\\ge)\s*[a-zA-Z]|"
+            r"[a-zA-Z]\s*(<=|>=|<|>|\\leq|\\geq|\\le|\\ge)\s*\d+|constraints?)",
+            line,
+            re.I,
+        ):
             candidates.append(line)
     return clean_text("\n".join(candidates[:12]))
 
@@ -688,17 +769,17 @@ def scrape_codeforces_problem_statement(
         if container is None:
             return {"statement_status": "parse_failed", "parse_status": "parse_failed"}
 
-        time_limit = clean_text(container.select_one(".time-limit").get_text(" ", strip=True)) if container.select_one(".time-limit") else ""
-        memory_limit = clean_text(container.select_one(".memory-limit").get_text(" ", strip=True)) if container.select_one(".memory-limit") else ""
+        time_limit = html_to_text_preserving_math(container.select_one(".time-limit"), " ") if container.select_one(".time-limit") else ""
+        memory_limit = html_to_text_preserving_math(container.select_one(".memory-limit"), " ") if container.select_one(".memory-limit") else ""
 
         input_node = container.select_one(".input-specification")
         output_node = container.select_one(".output-specification")
         note_node = container.select_one(".note")
         sample_node = container.select_one(".sample-tests")
 
-        input_description = clean_text(input_node.get_text("\n", strip=True)) if input_node else ""
-        output_description = clean_text(output_node.get_text("\n", strip=True)) if output_node else ""
-        notes = clean_text(note_node.get_text("\n", strip=True)) if note_node else ""
+        input_description = html_to_text_preserving_math(input_node) if input_node else ""
+        output_description = html_to_text_preserving_math(output_node) if output_node else ""
+        notes = html_to_text_preserving_math(note_node) if note_node else ""
 
         input_blocks = [pre.get_text("\n", strip=True) for pre in container.select(".sample-tests .input pre")]
         output_blocks = [pre.get_text("\n", strip=True) for pre in container.select(".sample-tests .output pre")]
@@ -711,7 +792,7 @@ def scrape_codeforces_problem_statement(
             classes = set(getattr(child, "get", lambda *_: [])("class", []))
             if classes.intersection(stop_classes):
                 break
-            text = clean_text(child.get_text("\n", strip=True)) if hasattr(child, "get_text") else clean_text(child)
+            text = html_to_text_preserving_math(child) if hasattr(child, "get_text") else clean_text(child)
             if text and not text.lower().startswith(("time limit", "memory limit")):
                 statement_parts.append(text)
         statement = clean_text("\n\n".join(statement_parts))
@@ -777,7 +858,7 @@ def find_codeforces_tutorial_url_from_problem_page(
 
 def _codeforces_editorial_body_text(soup: BeautifulSoup) -> str:
     body = soup.select_one(".ttypography") or soup.select_one(".blog-entry-content") or soup.body
-    return clean_text(body.get_text("\n", strip=True)) if body else ""
+    return html_to_text_preserving_math(body) if body else ""
 
 
 def _extract_codeforces_csrf(soup: BeautifulSoup) -> str:
@@ -843,7 +924,7 @@ def extract_codeforces_toggle_context(section_soup: Optional[BeautifulSoup]) -> 
     for spoiler in section_soup.select(".spoiler"):
         title_node = spoiler.select_one(".spoiler-title")
         content_node = spoiler.select_one(".spoiler-content")
-        spoiler_title = clean_text(title_node.get_text(" ", strip=True)) if title_node else "Spoiler"
+        spoiler_title = html_to_text_preserving_math(title_node, " ") if title_node else "Spoiler"
         if not content_node:
             continue
         lower_title = spoiler_title.lower()
@@ -851,7 +932,7 @@ def extract_codeforces_toggle_context(section_soup: Optional[BeautifulSoup]) -> 
             continue
         for placeholder in content_node.select(".problemTutorial"):
             placeholder.decompose()
-        text = clean_text(content_node.get_text("\n", strip=True))
+        text = html_to_text_preserving_math(content_node)
         if not text or "tutorial is loading" in text.lower():
             continue
         blocks.append(f"{spoiler_title}:\n{text}")
@@ -892,6 +973,9 @@ def fetch_codeforces_problem_tutorial(
         return "", "missing"
     tutorial_soup = BeautifulSoup(tutorial_html, "html.parser")
     text = _codeforces_editorial_body_text(tutorial_soup)
+    section_text = extract_codeforces_editorial_section(text, problem_index, "")
+    if section_text:
+        text = section_text
     return text, "downloaded" if text else "missing"
 
 
@@ -912,7 +996,7 @@ def _looks_like_codeforces_problem_heading(line: str) -> bool:
         return True
     if re.match(r"^[A-H][0-9]?\.\s+\S.{2,}$", line):
         return True
-    if re.match(r"^(?:problem\s+)?[A-H][0-9]?\s*[-:]\s+\S.{2,}$", line, flags=re.IGNORECASE):
+    if re.match(r"^(?:problem\s+)?[A-H][0-9]?\s*[-:\u2013\u2014]\s+\S.{2,}$", line, flags=re.IGNORECASE):
         return True
     return False
 
@@ -922,7 +1006,7 @@ def _trim_codeforces_code_spoiler(section_text: str) -> str:
     if not lines:
         return ""
     for idx, line in enumerate(lines):
-        if line.lower() == "code" and idx > 3:
+        if line.lower().startswith("code") and idx > 3:
             before = "\n".join(lines[:idx])
             if len(before.split()) >= 40:
                 return clean_text(before)
@@ -1080,17 +1164,17 @@ def extract_atcoder_sections(container: Any) -> Dict[str, Any]:
     for child in container.children:
         if getattr(child, "name", None) == "h3":
             break
-        text = clean_text(child.get_text("\n", strip=True)) if hasattr(child, "get_text") else clean_text(child)
+        text = html_to_text_preserving_math(child) if hasattr(child, "get_text") else clean_text(child)
         if text:
             statement_intro.append(text)
 
     for h3 in h3_nodes:
-        heading = clean_text(h3.get_text(" ", strip=True))
+        heading = html_to_text_preserving_math(h3, " ")
         body_parts = []
         for sibling in h3.next_siblings:
             if getattr(sibling, "name", None) == "h3":
                 break
-            text = clean_text(sibling.get_text("\n", strip=True)) if hasattr(sibling, "get_text") else clean_text(sibling)
+            text = html_to_text_preserving_math(sibling) if hasattr(sibling, "get_text") else clean_text(sibling)
             if text:
                 body_parts.append(text)
         body = clean_text("\n\n".join(body_parts))
@@ -1155,7 +1239,7 @@ def scrape_atcoder_problem_statement(
         if container is None:
             return {"statement_status": "parse_failed", "parse_status": "parse_failed"}
         sections = extract_atcoder_sections(container)
-        all_text = clean_text(soup.get_text("\n", strip=True))
+        all_text = html_to_text_preserving_math(soup)
         time_match = re.search(r"Time Limit:\s*([^/\n]+)", all_text)
         mem_match = re.search(r"Memory Limit:\s*([^\n]+)", all_text)
         sections.update(
@@ -1194,7 +1278,7 @@ def scrape_atcoder_editorials(
     for link in soup.select("a[href]"):
         href = link.get("href", "")
         if f"/contests/{contest_id}/editorial/" in href or re.search(r"/editorial/\d+", href):
-            links.append({"text": clean_text(link.get_text(" ", strip=True)), "url": urljoin(url, href)})
+            links.append({"text": html_to_text_preserving_math(link, " "), "url": urljoin(url, href)})
     unique_links = []
     seen = set()
     for item in links:
@@ -1245,7 +1329,7 @@ def match_atcoder_editorial_for_problem(
     try:
         soup = BeautifulSoup(html, "html.parser")
         container = soup.select_one(".lang-en" if preferred_language == "en" else ".lang-ja") or soup.select_one("#main-container") or soup.body
-        text = clean_text(container.get_text("\n", strip=True)) if container else ""
+        text = html_to_text_preserving_math(container) if container else ""
         return {"official_editorial": text, "editorial_url": selected["url"], "editorial_status": "downloaded" if text else "missing"}
     except Exception as exc:
         return {"official_editorial": "", "editorial_url": selected["url"], "editorial_status": f"parse_failed:{type(exc).__name__}"}

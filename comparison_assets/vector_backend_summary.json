@@ -1,5 +1,5 @@
 {
-  "nodes_indexed": 68,
+  "nodes_indexed": 95,
   "queries": [
     {
       "query_id": "binary_quadratic_time",
@@ -69,25 +69,25 @@
   "embedding": {
     "embedding_backend": "tfidf_svd_normalized",
     "tfidf_shape": [
-      68,
-      495
+      95,
+      2957
     ],
-    "embedding_dim": 67,
-    "n_components": 67,
+    "embedding_dim": 94,
+    "n_components": 94,
     "normalization": "l2"
   },
   "backend_status": {
     "local_matrix": {
       "status": "ok",
-      "elapsed_seconds": 0.002550399978645146
+      "elapsed_seconds": 0.00028149998979642987
     },
     "faiss": {
       "status": "ok",
-      "elapsed_seconds": 35.200356299988925
+      "elapsed_seconds": 0.07543110000551678
     },
     "chromadb": {
       "status": "ok",
-      "elapsed_seconds": 3.7183332000277005
+      "elapsed_seconds": 2.5456082000164315
     }
   },
   "why_results_match": "All backends receive the same L2-normalized TF-IDF+SVD vectors and use cosine-equivalent similarity. Local matrix and FAISS IndexFlatIP are exact under this setup; ChromaDB also returns the same top-k on this small dataset. Differences should mainly appear with larger datasets, approximate indexes, different embedding models, filtering, persistence settings, or backend-specific indexing parameters.",
@@ -101,23 +101,23 @@
     "chromadb": {
       "precision_at_k": 0.225,
       "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.4667,
-      "avg_score": 0.3442,
-      "latency_ms_per_query": 743.667
+      "reciprocal_rank": 0.3667,
+      "avg_score": 0.3887,
+      "latency_ms_per_query": 509.122
     },
     "faiss": {
       "precision_at_k": 0.225,
       "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.4667,
-      "avg_score": 0.3442,
-      "latency_ms_per_query": 7040.071
+      "reciprocal_rank": 0.3667,
+      "avg_score": 0.3887,
+      "latency_ms_per_query": 15.086
     },
     "local_matrix": {
       "precision_at_k": 0.225,
       "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.4667,
-      "avg_score": 0.3442,
-      "latency_ms_per_query": 0.51
+      "reciprocal_rank": 0.3667,
+      "avg_score": 0.3887,
+      "latency_ms_per_query": 0.056
     }
   }
 }
