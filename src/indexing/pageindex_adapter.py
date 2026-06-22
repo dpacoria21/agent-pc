@@ -18,11 +18,13 @@ from typing import Any
 
 import pandas as pd
 
+from text_formatting import normalize_math_text
+
 
 def clean_text(value: Any) -> str:
     if value is None or (isinstance(value, float) and pd.isna(value)):
         return ""
-    text = str(value).replace("\xa0", " ")
+    text = normalize_math_text(value).replace("\xa0", " ")
     text = re.sub(r"\r\n?", "\n", text)
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)

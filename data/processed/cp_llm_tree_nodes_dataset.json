@@ -11,37 +11,19 @@
     "evidence_text":"“For each i, the value b_i denotes the time unit at which person i sits down. Your task is to determine how many distinct arrays a are consistent with the given array b.”",
     "node_text":"Dado n, m, y un arreglo b (0<=b_i<m) que contiene todos los valores 0..m-1 al menos una vez, contar cuántos arreglos a (0<=a_i<n) producen exactamente los tiempos de asiento b_i.\n\n“For each i, the value b_i denotes the time unit at which person i sits down. Your task is to determine how many distinct arrays a are consistent with the given array b.”",
     "source_section":"Statement",
-    "skills":[
-      "Interpretar restricciones de proceso discreto",
-      "Comprender simultaneidad por tiempo"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Interpretar restricciones de proceso discreto\", \"Comprender simultaneidad por tiempo\"]",
+    "strategies":"[]",
     "confidence":0.78,
     "depth":0,
     "order":1,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::understand_when_no_valid_a",
@@ -55,36 +37,19 @@
     "evidence_text":"“If a person i with b_i > 0 has no neighbour with a smaller b_i, they would never sit down so there is no valid a so we output 0.”",
     "node_text":"Si una persona con b_i>0 no tiene vecino con menor b_i, nunca podrá sentarse; entonces la respuesta es 0.\n\n“If a person i with b_i > 0 has no neighbour with a smaller b_i, they would never sit down so there is no valid a so we output 0.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Razonamiento de imposibilidad por dependencia local"
-    ],
-    "strategies":[
-      "Verificar existencia de vecino con b menor para b_i>0"
-    ],
+    "skills":"[\"Razonamiento de imposibilidad por dependencia local\"]",
+    "strategies":"[\"Verificar existencia de vecino con b menor para b_i>0\"]",
     "confidence":0.86,
     "depth":1,
     "order":2,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::obs_independence",
@@ -98,36 +63,19 @@
     "evidence_text":"“We can observe that all a_i are independent of each other so long as they are consistent with the array b. This means we can compute the number of possible a_i for every i separately.”",
     "node_text":"Los valores a_i se pueden contar por persona de forma independiente mientras sean consistentes con b; luego se multiplican las cantidades.\n\n“We can observe that all a_i are independent of each other so long as they are consistent with the array b. This means we can compute the number of possible a_i for every i separately.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Descomposición del conteo en factores independientes"
-    ],
-    "strategies":[
-      "Contar opciones por variable y multiplicar"
-    ],
+    "skills":"[\"Descomposición del conteo en factores independientes\"]",
+    "strategies":"[\"Contar opciones por variable y multiplicar\"]",
     "confidence":0.84,
     "depth":1,
     "order":3,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::model_ct",
@@ -141,37 +89,19 @@
     "evidence_text":"“Let c_t be the number of people sat down at time t or earlier. This is all people where b_i ≤ t. For a time t, we can calculate c_t using prefix sums as it is the sum of c_{t-1} and the number of people that sit down at time t.”",
     "node_text":"Definir c_t como la cantidad de personas sentadas en el tiempo t o antes (equivale a b_i<=t). Se calcula con prefijos: c_t = c_{t-1} + (# que se sientan exactamente en t).\n\n“Let c_t be the number of people sat down at time t or earlier. This is all people where b_i ≤ t. For a time t, we can calculate c_t using prefix sums as it is the sum of c_{t-1} and the number of people that sit down at time t.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Construir variables auxiliares",
-      "Usar prefix sums"
-    ],
-    "strategies":[
-      "Precomputar c_t para rangos de tiempos"
-    ],
+    "skills":"[\"Construir variables auxiliares\", \"Usar prefix sums\"]",
+    "strategies":"[\"Precomputar c_t para rangos de tiempos\"]",
     "confidence":0.82,
     "depth":1,
     "order":4,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::proof_conditions_split",
@@ -185,37 +115,19 @@
     "evidence_text":"“For a person to sit down at time t, two conditions had to be met: At least a_i people have already sat down strictly before time t. At least one of their neighbors ... has already sat down strictly before time t. We can now split people into 2 types depending on which condition occurs first for them.”",
     "node_text":"Para que una persona se siente en el tiempo t, deben cumplirse dos condiciones: (1) haber al menos a_i sentados antes de t, y (2) al menos un vecino ya sentado antes de t. Se clasifica en Tipo A si primero ocurre la condición 1 (espera a vecino) y Tipo B si primero ocurre la condición 2 (espera a suficientes sentados).\n\n“For a person to sit down at time t, two conditions had to be met: At least a_i people have already sat down strictly before time t. At least one of their neighbors ... has already sat down strictly before time t. We can now split people into 2 types depending on which condition occurs first for them.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Razonamiento por casos",
-      "Interpretar condiciones temporales"
-    ],
-    "strategies":[
-      "Clasificación por orden de satisfacción"
-    ],
+    "skills":"[\"Razonamiento por casos\", \"Interpretar condiciones temporales\"]",
+    "strategies":"[\"Clasificación por orden de satisfacción\"]",
     "confidence":0.8,
     "depth":1,
     "order":5,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::typeA",
@@ -229,37 +141,19 @@
     "evidence_text":"“Type A: Condition 1 is satisfied first... A person is of this type if the earliest time one of their neighbours sat down is exactly 1 less than the time they sat down. This means their a_i can be any value between 1 and c_{t-1} inclusive so there are c_{t-1} possible values.”",
     "node_text":"Tipo A: la persona está esperando a que un vecino se siente. Es de Tipo A si el tiempo más temprano en que se sienta alguno de sus vecinos es exactamente 1 menos que su tiempo de asiento. Entonces a_i puede ser cualquier valor entre 1 y c_{t-1} inclusive: c_{t-1} posibilidades.\n\n“Type A: Condition 1 is satisfied first... A person is of this type if the earliest time one of their neighbours sat down is exactly 1 less than the time they sat down. This means their a_i can be any value between 1 and c_{t-1} inclusive so there are c_{t-1} possible values.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Conteo de enteros en intervalos",
-      "Razonamiento con tiempos vecinos"
-    ],
-    "strategies":[
-      "Determinar tipo por comparación de tiempos"
-    ],
+    "skills":"[\"Conteo de enteros en intervalos\", \"Razonamiento con tiempos vecinos\"]",
+    "strategies":"[\"Determinar tipo por comparación de tiempos\"]",
     "confidence":0.83,
     "depth":2,
     "order":6,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::typeB",
@@ -273,37 +167,19 @@
     "evidence_text":"“Type B: Condition 2 is satisfied first... A person is of this type if the time they sit down is at least 2 greater than the earliest time one of their neighbours sat down. Since they did not sit down at time t-1, their a_i must be greater than c_{t-2}. This means it must be between c_{t-2}+1 and c_{t-1} inclusive, giving c_{t-1}-c_{t-2} possibilities.”",
     "node_text":"Tipo B: la persona está esperando a que haya suficientes personas sentadas. Es de Tipo B si el tiempo de asiento es al menos 2 mayor que el tiempo más temprano de sus vecinos. Como no se sentó en t-1, su a_i debe ser mayor que c_{t-2}; por tanto a_i está entre c_{t-2}+1 y c_{t-1} inclusive, dando c_{t-1}-c_{t-2} posibilidades.\n\n“Type B: Condition 2 is satisfied first... A person is of this type if the time they sit down is at least 2 greater than the earliest time one of their neighbours sat down. Since they did not sit down at time t-1, their a_i must be greater than c_{t-2}. This means it must be between c_{t-2}+1 and c_{t-1} inclusive, giving c_{t-1}-c_{t-2} possibilities.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Conteo por diferencias de prefijos",
-      "Razonamiento con exclusión de t-1"
-    ],
-    "strategies":[
-      "Usar c_{t-2} y c_{t-1} para el rango"
-    ],
+    "skills":"[\"Conteo por diferencias de prefijos\", \"Razonamiento con exclusión de t-1\"]",
+    "strategies":"[\"Usar c_{t-2} y c_{t-1} para el rango\"]",
     "confidence":0.83,
     "depth":2,
     "order":7,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::algorithm_count",
@@ -317,38 +193,19 @@
     "evidence_text":"“We can iterate over all people i and look at the earliest time one of their neighbours sat down to find out which type of person they are, and then compute how many valid a_i there are for them. Finally, we can multiply the number of valid a_i for every person, and output this modulo 676767677.”",
     "node_text":"Iterar sobre cada persona i, hallar el tiempo más temprano en que se sentó alguno de sus vecinos para decidir Tipo A o Tipo B, calcular cuántos valores posibles de a_i hay según c_t, y multiplicar todas las cantidades módulo 676767677.\n\n“We can iterate over all people i and look at the earliest time one of their neighbours sat down to find out which type of person they are, and then compute how many valid a_i there are for them. Finally, we can multiply the number of valid a_i for every person, and output this modulo 676767677.”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Implementar clasificación por vecino",
-      "Multiplicación modular"
-    ],
-    "strategies":[
-      "Para cada i: determinar tipo y rango de a_i",
-      "Acumular producto modular"
-    ],
+    "skills":"[\"Implementar clasificación por vecino\", \"Multiplicación modular\"]",
+    "strategies":"[\"Para cada i: determinar tipo y rango de a_i\", \"Acumular producto modular\"]",
     "confidence":0.78,
     "depth":1,
     "order":8,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::complexity",
@@ -362,36 +219,19 @@
     "evidence_text":"“time limit per test 2 seconds memory limit per test 256 megabytes” (no hay análisis de complejidad en el editorial pegado).",
     "node_text":"No especificada en el editorial provisto.\n\n“time limit per test 2 seconds memory limit per test 256 megabytes” (no hay análisis de complejidad en el editorial pegado).",
     "source_section":"Statement \/ Editorial (no incluye complejidad)",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.2,
     "depth":1,
     "order":9,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::implementation_notes",
@@ -405,38 +245,19 @@
     "evidence_text":"“For a time t, we can calculate c_t using prefix sums...” y “If a person i with b_i > 0 has no neighbour with a smaller b_i... output 0.” y “iterate over all people i and look at the earliest time one of their neighbours sat down...”",
     "node_text":"Construir c_t con prefix sums sobre frecuencias de b_i; para cada i calcular el mínimo b de sus vecinos (si existen) y aplicar fórmulas de Tipo A\/B para obtener el número de opciones de a_i; si b_i>0 y no hay vecino con b menor, devolver 0.\n\n“For a time t, we can calculate c_t using prefix sums...” y “If a person i with b_i > 0 has no neighbour with a smaller b_i... output 0.” y “iterate over all people i and look at the earliest time one of their neighbours sat down...”",
     "source_section":"Official editorial - Solution",
-    "skills":[
-      "Prefijos por frecuencia",
-      "Manejo de bordes i=1 y i=n"
-    ],
-    "strategies":[
-      "Precomputar c_t",
-      "Calcular mínimo de vecinos"
-    ],
+    "skills":"[\"Prefijos por frecuencia\", \"Manejo de bordes i=1 y i=n\"]",
+    "strategies":"[\"Precomputar c_t\", \"Calcular mínimo de vecinos\"]",
     "confidence":0.62,
     "depth":1,
     "order":10,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::common_mistakes",
@@ -450,36 +271,19 @@
     "evidence_text":"No se proporciona sección de errores comunes en el texto dado.",
     "node_text":"No hay errores comunes explícitos en el editorial provisto.\n\nNo se proporciona sección de errores comunes en el texto dado.",
     "source_section":"Official editorial (no incluye)",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.1,
     "depth":1,
     "order":11,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::edge_cases",
@@ -493,36 +297,19 @@
     "evidence_text":"“If a person i with b_i > 0 has no neighbour with a smaller b_i... output 0.” y “At least one of their neighbors (person i - 1 or i + 1, if they exist) has already sat down...”",
     "node_text":"El editorial menciona explícitamente el caso b_i>0 sin vecino con menor b_i (respuesta 0) y el uso de vecinos existentes (i-1 o i+1 si existen). No detalla otros bordes.\n\n“If a person i with b_i > 0 has no neighbour with a smaller b_i... output 0.” y “At least one of their neighbors (person i - 1 or i + 1, if they exist) has already sat down...”",
     "source_section":"Official editorial \/ Statement",
-    "skills":[
-      "Manejo de extremos de la línea"
-    ],
-    "strategies":[
-      "Tratar i=1 y i=n con un solo vecino"
-    ],
+    "skills":"[\"Manejo de extremos de la línea\"]",
+    "strategies":"[\"Tratar i=1 y i=n con un solo vecino\"]",
     "confidence":0.55,
     "depth":1,
     "order":12,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_G::unknown_modulo_and_bi_zero",
@@ -536,36 +323,19 @@
     "evidence_text":"Hints: “What do you notice about people where b_i = 0?” y “If b_i = 0, then a_i must also equal 0.”; Solution: “output this modulo 676767677.”",
     "node_text":"El editorial provisto incluye hints sobre b_i=0 (y que a_i debe ser 0), pero la sección Solution pegada no lo desarrolla. El módulo aparece como 676767677 (primo) en el statement y se usa en la multiplicación en la solución.\n\nHints: “What do you notice about people where b_i = 0?” y “If b_i = 0, then a_i must also equal 0.”; Solution: “output this modulo 676767677.”",
     "source_section":"Official editorial - Hint \/ Solution",
-    "skills":[
-      "Aplicar restricciones directas para b_i=0"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Aplicar restricciones directas para b_i=0\"]",
+    "strategies":"[]",
     "confidence":0.45,
     "depth":1,
     "order":13,
     "source":"codeforces",
     "normalized_difficulty":1800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/G",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Conteo de configuraciones con restricciones locales y tiempos de activación",
-      "difficulty_comment":"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).",
-      "warnings":[
-        "El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.",
-        "No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Conteo de configuraciones con restricciones locales y tiempos de activación\", \"difficulty_comment\": \"1800 (constructivo + matemático; requiere modelar tipos de condiciones y contar opciones por persona).\", \"warnings\": [\"El editorial provisto no incluye una sección completa de Solution para el caso b_i=0; solo aparecen hints. Por tanto, el tratamiento exacto de b_i=0 en el conteo no está completamente soportado por el texto de Solution pegado.\", \"No se proporciona análisis de complejidad ni detalles de implementación (p.ej., cómo indexar t en 0..m-1) en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::problem",
@@ -576,41 +346,22 @@
     "node_type":"PROBLEM",
     "title":"Construct a rooted tree with given counts of even\/odd subtree sizes",
     "summary":"Given integers x and y, construct a rooted tree with x+y nodes such that exactly x vertices have even subtree size and exactly y vertices have odd subtree size; otherwise output NO.",
-    "evidence_text":"“construct a tree with x + y nodes, rooted at node 1” and “Exactly x nodes … have even subtree size. Exactly y nodes … have odd subtree size.”",
-    "node_text":"Given integers x and y, construct a rooted tree with x+y nodes such that exactly x vertices have even subtree size and exactly y vertices have odd subtree size; otherwise output NO.\n\n“construct a tree with x + y nodes, rooted at node 1” and “Exactly x nodes … have even subtree size. Exactly y nodes … have odd subtree size.”",
+    "evidence_text":"“construct a tree with x + y nodes, rooted at node 1” and “Exactly x nodes ... have even subtree size. Exactly y nodes ... have odd subtree size.”",
+    "node_text":"Given integers x and y, construct a rooted tree with x+y nodes such that exactly x vertices have even subtree size and exactly y vertices have odd subtree size; otherwise output NO.\n\n“construct a tree with x + y nodes, rooted at node 1” and “Exactly x nodes ... have even subtree size. Exactly y nodes ... have odd subtree size.”",
     "source_section":"Statement",
-    "skills":[
-      "Subtree size definition in rooted trees",
-      "Counting vertices by parity"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Subtree size definition in rooted trees\", \"Counting vertices by parity\"]",
+    "strategies":"[]",
     "confidence":0.9,
     "depth":0,
     "order":1,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::understanding_root_parity",
@@ -624,38 +375,19 @@
     "evidence_text":"“the subtree of the root has size x+y. So if x+y is even and x is zero, there is no valid tree. Similarly, if x+y is odd and y is zero, there is no valid tree.”",
     "node_text":"The root subtree size equals x+y. Use this to rule out cases where the required parity counts for root are impossible when x or y is zero.\n\n“the subtree of the root has size x+y. So if x+y is even and x is zero, there is no valid tree. Similarly, if x+y is odd and y is zero, there is no valid tree.”",
     "source_section":"Official editorial Hint 1",
-    "skills":[
-      "Parity of total node count",
-      "Mapping root parity to x\/y feasibility"
-    ],
-    "strategies":[
-      "Check feasibility based on x+y parity and whether x or y is zero"
-    ],
+    "skills":"[\"Parity of total node count\", \"Mapping root parity to x\/y feasibility\"]",
+    "strategies":"[\"Check feasibility based on x+y parity and whether x or y is zero\"]",
     "confidence":0.85,
     "depth":1,
     "order":2,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::model_reduce_excluding_root",
@@ -669,37 +401,19 @@
     "evidence_text":"“From this point onwards, we can now exclude the root by decrementing either x or y, and only considering the other vertices. The root will be trivially satisfied.”",
     "node_text":"After handling the impossible cases, reduce the problem by decrementing either x or y to account for the root being trivially satisfied; then only consider the other vertices.\n\n“From this point onwards, we can now exclude the root by decrementing either x or y, and only considering the other vertices. The root will be trivially satisfied.”",
     "source_section":"Official editorial Hint 1",
-    "skills":[
-      "Problem reduction by accounting for a fixed vertex"
-    ],
-    "strategies":[
-      "Transform counts for non-root vertices"
-    ],
+    "skills":"[\"Problem reduction by accounting for a fixed vertex\"]",
+    "strategies":"[\"Transform counts for non-root vertices\"]",
     "confidence":0.85,
     "depth":2,
     "order":3,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::observation_even_needs_odd_child",
@@ -710,41 +424,22 @@
     "node_type":"OBSERVATION",
     "title":"Even-subtree vertex must have an odd-sized child",
     "summary":"If a vertex has even subtree size, it must have at least one child whose subtree size is odd; otherwise the subtree size would be odd (sum of evens plus the node).",
-    "evidence_text":"“for any vertex whose subtree has an even size, it must have at least one child with an odd size. Indeed, suppose all of its children have even size. Then … the sum of some even numbers, plus one, the node itself.”",
-    "node_text":"If a vertex has even subtree size, it must have at least one child whose subtree size is odd; otherwise the subtree size would be odd (sum of evens plus the node).\n\n“for any vertex whose subtree has an even size, it must have at least one child with an odd size. Indeed, suppose all of its children have even size. Then … the sum of some even numbers, plus one, the node itself.”",
+    "evidence_text":"“for any vertex whose subtree has an even size, it must have at least one child with an odd size. Indeed, suppose all of its children have even size. Then ... the sum of some even numbers, plus one, the node itself.”",
+    "node_text":"If a vertex has even subtree size, it must have at least one child whose subtree size is odd; otherwise the subtree size would be odd (sum of evens plus the node).\n\n“for any vertex whose subtree has an even size, it must have at least one child with an odd size. Indeed, suppose all of its children have even size. Then ... the sum of some even numbers, plus one, the node itself.”",
     "source_section":"Official editorial Hint 2",
-    "skills":[
-      "Contrapositive reasoning",
-      "Parity propagation in rooted trees"
-    ],
-    "strategies":[
-      "Use parity contradiction to derive structural necessity"
-    ],
+    "skills":"[\"Contrapositive reasoning\", \"Parity propagation in rooted trees\"]",
+    "strategies":"[\"Use parity contradiction to derive structural necessity\"]",
     "confidence":0.9,
     "depth":3,
     "order":4,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::proof_impossibility_count_relation",
@@ -758,37 +453,19 @@
     "evidence_text":"“Therefore, if the number of vertices with an even subtree size is larger than the number of vertices with an odd subtree size (excluding the root), there is no valid tree.”",
     "node_text":"Using the observation, each even-subtree vertex (excluding root) needs at least one odd-subtree child, so if the number of even-subtree vertices is larger than the number of odd-subtree vertices (excluding the root), no valid tree exists.\n\n“Therefore, if the number of vertices with an even subtree size is larger than the number of vertices with an odd subtree size (excluding the root), there is no valid tree.”",
     "source_section":"Official editorial Hint 2",
-    "skills":[
-      "Counting argument from structural constraint"
-    ],
-    "strategies":[
-      "Apply necessary condition to reject"
-    ],
+    "skills":"[\"Counting argument from structural constraint\"]",
+    "strategies":"[\"Apply necessary condition to reject\"]",
     "confidence":0.85,
     "depth":4,
     "order":5,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::edge_cases_possible",
@@ -802,37 +479,19 @@
     "evidence_text":"“All other cases are possible.”",
     "node_text":"After applying the root feasibility checks and the even-vs-odd count restriction, the editorial claims that remaining cases admit a construction.\n\n“All other cases are possible.”",
     "source_section":"Official editorial Hint 3",
-    "skills":[
-      "Feasibility classification"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Feasibility classification\"]",
+    "strategies":"[]",
     "confidence":0.7,
     "depth":5,
     "order":6,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::algorithm_construct_pairs_to_root",
@@ -843,42 +502,22 @@
     "node_type":"ALGORITHM",
     "title":"Construct using x disjoint pairs attached to root",
     "summary":"Make every vertex (excluding the root) have subtree size either 1 or 2 by attaching x disjoint pairs of vertices; then attach each pair and all remaining vertices to the root. The number of vertices with even subtree size becomes exactly x (the parent from each pair).",
-    "evidence_text":"“we will try to make every vertex (excluding the root) have subtree size either 1 or 2. … attach x disjoint pairs of vertices. Then we will attach each pair, and all of the remaining vertices, to the root. Now, the number of vertices with an even subtree size is exactly x, the parent from each of the pairs”",
-    "node_text":"Make every vertex (excluding the root) have subtree size either 1 or 2 by attaching x disjoint pairs of vertices; then attach each pair and all remaining vertices to the root. The number of vertices with even subtree size becomes exactly x (the parent from each pair).\n\n“we will try to make every vertex (excluding the root) have subtree size either 1 or 2. … attach x disjoint pairs of vertices. Then we will attach each pair, and all of the remaining vertices, to the root. Now, the number of vertices with an even subtree size is exactly x, the parent from each of the pairs”",
+    "evidence_text":"“we will try to make every vertex (excluding the root) have subtree size either 1 or 2. ... attach x disjoint pairs of vertices. Then we will attach each pair, and all of the remaining vertices, to the root. Now, the number of vertices with an even subtree size is exactly x, the parent from each of the pairs”",
+    "node_text":"Make every vertex (excluding the root) have subtree size either 1 or 2 by attaching x disjoint pairs of vertices; then attach each pair and all remaining vertices to the root. The number of vertices with even subtree size becomes exactly x (the parent from each pair).\n\n“we will try to make every vertex (excluding the root) have subtree size either 1 or 2. ... attach x disjoint pairs of vertices. Then we will attach each pair, and all of the remaining vertices, to the root. Now, the number of vertices with an even subtree size is exactly x, the parent from each of the pairs”",
     "source_section":"Official editorial Solution",
-    "skills":[
-      "Designing a tree structure to control subtree sizes",
-      "Counting subtree parity in a constructed tree"
-    ],
-    "strategies":[
-      "Use disjoint pairs to create controlled even subtree sizes",
-      "Attach constructed components to the root"
-    ],
+    "skills":"[\"Designing a tree structure to control subtree sizes\", \"Counting subtree parity in a constructed tree\"]",
+    "strategies":"[\"Use disjoint pairs to create controlled even subtree sizes\", \"Attach constructed components to the root\"]",
     "confidence":0.8,
     "depth":6,
     "order":7,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::implementation_notes",
@@ -889,42 +528,22 @@
     "node_type":"IMPLEMENTATION",
     "title":"Implementation outline (adjacency list construction)",
     "summary":"Create x disjoint pairs among non-root vertices, connect each pair internally, then connect all pair vertices and remaining vertices directly to the root (node 1). Output NO if feasibility conditions fail.",
-    "evidence_text":"“attach x disjoint pairs of vertices … attach each pair, and all of the remaining vertices, to the root.”",
-    "node_text":"Create x disjoint pairs among non-root vertices, connect each pair internally, then connect all pair vertices and remaining vertices directly to the root (node 1). Output NO if feasibility conditions fail.\n\n“attach x disjoint pairs of vertices … attach each pair, and all of the remaining vertices, to the root.”",
+    "evidence_text":"“attach x disjoint pairs of vertices ... attach each pair, and all of the remaining vertices, to the root.”",
+    "node_text":"Create x disjoint pairs among non-root vertices, connect each pair internally, then connect all pair vertices and remaining vertices directly to the root (node 1). Output NO if feasibility conditions fail.\n\n“attach x disjoint pairs of vertices ... attach each pair, and all of the remaining vertices, to the root.”",
     "source_section":"Official editorial Solution",
-    "skills":[
-      "Building adjacency lists for a rooted tree",
-      "Careful node indexing"
-    ],
-    "strategies":[
-      "Construct internal edges for each pair",
-      "Add edges from root to all non-root vertices"
-    ],
+    "skills":"[\"Building adjacency lists for a rooted tree\", \"Careful node indexing\"]",
+    "strategies":"[\"Construct internal edges for each pair\", \"Add edges from root to all non-root vertices\"]",
     "confidence":0.55,
     "depth":7,
     "order":8,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::complexity",
@@ -938,37 +557,19 @@
     "evidence_text":"",
     "node_text":"The editorial does not state time\/memory complexity.",
     "source_section":"Official editorial",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.1,
     "depth":7,
     "order":9,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::common_mistakes",
@@ -982,37 +583,19 @@
     "evidence_text":"",
     "node_text":"The editorial does not list common mistakes; likely pitfalls include mishandling the root-exclusion decrement and incorrect counting of even\/odd vertices after construction.",
     "source_section":"Not provided",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.2,
     "depth":1,
     "order":10,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_F::prerequisite_subtree_parity",
@@ -1026,37 +609,19 @@
     "evidence_text":"“Then the total number of vertices in the subtree will be the sum of some even numbers, plus one, the node itself.”",
     "node_text":"If all children subtrees are even, then the vertex subtree size becomes odd because it is the sum of even sizes plus 1 for the vertex itself.\n\n“Then the total number of vertices in the subtree will be the sum of some even numbers, plus one, the node itself.”",
     "source_section":"Official editorial Hint 2",
-    "skills":[
-      "Parity arithmetic with sums"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Parity arithmetic with sums\"]",
+    "strategies":"[]",
     "confidence":0.85,
     "depth":1,
     "order":11,
     "source":"codeforces",
     "normalized_difficulty":1500.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "graphs"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "graphs"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"graphs\"]",
+    "topic_group":"[\"implementation_constructive\", \"graphs\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/F",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive algorithms on rooted trees (parity of subtree sizes)",
-      "difficulty_comment":"1500 (constructive + implementation on trees)",
-      "warnings":[
-        "El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.",
-        "La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.",
-        "No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive algorithms on rooted trees (parity of subtree sizes)\", \"difficulty_comment\": \"1500 (constructive + implementation on trees)\", \"warnings\": [\"El statement y la editorial proporcionados no incluyen restricciones completas (CONSTRAINTS aparece como 'nan') ni detalles de formato de entrada\/salida más allá de lo mostrado.\", \"La editorial no especifica complejidad ni un pseudocódigo\/implementación detallada; solo describe la idea de construcción con pares.\", \"No se incluyen condiciones exactas para el caso 'x+y is even and x is zero' y 'x+y is odd and y is zero' en términos de la versión reducida; solo se indica la exclusión del root por decremento.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::problem",
@@ -1067,43 +632,22 @@
     "node_type":"PROBLEM",
     "title":"E. The 67th XOR Problem",
     "summary":"Dado un arreglo de n enteros no negativos, se realizan exactamente n-1 operaciones: elegir un índice i, XOR-ing todos los elementos con x=a_i y luego eliminar a_i. Tras n-1 operaciones queda un elemento; se pide el máximo valor posible del elemento final con operaciones óptimas.",
-    "evidence_text":"“perform the following operation exactly n-1 times… Set a_j = a_j ⊕ x for all… Remove a_i… after n-1 operations, exactly one element remains… determine the maximum possible value”",
-    "node_text":"Dado un arreglo de n enteros no negativos, se realizan exactamente n-1 operaciones: elegir un índice i, XOR-ing todos los elementos con x=a_i y luego eliminar a_i. Tras n-1 operaciones queda un elemento; se pide el máximo valor posible del elemento final con operaciones óptimas.\n\n“perform the following operation exactly n-1 times… Set a_j = a_j ⊕ x for all… Remove a_i… after n-1 operations, exactly one element remains… determine the maximum possible value”",
+    "evidence_text":"“perform the following operation exactly n-1 times... Set a_j = a_j ⊕ x for all... Remove a_i... after n-1 operations, exactly one element remains... determine the maximum possible value”",
+    "node_text":"Dado un arreglo de n enteros no negativos, se realizan exactamente n-1 operaciones: elegir un índice i, XOR-ing todos los elementos con x=a_i y luego eliminar a_i. Tras n-1 operaciones queda un elemento; se pide el máximo valor posible del elemento final con operaciones óptimas.\n\n“perform the following operation exactly n-1 times... Set a_j = a_j ⊕ x for all... Remove a_i... after n-1 operations, exactly one element remains... determine the maximum possible value”",
     "source_section":"Statement",
-    "skills":[
-      "XOR bitwise",
-      "Optimización por elección de operaciones"
-    ],
-    "strategies":[
-      "Identificar invariante del proceso"
-    ],
+    "skills":"[\"XOR bitwise\", \"Optimización por elección de operaciones\"]",
+    "strategies":"[\"Identificar invariante del proceso\"]",
     "confidence":0.9,
     "depth":0,
     "order":1,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::hints",
@@ -1117,39 +661,19 @@
     "evidence_text":"“Hint 1 What happens after two operations? Does the first operation matter? Hint 2 Remember the propery that x ⊕ x = 0.”",
     "node_text":"(1) Analizar qué ocurre después de dos operaciones y si la primera importa. (2) Recordar la propiedad x ⊕ x = 0.\n\n“Hint 1 What happens after two operations? Does the first operation matter? Hint 2 Remember the propery that x ⊕ x = 0.”",
     "source_section":"Official Editorial",
-    "skills":[
-      "Propiedades de XOR"
-    ],
-    "strategies":[
-      "Probar casos pequeños (2 operaciones)"
-    ],
+    "skills":"[\"Propiedades de XOR\"]",
+    "strategies":"[\"Probar casos pequeños (2 operaciones)\"]",
     "confidence":0.95,
     "depth":1,
     "order":2,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::understand_effects_1",
@@ -1160,42 +684,22 @@
     "node_type":"UNDERSTANDING",
     "title":"Efecto tras la primera operación",
     "summary":"Si se procesa de izquierda a derecha, tras la primera operación el arreglo queda con cada elemento XOR con a1 y se elimina a1.",
-    "evidence_text":"“After the first operation, the array becomes: a = [a_2 ⊕ a_1, a_3 ⊕ a_1, …, a_n ⊕ a_1]. Note that the first element was removed.”",
-    "node_text":"Si se procesa de izquierda a derecha, tras la primera operación el arreglo queda con cada elemento XOR con a1 y se elimina a1.\n\n“After the first operation, the array becomes: a = [a_2 ⊕ a_1, a_3 ⊕ a_1, …, a_n ⊕ a_1]. Note that the first element was removed.”",
+    "evidence_text":"“After the first operation, the array becomes: a = [a_2 ⊕ a_1, a_3 ⊕ a_1, ..., a_n ⊕ a_1]. Note that the first element was removed.”",
+    "node_text":"Si se procesa de izquierda a derecha, tras la primera operación el arreglo queda con cada elemento XOR con a1 y se elimina a1.\n\n“After the first operation, the array becomes: a = [a_2 ⊕ a_1, a_3 ⊕ a_1, ..., a_n ⊕ a_1]. Note that the first element was removed.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Manipulación de XOR"
-    ],
-    "strategies":[
-      "Simular 1 operación"
-    ],
+    "skills":"[\"Manipulación de XOR\"]",
+    "strategies":"[\"Simular 1 operación\"]",
     "confidence":0.9,
     "depth":1,
     "order":3,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::understand_effects_2",
@@ -1206,42 +710,22 @@
     "node_type":"UNDERSTANDING",
     "title":"Efecto tras la segunda operación (la primera ya no importa)",
     "summary":"Tras la segunda operación, usando x ⊕ x = 0, el arreglo resultante depende solo del elemento elegido en la segunda operación (a2) y no del primero (a1).",
-    "evidence_text":"“After the second operation… Due to Hint 2, this is the same as a = [a_3 ⊕ a_2, …, a_n ⊕ a_2]. Note that this new array is independent of a_1.”",
-    "node_text":"Tras la segunda operación, usando x ⊕ x = 0, el arreglo resultante depende solo del elemento elegido en la segunda operación (a2) y no del primero (a1).\n\n“After the second operation… Due to Hint 2, this is the same as a = [a_3 ⊕ a_2, …, a_n ⊕ a_2]. Note that this new array is independent of a_1.”",
+    "evidence_text":"“After the second operation... Due to Hint 2, this is the same as a = [a_3 ⊕ a_2, ..., a_n ⊕ a_2]. Note that this new array is independent of a_1.”",
+    "node_text":"Tras la segunda operación, usando x ⊕ x = 0, el arreglo resultante depende solo del elemento elegido en la segunda operación (a2) y no del primero (a1).\n\n“After the second operation... Due to Hint 2, this is the same as a = [a_3 ⊕ a_2, ..., a_n ⊕ a_2]. Note that this new array is independent of a_1.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Simplificación con x ⊕ x = 0"
-    ],
-    "strategies":[
-      "Comparar dependencia en variables"
-    ],
+    "skills":"[\"Simplificación con x ⊕ x = 0\"]",
+    "strategies":"[\"Comparar dependencia en variables\"]",
     "confidence":0.95,
     "depth":1,
     "order":4,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::observation_invariant",
@@ -1252,42 +736,22 @@
     "node_type":"OBSERVATION",
     "title":"Invariante: el resultado final es x ⊕ y",
     "summary":"El editorial concluye que, tras extender el razonamiento (2, 3 y por inducción), lo único que importa es el elemento elegido en la última operación (x) y el elemento que nunca se elige (y). El valor final es x ⊕ y.",
-    "evidence_text":"“when doing three operations, the elements chosen for the first two operations do not matter. Inductively… The final value of the array is going to be x ⊕ y.”",
-    "node_text":"El editorial concluye que, tras extender el razonamiento (2, 3 y por inducción), lo único que importa es el elemento elegido en la última operación (x) y el elemento que nunca se elige (y). El valor final es x ⊕ y.\n\n“when doing three operations, the elements chosen for the first two operations do not matter. Inductively… The final value of the array is going to be x ⊕ y.”",
+    "evidence_text":"“when doing three operations, the elements chosen for the first two operations do not matter. Inductively... The final value of the array is going to be x ⊕ y.”",
+    "node_text":"El editorial concluye que, tras extender el razonamiento (2, 3 y por inducción), lo único que importa es el elemento elegido en la última operación (x) y el elemento que nunca se elige (y). El valor final es x ⊕ y.\n\n“when doing three operations, the elements chosen for the first two operations do not matter. Inductively... The final value of the array is going to be x ⊕ y.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Inducción informal sobre dependencias"
-    ],
-    "strategies":[
-      "Reducir a dos elementos relevantes"
-    ],
+    "skills":"[\"Inducción informal sobre dependencias\"]",
+    "strategies":"[\"Reducir a dos elementos relevantes\"]",
     "confidence":0.9,
     "depth":1,
     "order":5,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::model",
@@ -1301,39 +765,19 @@
     "evidence_text":"“Since n is small, it is enough to brute force all possible pairs (x, y). The answer is the maximum value of a_x ⊕ a_y among all pairs.”",
     "node_text":"Como el resultado final es x ⊕ y, el problema se reduce a encontrar el máximo a_x ⊕ a_y sobre todos los pares (x, y) posibles.\n\n“Since n is small, it is enough to brute force all possible pairs (x, y). The answer is the maximum value of a_x ⊕ a_y among all pairs.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Optimización por enumeración"
-    ],
-    "strategies":[
-      "Max sobre pares"
-    ],
+    "skills":"[\"Optimización por enumeración\"]",
+    "strategies":"[\"Max sobre pares\"]",
     "confidence":0.9,
     "depth":1,
     "order":6,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::proof_sketch",
@@ -1344,42 +788,22 @@
     "node_type":"PROOF",
     "title":"Justificación (esbozo) del invariante",
     "summary":"El editorial muestra explícitamente los casos de 1 y 2 operaciones y luego generaliza: tras 2 operaciones el elemento de la primera elección no afecta; tras 3 tampoco afectan las dos primeras; por inducción solo importan el último elegido y el nunca elegido, dando x ⊕ y.",
-    "evidence_text":"“After the second operation… independent of a_1… when doing three operations… Inductively… The final value… x ⊕ y.”",
-    "node_text":"El editorial muestra explícitamente los casos de 1 y 2 operaciones y luego generaliza: tras 2 operaciones el elemento de la primera elección no afecta; tras 3 tampoco afectan las dos primeras; por inducción solo importan el último elegido y el nunca elegido, dando x ⊕ y.\n\n“After the second operation… independent of a_1… when doing three operations… Inductively… The final value… x ⊕ y.”",
+    "evidence_text":"“After the second operation... independent of a_1... when doing three operations... Inductively... The final value... x ⊕ y.”",
+    "node_text":"El editorial muestra explícitamente los casos de 1 y 2 operaciones y luego generaliza: tras 2 operaciones el elemento de la primera elección no afecta; tras 3 tampoco afectan las dos primeras; por inducción solo importan el último elegido y el nunca elegido, dando x ⊕ y.\n\n“After the second operation... independent of a_1... when doing three operations... Inductively... The final value... x ⊕ y.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Razonamiento inductivo"
-    ],
-    "strategies":[
-      "Verificación por casos base + generalización"
-    ],
+    "skills":"[\"Razonamiento inductivo\"]",
+    "strategies":"[\"Verificación por casos base + generalización\"]",
     "confidence":0.85,
     "depth":1,
     "order":7,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::algorithm",
@@ -1393,40 +817,19 @@
     "evidence_text":"“it is enough to brute force all possible pairs (x, y). The answer is the maximum value of a_x ⊕ a_y among all pairs.”",
     "node_text":"Enumerar todos los pares (x, y) y calcular a_x ⊕ a_y; devolver el máximo.\n\n“it is enough to brute force all possible pairs (x, y). The answer is the maximum value of a_x ⊕ a_y among all pairs.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Enumeración de pares",
-      "Cálculo de XOR"
-    ],
-    "strategies":[
-      "Mantener máximo"
-    ],
+    "skills":"[\"Enumeración de pares\", \"Cálculo de XOR\"]",
+    "strategies":"[\"Mantener máximo\"]",
     "confidence":0.9,
     "depth":1,
     "order":8,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::complexity",
@@ -1440,39 +843,19 @@
     "evidence_text":"“Since n is small, it is enough to brute force all possible pairs (x, y).”",
     "node_text":"El editorial solo indica que n es pequeño y que basta brute force; no proporciona una cota explícita en el texto dado.\n\n“Since n is small, it is enough to brute force all possible pairs (x, y).”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Análisis de complejidad (no especificado)"
-    ],
-    "strategies":[
-      "Inferir de brute force"
-    ],
+    "skills":"[\"Análisis de complejidad (no especificado)\"]",
+    "strategies":"[\"Inferir de brute force\"]",
     "confidence":0.4,
     "depth":1,
     "order":9,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::implementation",
@@ -1483,42 +866,22 @@
     "node_type":"IMPLEMENTATION",
     "title":"Implementación (a nivel de idea)",
     "summary":"Implementar la enumeración de pares y el máximo de a_x ⊕ a_y. No hay detalles de implementación en el texto provisto.",
-    "evidence_text":"“brute force all possible pairs (x, y)… maximum value of a_x ⊕ a_y”",
-    "node_text":"Implementar la enumeración de pares y el máximo de a_x ⊕ a_y. No hay detalles de implementación en el texto provisto.\n\n“brute force all possible pairs (x, y)… maximum value of a_x ⊕ a_y”",
+    "evidence_text":"“brute force all possible pairs (x, y)... maximum value of a_x ⊕ a_y”",
+    "node_text":"Implementar la enumeración de pares y el máximo de a_x ⊕ a_y. No hay detalles de implementación en el texto provisto.\n\n“brute force all possible pairs (x, y)... maximum value of a_x ⊕ a_y”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Programación de loops y XOR"
-    ],
-    "strategies":[
-      "Usar doble loop"
-    ],
+    "skills":"[\"Programación de loops y XOR\"]",
+    "strategies":"[\"Usar doble loop\"]",
     "confidence":0.45,
     "depth":1,
     "order":10,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::common_mistake",
@@ -1532,39 +895,19 @@
     "evidence_text":"“Does the first operation matter?” \/ “Remember the propery that x ⊕ x = 0.”",
     "node_text":"No se menciona en el editorial provisto. Posibles errores: asumir que el orden de operaciones importa más allá del último y el nunca elegido; o no usar la propiedad x ⊕ x = 0 al simplificar.\n\n“Does the first operation matter?” \/ “Remember the propery that x ⊕ x = 0.”",
     "source_section":"Official Editorial - Hint\/Solution",
-    "skills":[
-      "Comprensión del invariante"
-    ],
-    "strategies":[
-      "Seguir la lógica del editorial"
-    ],
+    "skills":"[\"Comprensión del invariante\"]",
+    "strategies":"[\"Seguir la lógica del editorial\"]",
     "confidence":0.3,
     "depth":1,
     "order":11,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_E::edge_case",
@@ -1578,39 +921,19 @@
     "evidence_text":"“after n-1 operations, exactly one element remains”",
     "node_text":"No se especifican casos borde en el texto provisto (por ejemplo, n=1).\n\n“after n-1 operations, exactly one element remains”",
     "source_section":"Statement",
-    "skills":[
-      "Manejo de n mínimo"
-    ],
-    "strategies":[
-      "Verificar n=1 si aplica"
-    ],
+    "skills":"[\"Manejo de n mínimo\"]",
+    "strategies":"[\"Verificar n=1 si aplica\"]",
     "confidence":0.35,
     "depth":1,
     "order":12,
     "source":"codeforces",
     "normalized_difficulty":1200.0,
-    "normalized_tags":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
-    "topic_group":[
-      "techniques",
-      "data_structures",
-      "implementation_constructive"
-    ],
+    "normalized_tags":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
+    "topic_group":"[\"techniques\", \"data_structures\", \"implementation_constructive\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/E",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"XOR invariants \/ constructive reasoning with brute force over pairs",
-      "difficulty_comment":"1200 (según metadata).",
-      "warnings":[
-        "El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.",
-        "El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.",
-        "No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"XOR invariants \/ constructive reasoning with brute force over pairs\", \"difficulty_comment\": \"1200 (según metadata).\", \"warnings\": [\"El statement no incluye restricciones numéricas (CONSTRAINTS: “nan”), por lo que no se puede fijar una cota exacta de complejidad ni el rango de n.\", \"El editorial provisto no incluye pseudocódigo ni detalles de implementación; solo describe brute force y la fórmula del máximo.\", \"No se proporcionan secciones explícitas de prueba formal, complejidad o errores comunes; los nodos correspondientes se basan únicamente en lo que aparece en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::problem",
@@ -1624,39 +947,19 @@
     "evidence_text":"“Construct a sequence a containing n integers such that gcd(a_i, a_{i+1}) is distinct over all 1 ≤ i ≤ n - 1.”",
     "node_text":"Construir una secuencia a de n enteros tal que gcd(a_i, a_{i+1}) sea distinto para todo 1 ≤ i ≤ n-1.\n\n“Construct a sequence a containing n integers such that gcd(a_i, a_{i+1}) is distinct over all 1 ≤ i ≤ n - 1.”",
     "source_section":"Statement",
-    "skills":[
-      "Comprender el requisito de unicidad de gcds adyacentes"
-    ],
-    "strategies":[
-      "Modelar gcd(a_i,a_{i+1}) en términos de una construcción auxiliar"
-    ],
+    "skills":"[\"Comprender el requisito de unicidad de gcds adyacentes\"]",
+    "strategies":"[\"Modelar gcd(a_i,a_{i+1}) en términos de una construcción auxiliar\"]",
     "confidence":0.9,
     "depth":0,
     "order":1,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::hint_coprime",
@@ -1670,39 +973,19 @@
     "evidence_text":"“Think something related to coprime numbers.”",
     "node_text":"La pista sugiere que la construcción debe estar relacionada con números coprimos.\n\n“Think something related to coprime numbers.”",
     "source_section":"Official Editorial - Hint 1",
-    "skills":[
-      "Conectar coprimalidad con control de gcds"
-    ],
-    "strategies":[
-      "Buscar una construcción donde gcd(b_i,b_{i+2})=1"
-    ],
+    "skills":"[\"Conectar coprimalidad con control de gcds\"]",
+    "strategies":"[\"Buscar una construcción donde gcd(b_i,b_{i+2})=1\"]",
     "confidence":0.85,
     "depth":1,
     "order":2,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::model_product_neighbors",
@@ -1716,39 +999,19 @@
     "evidence_text":"“Let's take n+1 distinct numbers b_1,b_2,...,b_{n+1}. Now let a_i=b_i·b_{i+1} for all i.”",
     "node_text":"Tomar n+1 números distintos b_1..b_{n+1} y definir a_i=b_i*b_{i+1}. Luego expresar gcd(a_i,a_{i+1}) en función de b.\n\n“Let's take n+1 distinct numbers b_1,b_2,...,b_{n+1}. Now let a_i=b_i·b_{i+1} for all i.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Derivar gcd de productos"
-    ],
-    "strategies":[
-      "Reducir el problema a condiciones sobre gcd(b_i,b_{i+2})"
-    ],
+    "skills":"[\"Derivar gcd de productos\"]",
+    "strategies":"[\"Reducir el problema a condiciones sobre gcd(b_i,b_{i+2})\"]",
     "confidence":0.9,
     "depth":1,
     "order":3,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::model_gcd_relation",
@@ -1762,39 +1025,19 @@
     "evidence_text":"“Now gcd(a_i,a_{i+1})=b_{i+1}·gcd(b_i,b_{i+2}). Now if gcd(b_i,b_{i+2})=1 for all i, then we can obtain a distinct gcd for each adjacent pair and the construction is valid.”",
     "node_text":"Se obtiene gcd(a_i,a_{i+1}) = b_{i+1} * gcd(b_i, b_{i+2}). Si gcd(b_i,b_{i+2})=1 para todo i, entonces los gcd adyacentes quedan determinados por b_{i+1} y son distintos.\n\n“Now gcd(a_i,a_{i+1})=b_{i+1}·gcd(b_i,b_{i+2}). Now if gcd(b_i,b_{i+2})=1 for all i, then we can obtain a distinct gcd for each adjacent pair and the construction is valid.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Usar la fórmula de gcd para productos"
-    ],
-    "strategies":[
-      "Asegurar gcd(b_i,b_{i+2})=1"
-    ],
+    "skills":"[\"Usar la fórmula de gcd para productos\"]",
+    "strategies":"[\"Asegurar gcd(b_i,b_{i+2})=1\"]",
     "confidence":0.92,
     "depth":2,
     "order":4,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::proof_distinctness",
@@ -1808,39 +1051,19 @@
     "evidence_text":"“then we can obtain a distinct gcd for each adjacent pair and the construction is valid.”",
     "node_text":"La editorial afirma que si gcd(b_i,b_{i+2})=1 para todo i, entonces se obtiene un gcd distinto para cada par adyacente, validando la construcción.\n\n“then we can obtain a distinct gcd for each adjacent pair and the construction is valid.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Razonar sobre unicidad a partir de la expresión del gcd"
-    ],
-    "strategies":[
-      "Usar que el factor variable es b_{i+1} y que b son distintos"
-    ],
+    "skills":"[\"Razonar sobre unicidad a partir de la expresión del gcd\"]",
+    "strategies":"[\"Usar que el factor variable es b_{i+1} y que b son distintos\"]",
     "confidence":0.55,
     "depth":3,
     "order":5,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::algorithm_way1_primes",
@@ -1854,39 +1077,19 @@
     "evidence_text":"“One way to obtain this is to let all b_i be all primes starting from 2,3,5,... . Since all numbers are coprime to each other, their pairwise gcd is 1 and we get a valid construction.”",
     "node_text":"Elegir b_i como los primos 2,3,5,... (n+1 primos distintos) y definir a_i=b_i*b_{i+1}. Como todos los b son coprimos entre sí, gcd(b_i,b_{i+2})=1 y la construcción es válida.\n\n“One way to obtain this is to let all b_i be all primes starting from 2,3,5,... . Since all numbers are coprime to each other, their pairwise gcd is 1 and we get a valid construction.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Seleccionar una secuencia de b con coprimalidad garantizada"
-    ],
-    "strategies":[
-      "Usar primos para asegurar gcd=1 entre distintos"
-    ],
+    "skills":"[\"Seleccionar una secuencia de b con coprimalidad garantizada\"]",
+    "strategies":"[\"Usar primos para asegurar gcd=1 entre distintos\"]",
     "confidence":0.88,
     "depth":1,
     "order":6,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::algorithm_way2_odds",
@@ -1900,39 +1103,19 @@
     "evidence_text":"“Another way to obtain this to let all b_i be odd numbers starting from 1,3,5,... . Since gcd(x,x+4)=1, where x is odd, this construction is also valid.”",
     "node_text":"Elegir b_i como impares 1,3,5,... (n+1 impares). La editorial indica que gcd(x,x+4)=1 para x impar, lo que hace válida la condición necesaria para i separados por 2.\n\n“Another way to obtain this to let all b_i be odd numbers starting from 1,3,5,... . Since gcd(x,x+4)=1, where x is odd, this construction is also valid.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Aplicar una propiedad específica de gcd para una familia de enteros"
-    ],
-    "strategies":[
-      "Usar que b_i y b_{i+2} difieren en 4 cuando b son impares consecutivos"
-    ],
+    "skills":"[\"Aplicar una propiedad específica de gcd para una familia de enteros\"]",
+    "strategies":"[\"Usar que b_i y b_{i+2} difieren en 4 cuando b son impares consecutivos\"]",
     "confidence":0.78,
     "depth":1,
     "order":7,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::complexity",
@@ -1946,39 +1129,19 @@
     "evidence_text":"“Solution” (no incluye complejidad).",
     "node_text":"La editorial no proporciona análisis de complejidad.\n\n“Solution” (no incluye complejidad).",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.1,
     "depth":1,
     "order":8,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::implementation",
@@ -1992,40 +1155,19 @@
     "evidence_text":"“Now let a_i=b_i·b_{i+1} for all i.”",
     "node_text":"Implementar una de las dos construcciones: generar n+1 valores b_i según la opción elegida y luego imprimir a_i=b_i*b_{i+1}.\n\n“Now let a_i=b_i·b_{i+1} for all i.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Generar b_i según la regla",
-      "Calcular productos a_i"
-    ],
-    "strategies":[
-      "Elegir la variante de b_i (primos o impares)"
-    ],
+    "skills":"[\"Generar b_i según la regla\", \"Calcular productos a_i\"]",
+    "strategies":"[\"Elegir la variante de b_i (primos o impares)\"]",
     "confidence":0.6,
     "depth":1,
     "order":9,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::common_mistake_gcd_condition",
@@ -2039,39 +1181,19 @@
     "evidence_text":"“Now if gcd(b_i,b_{i+2})=1 for all i, then we can obtain a distinct gcd for each adjacent pair and the construction is valid.”",
     "node_text":"Si no se garantiza gcd(b_i,b_{i+2})=1, entonces gcd(a_i,a_{i+1}) ya no queda controlado como producto con un factor único b_{i+1}, y no se asegura la distinción.\n\n“Now if gcd(b_i,b_{i+2})=1 for all i, then we can obtain a distinct gcd for each adjacent pair and the construction is valid.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Verificar condiciones necesarias"
-    ],
-    "strategies":[
-      "Comprobar que la familia elegida de b cumple gcd a distancia 2"
-    ],
+    "skills":"[\"Verificar condiciones necesarias\"]",
+    "strategies":"[\"Comprobar que la familia elegida de b cumple gcd a distancia 2\"]",
     "confidence":0.7,
     "depth":1,
     "order":10,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::edge_cases",
@@ -2085,39 +1207,19 @@
     "evidence_text":"“It is guaranteed that at least one sequence a exists.”",
     "node_text":"La editorial no discute casos borde; solo se indica que existe al menos una secuencia.\n\n“It is guaranteed that at least one sequence a exists.”",
     "source_section":"Statement",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.2,
     "depth":1,
     "order":11,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_D::prerequisite_gcd_definition",
@@ -2131,39 +1233,19 @@
     "evidence_text":"“gcd(x,y) refers to the greatest common divisor of integers x and y.”",
     "node_text":"Se usa gcd(x,y) como el máximo común divisor de enteros x e y.\n\n“gcd(x,y) refers to the greatest common divisor of integers x and y.”",
     "source_section":"Statement",
-    "skills":[
-      "Conocer la definición de gcd"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Conocer la definición de gcd\"]",
+    "strategies":"[]",
     "confidence":0.85,
     "depth":1,
     "order":12,
     "source":"codeforces",
     "normalized_difficulty":1100.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/D",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Construcción con gcds distintos usando coprimos y una parametrización con productos",
-      "difficulty_comment":"Rating ~1100 (constructive\/greedy\/math).",
-      "warnings":[
-        "El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).",
-        "La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).",
-        "El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Construcción con gcds distintos usando coprimos y una parametrización con productos\", \"difficulty_comment\": \"Rating ~1100 (constructive\/greedy\/math).\", \"warnings\": [\"El statement no incluye formato de entrada\/salida ni restricciones numéricas (aparece “CONSTRAINTS nan”).\", \"La editorial no proporciona análisis de complejidad ni detalles de implementación (solo describe dos formas de elegir b y la fórmula a_i=b_i*b_{i+1}).\", \"El nodo de prueba solo puede reflejar la afirmación de la editorial; no hay demostración formal adicional en el texto dado.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::problem",
@@ -2174,42 +1256,22 @@
     "node_type":"PROBLEM",
     "title":"Construir permutación maximizando suma de medianas",
     "summary":"Dado n, construir una permutación p de longitud 3n. Al partirla en n bloques contiguos de 3 elementos, maximizar la suma de las medianas de cada bloque.",
-    "evidence_text":"“construct a permutation of length 3n … partition … into n contiguous blocks with 3 elements, the sum of the medians … is maximised.”",
-    "node_text":"Dado n, construir una permutación p de longitud 3n. Al partirla en n bloques contiguos de 3 elementos, maximizar la suma de las medianas de cada bloque.\n\n“construct a permutation of length 3n … partition … into n contiguous blocks with 3 elements, the sum of the medians … is maximised.”",
+    "evidence_text":"“construct a permutation of length 3n ... partition ... into n contiguous blocks with 3 elements, the sum of the medians ... is maximised.”",
+    "node_text":"Dado n, construir una permutación p de longitud 3n. Al partirla en n bloques contiguos de 3 elementos, maximizar la suma de las medianas de cada bloque.\n\n“construct a permutation of length 3n ... partition ... into n contiguous blocks with 3 elements, the sum of the medians ... is maximised.”",
     "source_section":"Statement",
-    "skills":[
-      "Comprender mediana en 3 elementos",
-      "Construcción de permutaciones"
-    ],
-    "strategies":[
-      "Greedy + prueba por cota"
-    ],
+    "skills":"[\"Comprender mediana en 3 elementos\", \"Construcción de permutaciones\"]",
+    "strategies":"[\"Greedy + prueba por cota\"]",
     "confidence":0.9,
     "depth":0,
     "order":1,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::understanding_median",
@@ -2223,38 +1285,19 @@
     "evidence_text":"“The median of an array b containing 3 elements is the 2-nd element after b is sorted in non-decreasing order.”",
     "node_text":"La mediana es el 2º elemento al ordenar los 3 valores en orden no decreciente.\n\n“The median of an array b containing 3 elements is the 2-nd element after b is sorted in non-decreasing order.”",
     "source_section":"Statement",
-    "skills":[
-      "Definición de mediana"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Definición de mediana\"]",
+    "strategies":"[]",
     "confidence":0.95,
     "depth":1,
     "order":2,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::observation_roles",
@@ -2268,38 +1311,19 @@
     "evidence_text":"“Observe that the position of an element doesn't really matter: we are only interested in whether an element is a median, a large element or a small element (in its triple).” y “Since 3n has no elements larger than it, it must be a large element. Similarly, since 1 has no elements smaller than it, it must be a small element.”",
     "node_text":"La posición no importa: en cada triple solo cuenta si el elemento es mediana, grande o pequeño. Además, 3n no tiene elementos mayores y 1 no tiene elementos menores, así que deben ser grande y pequeño respectivamente.\n\n“Observe that the position of an element doesn't really matter: we are only interested in whether an element is a median, a large element or a small element (in its triple).” y “Since 3n has no elements larger than it, it must be a large element. Similarly, since 1 has no elements smaller than it, it must be a small element.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Razonamiento por roles en triples"
-    ],
-    "strategies":[
-      "Reducir el problema a asignación de roles"
-    ],
+    "skills":"[\"Razonamiento por roles en triples\"]",
+    "strategies":"[\"Reducir el problema a asignación de roles\"]",
     "confidence":0.9,
     "depth":1,
     "order":3,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::model",
@@ -2310,42 +1334,22 @@
     "node_type":"MATHEMATICAL_MODEL",
     "title":"Modelo: triples (l_i, m_i, r_i) con l_i < m_i < r_i",
     "summary":"Cada bloque de 3 elementos puede verse como un triple ordenado (l_i, m_i, r_i) donde la mediana es m_i. Se ordenan las medianas m_1 < ... < m_n para razonar por disponibilidad de elementos grandes.",
-    "evidence_text":"“Let the i-th triple be {l_i, m_i, r_i}, with l_i < m_i < r_i, and wlog let m_1 < m_2 < … < m_n be the n medians.”",
-    "node_text":"Cada bloque de 3 elementos puede verse como un triple ordenado (l_i, m_i, r_i) donde la mediana es m_i. Se ordenan las medianas m_1 < ... < m_n para razonar por disponibilidad de elementos grandes.\n\n“Let the i-th triple be {l_i, m_i, r_i}, with l_i < m_i < r_i, and wlog let m_1 < m_2 < … < m_n be the n medians.”",
+    "evidence_text":"“Let the i-th triple be {l_i, m_i, r_i}, with l_i < m_i < r_i, and wlog let m_1 < m_2 < ... < m_n be the n medians.”",
+    "node_text":"Cada bloque de 3 elementos puede verse como un triple ordenado (l_i, m_i, r_i) donde la mediana es m_i. Se ordenan las medianas m_1 < ... < m_n para razonar por disponibilidad de elementos grandes.\n\n“Let the i-th triple be {l_i, m_i, r_i}, with l_i < m_i < r_i, and wlog let m_1 < m_2 < ... < m_n be the n medians.”",
     "source_section":"Official Editorial - Proof that this is optimal",
-    "skills":[
-      "Modelar bloques como triples ordenados",
-      "Ordenar variables para una cota"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Modelar bloques como triples ordenados\", \"Ordenar variables para una cota\"]",
+    "strategies":"[]",
     "confidence":0.85,
     "depth":1,
     "order":4,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::algorithm",
@@ -2355,43 +1359,23 @@
     "parent_node_key":"problem",
     "node_type":"ALGORITHM",
     "title":"Construcción greedy eligiendo la mayor mediana posible",
-    "summary":"Elegir la mediana más grande disponible: 3n-1. Como 1 < 3n-1 < 3n, forma un triple válido. Repetir el proceso sobre el subconjunto {2,3,...,3n-2}. La construcción resultante es: {1,3n-1,3n}, {2,3n-2,3n-3}, …, {n,2n-1,2n}.",
-    "evidence_text":"“To maximise the sum of medians, we should pick the largest possible median available, which is 3n-1. Since 1 < 3n-1 < 3n, this forms a valid triple. Now we can repeat the process on the subset {2, 3, ... 3n-2}, yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, … , {n, 2n-1, 2n}.”",
-    "node_text":"Elegir la mediana más grande disponible: 3n-1. Como 1 < 3n-1 < 3n, forma un triple válido. Repetir el proceso sobre el subconjunto {2,3,...,3n-2}. La construcción resultante es: {1,3n-1,3n}, {2,3n-2,3n-3}, …, {n,2n-1,2n}.\n\n“To maximise the sum of medians, we should pick the largest possible median available, which is 3n-1. Since 1 < 3n-1 < 3n, this forms a valid triple. Now we can repeat the process on the subset {2, 3, ... 3n-2}, yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, … , {n, 2n-1, 2n}.”",
+    "summary":"Elegir la mediana más grande disponible: 3n-1. Como 1 < 3n-1 < 3n, forma un triple válido. Repetir el proceso sobre el subconjunto {2,3,...,3n-2}. La construcción resultante es: {1,3n-1,3n}, {2,3n-2,3n-3}, ..., {n,2n-1,2n}.",
+    "evidence_text":"“To maximise the sum of medians, we should pick the largest possible median available, which is 3n-1. Since 1 < 3n-1 < 3n, this forms a valid triple. Now we can repeat the process on the subset {2, 3, ... 3n-2}, yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, ... , {n, 2n-1, 2n}.”",
+    "node_text":"Elegir la mediana más grande disponible: 3n-1. Como 1 < 3n-1 < 3n, forma un triple válido. Repetir el proceso sobre el subconjunto {2,3,...,3n-2}. La construcción resultante es: {1,3n-1,3n}, {2,3n-2,3n-3}, ..., {n,2n-1,2n}.\n\n“To maximise the sum of medians, we should pick the largest possible median available, which is 3n-1. Since 1 < 3n-1 < 3n, this forms a valid triple. Now we can repeat the process on the subset {2, 3, ... 3n-2}, yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, ... , {n, 2n-1, 2n}.”",
     "source_section":"Official Editorial - Solution",
-    "skills":[
-      "Greedy constructive",
-      "Construcción por patrones"
-    ],
-    "strategies":[
-      "Seleccionar mediana máxima y emparejar con extremos"
-    ],
+    "skills":"[\"Greedy constructive\", \"Construcción por patrones\"]",
+    "strategies":"[\"Seleccionar mediana máxima y emparejar con extremos\"]",
     "confidence":0.9,
     "depth":1,
     "order":5,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::proof_optimal",
@@ -2402,42 +1386,22 @@
     "node_type":"PROOF",
     "title":"Prueba de optimalidad por cota de disponibilidad de elementos grandes",
     "summary":"Para que una mediana m_i sea mediana, necesita un elemento estrictamente mayor que no se reutilice en otros triples. Se obtiene que para las medianas ordenadas, debe cumplirse una desigualdad que fuerza m_{n-k+1} ≤ 3n - 2k + 1, que coincide con la construcción óptima.",
-    "evidence_text":"“Each median needs an element strictly larger than it not used in any other triple. So there should be at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} … and more generally, at least 2k - 1 elements larger than m_{n-k+1}.” y “we need 2k-1 ≤ 3n - m_{n-k+1} … Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1, as in the optimal construction.”",
-    "node_text":"Para que una mediana m_i sea mediana, necesita un elemento estrictamente mayor que no se reutilice en otros triples. Se obtiene que para las medianas ordenadas, debe cumplirse una desigualdad que fuerza m_{n-k+1} ≤ 3n - 2k + 1, que coincide con la construcción óptima.\n\n“Each median needs an element strictly larger than it not used in any other triple. So there should be at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} … and more generally, at least 2k - 1 elements larger than m_{n-k+1}.” y “we need 2k-1 ≤ 3n - m_{n-k+1} … Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1, as in the optimal construction.”",
+    "evidence_text":"“Each median needs an element strictly larger than it not used in any other triple. So there should be at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} ... and more generally, at least 2k - 1 elements larger than m_{n-k+1}.” y “we need 2k-1 ≤ 3n - m_{n-k+1} ... Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1, as in the optimal construction.”",
+    "node_text":"Para que una mediana m_i sea mediana, necesita un elemento estrictamente mayor que no se reutilice en otros triples. Se obtiene que para las medianas ordenadas, debe cumplirse una desigualdad que fuerza m_{n-k+1} ≤ 3n - 2k + 1, que coincide con la construcción óptima.\n\n“Each median needs an element strictly larger than it not used in any other triple. So there should be at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} ... and more generally, at least 2k - 1 elements larger than m_{n-k+1}.” y “we need 2k-1 ≤ 3n - m_{n-k+1} ... Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1, as in the optimal construction.”",
     "source_section":"Official Editorial - Proof that this is optimal",
-    "skills":[
-      "Cotas combinatorias",
-      "Reordenamiento de índices"
-    ],
-    "strategies":[
-      "Contar elementos disponibles mayores que una mediana"
-    ],
+    "skills":"[\"Cotas combinatorias\", \"Reordenamiento de índices\"]",
+    "strategies":"[\"Contar elementos disponibles mayores que una mediana\"]",
     "confidence":0.85,
     "depth":1,
     "order":6,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::proof_step_availability",
@@ -2451,38 +1415,19 @@
     "evidence_text":"“at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} (namely m_n, r_n, r_{n-1}), and more generally, at least 2k - 1 elements larger than m_{n-k+1}.”",
     "node_text":"Si las medianas están ordenadas, para m_{n-k+1} se requieren al menos 2k-1 elementos estrictamente mayores (por m_n, r_n, r_{n-1}, etc.).\n\n“at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} (namely m_n, r_n, r_{n-1}), and more generally, at least 2k - 1 elements larger than m_{n-k+1}.”",
     "source_section":"Official Editorial - Proof that this is optimal",
-    "skills":[
-      "Conteo de requisitos por triple"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Conteo de requisitos por triple\"]",
+    "strategies":"[]",
     "confidence":0.8,
     "depth":2,
     "order":7,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::proof_step_inequality",
@@ -2493,41 +1438,22 @@
     "node_type":"PROOF_STEP",
     "title":"Paso clave: desigualdad y reordenamiento",
     "summary":"En {1..3n}, hay exactamente 3n - m_{n-k+1} elementos mayores que m_{n-k+1}. Entonces 2k-1 ≤ 3n - m_{n-k+1} y se reordena a m_{n-k+1} ≤ 3n - 2k + 1.",
-    "evidence_text":"“In the set 1 … 3n, there are 3n - m_{n-k+1} elements larger than m_{n-k+1} … and so we need 2k-1 ≤ 3n - m_{n-k+1}. Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1”",
-    "node_text":"En {1..3n}, hay exactamente 3n - m_{n-k+1} elementos mayores que m_{n-k+1}. Entonces 2k-1 ≤ 3n - m_{n-k+1} y se reordena a m_{n-k+1} ≤ 3n - 2k + 1.\n\n“In the set 1 … 3n, there are 3n - m_{n-k+1} elements larger than m_{n-k+1} … and so we need 2k-1 ≤ 3n - m_{n-k+1}. Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1”",
+    "evidence_text":"“In the set 1 ... 3n, there are 3n - m_{n-k+1} elements larger than m_{n-k+1} ... and so we need 2k-1 ≤ 3n - m_{n-k+1}. Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1”",
+    "node_text":"En {1..3n}, hay exactamente 3n - m_{n-k+1} elementos mayores que m_{n-k+1}. Entonces 2k-1 ≤ 3n - m_{n-k+1} y se reordena a m_{n-k+1} ≤ 3n - 2k + 1.\n\n“In the set 1 ... 3n, there are 3n - m_{n-k+1} elements larger than m_{n-k+1} ... and so we need 2k-1 ≤ 3n - m_{n-k+1}. Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1”",
     "source_section":"Official Editorial - Proof that this is optimal",
-    "skills":[
-      "Manipulación algebraica de desigualdades"
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[\"Manipulación algebraica de desigualdades\"]",
+    "strategies":"[]",
     "confidence":0.85,
     "depth":2,
     "order":8,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::implementation",
@@ -2538,41 +1464,22 @@
     "node_type":"IMPLEMENTATION",
     "title":"Implementación: emitir los triples en el patrón dado",
     "summary":"Construir los n triples según la fórmula del editorial y concatenarlos como permutación de longitud 3n (el statement permite cualquier orden de salida que cumpla la partición en bloques contiguos).",
-    "evidence_text":"“yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, … , {n, 2n-1, 2n}.” y “If there are multiple possible p, output any.”",
-    "node_text":"Construir los n triples según la fórmula del editorial y concatenarlos como permutación de longitud 3n (el statement permite cualquier orden de salida que cumpla la partición en bloques contiguos).\n\n“yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, … , {n, 2n-1, 2n}.” y “If there are multiple possible p, output any.”",
+    "evidence_text":"“yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, ... , {n, 2n-1, 2n}.” y “If there are multiple possible p, output any.”",
+    "node_text":"Construir los n triples según la fórmula del editorial y concatenarlos como permutación de longitud 3n (el statement permite cualquier orden de salida que cumpla la partición en bloques contiguos).\n\n“yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, ... , {n, 2n-1, 2n}.” y “If there are multiple possible p, output any.”",
     "source_section":"Official Editorial - Solution; Statement",
-    "skills":[
-      "Construcción de arreglo a partir de fórmula"
-    ],
-    "strategies":[
-      "Concatenar triples"
-    ],
+    "skills":"[\"Construcción de arreglo a partir de fórmula\"]",
+    "strategies":"[\"Concatenar triples\"]",
     "confidence":0.7,
     "depth":1,
     "order":9,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::complexity",
@@ -2586,38 +1493,19 @@
     "evidence_text":"",
     "node_text":"No especificada en el editorial provisto.",
     "source_section":"Official Editorial",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.1,
     "depth":1,
     "order":10,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::common_mistake",
@@ -2631,38 +1519,19 @@
     "evidence_text":"",
     "node_text":"No hay información explícita en el texto provisto sobre errores comunes.",
     "source_section":"Official Editorial",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.1,
     "depth":1,
     "order":11,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   },
   {
     "tree_node_id":"llm::codeforces_2218_C::edge_case",
@@ -2676,37 +1545,18 @@
     "evidence_text":"“CONSTRAINTS nan”",
     "node_text":"El statement no incluye restricciones numéricas (CONSTRAINTS: nan). No se puede detallar manejo de límites.\n\n“CONSTRAINTS nan”",
     "source_section":"Statement",
-    "skills":[
-
-    ],
-    "strategies":[
-
-    ],
+    "skills":"[]",
+    "strategies":"[]",
     "confidence":0.2,
     "depth":1,
     "order":12,
     "source":"codeforces",
     "normalized_difficulty":800.0,
-    "normalized_tags":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
-    "topic_group":[
-      "implementation_constructive",
-      "greedy",
-      "math"
-    ],
+    "normalized_tags":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "topic_group":"[\"implementation_constructive\", \"greedy\", \"math\"]",
     "url":"https:\/\/codeforces.com\/problemset\/problem\/2218\/C",
     "generation_status":"responses_api",
     "generation_model":"gpt-5.4-nano",
-    "metadata":{
-      "main_topic":"Constructive greedy optimization of medians in triples",
-      "difficulty_comment":"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).",
-      "warnings":[
-        "El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.",
-        "No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial."
-      ]
-    }
+    "metadata":"{\"main_topic\": \"Constructive greedy optimization of medians in triples\", \"difficulty_comment\": \"800 (constructive + greedy + math; requiere construir una permutación maximizando suma de medianas por bloques de 3).\", \"warnings\": [\"El editorial provisto no incluye restricciones numéricas ni detalles de complejidad\/implementación; los nodos correspondientes se dejan con baja confianza.\", \"No se proporcionan ejemplos adicionales ni pseudocódigo; la implementación se infiere solo a partir del patrón de triples del editorial.\"]}"
   }
 ]

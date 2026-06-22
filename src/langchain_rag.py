@@ -23,6 +23,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
 from llm.env_config import DEFAULT_OPENAI_MODEL, OpenAISettings, resolve_openai_settings
+from text_formatting import normalize_math_text
 
 
 DEFAULT_METRIC_THRESHOLDS = {"Faithfulness": 0.75, "Answer Relevancy": 0.75}
@@ -49,6 +50,7 @@ def parse_jsonish(value: Any) -> list[str]:
 
 def clean_text(value: Any) -> str:
     text = "" if value is None or (isinstance(value, float) and pd.isna(value)) else str(value)
+    text = normalize_math_text(text)
     text = text.replace("\xa0", " ")
     text = re.sub(r"\s+", " ", text)
     return text.strip()
@@ -129,7 +131,11 @@ ANSWER_PROMPT = ChatPromptTemplate.from_messages(
             "Eres un tutor RAG de programacion competitiva. Responde solo con la evidencia del contexto. "
             "Si el contexto no alcanza, dilo claramente. Da ayuda pedagogica, no una solucion completa innecesaria. "
             "Antes de dar una formula, verifica que la explicacion verbal y el codigo del contexto sean consistentes. "
-            "Si una frase del editorial es ambigua, reconciliala con el codigo o con una derivacion algebraica breve.",
+            "Si una frase del editorial es ambigua, reconciliala con el codigo o con una derivacion algebraica breve. "
+            "Preserva las formulas de forma limpia: si el contexto contiene `$x+y = z$`, muestra `$x+y = z$`; "
+            "no cambies subindices, signos ni operadores al parafrasear. "
+            "Si la consulta indica `exact_problem_not_in_dataset`, aclara que estas usando problemas similares "
+            "del corpus y no la editorial oficial del problema exacto.",
         ),
         (
             "human",
@@ -225,12 +231,14 @@ def run_langchain_rag_eval(
     top_k: int = 5,
     query_limit: int = 8,
     metric_thresholds: dict[str, float] | None = None,
+    scope_to_query_problem: bool = True,
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
-    settings = resolve_openai_settings(requested_model=model or DEFAULT_OPENAI_MODEL)
+    settings = resolve_openai_settings(requested_model=model)
     if not settings.available:
         raise RuntimeError("OPENAI_API_KEY is not configured. Add it to .env or environment variables.")
 
-    retriever = LocalNodeRetriever.from_nodes(page_nodes)
+    global_retriever = LocalNodeRetriever.from_nodes(page_nodes)
+    scoped_retrievers: dict[str, LocalNodeRetriever] = {}
     llm = make_llm(settings)
     answer_chain = ANSWER_PROMPT | llm | StrOutputParser()
     judge_chain = JUDGE_PROMPT | llm | StrOutputParser()
@@ -240,6 +248,15 @@ def run_langchain_rag_eval(
     start_all = time.perf_counter()
     for spec in queries:
         start = time.perf_counter()
+        retriever = global_retriever
+        problem_id = spec.get("global_problem_id", "")
+        if scope_to_query_problem and problem_id and "global_problem_id" in page_nodes.columns:
+            if problem_id not in scoped_retrievers:
+                scoped_nodes = page_nodes[page_nodes["global_problem_id"].astype(str).eq(str(problem_id))].copy()
+                scoped_retrievers[problem_id] = (
+                    LocalNodeRetriever.from_nodes(scoped_nodes) if not scoped_nodes.empty else global_retriever
+                )
+            retriever = scoped_retrievers[problem_id]
         hits = retriever.retrieve(spec["query"], top_k=top_k)
         context = format_context(hits)
         answer = answer_chain.invoke({"query": spec["query"], "context": context})
@@ -294,7 +311,8 @@ def run_langchain_rag_eval(
         "key_source": settings.key_source,
         "queries": len(results),
         "top_k": top_k,
-        "nodes_indexed": int(len(retriever.nodes)),
+        "nodes_indexed": int(len(global_retriever.nodes)),
+        "scope_to_query_problem": bool(scope_to_query_problem),
         "total_elapsed_seconds": round(time.perf_counter() - start_all, 3),
     }
     return results, summary, metadata

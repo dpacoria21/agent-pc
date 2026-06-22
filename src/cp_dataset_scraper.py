@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import copy
 import hashlib
-import html as html_lib
 import json
 import random
 import re
@@ -26,6 +25,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from tqdm.auto import tqdm
+
+from text_formatting import normalize_math_text as normalize_math_markup
+from text_formatting import space_inline_math as space_math_markup
 
 
 CODEFORCES_API_URL = "https://codeforces.com/api/problemset.problems"
@@ -286,46 +288,12 @@ def clean_text(text: Any) -> str:
 
 def normalize_math_text(text: Any) -> str:
     """Normalize common contest math markup into model-friendly Markdown LaTeX."""
-    if text is None:
-        return ""
-    value = html_lib.unescape(str(text))
-    replacements = {
-        "\u00a0": " ",
-        "\u2212": "-",
-        "\u2013": "-",
-        "\u2014": "-",
-        "\u2026": "...",
-        "â‰¤": "<=",
-        "â‰¥": ">=",
-        "âˆ’": "-",
-        "â€¦": "...",
-        "â€”": "-",
-        "â€“": "-",
-    }
-    for src, dst in replacements.items():
-        value = value.replace(src, dst)
-    value = re.sub(r"\{\\color\{[^{}]+\}\{([^{}]+)\}\}", r"\1", value)
-    value = re.sub(r"\${6}\s*(.*?)\s*\${6}", lambda m: f"$${m.group(1).strip()}$$", value, flags=re.S)
-    value = re.sub(r"\${3}\s*(.*?)\s*\${3}", lambda m: f"${m.group(1).strip()}$", value, flags=re.S)
-    return space_inline_math(value)
+    return normalize_math_markup(text)
 
 
 def space_inline_math(text: str) -> str:
     """Add spaces around inline math spans without changing their content."""
-    pieces: list[str] = []
-    last = 0
-    for match in re.finditer(r"\$[^$\n]+\$", text):
-        before = text[last : match.start()]
-        math = match.group(0)
-        if before and before[-1].isalnum():
-            before += " "
-        if match.end() < len(text) and text[match.end()].isalnum():
-            math += " "
-        pieces.append(before)
-        pieces.append(math)
-        last = match.end()
-    pieces.append(text[last:])
-    return "".join(pieces)
+    return space_math_markup(text)
 
 
 def html_to_text_preserving_math(node: Any, separator: str = "\n") -> str:
@@ -338,7 +306,8 @@ def html_to_text_preserving_math(node: Any, separator: str = "\n") -> str:
         if "math/tex" in script_type or "text/tex" in script_type:
             content = clean_text(script.string or script.get_text(" ", strip=True))
             if content:
-                script.replace_with(f" ${content}$ ")
+                delimiter = "$$" if "mode=display" in script_type else "$"
+                script.replace_with(f" {delimiter}{content}{delimiter} ")
             else:
                 script.decompose()
         else:

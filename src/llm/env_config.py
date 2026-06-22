@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-DEFAULT_OPENAI_MODEL = "gpt-5.4-nano"
+DEFAULT_OPENAI_MODEL = "gpt-4o-mini"
 
 
 @dataclass(frozen=True)
@@ -34,7 +34,12 @@ def normalize_model_name(value: str | None) -> str:
         return DEFAULT_OPENAI_MODEL
     text = re.sub(r"\s+", "-", text.lower())
     text = text.replace("_", "-")
-    return text
+    aliases = {
+        "gpto4-mini": "gpt-4o-mini",
+        "gpt4o-mini": "gpt-4o-mini",
+        "gpt-o4-mini": "gpt-4o-mini",
+    }
+    return aliases.get(text, text)
 
 
 def load_dotenv_file(env_path: str | Path = ".env", override: bool = False) -> dict[str, str]:
@@ -68,7 +73,7 @@ def resolve_openai_settings(
         key_source = "OPENAPI_KEY" if api_key else ""
         if api_key:
             os.environ["OPENAI_API_KEY"] = api_key
-    model = normalize_model_name(os.getenv("OPENAI_MODEL") or requested_model or DEFAULT_OPENAI_MODEL)
+    model = normalize_model_name(requested_model or os.getenv("OPENAI_MODEL") or DEFAULT_OPENAI_MODEL)
     os.environ["OPENAI_MODEL"] = model
     base_url = os.getenv("OPENAI_BASE_URL", "")
     return OpenAISettings(

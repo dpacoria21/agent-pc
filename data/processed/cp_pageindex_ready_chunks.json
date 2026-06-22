@@ -256,7 +256,7 @@
     "node_id":"pi::problem::codeforces_2218_D",
     "global_problem_id":"codeforces_2218_D",
     "node_type":"PROBLEM",
-    "chunk_text":"funny to make you, his loyal tester, solve it: Construct a sequence $a$ containing $n$ integers such that $\\operatorname{gcd}(a_i, a_{i+1})$ $^{\\text{†}}$ is distinct over all $1 \\leq i \\leq n - 1$. It is guaranteed that at least one sequence $a$ exists. $^{\\text{∗}}$ Online Encyclopedia of Integer Sequences, the favourite website of math nerds, overly astute testers, and insufficiently rigorous coordinators. $^{\\text{†}}$$\\operatorname{gcd}(x,y)$ refers to the greatest common divisor of integers $x$ and $y$. D - The 67th OEIS Problem Hint 1 Think something related to coprime numbers. Solution There are",
+    "chunk_text":"funny to make you, his loyal tester, solve it: Construct a sequence $a$ containing $n$ integers such that $\\operatorname{gcd}(a_i, a_{i+1})$ $^{\\text{†}}$ is distinct over all $1 \\leq i \\leq n - 1$. It is guaranteed that at least one sequence $a$ exists. $^{\\text{∗}}$ Online Encyclopedia of Integer Sequences, the favourite website of math nerds, overly astute testers, and insufficiently rigorous coordinators. $^{\\text{†}}$ $\\operatorname{gcd}(x,y)$ refers to the greatest common divisor of integers $x$ and $y$. D - The 67th OEIS Problem Hint 1 Think something related to coprime numbers. Solution There are",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/D\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 1100.0, \"rating\": 1100.0, \"problem_index\": \"D\"}"
   },
@@ -328,7 +328,7 @@
     "node_id":"pi::problem::codeforces_2218_C",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"PROBLEM",
-    "chunk_text":"3, ... 3n-2}$, yielding the construction $\\{1, 3n-1, 3n\\}, \\{2, 3n-2, 3n-3\\}, \\cdots , \\{n, 2n-1, 2n\\}$ Proof that this is optimal Let the $i^{th}$ triple be ${l_i, m_i, r_i}$, with $l_i \\lt m_i \\lt r_i$, and wlog let $m_1 \\lt m_2 \\lt \\cdots \\lt m_n$ be the $n$ medians. Each median needs an element strictly larger than it not used in any other triple. So there should be at least $1$ element larger than $m_n$, at least $3$ elements larger than $m_{n-1}$ (namely $m_n$, $r_n$, $r_{n-1}$), and more generally,",
+    "chunk_text":"3, ... 3n-2}$, yielding the construction$\\{1, 3n-1, 3n\\}, \\{2, 3n-2, 3n-3\\}, \\cdots , \\{n, 2n-1, 2n\\}$Proof that this is optimal Let the$ i^{th}$triple be${l_i, m_i, r_i}$, with$ l_i \\lt m_i \\lt r_i $, and wlog let$ m_1 \\lt m_2 \\lt \\cdots \\lt m_n $be the$ n $medians. Each median needs an element strictly larger than it not used in any other triple. So there should be at least$ 1 $element larger than$ m_n $, at least$ 3 $elements larger than$ m_{n-1}$(namely$ m_n $,$ r_n $,$ r_{n-1}$), and more generally,",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"rating\": 800.0, \"problem_index\": \"C\"}"
   },
@@ -337,7 +337,7 @@
     "node_id":"pi::problem::codeforces_2218_C",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"PROBLEM",
-    "chunk_text":"element larger than $m_n$, at least $3$ elements larger than $m_{n-1}$ (namely $m_n$, $r_n$, $r_{n-1}$), and more generally, at least $2k - 1$ elements larger than $m_{n-k+1}$. In the set $1 \\ldots 3n$, there are $3n - m_{n-k+1}$ elements larger than m_{n-k+1} (namely $m_{n-k+1}+1 \\ldots 3n$), and so we need $2k-1 \\leq 3n - m\\_{n-k+1}$ Rearranging, we get $m_{n-k+1} \\leq 3n - 2k + 1$, as in the optimal construction.",
+    "chunk_text":"element larger than $m_n$, at least $3$ elements larger than $m_{n-1}$ (namely $m_n$, $r_n$, $r_{n-1}$), and more generally, at least $2k - 1$ elements larger than $m_{n-k+1}$. In the set $1 \\ldots 3n$, there are $3n - m_{n-k+1}$ elements larger than m_{n-k+1} (namely $m_{n-k+1}+1 \\ldots 3n$), and so we need $2k-1 \\leq 3n - m_{n-k+1}$ Rearranging, we get $m_{n-k+1} \\leq 3n - 2k + 1$, as in the optimal construction.",
     "chunk_word_count":70,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"rating\": 800.0, \"problem_index\": \"C\"}"
   },
@@ -382,7 +382,7 @@
     "node_id":"pi::problem::codeforces_2218_A",
     "global_problem_id":"codeforces_2218_A",
     "node_type":"PROBLEM",
-    "chunk_text":"be as IMPORTANT as this one (and nothing this narrator says will sound so distinctly... orange again). You are implored to cooperate with Macaque, for his wrath (and joblessness) are unending. There is no room for error or incompetence. Lousiness shall be met with the full force of the law. Macaque is given an integer $x$. Your task is to choose an integer $y$ such that the value of $\\operatorname{min}(x, y)$$^{\\text{∗}}$ is maximized . If there are multiple valid $y$, you may output any of them. $^{\\text{∗}}$$\\operatorname{min}(x, y)$ is defined",
+    "chunk_text":"be as IMPORTANT as this one (and nothing this narrator says will sound so distinctly... orange again). You are implored to cooperate with Macaque, for his wrath (and joblessness) are unending. There is no room for error or incompetence. Lousiness shall be met with the full force of the law. Macaque is given an integer $x$. Your task is to choose an integer $y$ such that the value of $\\operatorname{min}(x, y)$ $^{\\text{∗}}$ is maximized . If there are multiple valid $y$, you may output any of them. $^{\\text{∗}}$ $\\operatorname{min}(x, y)$ is defined",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/A\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 800.0, \"rating\": 800.0, \"problem_index\": \"A\"}"
   },
@@ -391,7 +391,7 @@
     "node_id":"pi::problem::codeforces_2218_A",
     "global_problem_id":"codeforces_2218_A",
     "node_type":"PROBLEM",
-    "chunk_text":"maximized . If there are multiple valid $y$, you may output any of them. $^{\\text{∗}}$$\\operatorname{min}(x, y)$ is defined as the minimum of integers $x$ and $y$. A - The 67th Integer Problem Solution Many solutions exist here, and they are all trivial to find. Consider the value of $\\min(x, y)$ when $x$ is constant, and you vary $y$. When $y \\gt = x$, the value is $x$, and when $y \\lt x$ the value is $y$. Therefore, the largest that $\\min(x, y))$ can get for any value of $y$ is",
+    "chunk_text":"maximized . If there are multiple valid $y$, you may output any of them. $^{\\text{∗}}$ $\\operatorname{min}(x, y)$ is defined as the minimum of integers $x$ and $y$. A - The 67th Integer Problem Solution Many solutions exist here, and they are all trivial to find. Consider the value of $\\min(x, y)$ when $x$ is constant, and you vary $y$. When $y \\gt = x$, the value is $x$, and when $y \\lt x$ the value is $y$. Therefore, the largest that $\\min(x, y))$ can get for any value of $y$ is",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/A\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 800.0, \"rating\": 800.0, \"problem_index\": \"A\"}"
   },
@@ -562,7 +562,7 @@
     "node_id":"pi::problem::codeforces_2185_F",
     "global_problem_id":"codeforces_2185_F",
     "node_type":"PROBLEM",
-    "chunk_text":"x_2, \\ldots, x_y$ is equal to $x_1 \\oplus x_2 \\oplus x_3 \\ldots x_{y-1} \\oplus x_y$ where $\\oplus$ denotes the bitwise XOR operation . Solution: Firstly, note that, since the XOR operation is cumulative, the skill level of the $i$ th cow after $k$ rounds will always be the same, and it will be the XOR of all the cows in that cow's line XOR the cow's skill level. This means that we only need to simulate the matches involving the cow who was given the potion, and we can calculate",
+    "chunk_text":"x_2, \\ldots, x_y $is equal to$ x_1 \\oplus x_2 \\oplus x_3 \\ldots x_{y-1} \\oplus x_y $where$\\oplus $denotes the bitwise XOR operation . Solution: Firstly, note that, since the XOR operation is cumulative, the skill level of the$ i $th cow after$ k$ rounds will always be the same, and it will be the XOR of all the cows in that cow's line XOR the cow's skill level. This means that we only need to simulate the matches involving the cow who was given the potion, and we can calculate",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2185\/F\", \"normalized_tags\": [\"data_structures\", \"techniques\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"techniques\", \"implementation_constructive\"], \"difficulty\": 1700.0, \"rating\": 1700.0, \"problem_index\": \"F\"}"
   },
@@ -679,7 +679,7 @@
     "node_id":"pi::problem::codeforces_2185_C",
     "global_problem_id":"codeforces_2185_C",
     "node_type":"PROBLEM",
-    "chunk_text":"= [1, 3, 4, 2]$, and you perform the operation with $x = 3$, $a$ is now equal to $[4, 6, 7, 5]$. Output the maximum possible value of $\\operatorname{MEX}(a)$$^{\\text{∗}}$ after the operation is performed. $^{\\text{∗}}$$\\operatorname{MEX}(a)$ is defined as the smallest non-negative integer that is not present in the array. For example, $\\operatorname{MEX}([1, 2, 0, 5])$ is $3$, and $\\operatorname{MEX}([1, 2, 4, 9])$ is $0$. Solution: Solution 1: Firstly, let's only consider distinct elements of the array, since a duplicate value won't affect the value of $\\operatorname{MEX}$. An array with",
+    "chunk_text":"= [1, 3, 4, 2]$, and you perform the operation with$ x = 3 $,$ a $is now equal to$[4, 6, 7, 5]$. Output the maximum possible value of$\\operatorname{MEX}(a)$$^{\\text{∗}}$ after the operation is performed. $^{\\text{∗}}$$\\operatorname{MEX}(a)$is defined as the smallest non-negative integer that is not present in the array. For example,$\\operatorname{MEX}([1, 2, 0, 5])$is$ 3 $, and$\\operatorname{MEX}([1, 2, 4, 9])$is$ 0 $. Solution: Solution 1: Firstly, let's only consider distinct elements of the array, since a duplicate value won't affect the value of$\\operatorname{MEX}$. An array with",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2185\/C\", \"normalized_tags\": [\"implementation_constructive\", \"techniques\"], \"topic_group\": [\"implementation_constructive\", \"techniques\"], \"difficulty\": 900.0, \"rating\": 900.0, \"problem_index\": \"C\"}"
   },
@@ -823,7 +823,7 @@
     "node_id":"pi::problem::codeforces_2167_F",
     "global_problem_id":"codeforces_2167_F",
     "node_type":"PROBLEM",
-    "chunk_text":"\\dots + |S_n|$$ Unfortunately, Behruzbek is feeling sleepy now. Please help Behruzbek by finding the kawaiiness of the tree! $^{\\text{∗}}$ A tree is a connected graph without cycles. $^{\\text{†}}$ A rooted tree is a tree where one vertex is special and called the root. Hint 1: We don't need to know lowest common ancestor (LCA) to solve this problem. Think of subtree sizes to replace LCA . Hint 2: Let $sz_{i} =$ subtree size of $i$ when root is $r$. In order for $i$ to be able to be in",
+    "chunk_text":"\\dots + |S_n|$$Unfortunately, Behruzbek is feeling sleepy now. Please help Behruzbek by finding the kawaiiness of the tree!$^{\\text{∗}}$A tree is a connected graph without cycles.$^{\\text{†}}$A rooted tree is a tree where one vertex is special and called the root. Hint 1: We don't need to know lowest common ancestor (LCA) to solve this problem. Think of subtree sizes to replace LCA . Hint 2: Let$ sz_{i} =$subtree size of$ i $when root is$ r $. In order for$ i$ to be able to be in",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/F\", \"normalized_tags\": [\"graphs\", \"dynamic_programming\", \"math\"], \"topic_group\": [\"graphs\", \"dynamic_programming\", \"math\"], \"difficulty\": 1600.0, \"rating\": 1600.0, \"problem_index\": \"F\"}"
   },
@@ -886,7 +886,7 @@
     "node_id":"pi::problem::codeforces_2167_F",
     "global_problem_id":"codeforces_2167_F",
     "node_type":"PROBLEM",
-    "chunk_text":"\\geq k$ holds, because we are not changing subtree itself. Now let's consider outside of it, if $n - sz_{i} \\geq k$ holds, then we can choose any node in the subtree of $i$ as a root, and still $sz_{i} \\geq k$ holds.",
+    "chunk_text":"\\geq k $holds, because we are not changing subtree itself. Now let's consider outside of it, if$ n - sz_{i} \\geq k $holds, then we can choose any node in the subtree of$ i $as a root, and still$ sz_{i} \\geq k$ holds.",
     "chunk_word_count":43,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/F\", \"normalized_tags\": [\"graphs\", \"dynamic_programming\", \"math\"], \"topic_group\": [\"graphs\", \"dynamic_programming\", \"math\"], \"difficulty\": 1600.0, \"rating\": 1600.0, \"problem_index\": \"F\"}"
   },
@@ -940,7 +940,7 @@
     "node_id":"pi::problem::codeforces_2167_E",
     "global_problem_id":"codeforces_2167_E",
     "node_type":"PROBLEM",
-    "chunk_text":"m) + 1)$$ We just need to check whether this number is at least $k$. After finding the maximum possible value of $m$, we can simply iterate over these intervals and output teleport positions until we have printed $k$ of them. Time complexity: $O(nlogn)$.",
+    "chunk_text":"m) + 1)$$We just need to check whether this number is at least$ k $. After finding the maximum possible value of$ m $, we can simply iterate over these intervals and output teleport positions until we have printed$ k $of them. Time complexity:$ O(nlogn)$.",
     "chunk_word_count":44,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"math\", \"greedy\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"math\", \"greedy\", \"implementation_constructive\"], \"difficulty\": 1600.0, \"rating\": 1600.0, \"problem_index\": \"E\"}"
   },
@@ -949,7 +949,7 @@
     "node_id":"pi::problem::codeforces_2167_D",
     "global_problem_id":"codeforces_2167_D",
     "node_type":"PROBLEM",
-    "chunk_text":"Yet Another Array Problem D. Yet Another Array Problem time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output You are given an integer $n$ and an array $a$ of length $n$. Find the smallest integer $x$ ($2 \\le x \\le 10^{18}$) such that there exists an index $i$ ($1 \\le i \\le n$) with $\\gcd$ $^{\\text{∗}}$$(a_i, x) = 1$. If no such $x$ exists within the range $[2,10^{18}]$, output $-1$. $^{\\text{∗}}$$\\gcd(x, y)$ denotes the greatest common divisor (GCD) of integers $x$",
+    "chunk_text":"Yet Another Array Problem D. Yet Another Array Problem time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output You are given an integer $n$ and an array $a$ of length $n$. Find the smallest integer $x$ ($2 \\le x \\le 10^{18}$) such that there exists an index $i$ ($1 \\le i \\le n$) with $\\gcd$ $^{\\text{∗}}$ $(a_i, x) = 1$. If no such $x$ exists within the range $[2,10^{18}]$, output $-1$. $^{\\text{∗}}$ $\\gcd(x, y)$ denotes the greatest common divisor (GCD) of integers $x$",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/D\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1000.0, \"rating\": 1000.0, \"problem_index\": \"D\"}"
   },
@@ -958,7 +958,7 @@
     "node_id":"pi::problem::codeforces_2167_D",
     "global_problem_id":"codeforces_2167_D",
     "node_type":"PROBLEM",
-    "chunk_text":"exists within the range $[2,10^{18}]$, output $-1$. $^{\\text{∗}}$$\\gcd(x, y)$ denotes the greatest common divisor (GCD) of integers $x$ and $y$. Hint 1: Answer is always prime number, try to prove why. Hint 2: Notice how equation works if $x$ does not satisfy property. Hint 3: It means that for each $i$, $a_{i} \\equiv 0 \\ (mod \\ x)$ Solution: Let's first try to prove our first claim. Let $x$ be the answer and $p$ the smallest prime divisor of $x$. $\\gcd(x, a_{i})=$ $p_{1}^{min(e_{1}, e2_{1})} \\cdot p_{2}^{min(e_{2}, e2_{2})} \\cdot \\ldots \\cdot",
+    "chunk_text":"exists within the range $[2,10^{18}]$, output $-1$. $^{\\text{∗}}$ $\\gcd(x, y)$ denotes the greatest common divisor (GCD) of integers $x$ and $y$. Hint 1: Answer is always prime number, try to prove why. Hint 2: Notice how equation works if $x$ does not satisfy property. Hint 3: It means that for each $i$, $a_{i} \\equiv 0 \\ (mod \\ x)$ Solution: Let's first try to prove our first claim. Let $x$ be the answer and $p$ the smallest prime divisor of $x$. $\\gcd(x, a_{i})=$ $p_{1}^{min(e_{1}, e2_{1})} \\cdot p_{2}^{min(e_{2}, e2_{2})} \\cdot \\ldots \\cdot",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/D\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1000.0, \"rating\": 1000.0, \"problem_index\": \"D\"}"
   },
@@ -1435,7 +1435,7 @@
     "node_id":"pi::problem::codeforces_2148_B",
     "global_problem_id":"codeforces_2148_B",
     "node_type":"PROBLEM",
-    "chunk_text":"= m = 1$, $a = [1]$, $b = [1]$, the movement can be as follows: What is the minimum number of crossings necessary to reach $(x, y)$? 2148B - Lasers Solution (written by cry) Since our path is continuous, whatever route we take will always pass through all vertical and horizontal lasers in the region from $(0,0)$ to $(x,y)$ since our movement is bounded inside the region. Therefore, the answer is simply $n + m$. Time complexity: $\\mathcal{O}(1)$ per test case.",
+    "chunk_text":"= m = 1 $,$ a = [1]$,$ b = [1]$, the movement can be as follows: What is the minimum number of crossings necessary to reach$(x, y)$? 2148B - Lasers Solution (written by cry) Since our path is continuous, whatever route we take will always pass through all vertical and horizontal lasers in the region from$(0,0)$to$(x,y)$since our movement is bounded inside the region. Therefore, the answer is simply$ n + m $. Time complexity:$\\mathcal{O}(1)$ per test case.",
     "chunk_word_count":82,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2148\/B\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 800.0, \"rating\": 800.0, \"problem_index\": \"B\"}"
   },
@@ -1930,7 +1930,7 @@
     "node_id":"pi::problem::codeforces_2065_G",
     "global_problem_id":"codeforces_2065_G",
     "node_type":"PROBLEM",
-    "chunk_text":"can be written as $p \\cdot q$ where $p$ and $q$ are (not necessarily distinct) prime numbers . For example, $9$ is a semi-prime since it can be written as $3 \\cdot 3$, and $3$ is a prime number. Skibidus was given an array $a$ containing $n$ integers. He must report the number of pairs $(i, j)$ such that $i \\leq j$ and $\\operatorname{lcm}(a_i, a_j)$$^{\\text{∗}}$ is semi-prime . $^{\\text{∗}}$ Given two integers $x$ and $y$, $\\operatorname{lcm}(x, y)$ denotes the least common multiple of $x$ and $y$. 2065G - Skibidus and",
+    "chunk_text":"can be written as $p \\cdot q$ where $p$ and $q$ are (not necessarily distinct) prime numbers . For example, $9$ is a semi-prime since it can be written as $3 \\cdot 3$, and $3$ is a prime number. Skibidus was given an array $a$ containing $n$ integers. He must report the number of pairs $(i, j)$ such that $i \\leq j$ and $\\operatorname{lcm}(a_i, a_j)$ $^{\\text{∗}}$ is semi-prime . $^{\\text{∗}}$ Given two integers $x$ and $y$, $\\operatorname{lcm}(x, y)$ denotes the least common multiple of $x$ and $y$. 2065G - Skibidus and",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/G\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 1700.0, \"rating\": 1700.0, \"problem_index\": \"G\"}"
   },
@@ -2047,7 +2047,7 @@
     "node_id":"pi::problem::codeforces_2065_C2",
     "global_problem_id":"codeforces_2065_C2",
     "node_type":"PROBLEM",
-    "chunk_text":"perform the operation at most once : Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$$a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. Note: The text editorials will be provided by the authors of the round. This video tutorial acts",
+    "chunk_text":"perform the operation at most once : Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$ $a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. Note: The text editorials will be provided by the authors of the round. This video tutorial acts",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C2\", \"normalized_tags\": [\"techniques\", \"greedy\"], \"topic_group\": [\"techniques\", \"greedy\"], \"difficulty\": 1300.0, \"rating\": 1300.0, \"problem_index\": \"C2\"}"
   },
@@ -2074,7 +2074,7 @@
     "node_id":"pi::problem::codeforces_2065_C1",
     "global_problem_id":"codeforces_2065_C1",
     "node_type":"PROBLEM",
-    "chunk_text":"the operation at most once : Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$$a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. Note: The text editorials will be provided by the authors of the round. This video tutorial acts as",
+    "chunk_text":"the operation at most once : Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$ $a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. Note: The text editorials will be provided by the authors of the round. This video tutorial acts as",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C1\", \"normalized_tags\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"topic_group\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"difficulty\": 1100.0, \"rating\": 1100.0, \"problem_index\": \"C1\"}"
   },
@@ -2344,7 +2344,7 @@
     "node_id":"pi::problem::codeforces_2044_F",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"PROBLEM",
-    "chunk_text":"+ a_2 + a_3 + \\ldots) + b_2 \\cdot (a_1 + a_2 + a_3 + \\ldots) + \\ldots$ Further factoring gives: $B = (a_1 + a_2 + a_3 + a_4 + \\ldots) \\cdot (b_1 + b_2 + b_3 + \\ldots)$ This can be written as: $B = \\text{SumA} \\cdot \\text{SumB}$ Now, consider the effect of an operation on a column $C$. The beauty decreases by $A_c \\cdot \\text{SumB}$. Similarly, when an operation is done on a row $R$, the beauty decreases by $B_r \\cdot \\text{SumA}$. An important observation is that",
+    "chunk_text":"+ a_2 + a_3 + \\ldots) + b_2 \\cdot (a_1 + a_2 + a_3 + \\ldots) + \\ldots $Further factoring gives:$ B = (a_1 + a_2 + a_3 + a_4 + \\ldots) \\cdot (b_1 + b_2 + b_3 + \\ldots)$This can be written as:$ B = \\text{SumA} \\cdot \\text{SumB}$Now, consider the effect of an operation on a column$ C $. The beauty decreases by$ A_c \\cdot \\text{SumB}$. Similarly, when an operation is done on a row$ R $, the beauty decreases by$ B_r \\cdot \\text{SumA}$. An important observation is that",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"rating\": 1900.0, \"problem_index\": \"F\"}"
   },
@@ -2362,7 +2362,7 @@
     "node_id":"pi::problem::codeforces_2044_F",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"PROBLEM",
-    "chunk_text":"\\text{SumA} \\cdot \\text{SumB} - b_i \\cdot \\text{SumA} - a_j \\cdot \\text{SumB} + a_j \\cdot b_i$ Factoring terms, we obtain: $X = \\text{SumA} \\cdot (\\text{SumB} - b_i) - a_j \\cdot (\\text{SumB} - b_i)$ Finally: $X = (\\text{SumB} - b_i) \\cdot (\\text{SumA} - a_j)$ At this stage, it is sufficient to iterate over the divisors of $X$. For each ordered pair of divisors whose product is $X$, we check whether the required values of $\\text{SumB} - b_i$ and $\\text{SumA} - a_j$ can be achieved. This can be implemented using a simple map",
+    "chunk_text":"\\text{SumA} \\cdot \\text{SumB} - b_i \\cdot \\text{SumA} - a_j \\cdot \\text{SumB} + a_j \\cdot b_i $Factoring terms, we obtain:$ X = \\text{SumA} \\cdot (\\text{SumB} - b_i) - a_j \\cdot (\\text{SumB} - b_i)$Finally:$ X = (\\text{SumB} - b_i) \\cdot (\\text{SumA} - a_j)$At this stage, it is sufficient to iterate over the divisors of$ X $. For each ordered pair of divisors whose product is$ X $, we check whether the required values of$\\text{SumB} - b_i $and$\\text{SumA} - a_j$ can be achieved. This can be implemented using a simple map",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"rating\": 1900.0, \"problem_index\": \"F\"}"
   },
@@ -2425,7 +2425,7 @@
     "node_id":"pi::problem::codeforces_2044_E",
     "global_problem_id":"codeforces_2044_E",
     "node_type":"PROBLEM",
-    "chunk_text":"{\\frac{l_2}{k^n}} \\right \\rceil \\le x \\le \\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor$ Thus, when we intersect the two intervals, we get the following interval at last. $\\max \\left({l_1,\\left \\lceil {\\frac{l_2}{k^n}} \\right \\rceil}\\right) \\le x \\le \\min \\left({r_1,\\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor}\\right)$ Compute the size of this interval for all $k^n$ (at most $32$ values) and the answer can be found. Do note the following details while implementing: When $r \\lt l$, the size of the interval is $0$, not negative. Beware of overflows. Dealing with big integers can be helpful in",
+    "chunk_text":"{\\frac{l_2}{k^n}} \\right \\rceil \\le x \\le \\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor $Thus, when we intersect the two intervals, we get the following interval at last.$\\max \\left({l_1,\\left \\lceil {\\frac{l_2}{k^n}} \\right \\rceil}\\right) \\le x \\le \\min \\left({r_1,\\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor}\\right)$Compute the size of this interval for all$ k^n $(at most$ 32 $values) and the answer can be found. Do note the following details while implementing: When$ r \\lt l $, the size of the interval is$ 0$, not negative. Beware of overflows. Dealing with big integers can be helpful in",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/E\", \"normalized_tags\": [\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"], \"topic_group\": [\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"], \"difficulty\": 1300.0, \"rating\": 1300.0, \"problem_index\": \"E\"}"
   },
@@ -2614,7 +2614,7 @@
     "node_id":"pi::problem::codeforces_2009_G3",
     "global_problem_id":"codeforces_2009_G3",
     "node_type":"PROBLEM",
-    "chunk_text":"a_i \\cdot (nx_i - i) \\cdot (i - pv_i)$. Calculating $nx_i$ and $pv_i$ can be done with Monotonic Stack. Step 3 Given a query $(L, R)$, divide all indices $i$ ($L \\le i \\le R$) into $4$ groups depending on the existence of $nx_i$ and $pv_i$ within the interval $[L, R]$, i.e. : Case $1$ : $L \\le pv_i, nx_i \\le R$ Case $2$ : $pv_i \\lt L, nx_i \\le R$ Case $3$ : $L \\le pv_i, nx_i \\gt R$ Case $4$ : $pv_i \\lt L, nx_i \\gt R$ Try",
+    "chunk_text":"a_i \\cdot (nx_i - i) \\cdot (i - pv_i)$. Calculating$ nx_i $and$ pv_i $can be done with Monotonic Stack. Step 3 Given a query$(L, R)$, divide all indices$ i $($ L \\le i \\le R $) into$ 4 $groups depending on the existence of$ nx_i $and$ pv_i $within the interval$[L, R]$, i.e. : Case$ 1 $:$ L \\le pv_i, nx_i \\le R $Case$ 2 $:$ pv_i \\lt L, nx_i \\le R $Case$ 3 $:$ L \\le pv_i, nx_i \\gt R $Case$ 4 $:$ pv_i \\lt L, nx_i \\gt R$ Try",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G3\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"difficulty\": 2700.0, \"rating\": 2700.0, \"problem_index\": \"G3\"}"
   },
@@ -2722,7 +2722,7 @@
     "node_id":"pi::problem::codeforces_2009_G2",
     "global_problem_id":"codeforces_2009_G2",
     "node_type":"PROBLEM",
-    "chunk_text":"x$ where $x$ is any integer she desires ($x$ is not limited to the interval $[1,n]$). Denote $f(b)$ as the minimum number of operations she needs to perform until there exists a consecutive subarray $^{\\text{∗}}$ of length at least $k$ in $b$. Yunli is given an array $a$ of size $n$ and asks you $q$ queries. In each query, you must output $\\sum_{j=l+k-1}^{r} f([a_l, a_{l+1}, \\ldots, a_j])$. $^{\\text{∗}}$ If there exists a consecutive subarray of length $k$ that starts at index $i$ ($1 \\leq i \\leq |b|-k+1$), then $b_j =",
+    "chunk_text":"x $where$ x $is any integer she desires ($ x $is not limited to the interval$[1,n]$). Denote$ f(b)$as the minimum number of operations she needs to perform until there exists a consecutive subarray$^{\\text{∗}}$of length at least$ k $in$ b $. Yunli is given an array$ a $of size$ n $and asks you$ q $queries. In each query, you must output$\\sum_{j=l+k-1}^{r} f([a_l, a_{l+1}, \\ldots, a_j])$.$^{\\text{∗}}$If there exists a consecutive subarray of length$ k $that starts at index$ i $($ 1 \\leq i \\leq |b|-k+1 $), then$ b_j =",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G2\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"dynamic_programming\"], \"topic_group\": [\"techniques\", \"data_structures\", \"dynamic_programming\"], \"difficulty\": 2200.0, \"rating\": 2200.0, \"problem_index\": \"G2\"}"
   },
@@ -2839,7 +2839,7 @@
     "node_id":"pi::problem::codeforces_2009_E",
     "global_problem_id":"codeforces_2009_E",
     "node_type":"PROBLEM",
-    "chunk_text":"\\dots - a_n|$ is minimized. Note that for an arbitrary integer $z$, $|z|$ represents the absolute value of $z$. Output the minimum possible value of $x$. 2009E - Klee's SUPER DUPER LARGE Array!!! Problem Credits: cry Analysis: cry Solution We can rewrite $x$ as $|a_1+\\dots+a_i-(a_{i+1}+\\dots+a_n)|$. Essentially, we want to minimize the absolute value difference between the sums of the prefix and the suffix. With absolute value problems. it's always good to consider the positive and negative cases separately. We will consider the prefix greater than the suffix separately with the",
+    "chunk_text":"\\dots - a_n|$is minimized. Note that for an arbitrary integer$ z $,$|z|$represents the absolute value of$ z $. Output the minimum possible value of$ x $. 2009E - Klee's SUPER DUPER LARGE Array!!! Problem Credits: cry Analysis: cry Solution We can rewrite$ x $as$|a_1+\\dots+a_i-(a_{i+1}+\\dots+a_n)|$. Essentially, we want to minimize the absolute value difference between the sums of the prefix and the suffix. With absolute value problems. it's always good to consider the positive and negative cases separately. We will consider the prefix greater than the suffix separately with the",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/E\", \"normalized_tags\": [\"techniques\", \"math\", \"ternary_search\"], \"topic_group\": [\"techniques\", \"math\", \"ternary_search\"], \"difficulty\": 1400.0, \"rating\": 1400.0, \"problem_index\": \"E\"}"
   },
@@ -2902,7 +2902,7 @@
     "node_id":"pi::problem::codeforces_2009_D",
     "global_problem_id":"codeforces_2009_D",
     "node_type":"PROBLEM",
-    "chunk_text":"2$. Obviously, the length between the first and third point is $2$. Since we have $\\sqrt 2^2 + \\sqrt 2^2 = 2^2$, this is certainly a right triangle. Of course, we can flip the $y$ values of each point and it will still be a valid right triangle, just upside down.",
+    "chunk_text":"2 $. Obviously, the length between the first and third point is$ 2 $. Since we have$\\sqrt 2^2 + \\sqrt 2^2 = 2^2 $, this is certainly a right triangle. Of course, we can flip the$ y$ values of each point and it will still be a valid right triangle, just upside down.",
     "chunk_word_count":51,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/D\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 1400.0, \"rating\": 1400.0, \"problem_index\": \"D\"}"
   },
@@ -2938,7 +2938,7 @@
     "node_id":"pi::problem::codeforces_2009_C",
     "global_problem_id":"codeforces_2009_C",
     "node_type":"PROBLEM",
-    "chunk_text":"\\rceil \\geq \\lceil \\frac{x}{k} \\rceil$. In this case, there will need to be $\\lceil \\frac{y}{k} \\rceil - \\lceil \\frac{x}{k} \\rceil$ extra jumps in the $y$ direction. While Freya performs these extra jumps, she will choose $d = 0$ for the $x$ direction. In total, there will need to be $2 \\cdot \\lceil \\frac{y}{k} \\rceil$ jumps. $\\lceil \\frac{x}{k} \\rceil \\gt \\lceil \\frac{y}{k} \\rceil$. We can use the same reasoning as the previous case, but there's a catch. Since Freya is initially facing the $x$ direction, for the last jump, she does",
+    "chunk_text":"\\rceil \\geq \\lceil \\frac{x}{k} \\rceil $. In this case, there will need to be$\\lceil \\frac{y}{k} \\rceil - \\lceil \\frac{x}{k} \\rceil $extra jumps in the$ y $direction. While Freya performs these extra jumps, she will choose$ d = 0 $for the$ x $direction. In total, there will need to be$ 2 \\cdot \\lceil \\frac{y}{k} \\rceil $jumps.$\\lceil \\frac{x}{k} \\rceil \\gt \\lceil \\frac{y}{k} \\rceil $. We can use the same reasoning as the previous case, but there's a catch. Since Freya is initially facing the$ x$ direction, for the last jump, she does",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/C\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1100.0, \"rating\": 1100.0, \"problem_index\": \"C\"}"
   },
@@ -2983,7 +2983,7 @@
     "node_id":"pi::problem::codeforces_2009_B",
     "global_problem_id":"codeforces_2009_B",
     "node_type":"PROBLEM",
-    "chunk_text":"\\geq \\lceil \\frac{x}{k} \\rceil$. In this case, there will need to be $\\lceil \\frac{y}{k} \\rceil - \\lceil \\frac{x}{k} \\rceil$ extra jumps in the $y$ direction. While Freya performs these extra jumps, she will choose $d = 0$ for the $x$ direction. In total, there will need to be $2 \\cdot \\lceil \\frac{y}{k} \\rceil$ jumps. $\\lceil \\frac{x}{k} \\rceil \\gt \\lceil \\frac{y}{k} \\rceil$. We can use the same reasoning as the previous case, but there's a catch. Since Freya is initially facing the $x$ direction, for the last jump, she does not",
+    "chunk_text":"\\geq \\lceil \\frac{x}{k} \\rceil $. In this case, there will need to be$\\lceil \\frac{y}{k} \\rceil - \\lceil \\frac{x}{k} \\rceil $extra jumps in the$ y $direction. While Freya performs these extra jumps, she will choose$ d = 0 $for the$ x $direction. In total, there will need to be$ 2 \\cdot \\lceil \\frac{y}{k} \\rceil $jumps.$\\lceil \\frac{x}{k} \\rceil \\gt \\lceil \\frac{y}{k} \\rceil $. We can use the same reasoning as the previous case, but there's a catch. Since Freya is initially facing the$ x$ direction, for the last jump, she does not",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/B\", \"normalized_tags\": [\"implementation_constructive\"], \"topic_group\": [\"implementation_constructive\"], \"difficulty\": 800.0, \"rating\": 800.0, \"problem_index\": \"B\"}"
   },
@@ -3100,7 +3100,7 @@
     "node_id":"pi::problem::codeforces_1999_F",
     "global_problem_id":"codeforces_1999_F",
     "node_type":"PROBLEM",
-    "chunk_text":"7$. In other words, print the remainder of this sum when divided by $10^9 + 7$. $^{\\text{∗}}$ A binary array is an array consisting only of zeros and ones. $^{\\text{†}}$ An array $b$ is a subsequence of an array $a$ if $b$ can be obtained from $a$ by the deletion of several (possibly, zero or all) elements. Subsequences don't have to be contiguous. $^{\\text{‡}}$ The median of an array of odd length $k$ is the $\\frac{k+1}{2}$-th element when sorted. 1999F - Expected Median Video 1999G1 - Ruler (easy version) Video",
+    "chunk_text":"7 $. In other words, print the remainder of this sum when divided by$ 10^9 + 7 $.$^{\\text{∗}}$A binary array is an array consisting only of zeros and ones.$^{\\text{†}}$An array$ b $is a subsequence of an array$ a $if$ b $can be obtained from$ a $by the deletion of several (possibly, zero or all) elements. Subsequences don't have to be contiguous.$^{\\text{‡}}$The median of an array of odd length$ k $is the$\\frac{k+1}{2}$-th element when sorted. 1999F - Expected Median Video 1999G1 - Ruler (easy version) Video",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1999\/F\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 1500.0, \"rating\": 1500.0, \"problem_index\": \"F\"}"
   },
@@ -3577,7 +3577,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_problem",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"PROBLEM",
-    "chunk_text":"Dado n, construir una permutación p de longitud 3n. Al partirla en n bloques contiguos de 3 elementos, maximizar la suma de las medianas de cada bloque. “construct a permutation of length 3n … partition … into n contiguous blocks with 3 elements, the sum of the medians … is maximised.”",
+    "chunk_text":"Dado n, construir una permutación p de longitud 3n. Al partirla en n bloques contiguos de 3 elementos, maximizar la suma de las medianas de cada bloque. “construct a permutation of length 3n ... partition ... into n contiguous blocks with 3 elements, the sum of the medians ... is maximised.”",
     "chunk_word_count":51,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::problem\", \"generation_status\": \"responses_api\", \"skills\": [\"Comprender mediana en 3 elementos\", \"Construcción de permutaciones\"], \"strategies\": [\"Greedy + prueba por cota\"]}"
   },
@@ -3595,7 +3595,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_E_problem",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"PROBLEM",
-    "chunk_text":"Dado un arreglo de n enteros no negativos, se realizan exactamente n-1 operaciones: elegir un índice i, XOR-ing todos los elementos con x=a_i y luego eliminar a_i. Tras n-1 operaciones queda un elemento; se pide el máximo valor posible del elemento final con operaciones óptimas. “perform the following operation exactly n-1 times… Set a_j = a_j ⊕ x for all… Remove a_i… after n-1 operations, exactly one element remains… determine the maximum possible value”",
+    "chunk_text":"Dado un arreglo de n enteros no negativos, se realizan exactamente n-1 operaciones: elegir un índice i, XOR-ing todos los elementos con x=a_i y luego eliminar a_i. Tras n-1 operaciones queda un elemento; se pide el máximo valor posible del elemento final con operaciones óptimas. “perform the following operation exactly n-1 times... Set a_j = a_j ⊕ x for all... Remove a_i... after n-1 operations, exactly one element remains... determine the maximum possible value”",
     "chunk_word_count":74,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_tree_node_id\": \"llm::codeforces_2218_E::problem\", \"generation_status\": \"responses_api\", \"skills\": [\"XOR bitwise\", \"Optimización por elección de operaciones\"], \"strategies\": [\"Identificar invariante del proceso\"]}"
   },
@@ -3604,7 +3604,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_F_problem",
     "global_problem_id":"codeforces_2218_F",
     "node_type":"PROBLEM",
-    "chunk_text":"Given integers x and y, construct a rooted tree with x+y nodes such that exactly x vertices have even subtree size and exactly y vertices have odd subtree size; otherwise output NO. “construct a tree with x + y nodes, rooted at node 1” and “Exactly x nodes … have even subtree size. Exactly y nodes … have odd subtree size.”",
+    "chunk_text":"Given integers x and y, construct a rooted tree with x+y nodes such that exactly x vertices have even subtree size and exactly y vertices have odd subtree size; otherwise output NO. “construct a tree with x + y nodes, rooted at node 1” and “Exactly x nodes ... have even subtree size. Exactly y nodes ... have odd subtree size.”",
     "chunk_word_count":61,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/F\", \"normalized_tags\": [\"implementation_constructive\", \"graphs\"], \"topic_group\": [\"implementation_constructive\", \"graphs\"], \"difficulty\": 1500.0, \"source_tree_node_id\": \"llm::codeforces_2218_F::problem\", \"generation_status\": \"responses_api\", \"skills\": [\"Subtree size definition in rooted trees\", \"Counting vertices by parity\"], \"strategies\": []}"
   },
@@ -3658,7 +3658,7 @@
     "node_id":"pi::page::codeforces_1985_D_01_STATEMENT",
     "global_problem_id":"codeforces_1985_D",
     "node_type":"STATEMENT",
-    "chunk_text":"k$) if $|h - a| + |k - b| \\lt r$, where $r$ is a positive constant. On the grid, the set of points that are part of the manhattan circle is marked as '#'. Find the coordinates of the center of the circle.",
+    "chunk_text":"k $) if$|h - a| + |k - b| \\lt r $, where$ r$ is a positive constant. On the grid, the set of points that are part of the manhattan circle is marked as '#'. Find the coordinates of the center of the circle.",
     "chunk_word_count":44,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1985\/D\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 900.0, \"source_page_node_id\": \"codeforces_1985_D::01_STATEMENT\"}"
   },
@@ -3694,7 +3694,7 @@
     "node_id":"pi::page::codeforces_1985_F_01_STATEMENT",
     "global_problem_id":"codeforces_1985_F",
     "node_type":"STATEMENT",
-    "chunk_text":"c_i$ if your current turn is $x$. Each turn, you can use all attacks that are not currently on cooldown, all at once . If all attacks are on cooldown, you do nothing for the turn and skip to the next turn. Initially, all attacks are not on cooldown. How many turns will you take to beat the boss? The boss is beaten when its health is $0$ or less.",
+    "chunk_text":"c_i $if your current turn is$ x $. Each turn, you can use all attacks that are not currently on cooldown, all at once . If all attacks are on cooldown, you do nothing for the turn and skip to the next turn. Initially, all attacks are not on cooldown. How many turns will you take to beat the boss? The boss is beaten when its health is$ 0$ or less.",
     "chunk_word_count":70,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1985\/F\", \"normalized_tags\": [\"techniques\", \"data_structures\"], \"topic_group\": [\"techniques\", \"data_structures\"], \"difficulty\": 1500.0, \"source_page_node_id\": \"codeforces_1985_F::01_STATEMENT\"}"
   },
@@ -4054,7 +4054,7 @@
     "node_id":"pi::page::codeforces_2009_G1_01_STATEMENT",
     "global_problem_id":"codeforces_2009_G1",
     "node_type":"STATEMENT",
-    "chunk_text":"a_{l+1}, \\ldots, a_{l+k-1}])$. $^{\\text{∗}}$ If there exists a consecutive subarray of length $k$ that starts at index $i$ ($1 \\leq i \\leq |b|-k+1$), then $b_j = b_{j-1} + 1$ for all $i \\lt j \\leq i+k-1$.",
+    "chunk_text":"a_{l+1}, \\ldots, a_{l+k-1}])$.$^{\\text{∗}}$If there exists a consecutive subarray of length$ k $that starts at index$ i $($ 1 \\leq i \\leq |b|-k+1 $), then$ b_j = b_{j-1} + 1 $for all$ i \\lt j \\leq i+k-1$.",
     "chunk_word_count":36,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G1\", \"normalized_tags\": [\"techniques\", \"data_structures\"], \"topic_group\": [\"techniques\", \"data_structures\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2009_G1::01_STATEMENT\"}"
   },
@@ -4108,7 +4108,7 @@
     "node_id":"pi::page::codeforces_2009_G3_01_STATEMENT",
     "global_problem_id":"codeforces_2009_G3",
     "node_type":"STATEMENT",
-    "chunk_text":"\\sum_{j=i+k-1}^{r} f([a_i, a_{i+1}, \\ldots, a_j])$. $^{\\text{∗}}$ If there exists a consecutive subarray of length $k$ that starts at index $i$ ($1 \\leq i \\leq |b|-k+1$), then $b_j = b_{j-1} + 1$ for all $i \\lt j \\leq i+k-1$.",
+    "chunk_text":"\\sum_{j=i+k-1}^{r} f([a_i, a_{i+1}, \\ldots, a_j])$.$^{\\text{∗}}$If there exists a consecutive subarray of length$ k $that starts at index$ i $($ 1 \\leq i \\leq |b|-k+1 $), then$ b_j = b_{j-1} + 1 $for all$ i \\lt j \\leq i+k-1$.",
     "chunk_word_count":38,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G3\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"difficulty\": 2700.0, \"source_page_node_id\": \"codeforces_2009_G3::01_STATEMENT\"}"
   },
@@ -4189,7 +4189,7 @@
     "node_id":"pi::page::codeforces_2044_F_01_STATEMENT",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"STATEMENT",
-    "chunk_text":"\\leq n$ and $1 \\leq j \\leq m$. Then, Robot gives you $q$ queries, each consisting of a single integer $x$. For each query, determine whether or not it is possible to perform the following operation exactly once so that $M$ has a beauty of $x$: Choose integers $r$ and $c$ such that $1 \\leq r \\leq n$ and $1 \\leq c \\leq m$ Set $M_{i,j}$ to be $0$ for all ordered pairs $(i,j)$ such that $i=r$, $j=c$, or both. Note that queries are not persistent , meaning that you",
+    "chunk_text":"\\leq n $and$ 1 \\leq j \\leq m $. Then, Robot gives you$ q $queries, each consisting of a single integer$ x $. For each query, determine whether or not it is possible to perform the following operation exactly once so that$ M $has a beauty of$ x $: Choose integers$ r $and$ c $such that$ 1 \\leq r \\leq n $and$ 1 \\leq c \\leq m $Set$ M_{i,j}$to be$ 0 $for all ordered pairs$(i,j)$such that$ i=r $,$ j=c$, or both. Note that queries are not persistent , meaning that you",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2044_F::01_STATEMENT\"}"
   },
@@ -4342,7 +4342,7 @@
     "node_id":"pi::page::codeforces_2065_C1_01_STATEMENT",
     "global_problem_id":"codeforces_2065_C1",
     "node_type":"STATEMENT",
-    "chunk_text":"Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$$a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$.",
+    "chunk_text":"Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$ $a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$.",
     "chunk_word_count":66,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C1\", \"normalized_tags\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"topic_group\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2065_C1::01_STATEMENT\"}"
   },
@@ -4360,7 +4360,7 @@
     "node_id":"pi::page::codeforces_2065_C2_01_STATEMENT",
     "global_problem_id":"codeforces_2065_C2",
     "node_type":"STATEMENT",
-    "chunk_text":": Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$$a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$.",
+    "chunk_text":": Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. Skibidus needs your help determining whether he can sort $a$ in non-decreasing order $^{\\text{∗}}$ by performing the above operation some number of times. $^{\\text{∗}}$ $a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$.",
     "chunk_word_count":67,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C2\", \"normalized_tags\": [\"techniques\", \"greedy\"], \"topic_group\": [\"techniques\", \"greedy\"], \"difficulty\": 1300.0, \"source_page_node_id\": \"codeforces_2065_C2::01_STATEMENT\"}"
   },
@@ -4459,7 +4459,7 @@
     "node_id":"pi::page::codeforces_2065_G_01_STATEMENT",
     "global_problem_id":"codeforces_2065_G",
     "node_type":"STATEMENT",
-    "chunk_text":"as $p \\cdot q$ where $p$ and $q$ are (not necessarily distinct) prime numbers . For example, $9$ is a semi-prime since it can be written as $3 \\cdot 3$, and $3$ is a prime number. Skibidus was given an array $a$ containing $n$ integers. He must report the number of pairs $(i, j)$ such that $i \\leq j$ and $\\operatorname{lcm}(a_i, a_j)$$^{\\text{∗}}$ is semi-prime . $^{\\text{∗}}$ Given two integers $x$ and $y$, $\\operatorname{lcm}(x, y)$ denotes the least common multiple of $x$ and $y$.",
+    "chunk_text":"as $p \\cdot q$ where $p$ and $q$ are (not necessarily distinct) prime numbers . For example, $9$ is a semi-prime since it can be written as $3 \\cdot 3$, and $3$ is a prime number. Skibidus was given an array $a$ containing $n$ integers. He must report the number of pairs $(i, j)$ such that $i \\leq j$ and $\\operatorname{lcm}(a_i, a_j)$ $^{\\text{∗}}$ is semi-prime . $^{\\text{∗}}$ Given two integers $x$ and $y$, $\\operatorname{lcm}(x, y)$ denotes the least common multiple of $x$ and $y$.",
     "chunk_word_count":83,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/G\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 1700.0, \"source_page_node_id\": \"codeforces_2065_G::01_STATEMENT\"}"
   },
@@ -4666,7 +4666,7 @@
     "node_id":"pi::page::codeforces_2148_B_01_STATEMENT",
     "global_problem_id":"codeforces_2148_B",
     "node_type":"STATEMENT",
-    "chunk_text":"m = 1$, $a = [1]$, $b = [1]$, the movement can be as follows: What is the minimum number of crossings necessary to reach $(x, y)$?",
+    "chunk_text":"m = 1 $,$ a = [1]$,$ b = [1]$, the movement can be as follows: What is the minimum number of crossings necessary to reach$(x, y)$?",
     "chunk_word_count":27,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2148\/B\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2148_B::01_STATEMENT\"}"
   },
@@ -4846,7 +4846,7 @@
     "node_id":"pi::page::codeforces_2167_D_01_STATEMENT",
     "global_problem_id":"codeforces_2167_D",
     "node_type":"STATEMENT",
-    "chunk_text":"D. Yet Another Array Problem time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output You are given an integer $n$ and an array $a$ of length $n$. Find the smallest integer $x$ ($2 \\le x \\le 10^{18}$) such that there exists an index $i$ ($1 \\le i \\le n$) with $\\gcd$ $^{\\text{∗}}$$(a_i, x) = 1$. If no such $x$ exists within the range $[2,10^{18}]$, output $-1$. $^{\\text{∗}}$$\\gcd(x, y)$ denotes the greatest common divisor (GCD) of integers $x$ and $y$.",
+    "chunk_text":"D. Yet Another Array Problem time limit per test 2 seconds memory limit per test 256 megabytes input standard input output standard output You are given an integer $n$ and an array $a$ of length $n$. Find the smallest integer $x$ ($2 \\le x \\le 10^{18}$) such that there exists an index $i$ ($1 \\le i \\le n$) with $\\gcd$ $^{\\text{∗}}$ $(a_i, x) = 1$. If no such $x$ exists within the range $[2,10^{18}]$, output $-1$. $^{\\text{∗}}$ $\\gcd(x, y)$ denotes the greatest common divisor (GCD) of integers $x$ and $y$.",
     "chunk_word_count":88,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/D\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1000.0, \"source_page_node_id\": \"codeforces_2167_D::01_STATEMENT\"}"
   },
@@ -4900,7 +4900,7 @@
     "node_id":"pi::page::codeforces_2167_F_01_STATEMENT",
     "global_problem_id":"codeforces_2167_F",
     "node_type":"STATEMENT",
-    "chunk_text":"|S_n|$$ Unfortunately, Behruzbek is feeling sleepy now. Please help Behruzbek by finding the kawaiiness of the tree! $^{\\text{∗}}$ A tree is a connected graph without cycles. $^{\\text{†}}$ A rooted tree is a tree where one vertex is special and called the root.",
+    "chunk_text":"|S_n|$$Unfortunately, Behruzbek is feeling sleepy now. Please help Behruzbek by finding the kawaiiness of the tree!$^{\\text{∗}}$A tree is a connected graph without cycles.$^{\\text{†}}$ A rooted tree is a tree where one vertex is special and called the root.",
     "chunk_word_count":42,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/F\", \"normalized_tags\": [\"graphs\", \"dynamic_programming\", \"math\"], \"topic_group\": [\"graphs\", \"dynamic_programming\", \"math\"], \"difficulty\": 1600.0, \"source_page_node_id\": \"codeforces_2167_F::01_STATEMENT\"}"
   },
@@ -4945,7 +4945,7 @@
     "node_id":"pi::page::codeforces_2185_B_01_STATEMENT",
     "global_problem_id":"codeforces_2185_B",
     "node_type":"STATEMENT",
-    "chunk_text":"2, 1$] is $\\operatorname{max}(1) + \\operatorname{max}(1, 2) + \\operatorname{max}(1, 2, 1) = 1 + 2 + 2 = 5$. You can choose two indices $i$ and $j$ and swap elements $a_i$ and $a_j$; this operation can be applied at most one time. Find the maximum possible value of the array $a$ after at most one operation.",
+    "chunk_text":"2, 1 $] is$\\operatorname{max}(1) + \\operatorname{max}(1, 2) + \\operatorname{max}(1, 2, 1) = 1 + 2 + 2 = 5 $. You can choose two indices$ i $and$ j $and swap elements$ a_i $and$ a_j $; this operation can be applied at most one time. Find the maximum possible value of the array$ a$ after at most one operation.",
     "chunk_word_count":56,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2185\/B\", \"normalized_tags\": [\"greedy\"], \"topic_group\": [\"greedy\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2185_B::01_STATEMENT\"}"
   },
@@ -4963,7 +4963,7 @@
     "node_id":"pi::page::codeforces_2185_C_01_STATEMENT",
     "global_problem_id":"codeforces_2185_C",
     "node_type":"STATEMENT",
-    "chunk_text":"3, 4, 2]$, and you perform the operation with $x = 3$, $a$ is now equal to $[4, 6, 7, 5]$. Output the maximum possible value of $\\operatorname{MEX}(a)$$^{\\text{∗}}$ after the operation is performed. $^{\\text{∗}}$$\\operatorname{MEX}(a)$ is defined as the smallest non-negative integer that is not present in the array. For example, $\\operatorname{MEX}([1, 2, 0, 5])$ is $3$, and $\\operatorname{MEX}([1, 2, 4, 9])$ is $0$.",
+    "chunk_text":"3, 4, 2]$, and you perform the operation with$ x = 3 $,$ a $is now equal to$[4, 6, 7, 5]$. Output the maximum possible value of$\\operatorname{MEX}(a)$$^{\\text{∗}}$ after the operation is performed. $^{\\text{∗}}$$\\operatorname{MEX}(a)$is defined as the smallest non-negative integer that is not present in the array. For example,$\\operatorname{MEX}([1, 2, 0, 5])$is$ 3 $, and$\\operatorname{MEX}([1, 2, 4, 9])$is$ 0$.",
     "chunk_word_count":63,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2185\/C\", \"normalized_tags\": [\"implementation_constructive\", \"techniques\"], \"topic_group\": [\"implementation_constructive\", \"techniques\"], \"difficulty\": 900.0, \"source_page_node_id\": \"codeforces_2185_C::01_STATEMENT\"}"
   },
@@ -5053,7 +5053,7 @@
     "node_id":"pi::page::codeforces_2185_F_01_STATEMENT",
     "global_problem_id":"codeforces_2185_F",
     "node_type":"STATEMENT",
-    "chunk_text":"\\ldots, x_y$ is equal to $x_1 \\oplus x_2 \\oplus x_3 \\ldots x_{y-1} \\oplus x_y$ where $\\oplus$ denotes the bitwise XOR operation .",
+    "chunk_text":"\\ldots, x_y $is equal to$ x_1 \\oplus x_2 \\oplus x_3 \\ldots x_{y-1} \\oplus x_y $where$\\oplus$ denotes the bitwise XOR operation .",
     "chunk_word_count":22,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2185\/F\", \"normalized_tags\": [\"data_structures\", \"techniques\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"techniques\", \"implementation_constructive\"], \"difficulty\": 1700.0, \"source_page_node_id\": \"codeforces_2185_F::01_STATEMENT\"}"
   },
@@ -5134,7 +5134,7 @@
     "node_id":"pi::page::codeforces_2218_A_01_STATEMENT",
     "global_problem_id":"codeforces_2218_A",
     "node_type":"STATEMENT",
-    "chunk_text":"this one (and nothing this narrator says will sound so distinctly... orange again). You are implored to cooperate with Macaque, for his wrath (and joblessness) are unending. There is no room for error or incompetence. Lousiness shall be met with the full force of the law. Macaque is given an integer $x$. Your task is to choose an integer $y$ such that the value of $\\operatorname{min}(x, y)$$^{\\text{∗}}$ is maximized . If there are multiple valid $y$, you may output any of them. $^{\\text{∗}}$$\\operatorname{min}(x, y)$ is defined as the minimum of",
+    "chunk_text":"this one (and nothing this narrator says will sound so distinctly... orange again). You are implored to cooperate with Macaque, for his wrath (and joblessness) are unending. There is no room for error or incompetence. Lousiness shall be met with the full force of the law. Macaque is given an integer $x$. Your task is to choose an integer $y$ such that the value of $\\operatorname{min}(x, y)$ $^{\\text{∗}}$ is maximized . If there are multiple valid $y$, you may output any of them. $^{\\text{∗}}$ $\\operatorname{min}(x, y)$ is defined as the minimum of",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/A\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2218_A::01_STATEMENT\"}"
   },
@@ -5143,7 +5143,7 @@
     "node_id":"pi::page::codeforces_2218_A_01_STATEMENT",
     "global_problem_id":"codeforces_2218_A",
     "node_type":"STATEMENT",
-    "chunk_text":"are multiple valid $y$, you may output any of them. $^{\\text{∗}}$$\\operatorname{min}(x, y)$ is defined as the minimum of integers $x$ and $y$.",
+    "chunk_text":"are multiple valid $y$, you may output any of them. $^{\\text{∗}}$ $\\operatorname{min}(x, y)$ is defined as the minimum of integers $x$ and $y$.",
     "chunk_word_count":22,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/A\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2218_A::01_STATEMENT\"}"
   },
@@ -5215,7 +5215,7 @@
     "node_id":"pi::page::codeforces_2218_D_01_STATEMENT",
     "global_problem_id":"codeforces_2218_D",
     "node_type":"STATEMENT",
-    "chunk_text":"his loyal tester, solve it: Construct a sequence $a$ containing $n$ integers such that $\\operatorname{gcd}(a_i, a_{i+1})$ $^{\\text{†}}$ is distinct over all $1 \\leq i \\leq n - 1$. It is guaranteed that at least one sequence $a$ exists. $^{\\text{∗}}$ Online Encyclopedia of Integer Sequences, the favourite website of math nerds, overly astute testers, and insufficiently rigorous coordinators. $^{\\text{†}}$$\\operatorname{gcd}(x,y)$ refers to the greatest common divisor of integers $x$ and $y$.",
+    "chunk_text":"his loyal tester, solve it: Construct a sequence $a$ containing $n$ integers such that $\\operatorname{gcd}(a_i, a_{i+1})$ $^{\\text{†}}$ is distinct over all $1 \\leq i \\leq n - 1$. It is guaranteed that at least one sequence $a$ exists. $^{\\text{∗}}$ Online Encyclopedia of Integer Sequences, the favourite website of math nerds, overly astute testers, and insufficiently rigorous coordinators. $^{\\text{†}}$ $\\operatorname{gcd}(x,y)$ refers to the greatest common divisor of integers $x$ and $y$.",
     "chunk_word_count":69,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/D\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2218_D::01_STATEMENT\"}"
   },
@@ -5242,7 +5242,7 @@
     "node_id":"pi::page::codeforces_2218_E_01_STATEMENT",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"STATEMENT",
-    "chunk_text":"a_i$. Set $a_j = a_j \\oplus x$ for all $1 \\leq j \\leq |a|$, where $\\oplus$ denotes the bitwise XOR operation . Remove $a_i$ from the array. It can be shown that after $n-1$ operations, exactly one element remains in the array. Your task is to determine the maximum possible value of this final remaining element if you perform the operations optimally.",
+    "chunk_text":"a_i $. Set$ a_j = a_j \\oplus x $for all$ 1 \\leq j \\leq |a|$, where$\\oplus $denotes the bitwise XOR operation . Remove$ a_i $from the array. It can be shown that after$ n-1$ operations, exactly one element remains in the array. Your task is to determine the maximum possible value of this final remaining element if you perform the operations optimally.",
     "chunk_word_count":62,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_page_node_id\": \"codeforces_2218_E::01_STATEMENT\"}"
   },
@@ -5314,7 +5314,7 @@
     "node_id":"pi::page::codeforces_2218_G_01_STATEMENT",
     "global_problem_id":"codeforces_2218_G",
     "node_type":"STATEMENT",
-    "chunk_text":"1$, if they exist) has already sat down strictly before time $t$. At the beginning of every unit of time, each standing person checks these conditions. All people for whom the conditions are satisfied sit down simultaneously , and then the process advances to the next unit of time. For each $i$, the value $b_i$ denotes the time unit at which person $i$ sits down. Your task is to determine how many distinct arrays $a$ are consistent with the given array $b$. Since this number can be very large, output",
+    "chunk_text":"1 $, if they exist) has already sat down strictly before time$ t $. At the beginning of every unit of time, each standing person checks these conditions. All people for whom the conditions are satisfied sit down simultaneously , and then the process advances to the next unit of time. For each$ i $, the value$ b_i $denotes the time unit at which person$ i $sits down. Your task is to determine how many distinct arrays$ a $are consistent with the given array$ b$. Since this number can be very large, output",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/G\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1800.0, \"source_page_node_id\": \"codeforces_2218_G::01_STATEMENT\"}"
   },
@@ -5476,7 +5476,7 @@
     "node_id":"pi::page::codeforces_1999_D_02_INPUT",
     "global_problem_id":"codeforces_1999_D",
     "node_type":"INPUT",
-    "chunk_text":"\\leq |s|$, and $t$ consists only of lowercase English letters) - the string that should be a subsequence of string $s$. The sum of $|s|$ over all test cases doesn't exceed $2 \\cdot 10^5$, where $|x|$ denotes the length of the string $x$.",
+    "chunk_text":"\\leq |s|$, and$ t $consists only of lowercase English letters) - the string that should be a subsequence of string$ s $. The sum of$|s|$over all test cases doesn't exceed$ 2 \\cdot 10^5 $, where$|x|$denotes the length of the string$ x$.",
     "chunk_word_count":43,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1999\/D\", \"normalized_tags\": [\"greedy\", \"implementation_constructive\", \"strings\"], \"topic_group\": [\"greedy\", \"implementation_constructive\", \"strings\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_1999_D::02_INPUT\"}"
   },
@@ -5503,7 +5503,7 @@
     "node_id":"pi::page::codeforces_1999_F_02_INPUT",
     "global_problem_id":"codeforces_1999_F",
     "node_type":"INPUT",
-    "chunk_text":"a_i \\leq 1$) - the elements of the array. It is guaranteed that sum of $n$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"a_i \\leq 1 $) - the elements of the array. It is guaranteed that sum of$ n $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":26,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1999\/F\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 1500.0, \"source_page_node_id\": \"codeforces_1999_F::02_INPUT\"}"
   },
@@ -5620,7 +5620,7 @@
     "node_id":"pi::page::codeforces_2009_G1_02_INPUT",
     "global_problem_id":"codeforces_2009_G1",
     "node_type":"INPUT",
-    "chunk_text":"\\dots, a_n$ ($1 \\leq a_i \\leq n$). The following $q$ lines contain two integers $l$ and $r$ ($1 \\leq l \\leq r \\leq n$, $r=l+k-1$) - the bounds of the query. It is guaranteed that the sum of $n$ over all test cases does not exceed $2 \\cdot 10^5$ and the sum of $q$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"\\dots, a_n $($ 1 \\leq a_i \\leq n $). The following$ q $lines contain two integers$ l $and$ r $($ 1 \\leq l \\leq r \\leq n $,$ r=l+k-1 $) - the bounds of the query. It is guaranteed that the sum of$ n $over all test cases does not exceed$ 2 \\cdot 10^5 $and the sum of$ q $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":64,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G1\", \"normalized_tags\": [\"techniques\", \"data_structures\"], \"topic_group\": [\"techniques\", \"data_structures\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2009_G1::02_INPUT\"}"
   },
@@ -5638,7 +5638,7 @@
     "node_id":"pi::page::codeforces_2009_G2_02_INPUT",
     "global_problem_id":"codeforces_2009_G2",
     "node_type":"INPUT",
-    "chunk_text":"..., a_n$ ($1 \\leq a_i \\leq n$). The following $q$ lines contain two integers $l$ and $r$ ($1 \\leq l \\leq r \\leq n$, $r \\geq l+k-1$) - the bounds of the query. It is guaranteed the sum of $n$ over all test cases does not exceed $2 \\cdot 10^5$ and the sum of $q$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"..., a_n $($ 1 \\leq a_i \\leq n $). The following$ q $lines contain two integers$ l $and$ r $($ 1 \\leq l \\leq r \\leq n $,$ r \\geq l+k-1 $) - the bounds of the query. It is guaranteed the sum of$ n $over all test cases does not exceed$ 2 \\cdot 10^5 $and the sum of$ q $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":65,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G2\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"dynamic_programming\"], \"topic_group\": [\"techniques\", \"data_structures\", \"dynamic_programming\"], \"difficulty\": 2200.0, \"source_page_node_id\": \"codeforces_2009_G2::02_INPUT\"}"
   },
@@ -5656,7 +5656,7 @@
     "node_id":"pi::page::codeforces_2009_G3_02_INPUT",
     "global_problem_id":"codeforces_2009_G3",
     "node_type":"INPUT",
-    "chunk_text":"..., a_n$ ($1 \\leq a_i \\leq n$). The following $q$ lines contain two integers $l$ and $r$ ($1 \\leq l \\leq r \\leq n$, $r \\geq l+k-1$) - the bounds of the query. It is guaranteed that the sum of $n$ over all test cases does not exceed $2 \\cdot 10^5$ and the sum of $q$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"..., a_n $($ 1 \\leq a_i \\leq n $). The following$ q $lines contain two integers$ l $and$ r $($ 1 \\leq l \\leq r \\leq n $,$ r \\geq l+k-1 $) - the bounds of the query. It is guaranteed that the sum of$ n $over all test cases does not exceed$ 2 \\cdot 10^5 $and the sum of$ q $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":66,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G3\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"difficulty\": 2700.0, \"source_page_node_id\": \"codeforces_2009_G3::02_INPUT\"}"
   },
@@ -5755,7 +5755,7 @@
     "node_id":"pi::page::codeforces_2044_H_02_INPUT",
     "global_problem_id":"codeforces_2044_H",
     "node_type":"INPUT",
-    "chunk_text":"\\leq 10^6$). The following $q$ lines contain four integers $x_1$, $y_1$, $x_2$, and $y_2$ ($1 \\leq x_1 \\leq x_2 \\leq n, 1 \\leq y_1 \\leq y_2 \\leq n$) - the bounds of the query. It is guaranteed that the sum of $n$ over all test cases does not exceed $2000$ and the sum of $q$ over all test cases does not exceed $10^6$.",
+    "chunk_text":"\\leq 10^6 $). The following$ q $lines contain four integers$ x_1 $,$ y_1 $,$ x_2 $, and$ y_2 $($ 1 \\leq x_1 \\leq x_2 \\leq n, 1 \\leq y_1 \\leq y_2 \\leq n $) - the bounds of the query. It is guaranteed that the sum of$ n $over all test cases does not exceed$ 2000 $and the sum of$ q $over all test cases does not exceed$ 10^6$.",
     "chunk_word_count":63,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/H\", \"normalized_tags\": [\"implementation_constructive\", \"data_structures\", \"dynamic_programming\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"data_structures\", \"dynamic_programming\", \"math\"], \"difficulty\": 2100.0, \"source_page_node_id\": \"codeforces_2044_H::02_INPUT\"}"
   },
@@ -5791,7 +5791,7 @@
     "node_id":"pi::page::codeforces_2065_C1_02_INPUT",
     "global_problem_id":"codeforces_2065_C1",
     "node_type":"INPUT",
-    "chunk_text":"b_2, \\ldots, b_m$ ($1 \\leq b_i \\leq 10^9$). It is guaranteed that the sum of $n$ and the sum of $m$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"b_2, \\ldots, b_m $($ 1 \\leq b_i \\leq 10^9 $). It is guaranteed that the sum of$ n $and the sum of$ m $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":31,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C1\", \"normalized_tags\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"topic_group\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2065_C1::02_INPUT\"}"
   },
@@ -5881,7 +5881,7 @@
     "node_id":"pi::page::codeforces_2065_H_02_INPUT",
     "global_problem_id":"codeforces_2065_H",
     "node_type":"INPUT",
-    "chunk_text":"\\leq v_i \\leq |s|$), denoting $s_{v_i}$ is flipped for the $i$'th query. It is guaranteed that the sum of $|s|$ and the sum of $q$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"\\leq v_i \\leq |s|$), denoting$ s_{v_i}$is flipped for the$ i $'th query. It is guaranteed that the sum of$|s|$and the sum of$ q $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":35,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/H\", \"normalized_tags\": [\"math\", \"data_structures\", \"techniques\", \"dynamic_programming\"], \"topic_group\": [\"math\", \"data_structures\", \"techniques\", \"dynamic_programming\"], \"difficulty\": 2200.0, \"source_page_node_id\": \"codeforces_2065_H::02_INPUT\"}"
   },
@@ -5917,7 +5917,7 @@
     "node_id":"pi::page::codeforces_2094_C_02_INPUT",
     "global_problem_id":"codeforces_2094_C",
     "node_type":"INPUT",
-    "chunk_text":"n$). It is guaranteed that the grid encodes a valid permutation, and the sum of $n$ over all test cases does not exceed $800$.",
+    "chunk_text":"n $). It is guaranteed that the grid encodes a valid permutation, and the sum of$ n $over all test cases does not exceed$ 800$.",
     "chunk_word_count":24,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2094\/C\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 900.0, \"source_page_node_id\": \"codeforces_2094_C::02_INPUT\"}"
   },
@@ -5935,7 +5935,7 @@
     "node_id":"pi::page::codeforces_2094_D_02_INPUT",
     "global_problem_id":"codeforces_2094_D",
     "node_type":"INPUT",
-    "chunk_text":"|p| \\le |s| \\le 2 \\cdot 10^5$) consisting only of the characters \" R \" and \" L \". It is guaranteed that the sum of $|s|$ does not exceed $2\\cdot 10^5$ across all test cases.",
+    "chunk_text":"|p| \\le |s| \\le 2 \\cdot 10^5 $) consisting only of the characters \" R \" and \" L \". It is guaranteed that the sum of$|s|$does not exceed$ 2\\cdot 10^5$ across all test cases.",
     "chunk_word_count":36,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2094\/D\", \"normalized_tags\": [\"greedy\", \"strings\", \"techniques\"], \"topic_group\": [\"greedy\", \"strings\", \"techniques\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2094_D::02_INPUT\"}"
   },
@@ -5989,7 +5989,7 @@
     "node_id":"pi::page::codeforces_2094_H_02_INPUT",
     "global_problem_id":"codeforces_2094_H",
     "node_type":"INPUT",
-    "chunk_text":"1 \\leq l \\leq r \\leq n$). It is guaranteed that the sum of $n$ does not exceed $10^5$ over all test cases, and the sum of $q$ does not exceed $5\\cdot 10^4$ over all test cases.",
+    "chunk_text":"1 \\leq l \\leq r \\leq n $). It is guaranteed that the sum of$ n $does not exceed$ 10^5 $over all test cases, and the sum of$ q $does not exceed$ 5\\cdot 10^4$ over all test cases.",
     "chunk_word_count":37,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2094\/H\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2094_H::02_INPUT\"}"
   },
@@ -6034,7 +6034,7 @@
     "node_id":"pi::page::codeforces_2148_C_02_INPUT",
     "global_problem_id":"codeforces_2148_C",
     "node_type":"INPUT",
-    "chunk_text":"\\{0,1\\})$ - the $i$-th requirement by the audio. It is guaranteed that $a_i \\gt a_{i-1}$ over all $i \\gt 1$. It is guaranteed that the sum of $n$ over all test cases does not exceed $2 \\cdot 10^5$.",
+    "chunk_text":"\\{0,1\\})$- the$ i $-th requirement by the audio. It is guaranteed that$ a_i \\gt a_{i-1}$over all$ i \\gt 1 $. It is guaranteed that the sum of$ n $over all test cases does not exceed$ 2 \\cdot 10^5$.",
     "chunk_word_count":38,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2148\/C\", \"normalized_tags\": [\"greedy\", \"math\"], \"topic_group\": [\"greedy\", \"math\"], \"difficulty\": 900.0, \"source_page_node_id\": \"codeforces_2148_C::02_INPUT\"}"
   },
@@ -7312,7 +7312,7 @@
     "node_id":"pi::page::codeforces_2009_D_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2009_D",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"\\leq y_i \\leq 1$) - the $i$'th point that Satyam can choose from. It is guaranteed that all $(x_i, y_i)$ are pairwise distinct.",
+    "chunk_text":"\\leq y_i \\leq 1 $) - the$ i $'th point that Satyam can choose from. It is guaranteed that all$(x_i, y_i)$ are pairwise distinct.",
     "chunk_word_count":23,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/D\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 1400.0, \"source_page_node_id\": \"codeforces_2009_D::04_CONSTRAINTS\"}"
   },
@@ -7447,7 +7447,7 @@
     "node_id":"pi::page::codeforces_2044_D_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2044_D",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"i \\leq n$. The first line contains $t$ ($1 \\leq t \\leq 10^4$) - the number of test cases. The first line of each test case contains an integer $n$ ($1 \\leq n \\leq 2 \\cdot 10^5$) - the length of $a$. The following line of each test case contains $n$ integers $a_1, a_2, \\ldots, a_n$ ($1 \\leq a_i \\leq n$).",
+    "chunk_text":"i \\leq n $. The first line contains$ t $($ 1 \\leq t \\leq 10^4 $) - the number of test cases. The first line of each test case contains an integer$ n $($ 1 \\leq n \\leq 2 \\cdot 10^5 $) - the length of$ a $. The following line of each test case contains$ n $integers$ a_1, a_2, \\ldots, a_n $($ 1 \\leq a_i \\leq n$).",
     "chunk_word_count":61,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/D\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2044_D::04_CONSTRAINTS\"}"
   },
@@ -7474,7 +7474,7 @@
     "node_id":"pi::page::codeforces_2044_F_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"\\leq 2\\cdot 10^5, 1 \\leq q \\leq 5\\cdot 10^4$) - the length of $a$, the length of $b$, and the number of queries respectively. The second line contains $n$ integers $a_1, a_2, \\ldots, a_n$ ($0 \\leq |a_i| \\leq n$). The third line contains $m$ integers $b_1, b_2, \\ldots, b_m$ ($0 \\leq |b_i| \\leq m$). The following $q$ lines each contain a single integer $x$ ($1 \\leq |x| \\leq 2\\cdot 10^5$), the beauty of the grid you wish to achieve by setting all elements in a row and a column to",
+    "chunk_text":"\\leq 2\\cdot 10^5, 1 \\leq q \\leq 5\\cdot 10^4 $) - the length of$ a $, the length of$ b $, and the number of queries respectively. The second line contains$ n $integers$ a_1, a_2, \\ldots, a_n $($ 0 \\leq |a_i| \\leq n $). The third line contains$ m $integers$ b_1, b_2, \\ldots, b_m $($ 0 \\leq |b_i| \\leq m $). The following$ q $lines each contain a single integer$ x $($ 1 \\leq |x| \\leq 2\\cdot 10^5$), the beauty of the grid you wish to achieve by setting all elements in a row and a column to",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2044_F::04_CONSTRAINTS\"}"
   },
@@ -7519,7 +7519,7 @@
     "node_id":"pi::page::codeforces_2044_H_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2044_H",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"10^6$). The following $q$ lines contain four integers $x_1$, $y_1$, $x_2$, and $y_2$ ($1 \\leq x_1 \\leq x_2 \\leq n, 1 \\leq y_1 \\leq y_2 \\leq n$) - the bounds of the query.",
+    "chunk_text":"10^6 $). The following$ q $lines contain four integers$ x_1 $,$ y_1 $,$ x_2 $, and$ y_2 $($ 1 \\leq x_1 \\leq x_2 \\leq n, 1 \\leq y_1 \\leq y_2 \\leq n$) - the bounds of the query.",
     "chunk_word_count":33,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/H\", \"normalized_tags\": [\"implementation_constructive\", \"data_structures\", \"dynamic_programming\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"data_structures\", \"dynamic_programming\", \"math\"], \"difficulty\": 2100.0, \"source_page_node_id\": \"codeforces_2044_H::04_CONSTRAINTS\"}"
   },
@@ -7546,7 +7546,7 @@
     "node_id":"pi::page::codeforces_2065_C1_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2065_C1",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. $^{\\text{∗}}$$a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. The first line contains an integer $t$ ($1 \\leq t \\leq 10^4$) - the number of test cases. The first line of each test case contains two integers $n$ and $m$ ($1 \\leq n \\leq 2 \\cdot 10^5$, $\\textbf{m = 1}$). The following line of each test",
+    "chunk_text":"Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. $^{\\text{∗}}$ $a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. The first line contains an integer $t$ ($1 \\leq t \\leq 10^4$) - the number of test cases. The first line of each test case contains two integers $n$ and $m$ ($1 \\leq n \\leq 2 \\cdot 10^5$, $\\textbf{m = 1}$). The following line of each test",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C1\", \"normalized_tags\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"topic_group\": [\"techniques\", \"dynamic_programming\", \"greedy\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2065_C1::04_CONSTRAINTS\"}"
   },
@@ -7564,7 +7564,7 @@
     "node_id":"pi::page::codeforces_2065_C2_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2065_C2",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"This is the hard version of the problem. In this version, $m \\leq 2\\cdot 10^5$. Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. $^{\\text{∗}}$$a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. The first line contains an integer $t$ ($1 \\leq t \\leq 10^4$) - the number of test cases. The first line of each test case contains two integers $n$ and $m$ ($1",
+    "chunk_text":"This is the hard version of the problem. In this version, $m \\leq 2\\cdot 10^5$. Choose an integer $j$ such that $1 \\leq j \\leq m$. Set $a_i := b_j - a_i$. Note that $a_i$ may become non-positive as a result of this operation. $^{\\text{∗}}$ $a$ is sorted in non-decreasing order if $a_1 \\leq a_2 \\leq \\ldots \\leq a_n$. The first line contains an integer $t$ ($1 \\leq t \\leq 10^4$) - the number of test cases. The first line of each test case contains two integers $n$ and $m$ ($1",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/C2\", \"normalized_tags\": [\"techniques\", \"greedy\"], \"topic_group\": [\"techniques\", \"greedy\"], \"difficulty\": 1300.0, \"source_page_node_id\": \"codeforces_2065_C2::04_CONSTRAINTS\"}"
   },
@@ -7780,7 +7780,7 @@
     "node_id":"pi::page::codeforces_2148_F_04_CONSTRAINTS",
     "global_problem_id":"codeforces_2148_F",
     "node_type":"CONSTRAINTS",
-    "chunk_text":"\\cdot 10^5$). For the following $n$ lines, the first integer $k_i$ ($1 \\leq k \\leq 2 \\cdot 10^5$) denotes the length of $a_i$. Then, $k_i$ space-separated integers $a_{i_1}, a_{i_2}, \\ldots, a_{i_{k_i}}$ follow ($1 \\leq a_{i_j} \\leq 2 \\cdot 10^5$).",
+    "chunk_text":"\\cdot 10^5 $). For the following$ n $lines, the first integer$ k_i $($ 1 \\leq k \\leq 2 \\cdot 10^5 $) denotes the length of$ a_i $. Then,$ k_i $space-separated integers$ a_{i_1}, a_{i_2}, \\ldots, a_{i_{k_i}}$follow ($ 1 \\leq a_{i_j} \\leq 2 \\cdot 10^5$).",
     "chunk_word_count":39,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2148\/F\", \"normalized_tags\": [\"greedy\", \"implementation_constructive\", \"techniques\"], \"topic_group\": [\"greedy\", \"implementation_constructive\", \"techniques\"], \"difficulty\": 1800.0, \"source_page_node_id\": \"codeforces_2148_F::04_CONSTRAINTS\"}"
   },
@@ -8752,7 +8752,7 @@
     "node_id":"pi::page::codeforces_1985_C_06_NOTES",
     "global_problem_id":"codeforces_1985_C",
     "node_type":"NOTES",
-    "chunk_text":"0 + 1 + 1$; prefix $[0, 1, 2, 1, 4]$ is a good array, since $4 = 0 + 1 + 2 + 1$. As you can see, three of them are good, so the answer is $3$.",
+    "chunk_text":"0 + 1 + 1 $; prefix$[0, 1, 2, 1, 4]$is a good array, since$ 4 = 0 + 1 + 2 + 1 $. As you can see, three of them are good, so the answer is$ 3$.",
     "chunk_word_count":39,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1985\/C\", \"normalized_tags\": [\"greedy\"], \"topic_group\": [\"greedy\"], \"difficulty\": 1000.0, \"source_page_node_id\": \"codeforces_1985_C::06_NOTES\"}"
   },
@@ -8770,7 +8770,7 @@
     "node_id":"pi::page::codeforces_1985_E_06_NOTES",
     "global_problem_id":"codeforces_1985_E",
     "node_type":"NOTES",
-    "chunk_text":"1)$ $(1, 0, 1)$ $(1, 1, 0)$ $(0, 1, 1)$ $(1, 1, 1)$ The arrangement of $S$ with a coordinate of $(0, 0, 0)$ is depicted below: For the second test case, $S$ with side lengths $2$, $3$, and $3$ are optimal.",
+    "chunk_text":"1)$$(1, 0, 1)$$(1, 1, 0)$$(0, 1, 1)$$(1, 1, 1)$The arrangement of$ S $with a coordinate of$(0, 0, 0)$is depicted below: For the second test case,$ S $with side lengths$ 2 $,$ 3 $, and$ 3$ are optimal.",
     "chunk_word_count":42,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1985\/E\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1200.0, \"source_page_node_id\": \"codeforces_1985_E::06_NOTES\"}"
   },
@@ -9175,7 +9175,7 @@
     "node_id":"pi::page::codeforces_2065_E_06_NOTES",
     "global_problem_id":"codeforces_2065_E",
     "node_type":"NOTES",
-    "chunk_text":"= 0$. Consider the substring bounded by indices $[1, 3]$. Its balance-value is $\\max(1 - 2, 2 - 1) = 1$. Consider the substring bounded by indices $[2, 2]$. Its balance-value is $\\max(1 - 0, 0 - 1) = 1$. Consider the substring bounded by indices $[2, 3]$. Its balance-value is $\\max(1 - 1, 1 - 1) = 0$. Consider the substring bounded by indices $[3, 3]$. Its balance-value is $\\max(0 - 1, 1 - 0) = 1$. Among all possible substrings, the maximum balance-value is $1$. In the second",
+    "chunk_text":"= 0 $. Consider the substring bounded by indices$[1, 3]$. Its balance-value is$\\max(1 - 2, 2 - 1) = 1 $. Consider the substring bounded by indices$[2, 2]$. Its balance-value is$\\max(1 - 0, 0 - 1) = 1 $. Consider the substring bounded by indices$[2, 3]$. Its balance-value is$\\max(1 - 1, 1 - 1) = 0 $. Consider the substring bounded by indices$[3, 3]$. Its balance-value is$\\max(0 - 1, 1 - 0) = 1 $. Among all possible substrings, the maximum balance-value is$ 1$. In the second",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/E\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"strings\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"strings\"], \"difficulty\": 1600.0, \"source_page_node_id\": \"codeforces_2065_E::06_NOTES\"}"
   },
@@ -9184,7 +9184,7 @@
     "node_id":"pi::page::codeforces_2065_E_06_NOTES",
     "global_problem_id":"codeforces_2065_E",
     "node_type":"NOTES",
-    "chunk_text":"1, 1 - 0) = 1$. Among all possible substrings, the maximum balance-value is $1$. In the second test case, the substring with the maximum balance-value is $0100$, which has a balance of $max(3-1, 1-3)=2$.",
+    "chunk_text":"1, 1 - 0) = 1 $. Among all possible substrings, the maximum balance-value is$ 1 $. In the second test case, the substring with the maximum balance-value is$ 0100 $, which has a balance of$ max(3-1, 1-3)=2$.",
     "chunk_word_count":35,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2065\/E\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"strings\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"strings\"], \"difficulty\": 1600.0, \"source_page_node_id\": \"codeforces_2065_E::06_NOTES\"}"
   },
@@ -9976,7 +9976,7 @@
     "node_id":"pi::page::codeforces_2009_C_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2009_C",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\frac{y}{k} \\rceil \\geq \\lceil \\frac{x}{k} \\rceil$. In this case, there will need to be $\\lceil \\frac{y}{k} \\rceil - \\lceil \\frac{x}{k} \\rceil$ extra jumps in the $y$ direction. While Freya performs these extra jumps, she will choose $d = 0$ for the $x$ direction. In total, there will need to be $2 \\cdot \\lceil \\frac{y}{k} \\rceil$ jumps. $\\lceil \\frac{x}{k} \\rceil \\gt \\lceil \\frac{y}{k} \\rceil$. We can use the same reasoning as the previous case, but there's a catch. Since Freya is initially facing the $x$ direction, for the last jump, she",
+    "chunk_text":"\\frac{y}{k} \\rceil \\geq \\lceil \\frac{x}{k} \\rceil $. In this case, there will need to be$\\lceil \\frac{y}{k} \\rceil - \\lceil \\frac{x}{k} \\rceil $extra jumps in the$ y $direction. While Freya performs these extra jumps, she will choose$ d = 0 $for the$ x $direction. In total, there will need to be$ 2 \\cdot \\lceil \\frac{y}{k} \\rceil $jumps.$\\lceil \\frac{x}{k} \\rceil \\gt \\lceil \\frac{y}{k} \\rceil $. We can use the same reasoning as the previous case, but there's a catch. Since Freya is initially facing the$ x$ direction, for the last jump, she",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/C\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1100.0, \"source_page_node_id\": \"codeforces_2009_C::07_EDITORIAL_FULL\"}"
   },
@@ -10138,7 +10138,7 @@
     "node_id":"pi::page::codeforces_2009_G3_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2009_G3",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\lt = r \\lt = R$. This can be solved in $O((n + q) log(n))$ using Fenwick Tree and Sweepline. Iterate from $i = n$ to $i = 1$. For every tuple with left end at $i$ say $(i, j, v)$, add $v$ to a range query sum data structure at position $j$. Then, for every query with left end at $i$, we can simply query the range sum from $i = l$ to $i = r$ to get the required answer. How to reduce Case 1 to Rectangle Queries?",
+    "chunk_text":"\\lt = r \\lt = R $. This can be solved in$ O((n + q) log(n))$using Fenwick Tree and Sweepline. Iterate from$ i = n $to$ i = 1 $. For every tuple with left end at$ i $say$(i, j, v)$, add$ v $to a range query sum data structure at position$ j $. Then, for every query with left end at$ i $, we can simply query the range sum from$ i = l $to$ i = r$ to get the required answer. How to reduce Case 1 to Rectangle Queries?",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G3\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"difficulty\": 2700.0, \"source_page_node_id\": \"codeforces_2009_G3::07_EDITORIAL_FULL\"}"
   },
@@ -10147,7 +10147,7 @@
     "node_id":"pi::page::codeforces_2009_G3_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2009_G3",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"l$ to $i = r$ to get the required answer. How to reduce Case 1 to Rectangle Queries? For every index $i$ from $1$ to $n$, generate a tuple as $(pv_i, nx_i, a_i \\cdot (i - pv_i) \\cdot (nx_i - i)$. Then, solve the Rectangle Queries problem with this list of tuples. The answer will be the required contribution of all indices belonging to Case $1$. Step 5 This leaves us with Case $2$ and $3$, which are symmetric, so we discuss only case $2$. Let us sweepline from $i",
+    "chunk_text":"l $to$ i = r $to get the required answer. How to reduce Case 1 to Rectangle Queries? For every index$ i $from$ 1 $to$ n $, generate a tuple as$(pv_i, nx_i, a_i \\cdot (i - pv_i) \\cdot (nx_i - i)$. Then, solve the Rectangle Queries problem with this list of tuples. The answer will be the required contribution of all indices belonging to Case$ 1 $. Step 5 This leaves us with Case$ 2 $and$ 3 $, which are symmetric, so we discuss only case$ 2 $. Let us sweepline from$ i",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G3\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"difficulty\": 2700.0, \"source_page_node_id\": \"codeforces_2009_G3::07_EDITORIAL_FULL\"}"
   },
@@ -10165,7 +10165,7 @@
     "node_id":"pi::page::codeforces_2009_G3_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2009_G3",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"L$, with the possible exception of the minimum in the range $[L, R]$ (that might belong to Case $4$). Step 6 Let's analyze the contribution of the indices in Case $2$. It is $a_i \\cdot (L - i + 1) \\cdot (nx_i - i)$. Take a look at what happens when we go from $L$ to $L - 1$, how do all the contributions of elements belonging to Case $2$ change. Step 7 Some elements get popped from the Monotonic Stack because $a_{L - 1}$. We need to reset the",
+    "chunk_text":"L $, with the possible exception of the minimum in the range$[L, R]$(that might belong to Case$ 4 $). Step 6 Let's analyze the contribution of the indices in Case$ 2 $. It is$ a_i \\cdot (L - i + 1) \\cdot (nx_i - i)$. Take a look at what happens when we go from$ L $to$ L - 1 $, how do all the contributions of elements belonging to Case$ 2 $change. Step 7 Some elements get popped from the Monotonic Stack because$ a_{L - 1}$. We need to reset the",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2009\/G3\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\", \"implementation_constructive\"], \"difficulty\": 2700.0, \"source_page_node_id\": \"codeforces_2009_G3::07_EDITORIAL_FULL\"}"
   },
@@ -10318,7 +10318,7 @@
     "node_id":"pi::page::codeforces_2044_E_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2044_E",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\le \\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor$ Thus, when we intersect the two intervals, we get the following interval at last. $\\max \\left({l_1,\\left \\lceil {\\frac{l_2}{k^n}} \\right \\rceil}\\right) \\le x \\le \\min \\left({r_1,\\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor}\\right)$ Compute the size of this interval for all $k^n$ (at most $32$ values) and the answer can be found. Do note the following details while implementing: When $r \\lt l$, the size of the interval is $0$, not negative. Beware of overflows. Dealing with big integers can be helpful in avoiding this, but it may",
+    "chunk_text":"\\le \\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor $Thus, when we intersect the two intervals, we get the following interval at last.$\\max \\left({l_1,\\left \\lceil {\\frac{l_2}{k^n}} \\right \\rceil}\\right) \\le x \\le \\min \\left({r_1,\\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor}\\right)$Compute the size of this interval for all$ k^n $(at most$ 32 $values) and the answer can be found. Do note the following details while implementing: When$ r \\lt l $, the size of the interval is$ 0$, not negative. Beware of overflows. Dealing with big integers can be helpful in avoiding this, but it may",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/E\", \"normalized_tags\": [\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"], \"topic_group\": [\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"], \"difficulty\": 1300.0, \"source_page_node_id\": \"codeforces_2044_E::07_EDITORIAL_FULL\"}"
   },
@@ -10354,7 +10354,7 @@
     "node_id":"pi::page::codeforces_2044_F_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"+ \\ldots) + \\ldots$ Further factoring gives: $B = (a_1 + a_2 + a_3 + a_4 + \\ldots) \\cdot (b_1 + b_2 + b_3 + \\ldots)$ This can be written as: $B = \\text{SumA} \\cdot \\text{SumB}$ Now, consider the effect of an operation on a column $C$. The beauty decreases by $A_c \\cdot \\text{SumB}$. Similarly, when an operation is done on a row $R$, the beauty decreases by $B_r \\cdot \\text{SumA}$. An important observation is that the element at position $(r, c)$ is counted twice, so we must account for",
+    "chunk_text":"+ \\ldots) + \\ldots $Further factoring gives:$ B = (a_1 + a_2 + a_3 + a_4 + \\ldots) \\cdot (b_1 + b_2 + b_3 + \\ldots)$This can be written as:$ B = \\text{SumA} \\cdot \\text{SumB}$Now, consider the effect of an operation on a column$ C $. The beauty decreases by$ A_c \\cdot \\text{SumB}$. Similarly, when an operation is done on a row$ R $, the beauty decreases by$ B_r \\cdot \\text{SumA}$. An important observation is that the element at position$(r, c)$ is counted twice, so we must account for",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2044_F::07_EDITORIAL_FULL\"}"
   },
@@ -10372,7 +10372,7 @@
     "node_id":"pi::page::codeforces_2044_F_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"b_i$ Factoring terms, we obtain: $X = \\text{SumA} \\cdot (\\text{SumB} - b_i) - a_j \\cdot (\\text{SumB} - b_i)$ Finally: $X = (\\text{SumB} - b_i) \\cdot (\\text{SumA} - a_j)$ At this stage, it is sufficient to iterate over the divisors of $X$. For each ordered pair of divisors whose product is $X$, we check whether the required values of $\\text{SumB} - b_i$ and $\\text{SumA} - a_j$ can be achieved. This can be implemented using a simple map or boolean vector for faster computation, although such optimization is not required for this",
+    "chunk_text":"b_i $Factoring terms, we obtain:$ X = \\text{SumA} \\cdot (\\text{SumB} - b_i) - a_j \\cdot (\\text{SumB} - b_i)$Finally:$ X = (\\text{SumB} - b_i) \\cdot (\\text{SumA} - a_j)$At this stage, it is sufficient to iterate over the divisors of$ X $. For each ordered pair of divisors whose product is$ X $, we check whether the required values of$\\text{SumB} - b_i $and$\\text{SumA} - a_j$ can be achieved. This can be implemented using a simple map or boolean vector for faster computation, although such optimization is not required for this",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2044_F::07_EDITORIAL_FULL\"}"
   },
@@ -10588,7 +10588,7 @@
     "node_id":"pi::page::codeforces_2094_B_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2094_B",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"= r - (r-m) = m$ and $l \\leq r-m \\leq 0 \\leq r \\leq r$, where $l \\leq r-m$ holds because $r-l = n \\geq m$. An alternative approach which runs in $O(m)$ time is to simply simulate the process; expand in an arbitrary direction which satisfies the desired inequalities until $r' - l' = m$.",
+    "chunk_text":"= r - (r-m) = m $and$ l \\leq r-m \\leq 0 \\leq r \\leq r $, where$ l \\leq r-m $holds because$ r-l = n \\geq m $. An alternative approach which runs in$ O(m)$time is to simply simulate the process; expand in an arbitrary direction which satisfies the desired inequalities until$ r' - l' = m$.",
     "chunk_word_count":57,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2094\/B\", \"normalized_tags\": [\"implementation_constructive\"], \"topic_group\": [\"implementation_constructive\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2094_B::07_EDITORIAL_FULL\"}"
   },
@@ -10606,7 +10606,7 @@
     "node_id":"pi::page::codeforces_2094_C_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2094_C",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"i\\leq 2n$, we can find $p_i$ by checking $G_{n, i-n}$. Now, we only have to find the value of $p_1$. However, each value from $1$ to $2n$ must appear exactly once in $p$. Thus, we can simply find the value which has not appeared yet, and choose that as $p_1$. This can be done by storing which values have been seen in a boolean array, and then finding which one remains false.",
+    "chunk_text":"i\\leq 2n $, we can find$ p_i $by checking$ G_{n, i-n}$. Now, we only have to find the value of$ p_1 $. However, each value from$ 1 $to$ 2n $must appear exactly once in$ p $. Thus, we can simply find the value which has not appeared yet, and choose that as$ p_1$. This can be done by storing which values have been seen in a boolean array, and then finding which one remains false.",
     "chunk_word_count":72,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2094\/C\", \"normalized_tags\": [\"math\"], \"topic_group\": [\"math\"], \"difficulty\": 900.0, \"source_page_node_id\": \"codeforces_2094_C::07_EDITORIAL_FULL\"}"
   },
@@ -10858,7 +10858,7 @@
     "node_id":"pi::page::codeforces_2094_H_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2094_H",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\frac{1}{A}) = AH(A) = O(A\\log A)$ computations). This allows us to remove the $\\sqrt{k}$ term in the runtime of each query.",
+    "chunk_text":"\\frac{1}{A}) = AH(A) = O(A\\log A)$computations). This allows us to remove the$\\sqrt{k}$ term in the runtime of each query.",
     "chunk_word_count":21,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2094\/H\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2094_H::07_EDITORIAL_FULL\"}"
   },
@@ -11182,7 +11182,7 @@
     "node_id":"pi::page::codeforces_2167_D_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2167_D",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"= 1$, where $p_{i}$ and $e_{i}$ are prime factorization of $x$ and $p2_{i}$ and $e2_{i}$ are that of $a_{i}$. Since $\\gcd(x, a_{i}) = 1$, for each $i$ either $e_{i} = 0$ or $e2_{i} = 0$ should hold. If $p$ is prime divisor of $x$, then $e_{i} \\geq 1$ for $p_{i} = p$, thus $e2_{i} = 0$ must hold. This implies that $\\gcd(p, a_{i}) = 1$. So we will focus only on prime numbers. Since $a_{i} \\equiv 0 \\ (mod \\ x)$ for each $i$, if $x$ does not satisfy the",
+    "chunk_text":"= 1 $, where$ p_{i}$and$ e_{i}$are prime factorization of$ x $and$ p2_{i}$and$ e2_{i}$are that of$ a_{i}$. Since$\\gcd(x, a_{i}) = 1 $, for each$ i $either$ e_{i} = 0 $or$ e2_{i} = 0 $should hold. If$ p $is prime divisor of$ x $, then$ e_{i} \\geq 1 $for$ p_{i} = p $, thus$ e2_{i} = 0 $must hold. This implies that$\\gcd(p, a_{i}) = 1 $. So we will focus only on prime numbers. Since$ a_{i} \\equiv 0 \\ (mod \\ x)$for each$ i $, if$ x$ does not satisfy the",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/D\", \"normalized_tags\": [\"implementation_constructive\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"math\"], \"difficulty\": 1000.0, \"source_page_node_id\": \"codeforces_2167_D::07_EDITORIAL_FULL\"}"
   },
@@ -11317,7 +11317,7 @@
     "node_id":"pi::page::codeforces_2167_G_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2167_G",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\max_{j \\lt i,\\, a_j \\le a_i} dp[j]$$ If there is no such $j$, we simply take $dp[i] = c_i$. After computing all $dp[i]$, the maximum achievable sum of kept elements is $\\max_i dp[i]$. Hence, the final answer is $$answer = \\sum_{i=1}^{n} c_i - \\max_i dp[i]$$",
+    "chunk_text":"\\max_{j \\lt i,\\, a_j \\le a_i} dp[j]$$If there is no such $j$, we simply take $dp[i] = c_i$. After computing all $dp[i]$, the maximum achievable sum of kept elements is $\\max_i dp[i]$. Hence, the final answer is$$ answer = \\sum_{i=1}^{n} c_i - \\max_i dp[i]$$",
     "chunk_word_count":45,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2167\/G\", \"normalized_tags\": [\"data_structures\", \"dynamic_programming\"], \"topic_group\": [\"data_structures\", \"dynamic_programming\"], \"difficulty\": 1600.0, \"source_page_node_id\": \"codeforces_2167_G::07_EDITORIAL_FULL\"}"
   },
@@ -11551,7 +11551,7 @@
     "node_id":"pi::page::codeforces_2218_C_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"$m_1 \\lt m_2 \\lt \\cdots \\lt m_n$ be the $n$ medians. Each median needs an element strictly larger than it not used in any other triple. So there should be at least $1$ element larger than $m_n$, at least $3$ elements larger than $m_{n-1}$ (namely $m_n$, $r_n$, $r_{n-1}$), and more generally, at least $2k - 1$ elements larger than $m_{n-k+1}$. In the set $1 \\ldots 3n$, there are $3n - m_{n-k+1}$ elements larger than m_{n-k+1} (namely $m_{n-k+1}+1 \\ldots 3n$), and so we need $2k-1 \\leq 3n - m\\_{n-k+1}$ Rearranging, we",
+    "chunk_text":"$m_1 \\lt m_2 \\lt \\cdots \\lt m_n$ be the $n$ medians. Each median needs an element strictly larger than it not used in any other triple. So there should be at least $1$ element larger than $m_n$, at least $3$ elements larger than $m_{n-1}$ (namely $m_n$, $r_n$, $r_{n-1}$), and more generally, at least $2k - 1$ elements larger than $m_{n-k+1}$. In the set $1 \\ldots 3n$, there are $3n - m_{n-k+1}$ elements larger than m_{n-k+1} (namely $m_{n-k+1}+1 \\ldots 3n$), and so we need $2k-1 \\leq 3n - m_{n-k+1}$ Rearranging, we",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2218_C::07_EDITORIAL_FULL\"}"
   },
@@ -11560,7 +11560,7 @@
     "node_id":"pi::page::codeforces_2218_C_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"larger than m_{n-k+1} (namely $m_{n-k+1}+1 \\ldots 3n$), and so we need $2k-1 \\leq 3n - m\\_{n-k+1}$ Rearranging, we get $m_{n-k+1} \\leq 3n - 2k + 1$, as in the optimal construction.",
+    "chunk_text":"larger than m_{n-k+1} (namely $m_{n-k+1}+1 \\ldots 3n$), and so we need $2k-1 \\leq 3n - m_{n-k+1}$ Rearranging, we get $m_{n-k+1} \\leq 3n - 2k + 1$, as in the optimal construction.",
     "chunk_word_count":31,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2218_C::07_EDITORIAL_FULL\"}"
   },
@@ -11596,7 +11596,7 @@
     "node_id":"pi::page::codeforces_2218_E_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\ldots, a_n \\oplus a_1]$. Note that the first element was removed. After the second operation, the array becomes $a = [(a_3 \\oplus a_1) \\oplus (a_2 \\oplus a_1), \\ldots, (a_n \\oplus a_1) \\oplus (a_2 \\oplus a_1)]$. Due to Hint $2$, this is the same as $a = [a_3 \\oplus a_2, \\ldots, a_n \\oplus a_2]$. Note that this new array is independent of $a_1$. In fact, after any two operations, the value of the element chosen in the first operation does not matter. Taking this a step further: when doing three operations,",
+    "chunk_text":"\\ldots, a_n \\oplus a_1]$. Note that the first element was removed. After the second operation, the array becomes$ a = [(a_3 \\oplus a_1) \\oplus (a_2 \\oplus a_1), \\ldots, (a_n \\oplus a_1) \\oplus (a_2 \\oplus a_1)]$. Due to Hint$ 2 $, this is the same as$ a = [a_3 \\oplus a_2, \\ldots, a_n \\oplus a_2]$. Note that this new array is independent of$ a_1$. In fact, after any two operations, the value of the element chosen in the first operation does not matter. Taking this a step further: when doing three operations,",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_page_node_id\": \"codeforces_2218_E::07_EDITORIAL_FULL\"}"
   },
@@ -11614,7 +11614,7 @@
     "node_id":"pi::page::codeforces_2218_E_07_EDITORIAL_FULL",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"EDITORIAL_FULL",
-    "chunk_text":"\\oplus y$. Since $n$ is small, it is enough to brute force all possible pairs $(x, y)$. The answer is the maximum value of $a_x \\oplus a_y$ among all pairs.",
+    "chunk_text":"\\oplus y $. Since$ n $is small, it is enough to brute force all possible pairs$(x, y)$. The answer is the maximum value of$ a_x \\oplus a_y$ among all pairs.",
     "chunk_word_count":30,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_page_node_id\": \"codeforces_2218_E::07_EDITORIAL_FULL\"}"
   },
@@ -11740,7 +11740,7 @@
     "node_id":"pi::page::codeforces_2044_F_08_EDITORIAL_OBSERVATION",
     "global_problem_id":"codeforces_2044_F",
     "node_type":"EDITORIAL_OBSERVATION",
-    "chunk_text":"- a_j \\cdot (\\text{SumB} - b_i)$ Finally: $X = (\\text{SumB} - b_i) \\cdot (\\text{SumA} - a_j)$ At this stage, it is sufficient to iterate over the divisors of $X$.",
+    "chunk_text":"- a_j \\cdot (\\text{SumB} - b_i)$Finally:$ X = (\\text{SumB} - b_i) \\cdot (\\text{SumA} - a_j)$At this stage, it is sufficient to iterate over the divisors of$ X$.",
     "chunk_word_count":29,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/F\", \"normalized_tags\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"topic_group\": [\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\"], \"difficulty\": 1900.0, \"source_page_node_id\": \"codeforces_2044_F::08_EDITORIAL_OBSERVATION\"}"
   },
@@ -12280,7 +12280,7 @@
     "node_id":"pi::page::codeforces_2044_E_10_EDITORIAL_ALGORITHM",
     "global_problem_id":"codeforces_2044_E",
     "node_type":"EDITORIAL_ALGORITHM",
-    "chunk_text":"\\right \\rceil}\\right) \\le x \\le \\min \\left({r_1,\\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor}\\right)$ Compute the size of this interval for all $k^n$ (at most $32$ values) and the answer can be found. Dealing with big integers can be helpful in avoiding this, but it may make your solution slow.",
+    "chunk_text":"\\right \\rceil}\\right) \\le x \\le \\min \\left({r_1,\\left \\lfloor {\\frac{r_2}{k^n}} \\right \\rfloor}\\right)$Compute the size of this interval for all$ k^n $(at most$ 32$ values) and the answer can be found. Dealing with big integers can be helpful in avoiding this, but it may make your solution slow.",
     "chunk_word_count":47,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2044\/E\", \"normalized_tags\": [\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"], \"topic_group\": [\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"], \"difficulty\": 1300.0, \"source_page_node_id\": \"codeforces_2044_E::10_EDITORIAL_ALGORITHM\"}"
   },
@@ -12928,7 +12928,7 @@
     "node_id":"pi::page::codeforces_1985_C_12_IMPLEMENTATION_HINTS",
     "global_problem_id":"codeforces_1985_C",
     "node_type":"IMPLEMENTATION_HINTS",
-    "chunk_text":"0 + 1 + 1$; prefix $[0, 1, 2, 1, 4]$ is a good array, since $4 = 0 + 1 + 2 + 1$.",
+    "chunk_text":"0 + 1 + 1 $; prefix$[0, 1, 2, 1, 4]$is a good array, since$ 4 = 0 + 1 + 2 + 1$.",
     "chunk_word_count":25,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/1985\/C\", \"normalized_tags\": [\"greedy\"], \"topic_group\": [\"greedy\"], \"difficulty\": 1000.0, \"source_page_node_id\": \"codeforces_1985_C::12_IMPLEMENTATION_HINTS\"}"
   },
@@ -13414,7 +13414,7 @@
     "node_id":"pi::page::codeforces_2185_B_12_IMPLEMENTATION_HINTS",
     "global_problem_id":"codeforces_2185_B",
     "node_type":"IMPLEMENTATION_HINTS",
-    "chunk_text":"+ \\operatorname{max}(5, 1, 4) + \\operatorname{max}(5, 1, 4, 2) + \\operatorname{max}(5, 1, 4, 2, 3) = 25$. For the second test case, the current value of the array is $\\operatorname{max}(5) + \\operatorname{max}(5, 1) = 10$.",
+    "chunk_text":"+ \\operatorname{max}(5, 1, 4) + \\operatorname{max}(5, 1, 4, 2) + \\operatorname{max}(5, 1, 4, 2, 3) = 25 $. For the second test case, the current value of the array is$\\operatorname{max}(5) + \\operatorname{max}(5, 1) = 10$.",
     "chunk_word_count":35,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2185\/B\", \"normalized_tags\": [\"greedy\"], \"topic_group\": [\"greedy\"], \"difficulty\": 800.0, \"source_page_node_id\": \"codeforces_2185_B::12_IMPLEMENTATION_HINTS\"}"
   },
@@ -13675,7 +13675,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_E_understand_effects_1",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"UNDERSTANDING",
-    "chunk_text":"Si se procesa de izquierda a derecha, tras la primera operación el arreglo queda con cada elemento XOR con a1 y se elimina a1. “After the first operation, the array becomes: a = [a_2 ⊕ a_1, a_3 ⊕ a_1, …, a_n ⊕ a_1]. Note that the first element was removed.”",
+    "chunk_text":"Si se procesa de izquierda a derecha, tras la primera operación el arreglo queda con cada elemento XOR con a1 y se elimina a1. “After the first operation, the array becomes: a = [a_2 ⊕ a_1, a_3 ⊕ a_1, ..., a_n ⊕ a_1]. Note that the first element was removed.”",
     "chunk_word_count":50,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_tree_node_id\": \"llm::codeforces_2218_E::understand_effects_1\", \"generation_status\": \"responses_api\", \"skills\": [\"Manipulación de XOR\"], \"strategies\": [\"Simular 1 operación\"]}"
   },
@@ -13693,7 +13693,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_model",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"MATHEMATICAL_MODEL",
-    "chunk_text":"Cada bloque de 3 elementos puede verse como un triple ordenado (l_i, m_i, r_i) donde la mediana es m_i. Se ordenan las medianas m_1 < ... < m_n para razonar por disponibilidad de elementos grandes. “Let the i-th triple be {l_i, m_i, r_i}, with l_i < m_i < r_i, and wlog let m_1 < m_2 < … < m_n be the n medians.”",
+    "chunk_text":"Cada bloque de 3 elementos puede verse como un triple ordenado (l_i, m_i, r_i) donde la mediana es m_i. Se ordenan las medianas m_1 < ... < m_n para razonar por disponibilidad de elementos grandes. “Let the i-th triple be {l_i, m_i, r_i}, with l_i < m_i < r_i, and wlog let m_1 < m_2 < ... < m_n be the n medians.”",
     "chunk_word_count":63,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::model\", \"generation_status\": \"responses_api\", \"skills\": [\"Modelar bloques como triples ordenados\", \"Ordenar variables para una cota\"], \"strategies\": []}"
   },
@@ -13702,7 +13702,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_E_understand_effects_2",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"UNDERSTANDING",
-    "chunk_text":"Tras la segunda operación, usando x ⊕ x = 0, el arreglo resultante depende solo del elemento elegido en la segunda operación (a2) y no del primero (a1). “After the second operation… Due to Hint 2, this is the same as a = [a_3 ⊕ a_2, …, a_n ⊕ a_2]. Note that this new array is independent of a_1.”",
+    "chunk_text":"Tras la segunda operación, usando x ⊕ x = 0, el arreglo resultante depende solo del elemento elegido en la segunda operación (a2) y no del primero (a1). “After the second operation... Due to Hint 2, this is the same as a = [a_3 ⊕ a_2, ..., a_n ⊕ a_2]. Note that this new array is independent of a_1.”",
     "chunk_word_count":59,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_tree_node_id\": \"llm::codeforces_2218_E::understand_effects_2\", \"generation_status\": \"responses_api\", \"skills\": [\"Simplificación con x ⊕ x = 0\"], \"strategies\": [\"Comparar dependencia en variables\"]}"
   },
@@ -13720,7 +13720,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_algorithm",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"ALGORITHM",
-    "chunk_text":"Elegir la mediana más grande disponible: 3n-1. Como 1 < 3n-1 < 3n, forma un triple válido. Repetir el proceso sobre el subconjunto {2,3,...,3n-2}. La construcción resultante es: {1,3n-1,3n}, {2,3n-2,3n-3}, …, {n,2n-1,2n}. “To maximise the sum of medians, we should pick the largest possible median available, which is 3n-1. Since 1 < 3n-1 < 3n, this forms a valid triple. Now we can repeat the process on the subset {2, 3, ... 3n-2}, yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, … , {n, 2n-1, 2n}.”",
+    "chunk_text":"Elegir la mediana más grande disponible: 3n-1. Como 1 < 3n-1 < 3n, forma un triple válido. Repetir el proceso sobre el subconjunto {2,3,...,3n-2}. La construcción resultante es: {1,3n-1,3n}, {2,3n-2,3n-3}, ..., {n,2n-1,2n}. “To maximise the sum of medians, we should pick the largest possible median available, which is 3n-1. Since 1 < 3n-1 < 3n, this forms a valid triple. Now we can repeat the process on the subset {2, 3, ... 3n-2}, yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, ... , {n, 2n-1, 2n}.”",
     "chunk_word_count":87,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::algorithm\", \"generation_status\": \"responses_api\", \"skills\": [\"Greedy constructive\", \"Construcción por patrones\"], \"strategies\": [\"Seleccionar mediana máxima y emparejar con extremos\"]}"
   },
@@ -13729,7 +13729,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_E_observation_invariant",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"OBSERVATION",
-    "chunk_text":"El editorial concluye que, tras extender el razonamiento (2, 3 y por inducción), lo único que importa es el elemento elegido en la última operación (x) y el elemento que nunca se elige (y). El valor final es x ⊕ y. “when doing three operations, the elements chosen for the first two operations do not matter. Inductively… The final value of the array is going to be x ⊕ y.”",
+    "chunk_text":"El editorial concluye que, tras extender el razonamiento (2, 3 y por inducción), lo único que importa es el elemento elegido en la última operación (x) y el elemento que nunca se elige (y). El valor final es x ⊕ y. “when doing three operations, the elements chosen for the first two operations do not matter. Inductively... The final value of the array is going to be x ⊕ y.”",
     "chunk_word_count":70,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_tree_node_id\": \"llm::codeforces_2218_E::observation_invariant\", \"generation_status\": \"responses_api\", \"skills\": [\"Inducción informal sobre dependencias\"], \"strategies\": [\"Reducir a dos elementos relevantes\"]}"
   },
@@ -13756,7 +13756,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_proof_optimal",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"PROOF",
-    "chunk_text":"Para que una mediana m_i sea mediana, necesita un elemento estrictamente mayor que no se reutilice en otros triples. Se obtiene que para las medianas ordenadas, debe cumplirse una desigualdad que fuerza m_{n-k+1} ≤ 3n - 2k + 1, que coincide con la construcción óptima. “Each median needs an element strictly larger than it not used in any other triple. So there should be at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} … and more generally, at least 2k - 1 elements larger than",
+    "chunk_text":"Para que una mediana m_i sea mediana, necesita un elemento estrictamente mayor que no se reutilice en otros triples. Se obtiene que para las medianas ordenadas, debe cumplirse una desigualdad que fuerza m_{n-k+1} ≤ 3n - 2k + 1, que coincide con la construcción óptima. “Each median needs an element strictly larger than it not used in any other triple. So there should be at least 1 element larger than m_n, at least 3 elements larger than m_{n-1} ... and more generally, at least 2k - 1 elements larger than",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::proof_optimal\", \"generation_status\": \"responses_api\", \"skills\": [\"Cotas combinatorias\", \"Reordenamiento de índices\"], \"strategies\": [\"Contar elementos disponibles mayores que una mediana\"]}"
   },
@@ -13765,7 +13765,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_proof_optimal",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"PROOF",
-    "chunk_text":"least 3 elements larger than m_{n-1} … and more generally, at least 2k - 1 elements larger than m_{n-k+1}.” y “we need 2k-1 ≤ 3n - m_{n-k+1} … Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1, as in the optimal construction.”",
+    "chunk_text":"least 3 elements larger than m_{n-1} ... and more generally, at least 2k - 1 elements larger than m_{n-k+1}.” y “we need 2k-1 ≤ 3n - m_{n-k+1} ... Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1, as in the optimal construction.”",
     "chunk_word_count":43,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::proof_optimal\", \"generation_status\": \"responses_api\", \"skills\": [\"Cotas combinatorias\", \"Reordenamiento de índices\"], \"strategies\": [\"Contar elementos disponibles mayores que una mediana\"]}"
   },
@@ -13801,7 +13801,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_E_proof_sketch",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"PROOF",
-    "chunk_text":"El editorial muestra explícitamente los casos de 1 y 2 operaciones y luego generaliza: tras 2 operaciones el elemento de la primera elección no afecta; tras 3 tampoco afectan las dos primeras; por inducción solo importan el último elegido y el nunca elegido, dando x ⊕ y. “After the second operation… independent of a_1… when doing three operations… Inductively… The final value… x ⊕ y.”",
+    "chunk_text":"El editorial muestra explícitamente los casos de 1 y 2 operaciones y luego generaliza: tras 2 operaciones el elemento de la primera elección no afecta; tras 3 tampoco afectan las dos primeras; por inducción solo importan el último elegido y el nunca elegido, dando x ⊕ y. “After the second operation... independent of a_1... when doing three operations... Inductively... The final value... x ⊕ y.”",
     "chunk_word_count":65,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_tree_node_id\": \"llm::codeforces_2218_E::proof_sketch\", \"generation_status\": \"responses_api\", \"skills\": [\"Razonamiento inductivo\"], \"strategies\": [\"Verificación por casos base + generalización\"]}"
   },
@@ -13846,7 +13846,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_implementation",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"IMPLEMENTATION",
-    "chunk_text":"Construir los n triples según la fórmula del editorial y concatenarlos como permutación de longitud 3n (el statement permite cualquier orden de salida que cumpla la partición en bloques contiguos). “yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, … , {n, 2n-1, 2n}.” y “If there are multiple possible p, output any.”",
+    "chunk_text":"Construir los n triples según la fórmula del editorial y concatenarlos como permutación de longitud 3n (el statement permite cualquier orden de salida que cumpla la partición en bloques contiguos). “yielding the construction {1, 3n-1, 3n}, {2, 3n-2, 3n-3}, ... , {n, 2n-1, 2n}.” y “If there are multiple possible p, output any.”",
     "chunk_word_count":53,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::implementation\", \"generation_status\": \"responses_api\", \"skills\": [\"Construcción de arreglo a partir de fórmula\"], \"strategies\": [\"Concatenar triples\"]}"
   },
@@ -13891,7 +13891,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_E_implementation",
     "global_problem_id":"codeforces_2218_E",
     "node_type":"IMPLEMENTATION",
-    "chunk_text":"Implementar la enumeración de pares y el máximo de a_x ⊕ a_y. No hay detalles de implementación en el texto provisto. “brute force all possible pairs (x, y)… maximum value of a_x ⊕ a_y”",
+    "chunk_text":"Implementar la enumeración de pares y el máximo de a_x ⊕ a_y. No hay detalles de implementación en el texto provisto. “brute force all possible pairs (x, y)... maximum value of a_x ⊕ a_y”",
     "chunk_word_count":34,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/E\", \"normalized_tags\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"topic_group\": [\"techniques\", \"data_structures\", \"implementation_constructive\"], \"difficulty\": 1200.0, \"source_tree_node_id\": \"llm::codeforces_2218_E::implementation\", \"generation_status\": \"responses_api\", \"skills\": [\"Programación de loops y XOR\"], \"strategies\": [\"Usar doble loop\"]}"
   },
@@ -14080,7 +14080,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_C_proof_step_inequality",
     "global_problem_id":"codeforces_2218_C",
     "node_type":"PROOF_STEP",
-    "chunk_text":"En {1..3n}, hay exactamente 3n - m_{n-k+1} elementos mayores que m_{n-k+1}. Entonces 2k-1 ≤ 3n - m_{n-k+1} y se reordena a m_{n-k+1} ≤ 3n - 2k + 1. “In the set 1 … 3n, there are 3n - m_{n-k+1} elements larger than m_{n-k+1} … and so we need 2k-1 ≤ 3n - m_{n-k+1}. Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1”",
+    "chunk_text":"En {1..3n}, hay exactamente 3n - m_{n-k+1} elementos mayores que m_{n-k+1}. Entonces 2k-1 ≤ 3n - m_{n-k+1} y se reordena a m_{n-k+1} ≤ 3n - 2k + 1. “In the set 1 ... 3n, there are 3n - m_{n-k+1} elements larger than m_{n-k+1} ... and so we need 2k-1 ≤ 3n - m_{n-k+1}. Rearranging, we get m_{n-k+1} ≤ 3n - 2k + 1”",
     "chunk_word_count":63,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/C\", \"normalized_tags\": [\"implementation_constructive\", \"greedy\", \"math\"], \"topic_group\": [\"implementation_constructive\", \"greedy\", \"math\"], \"difficulty\": 800.0, \"source_tree_node_id\": \"llm::codeforces_2218_C::proof_step_inequality\", \"generation_status\": \"responses_api\", \"skills\": [\"Manipulación algebraica de desigualdades\"], \"strategies\": []}"
   },
@@ -14089,7 +14089,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_F_observation_even_needs_odd_child",
     "global_problem_id":"codeforces_2218_F",
     "node_type":"OBSERVATION",
-    "chunk_text":"If a vertex has even subtree size, it must have at least one child whose subtree size is odd; otherwise the subtree size would be odd (sum of evens plus the node). “for any vertex whose subtree has an even size, it must have at least one child with an odd size. Indeed, suppose all of its children have even size. Then … the sum of some even numbers, plus one, the node itself.”",
+    "chunk_text":"If a vertex has even subtree size, it must have at least one child whose subtree size is odd; otherwise the subtree size would be odd (sum of evens plus the node). “for any vertex whose subtree has an even size, it must have at least one child with an odd size. Indeed, suppose all of its children have even size. Then ... the sum of some even numbers, plus one, the node itself.”",
     "chunk_word_count":74,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/F\", \"normalized_tags\": [\"implementation_constructive\", \"graphs\"], \"topic_group\": [\"implementation_constructive\", \"graphs\"], \"difficulty\": 1500.0, \"source_tree_node_id\": \"llm::codeforces_2218_F::observation_even_needs_odd_child\", \"generation_status\": \"responses_api\", \"skills\": [\"Contrapositive reasoning\", \"Parity propagation in rooted trees\"], \"strategies\": [\"Use parity contradiction to derive structural necessity\"]}"
   },
@@ -14125,7 +14125,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_F_algorithm_construct_pairs_to_root",
     "global_problem_id":"codeforces_2218_F",
     "node_type":"ALGORITHM",
-    "chunk_text":"Make every vertex (excluding the root) have subtree size either 1 or 2 by attaching x disjoint pairs of vertices; then attach each pair and all remaining vertices to the root. The number of vertices with even subtree size becomes exactly x (the parent from each pair). “we will try to make every vertex (excluding the root) have subtree size either 1 or 2. … attach x disjoint pairs of vertices. Then we will attach each pair, and all of the remaining vertices, to the root. Now, the number of",
+    "chunk_text":"Make every vertex (excluding the root) have subtree size either 1 or 2 by attaching x disjoint pairs of vertices; then attach each pair and all remaining vertices to the root. The number of vertices with even subtree size becomes exactly x (the parent from each pair). “we will try to make every vertex (excluding the root) have subtree size either 1 or 2. ... attach x disjoint pairs of vertices. Then we will attach each pair, and all of the remaining vertices, to the root. Now, the number of",
     "chunk_word_count":90,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/F\", \"normalized_tags\": [\"implementation_constructive\", \"graphs\"], \"topic_group\": [\"implementation_constructive\", \"graphs\"], \"difficulty\": 1500.0, \"source_tree_node_id\": \"llm::codeforces_2218_F::algorithm_construct_pairs_to_root\", \"generation_status\": \"responses_api\", \"skills\": [\"Designing a tree structure to control subtree sizes\", \"Counting subtree parity in a constructed tree\"], \"strategies\": [\"Use disjoint pairs to create controlled even subtree sizes\", \"Attach constructed components to the root\"]}"
   },
@@ -14143,7 +14143,7 @@
     "node_id":"pi::llm::llm_codeforces_2218_F_implementation_notes",
     "global_problem_id":"codeforces_2218_F",
     "node_type":"IMPLEMENTATION",
-    "chunk_text":"Create x disjoint pairs among non-root vertices, connect each pair internally, then connect all pair vertices and remaining vertices directly to the root (node 1). Output NO if feasibility conditions fail. “attach x disjoint pairs of vertices … attach each pair, and all of the remaining vertices, to the root.”",
+    "chunk_text":"Create x disjoint pairs among non-root vertices, connect each pair internally, then connect all pair vertices and remaining vertices directly to the root (node 1). Output NO if feasibility conditions fail. “attach x disjoint pairs of vertices ... attach each pair, and all of the remaining vertices, to the root.”",
     "chunk_word_count":50,
     "metadata":"{\"source\": \"codeforces\", \"url\": \"https:\/\/codeforces.com\/problemset\/problem\/2218\/F\", \"normalized_tags\": [\"implementation_constructive\", \"graphs\"], \"topic_group\": [\"implementation_constructive\", \"graphs\"], \"difficulty\": 1500.0, \"source_tree_node_id\": \"llm::codeforces_2218_F::implementation_notes\", \"generation_status\": \"responses_api\", \"skills\": [\"Building adjacency lists for a rooted tree\", \"Careful node indexing\"], \"strategies\": [\"Construct internal edges for each pair\", \"Add edges from root to all non-root vertices\"]}"
   }

@@ -9,6 +9,7 @@ by the evaluation scripts.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -34,6 +35,7 @@ from langchain_rag import (  # noqa: E402
     parse_judge_json,
 )
 from llm.env_config import DEFAULT_OPENAI_MODEL, resolve_openai_settings  # noqa: E402
+from text_formatting import normalize_math_text  # noqa: E402
 
 
 PROCESSED = ROOT / "data" / "processed"
@@ -141,6 +143,124 @@ def parse_listish(value: Any) -> list[str]:
     except Exception:
         pass
     return [text]
+
+
+def normalize_lookup_text(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(value or "").lower())
+
+
+def extract_codeforces_references(text: str) -> list[tuple[str, str, str]]:
+    """Return (global_problem_id, display_ref, source) candidates from text."""
+    candidates: list[tuple[str, str, str]] = []
+    seen: set[str] = set()
+    raw = str(text or "")
+    url_pattern = re.compile(
+        r"codeforces\.com/(?:problemset/problem|contest)/(\d+)/(?:problem/)?([A-Za-z][0-9]?)",
+        flags=re.IGNORECASE,
+    )
+    short_pattern = re.compile(
+        r"\b(?:codeforces|cf)?\s*#?\s*(\d{3,6})\s*([A-Za-z][0-9]?)\b",
+        flags=re.IGNORECASE,
+    )
+    for contest_id, problem_index in url_pattern.findall(raw):
+        display = f"Codeforces {contest_id}{problem_index.upper()}"
+        problem_id = f"codeforces_{contest_id}_{problem_index.upper()}"
+        if problem_id not in seen:
+            candidates.append((problem_id, display, "codeforces_url"))
+            seen.add(problem_id)
+    for contest_id, problem_index in short_pattern.findall(raw):
+        display = f"Codeforces {contest_id}{problem_index.upper()}"
+        problem_id = f"codeforces_{contest_id}_{problem_index.upper()}"
+        if problem_id not in seen:
+            candidates.append((problem_id, display, "codeforces_ref"))
+            seen.add(problem_id)
+    return candidates
+
+
+def resolve_problem_reference(problems: pd.DataFrame, text: str) -> dict[str, str]:
+    """Detect whether the user mentioned a known or missing problem."""
+    if problems.empty:
+        return {"status": "none"}
+
+    known_ids = {str(pid): str(pid) for pid in problems["global_problem_id"].fillna("").astype(str)}
+    known_ids_lower = {pid.lower(): pid for pid in known_ids}
+    raw = str(text or "")
+
+    for match in re.findall(r"\b(?:codeforces|atcoder)_[A-Za-z0-9_.-]+", raw, flags=re.IGNORECASE):
+        known_id = known_ids_lower.get(match.lower())
+        if known_id:
+            return {"status": "matched", "problem_id": known_id, "reference": known_id, "source": "global_problem_id"}
+
+    for problem_id, display, source in extract_codeforces_references(raw):
+        if problem_id in known_ids:
+            return {"status": "matched", "problem_id": problem_id, "reference": display, "source": source}
+        return {"status": "not_found", "reference": display, "source": source}
+
+    query_norm = normalize_lookup_text(raw)
+    title_matches: list[str] = []
+    for _, row in problems.iterrows():
+        title = str(row.get("title", "")).strip()
+        title_norm = normalize_lookup_text(title)
+        if len(title_norm) >= 10 and title_norm in query_norm:
+            title_matches.append(str(row.get("global_problem_id", "")))
+    title_matches = [pid for pid in dict.fromkeys(title_matches) if pid]
+    if len(title_matches) == 1:
+        return {
+            "status": "matched",
+            "problem_id": title_matches[0],
+            "reference": problem_label(title_matches[0], problems),
+            "source": "title",
+        }
+
+    return {"status": "none"}
+
+
+def build_similarity_query(
+    *,
+    user_query: str,
+    external_reference: str = "",
+    external_context: str = "",
+    lookup: dict[str, str] | None = None,
+) -> str:
+    lookup = lookup or {}
+    reference = external_reference.strip() or lookup.get("reference", "").strip() or "problema no identificado"
+    context = clean_text(external_context)
+    return "\n".join(
+        part
+        for part in [
+            "Problem lookup status: exact_problem_not_in_dataset",
+            f"External problem reference: {reference}",
+            f"External problem statement or constraints provided by the student: {context}" if context else "",
+            f"Student question: {user_query}",
+            (
+                "Instruction: the exact problem is not available in the local corpus. Use the recovered problems only "
+                "as similar examples to infer possible strategies, constraints, pitfalls, or proof ideas. Be explicit "
+                "that this is not the official editorial of the external problem, and do not claim certainty beyond "
+                "the retrieved evidence."
+            ),
+        ]
+        if part
+    )
+
+
+def build_problem_query(problem_id: str, problems: pd.DataFrame, user_query: str) -> str:
+    return (
+        f"Problem lookup status: exact_problem_in_dataset\n"
+        f"Problem: {problem_label(problem_id, problems)}\n"
+        f"Student question: {user_query}"
+    )
+
+
+def unique_top_problem_ids(hits: pd.DataFrame, limit: int = 5) -> list[str]:
+    if hits.empty or "global_problem_id" not in hits.columns:
+        return []
+    values = []
+    for problem_id in hits["global_problem_id"].fillna("").astype(str).tolist():
+        if problem_id and problem_id not in values:
+            values.append(problem_id)
+        if len(values) >= limit:
+            break
+    return values
 
 
 @st.cache_data(show_spinner=False)
@@ -285,33 +405,53 @@ def main() -> None:
         )
         top_k = st.slider("Top-k contextos", min_value=3, max_value=12, value=DEFAULT_TOP_K, step=1)
         scoped = st.checkbox("Restringir busqueda al problema seleccionado", value=True)
+        external_mode = st.checkbox("Consultar problema externo/no listado", value=False)
         evaluate = st.checkbox("Evaluar respuesta con LLM-as-a-Judge", value=False)
         use_reference = st.checkbox("Usar respuestas de referencia curadas", value=False)
         st.divider()
-        st.caption("Para demo en vivo, usa busqueda restringida. Para mostrar limitaciones del RAG, desactiva la restriccion.")
+        st.caption("Para demo en vivo, usa busqueda restringida. Para problemas externos, activa el modo no listado.")
         st.caption("Las respuestas de referencia son un respaldo de demo; no son evaluacion automatica.")
 
-    options = problem_options(problems)
-    selected_problem = st.selectbox(
-        "Problema para la demo",
-        options=options,
-        format_func=lambda pid: problem_label(pid, problems),
-    )
-    render_problem_card(selected_problem, problems)
-
-    suggested = DEMO_PROBLEMS.get(selected_problem, {}).get("questions", [])
-    if suggested:
-        chosen_question = st.selectbox("Preguntas sugeridas", suggested)
+    external_reference = ""
+    external_context = ""
+    if external_mode:
+        st.subheader("Consulta sobre problema externo o no listado")
+        st.caption(
+            "Si el problema exacto no esta en el corpus, el sistema buscara problemas similares "
+            "por etiquetas, restricciones, editorial y estrategia. La respuesta debe tratarse como orientacion, no como editorial oficial."
+        )
+        external_reference = st.text_input("ID, URL o titulo del problema externo", placeholder="Ej.: Codeforces 1900C o https://codeforces.com/problemset/problem/1900/C")
+        external_context = st.text_area(
+            "Enunciado, resumen o restricciones disponibles",
+            placeholder="Pega aqui el statement, restricciones o una descripcion corta si la tienes.",
+            height=140,
+        )
+        selected_problem = ""
+        suggested = []
+        chosen_question = "What strategy or idea should I try first?"
     else:
-        chosen_question = "What is the key observation and algorithm for this problem?"
+        options = problem_options(problems)
+        selected_problem = st.selectbox(
+            "Problema para la demo",
+            options=options,
+            format_func=lambda pid: problem_label(pid, problems),
+        )
+        render_problem_card(selected_problem, problems)
+
+        suggested = DEMO_PROBLEMS.get(selected_problem, {}).get("questions", [])
+        if suggested:
+            chosen_question = st.selectbox("Preguntas sugeridas", suggested)
+        else:
+            chosen_question = "What is the key observation and algorithm for this problem?"
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
     if "last_problem" not in st.session_state:
-        st.session_state.last_problem = selected_problem
-    if st.session_state.last_problem != selected_problem:
+        st.session_state.last_problem = ""
+    active_problem_key = f"external::{external_reference.strip()}::{external_context.strip()[:80]}" if external_mode else selected_problem
+    if st.session_state.last_problem != active_problem_key:
         st.session_state.messages = []
-        st.session_state.last_problem = selected_problem
+        st.session_state.last_problem = active_problem_key
 
     col_a, col_b = st.columns([1, 1])
     with col_a:
@@ -331,21 +471,74 @@ def main() -> None:
         user_query = prompt_value
 
     if user_query:
-        scoped_problem_id = selected_problem if scoped else None
-        query = (
-            f"Problem: {problem_label(selected_problem, problems)}\n"
-            f"Student question: {user_query}"
+        lookup_text = "\n".join(
+            part
+            for part in [
+                external_reference if external_mode else "",
+                external_context if external_mode else "",
+                user_query,
+            ]
+            if part
         )
+        lookup = resolve_problem_reference(problems, lookup_text)
+        retrieval_mode = "scoped_problem" if scoped else "global_corpus"
+        exact_problem_id = selected_problem
+        scoped_problem_id = selected_problem if selected_problem and scoped else None
+
+        if external_mode:
+            if lookup.get("status") == "matched":
+                exact_problem_id = lookup.get("problem_id", "")
+                scoped_problem_id = exact_problem_id if scoped else None
+                query = build_problem_query(exact_problem_id, problems, user_query)
+                if external_context.strip():
+                    query = f"{query}\nStudent-provided statement or constraints: {clean_text(external_context)}"
+                retrieval_mode = "external_reference_found_in_dataset"
+            else:
+                exact_problem_id = ""
+                scoped_problem_id = None
+                query = build_similarity_query(
+                    user_query=user_query,
+                    external_reference=external_reference,
+                    external_context=external_context,
+                    lookup=lookup,
+                )
+                retrieval_mode = "similar_problem_fallback"
+        elif lookup.get("status") == "matched" and lookup.get("problem_id") != selected_problem:
+            exact_problem_id = lookup.get("problem_id", "")
+            scoped_problem_id = exact_problem_id if scoped else None
+            query = build_problem_query(exact_problem_id, problems, user_query)
+            retrieval_mode = "auto_switched_exact_problem"
+        elif lookup.get("status") == "not_found":
+            exact_problem_id = ""
+            scoped_problem_id = None
+            query = build_similarity_query(user_query=user_query, lookup=lookup)
+            retrieval_mode = "similar_problem_fallback"
+        else:
+            query = build_problem_query(selected_problem, problems, user_query)
 
         st.session_state.messages.append({"role": "user", "content": user_query})
         with st.chat_message("user"):
             st.markdown(user_query)
 
         with st.chat_message("assistant"):
+            if retrieval_mode == "similar_problem_fallback":
+                st.info(
+                    "No encontre ese problema exacto en el corpus. Buscare problemas similares y la respuesta "
+                    "se presentara como orientacion, no como editorial oficial."
+                )
+            elif retrieval_mode in {"auto_switched_exact_problem", "external_reference_found_in_dataset"}:
+                st.info(f"Detecte {problem_label(exact_problem_id, problems)} en el dataset y usare ese problema como base.")
+
             with st.spinner("Recuperando contexto y consultando el modelo..."):
                 try:
                     retriever = build_retriever(index_source, scoped_problem_id)
-                    if use_reference and user_query in REFERENCE_ANSWERS.get(selected_problem, {}):
+                    can_use_reference = (
+                        use_reference
+                        and not external_mode
+                        and exact_problem_id == selected_problem
+                        and user_query in REFERENCE_ANSWERS.get(selected_problem, {})
+                    )
+                    if can_use_reference:
                         hits = retriever.retrieve(query, top_k=top_k)
                         answer = REFERENCE_ANSWERS[selected_problem][user_query]
                         metrics = {
@@ -362,10 +555,27 @@ def main() -> None:
                             top_k=top_k,
                             evaluate=evaluate,
                         )
+                    metrics.update(
+                        {
+                            "retrieval_mode": retrieval_mode,
+                            "problem_lookup": lookup,
+                            "scoped_problem_id": scoped_problem_id or "",
+                            "exact_problem_id": exact_problem_id or "",
+                            "top_similar_problem_ids": unique_top_problem_ids(hits),
+                        }
+                    )
                 except Exception as exc:
                     st.error(f"No se pudo generar la respuesta: {exc}")
                     st.stop()
 
+            answer = normalize_math_text(answer)
+            if retrieval_mode == "similar_problem_fallback":
+                fallback_note = (
+                    "Nota: no encontre el problema exacto en el corpus local. La respuesta usa problemas recuperados "
+                    "por similitud como apoyo, asi que debe leerse como una pista razonada y no como la editorial oficial."
+                )
+                if not answer.startswith("Nota:"):
+                    answer = f"{fallback_note}\n\n{answer}"
             st.markdown(answer)
             st.session_state.messages.append({"role": "assistant", "content": answer})
 

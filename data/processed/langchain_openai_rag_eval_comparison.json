@@ -3,32 +3,32 @@
     "Modo de indice":"Page Nodes",
     "Metrica":"Faithfulness",
     "Umbral":0.75,
-    "Promedio":0.53,
-    "Desviacion estandar":0.283,
-    "% >= umbral":"25 %"
+    "Promedio":0.89,
+    "Desviacion estandar":0.017,
+    "% >= umbral":"100 %"
   },
   {
     "Modo de indice":"Page Nodes",
     "Metrica":"Answer Relevancy",
     "Umbral":0.75,
-    "Promedio":0.54,
-    "Desviacion estandar":0.29,
-    "% >= umbral":"25 %"
+    "Promedio":0.89,
+    "Desviacion estandar":0.017,
+    "% >= umbral":"100 %"
   },
   {
     "Modo de indice":"PageIndex Chunks",
     "Metrica":"Faithfulness",
     "Umbral":0.75,
-    "Promedio":0.43,
-    "Desviacion estandar":0.282,
-    "% >= umbral":"12 %"
+    "Promedio":0.85,
+    "Desviacion estandar":0.05,
+    "% >= umbral":"100 %"
   },
   {
     "Modo de indice":"PageIndex Chunks",
     "Metrica":"Answer Relevancy",
     "Umbral":0.75,
-    "Promedio":0.54,
-    "Desviacion estandar":0.289,
-    "% >= umbral":"38 %"
+    "Promedio":0.89,
+    "Desviacion estandar":0.017,
+    "% >= umbral":"100 %"
   }
 ]

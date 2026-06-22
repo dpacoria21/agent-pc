@@ -1,4 +1,4 @@
-# Manual de ejecucion: Div. 4 + LangChain + GPT-5.4 nano
+# Manual de ejecucion: Div. 4 + LangChain + GPT-4o mini
 
 Este manual deja el proyecto listo para hacer una demostracion local, sin Google Colab, usando problemas recientes de Codeforces Div. 4, LangChain y el modelo configurado en OpenAI.
 
@@ -13,7 +13,7 @@ El archivo `.env` debe incluir la clave:
 
 ```env
 OPENAI_API_KEY=tu_clave_aqui
-OPENAI_MODEL=gpt-5.4-nano
+OPENAI_MODEL=gpt-4o-mini
 ```
 
 El proyecto tambien acepta `OPENAPI_KEY` como alias, pero se recomienda usar `OPENAI_API_KEY`.
@@ -106,7 +106,7 @@ Las advertencias actuales son por editoriales descargadas pero inusualmente cort
 Ejecuta:
 
 ```bash
-python scripts/run_phase3_llm_tree_builder.py --limit 5 --model gpt-5.4-nano
+python scripts/run_phase3_llm_tree_builder.py --limit 5 --model gpt-4o-mini
 ```
 
 Que hace:
@@ -164,7 +164,7 @@ En la corrida actual:
 El runner usa LangChain para:
 
 - crear el `ChatOpenAI`;
-- consultar el modelo `gpt-5.4-nano`;
+- consultar el modelo `gpt-4o-mini`;
 - generar respuestas con contexto recuperado;
 - evaluar con LLM-as-a-Judge.
 
@@ -178,7 +178,7 @@ La recuperacion local usa:
 ### Modo A: Page Nodes
 
 ```bash
-python scripts/run_langchain_openai_rag_eval.py --model gpt-5.4-nano --query-limit 8 --top-k 5 --index-source page_nodes --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
+python scripts/run_langchain_openai_rag_eval.py --model gpt-4o-mini --query-limit 8 --top-k 5 --index-source page_nodes --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
 ```
 
 Usa como unidades de recuperacion:
@@ -198,7 +198,7 @@ comparison_assets/langchain_openai_rag_eval_summary_page_nodes.png
 ### Modo B: PageIndex chunks
 
 ```bash
-python scripts/run_langchain_openai_rag_eval.py --model gpt-5.4-nano --query-limit 8 --top-k 5 --index-source pageindex_chunks --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
+python scripts/run_langchain_openai_rag_eval.py --model gpt-4o-mini --query-limit 8 --top-k 5 --index-source pageindex_chunks --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
 ```
 
 Usa como unidades de recuperacion:
@@ -260,10 +260,10 @@ En esta corrida los valores no son altos. Eso es util para la tesis porque muest
 ```bash
 python scripts/build_latest_div4_dataset.py --target-problems 80 --contest-lookback 30 --request-delay 1.0
 python scripts/run_phase2_dataset_contract.py --fail-on-error
-python scripts/run_phase3_llm_tree_builder.py --limit 5 --model gpt-5.4-nano
+python scripts/run_phase3_llm_tree_builder.py --limit 5 --model gpt-4o-mini
 python scripts/run_phase4_tree_index.py
-python scripts/run_langchain_openai_rag_eval.py --model gpt-5.4-nano --query-limit 8 --top-k 5 --index-source page_nodes --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
-python scripts/run_langchain_openai_rag_eval.py --model gpt-5.4-nano --query-limit 8 --top-k 5 --index-source pageindex_chunks --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
+python scripts/run_langchain_openai_rag_eval.py --model gpt-4o-mini --query-limit 8 --top-k 5 --index-source page_nodes --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
+python scripts/run_langchain_openai_rag_eval.py --model gpt-4o-mini --query-limit 8 --top-k 5 --index-source pageindex_chunks --faithfulness-threshold 0.75 --answer-relevancy-threshold 0.75
 python scripts/compare_langchain_eval_modes.py
 ```
 
@@ -322,7 +322,7 @@ http://localhost:8501
 
 En la barra lateral:
 
-- Modelo: `gpt-5.4-nano`
+- Modelo: `gpt-4o-mini`
 - Unidad de recuperacion: `Page Nodes`
 - Top-k contextos: `5`
 - Restringir busqueda al problema seleccionado: activado

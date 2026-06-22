@@ -1,3 +1,3 @@
 Metrica,Umbral,Promedio,Desviacion estandar,% >= umbral
-Faithfulness,0.75,0.53,0.283,25 %
-Answer Relevancy,0.75,0.54,0.290,25 %
+Faithfulness,0.75,0.89,0.017,100 %
+Answer Relevancy,0.75,0.89,0.017,100 %

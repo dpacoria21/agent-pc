@@ -12,7 +12,7 @@ import os
 from dataclasses import dataclass
 from typing import Any
 
-from llm.env_config import DEFAULT_OPENAI_MODEL, resolve_openai_settings
+from llm.env_config import resolve_openai_settings
 
 
 @dataclass
@@ -27,7 +27,7 @@ class GPTResult:
 
 class GPTClient:
     def __init__(self, model: str | None = None, api_key: str | None = None, base_url: str | None = None) -> None:
-        settings = resolve_openai_settings(requested_model=model or DEFAULT_OPENAI_MODEL)
+        settings = resolve_openai_settings(requested_model=model)
         self.api_key = api_key or settings.api_key
         self.model = model or settings.model
         self.base_url = base_url or settings.base_url

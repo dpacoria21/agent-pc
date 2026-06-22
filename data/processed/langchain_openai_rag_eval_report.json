@@ -1,13 +1,19 @@
 {
-  "model": "gpt-5.4-nano",
+  "model": "gpt-4o-mini",
   "key_source": "OPENAI_API_KEY",
   "queries": 8,
   "top_k": 5,
-  "nodes_indexed": 1464,
-  "total_elapsed_seconds": 66.263,
+  "nodes_indexed": 1572,
+  "scope_to_query_problem": true,
+  "total_elapsed_seconds": 83.807,
   "index_source": "pageindex_chunks",
-  "retrieval_units_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_chunks.csv",
-  "results_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\langchain_openai_rag_eval_results_pageindex_chunks.csv",
-  "summary_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\langchain_openai_rag_eval_summary_pageindex_chunks.csv",
-  "summary_png": "C:\\Users\\Asus\\Desktop\\agent-pc\\comparison_assets\\langchain_openai_rag_eval_summary_pageindex_chunks.png"
+  "global_retrieval": false,
+  "metric_thresholds": {
+    "Faithfulness": 0.75,
+    "Answer Relevancy": 0.75
+  },
+  "retrieval_units_csv": "C:\\Users\\diego\\OneDrive\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_chunks.csv",
+  "results_csv": "C:\\Users\\diego\\OneDrive\\Desktop\\agent-pc\\data\\processed\\langchain_openai_rag_eval_results_pageindex_chunks.csv",
+  "summary_csv": "C:\\Users\\diego\\OneDrive\\Desktop\\agent-pc\\data\\processed\\langchain_openai_rag_eval_summary_pageindex_chunks.csv",
+  "summary_png": "C:\\Users\\diego\\OneDrive\\Desktop\\agent-pc\\comparison_assets\\langchain_openai_rag_eval_summary_pageindex_chunks.png"
 }
