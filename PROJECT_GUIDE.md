@@ -25,6 +25,8 @@ agent-pc/
       structured_outputs.py
     indexing/
       llm_tree_builder.py
+      pageindex_adapter.py
+      pedagogical_graph.py
     cp_dataset_scraper.py
     hybrid_tree_search.py
     rag_cp_student_profile.py
@@ -36,6 +38,8 @@ agent-pc/
   scripts/
     run_phase2_dataset_contract.py
     run_phase3_llm_tree_builder.py
+    run_phase4_tree_index.py
+    run_phase5_retrieval_evaluation.py
     run_all_local.py
     run_hybrid_tree_prototype.py
     verify_codeforces_editorials.py
@@ -53,6 +57,7 @@ agent-pc/
   comparison_assets/
     hybrid_tree_architecture.png
     hybrid_tree_structure.png
+    pedagogical_graph_overview.png
     hybrid_tree_score_components.png
     hybrid_tree_recommendations.png
     page_index_comparison.png
@@ -256,7 +261,8 @@ Flujo:
 ```text
 1. cp_problems_dataset + cp_page_nodes_dataset
 2. build_tree_nodes(...)
-   root -> platform -> topic -> difficulty bucket -> problem -> section group -> content node
+   root -> platform/topic/difficulty -> problem -> section group -> content node
+   root -> pedagogical layer -> topic -> technique -> approach/risk/prerequisite
 3. build_tree_chunks(...)
    divide node_text en chunks asociados al nodo
 4. Value Search
@@ -284,7 +290,7 @@ Donde:
 ```text
 value_score       = similitud coseno de chunks agregada al nodo
 guided_score      = coincidencia entre query intent, node_type, tags y resumen
-metadata_bonus    = filtros por tags, dificultad y etapa pedagogica
+metadata_bonus    = filtros por tags, dificultad, etapa pedagogica y enfoque detectado
 ```
 
 Las queries demo actuales son:
@@ -300,22 +306,24 @@ En la ultima ejecucion:
 
 ```text
 problems:   7
-page_nodes: 91
-tree_nodes: 133
-chunks:     181
+page_nodes: 1040
+tree_nodes: 1715
+chunks:     1819
+pedagogical_nodes: 322
+pedagogical_edges: 2244
 embedding:  TF-IDF + SVD + L2
 ```
 
 Resultados esperados:
 
 ```text
-grid_l_proof              -> codeforces_2219_A
-unique_values_formula     -> codeforces_2219_B1
-tree_mex_implementation   -> codeforces_2219_D
-weird_chessboard_proof    -> codeforces_2219_E
+grid_l_proof              -> problema/nodos con prueba y modelo matematico
+unique_values_formula     -> nodos TECHNIQUE/APPROACH de formula o binary_search
+tree_mex_implementation   -> nodos de riesgos, edge cases e implementacion en arboles
+weird_chessboard_proof    -> nodos APPROACH/PROOF de patrones constructivos
 ```
 
-Esta implementacion sigue la intuicion de PageIndex: recuperar nodos, no solo chunks. La diferencia es que aqui el "LLM tree search" esta simulado con reglas de intencion para poder ejecutar todo localmente sin API key.
+Esta implementacion sigue la intuicion de PageIndex: recuperar nodos conectados, no solo chunks. La diferencia es que aqui el "LLM tree search" esta simulado con reglas de intencion para poder ejecutar todo localmente sin API key. La nueva capa pedagogica agrega relaciones cruzadas que PageIndex real podria usar despues como señales de expansion/reranking.
 
 ## 3.3 Como obtiene editoriales de Codeforces
 
@@ -464,7 +472,51 @@ codeforces_750_A::13_COMMON_MISTAKES
 
 Importante:
 
-> El prototipo actual descompone problemas en secciones utiles, pero todavia no construye un arbol de busqueda tipo PageIndex ni relaciones explicitas entre problemas similares.
+> Los Page Nodes siguen siendo la base documental. Encima de ellos ahora se construye una capa pedagogica conectada que agrega `TOPIC`, `TECHNIQUE`, `APPROACH`, `PREREQUISITE` y `RISK`, junto con aristas como `EXPLAINS_APPROACH`, `PREREQUISITE_OF`, `HAS_RISK`, `ALTERNATIVE_APPROACH`, `SAME_PATTERN_AS` y `NEXT_PRACTICE_STEP`.
+
+## 4.1 Capa pedagogica conectada
+
+Archivo principal:
+
+```text
+src/indexing/pedagogical_graph.py
+```
+
+Esta capa toma `cp_problems_dataset`, `cp_page_nodes_dataset` y, si existe, `cp_llm_tree_nodes_dataset`. Luego infiere senales pedagogicas por problema:
+
+```text
+topics          -> math, graphs, greedy, dynamic_programming, techniques
+techniques      -> binary_search, direct_formula, constructive, graphs, sorting
+prerequisites   -> monotonic_predicate, algebraic_modeling, exchange_argument
+risks           -> wrong_bounds, precision_error, overflow, wrong_proof
+approaches      -> enfoque especifico del problema conectado a una tecnica global
+```
+
+La salida nueva queda en:
+
+```text
+data/processed/cp_pedagogical_graph_nodes.csv
+data/processed/cp_pedagogical_graph_edges.csv
+data/processed/cp_problem_pedagogical_signals.csv
+```
+
+Ejemplo conceptual:
+
+```text
+TOPIC: math
+  TECHNIQUE: direct_formula
+    APPROACH: codeforces_750_A - Direct Formula Approach
+    PREREQUISITE: algebraic_modeling
+    RISK: overflow
+
+TOPIC: techniques
+  TECHNIQUE: binary_search
+    APPROACH: codeforces_750_A - Binary Search Approach
+    PREREQUISITE: monotonic_predicate
+    RISK: wrong_bounds
+```
+
+Esto permite que un mismo problema tenga varias rutas de solucion. Por ejemplo, un problema matematico puede conectarse tanto a `direct_formula` como a `binary_search`, y el agente puede recuperar la ruta mas parecida a la idea del estudiante.
 
 ## 5. Como busca informacion
 
@@ -522,7 +574,13 @@ Donde:
 - `keyword_score`: coincidencia literal.
 - `metadata_bonus`: tags, dificultad y tipo de nodo.
 
-Esto es hibrido en sentido local, pero no es PageIndex Hybrid Tree Search. No hay cola de nodos, no hay LLM tree search y no hay score agregado chunk->node como en el tutorial de PageIndex.
+Esto es el baseline hibrido plano. Para aproximarse a PageIndex Hybrid Tree Search se usa ademas `src/hybrid_tree_search.py`, donde hay:
+
+- cola hibrida de nodos deduplicados;
+- score agregado chunk -> node -> ancestros;
+- busqueda guiada por intencion de la query;
+- nodos pedagogicos `APPROACH`, `TECHNIQUE`, `PREREQUISITE` y `RISK`;
+- recomendaciones por problema con razones interpretables.
 
 ## 6. Que comparan los graficos
 
@@ -534,7 +592,15 @@ Compara visualmente:
 
 - RAG plano por chunks.
 - Page Index local por secciones.
-- PageIndex Hybrid Tree Search como objetivo futuro.
+- PageIndex Hybrid Tree Search como arquitectura objetivo.
+
+### 6.1.1 `pedagogical_graph_overview.png`
+
+Muestra la nueva capa conectada:
+
+- distribucion de nodos `TOPIC`, `TECHNIQUE`, `APPROACH`, `PREREQUISITE` y `RISK`;
+- distribucion de aristas como `EXPLAINS_APPROACH`, `PREREQUISITE_OF`, `HAS_RISK`, `SAME_PATTERN_AS` y `NEXT_PRACTICE_STEP`;
+- evidencia visual de que el sistema ya no almacena solo problemas/editoriales, sino relaciones pedagogicas reutilizables.
 
 ### 6.2 `rag_retrieval_metrics.png`
 
@@ -1382,13 +1448,16 @@ Tu tarea es estructurar el contenido en un arbol pedagogico JSON.
 Reglas:
 - No inventes contenido que no este en el statement o editorial.
 - Separa observacion, modelo matematico, prueba, algoritmo, complejidad, implementacion y errores comunes.
+- Extrae enfoques alternativos como `APPROACH`.
+- Extrae prerequisitos como `PREREQUISITE`.
+- Extrae riesgos como `RISK`.
 - Incluye evidence_text corto para cada nodo.
 - Marca confidence entre 0 y 1.
 - Si una seccion no aparece, usa null o lista vacia.
 - Devuelve solo JSON valido.
 ```
 
-Esta fase es importante porque PageIndex Hybrid Tree Search funciona mejor cuando el arbol tiene nodos semanticamente utiles, no solo secciones fijas.
+Esta fase es importante porque PageIndex Hybrid Tree Search funciona mejor cuando el arbol tiene nodos semanticamente utiles, no solo secciones fijas. Si GPT no esta disponible, el fallback local genera nodos de enfoque, prerequisito y riesgo con reglas reproducibles.
 
 Implementacion actual:
 
@@ -1418,11 +1487,10 @@ Si no hay `OPENAI_API_KEY`, el modulo usa fallback heuristico con el mismo forma
 Ultima ejecucion local:
 
 ```text
-selected_problem_count: 3
-tree_node_count: 16
-edge_count: 5
-client_available: false
-generation_status: fallback_after_missing_api_key
+selected_problem_count: 3 si usas --limit 3, o mas si aumentas el limite
+tree_node_count: depende de la cantidad de nodos extraidos por problema
+edge_count: relaciones SUPPORTS, HAS_APPROACH, PREREQUISITE_OF y HAS_RISK
+client_available: true si OPENAI_API_KEY esta disponible
 ```
 
 Esto significa que la infraestructura de Fase 3 ya esta lista, pero esa corrida no uso GPT real porque la key no estaba disponible en el entorno de terminal.
@@ -1432,7 +1500,7 @@ Esto significa que la infraestructura de Fase 3 ya esta lista, pero esa corrida 
 Objetivo:
 
 ```text
-Transformar el JSON estructurado por GPT en nodos listos para busqueda jerarquica.
+Transformar el JSON estructurado por GPT/fallback y los Page Nodes en nodos listos para busqueda jerarquica conectada.
 ```
 
 Salida:
@@ -1440,7 +1508,12 @@ Salida:
 ```text
 data/processed/cp_tree_nodes_dataset.csv
 data/processed/cp_tree_chunks_dataset.csv
-data/processed/cp_tree_edges_dataset.csv
+data/processed/cp_pageindex_ready_nodes.csv
+data/processed/cp_pageindex_ready_edges.csv
+data/processed/cp_pageindex_ready_chunks.csv
+data/processed/cp_pedagogical_graph_nodes.csv
+data/processed/cp_pedagogical_graph_edges.csv
+data/processed/cp_problem_pedagogical_signals.csv
 ```
 
 Campos minimos:
@@ -1467,9 +1540,25 @@ PREREQUISITE_OF
 ALTERNATIVE_APPROACH
 SAME_PROOF_PATTERN
 SAME_COMMON_MISTAKE
+EXPLAINS_APPROACH
+HAS_RISK
+SAME_PATTERN_AS
+NEXT_PRACTICE_STEP
 ```
 
-Aunque PageIndex trabaja con arbol, estas relaciones cruzadas pueden guardarse como metadata adicional para reranking y analisis, sin romper la estructura principal.
+Aunque PageIndex trabaja con arbol, estas relaciones cruzadas se guardan como aristas tabulares. En una implementacion real pueden usarse para expansion de nodos, reranking, rutas de aprendizaje y explicaciones de recomendacion.
+
+Ultima ejecucion verificada:
+
+```text
+problem_count: 80
+page_node_count: 1040
+pedagogical_node_count: 322
+pedagogical_edge_count: 2244
+pageindex_ready_node_count: 1512
+pageindex_ready_edge_count: 3799
+pageindex_ready_chunk_count: 1859
+```
 
 ### 12.6 Fase 5: retrieval hibrido
 

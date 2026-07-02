@@ -20,6 +20,11 @@ import pandas as pd
 
 from text_formatting import normalize_math_text
 
+from indexing.pedagogical_graph import (
+    build_pedagogical_pageindex_layer,
+    save_pedagogical_graph_outputs,
+)
+
 
 def clean_text(value: Any) -> str:
     if value is None or (isinstance(value, float) and pd.isna(value)):
@@ -305,6 +310,38 @@ def build_pageindex_chunks(nodes: pd.DataFrame, max_words: int = 90, overlap: in
     return pd.DataFrame(rows)
 
 
+def build_pageindex_ready_graph(
+    problems: pd.DataFrame,
+    page_nodes: pd.DataFrame,
+    llm_nodes: pd.DataFrame | None = None,
+    llm_edges: pd.DataFrame | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Build PageIndex-ready nodes, edges, and chunks with pedagogy links.
+
+    The legacy exporter produced a document tree. This wrapper keeps that tree
+    and adds a connected pedagogical layer: topics, techniques, prerequisites,
+    risks, problem-specific approaches, and cross-problem practice links.
+    """
+
+    base_nodes = build_pageindex_ready_nodes(problems, page_nodes, llm_nodes=llm_nodes)
+    pedagogy_nodes, pedagogy_edges, signals = build_pedagogical_pageindex_layer(
+        problems,
+        page_nodes,
+        llm_nodes=llm_nodes,
+        root_node_id="pi::root::competitive_programming",
+    )
+    nodes = pd.concat([base_nodes, pedagogy_nodes], ignore_index=True)
+    nodes = nodes.drop_duplicates("node_id", keep="first").sort_values(["depth", "order", "node_id"]).reset_index(drop=True)
+
+    base_edges = build_pageindex_edges(nodes, llm_edges=llm_edges)
+    edges = pd.concat([base_edges, pedagogy_edges], ignore_index=True)
+    if not edges.empty:
+        edges = edges.drop_duplicates("edge_id", keep="first").reset_index(drop=True)
+
+    chunks = build_pageindex_chunks(nodes)
+    return nodes, edges, chunks, pedagogy_nodes, pedagogy_edges, signals
+
+
 def save_phase4_outputs(nodes: pd.DataFrame, edges: pd.DataFrame, chunks: pd.DataFrame, processed_dir: str | Path) -> dict[str, str]:
     processed = Path(processed_dir)
     processed.mkdir(parents=True, exist_ok=True)
@@ -326,4 +363,18 @@ def save_phase4_outputs(nodes: pd.DataFrame, edges: pd.DataFrame, chunks: pd.Dat
             paths[f"{stem}_parquet"] = str(parquet_path)
         except Exception:
             pass
+    return paths
+
+
+def save_phase4_graph_outputs(
+    nodes: pd.DataFrame,
+    edges: pd.DataFrame,
+    chunks: pd.DataFrame,
+    pedagogy_nodes: pd.DataFrame,
+    pedagogy_edges: pd.DataFrame,
+    signals: pd.DataFrame,
+    processed_dir: str | Path,
+) -> dict[str, str]:
+    paths = save_phase4_outputs(nodes, edges, chunks, processed_dir)
+    paths.update(save_pedagogical_graph_outputs(pedagogy_nodes, pedagogy_edges, signals, processed_dir))
     return paths

@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "generator_model": "gpt-4o-mini (persisted answers)",
+  "independent_judge_model": "gemini-2.5-flash",
+  "judge_provider": "Google",
+  "key_source": "GEMINI_API_KEY",
+  "evaluated_answers": 16,
+  "problems_per_mode": 8,
+  "temperature": 0,
+  "validation_type": "cross-model external automated audit grounded in retrieved official context",
+  "human_validation_status": "protocol prepared; ratings pending",
+  "mean_context_problem_precision": 1.0,
+  "outputs": {
+    "results_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\gemini_cross_judge_results.csv",
+    "summary_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\gemini_cross_judge_summary.csv",
+    "human_protocol_csv": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\human_validation_protocol.csv"
+  }
+}

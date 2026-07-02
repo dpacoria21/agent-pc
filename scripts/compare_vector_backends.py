@@ -37,7 +37,11 @@ PROCESSED = ROOT / "data" / "processed"
 OUT = ROOT / "comparison_assets"
 OUT.mkdir(exist_ok=True)
 
-NODES_PATH = PROCESSED / "cp_page_nodes_dataset.csv"
+NODES_PATH = (
+    PROCESSED / "cp_pageindex_ready_nodes.csv"
+    if (PROCESSED / "cp_pageindex_ready_nodes.csv").exists()
+    else PROCESSED / "cp_page_nodes_dataset.csv"
+)
 IDEAS_PATH = PROCESSED / "math_binary_classification_report.csv"
 TOP_K = 8
 
@@ -151,6 +155,7 @@ def main() -> None:
 
     summary = {
         "nodes_indexed": int(len(nodes)),
+        "nodes_path": str(NODES_PATH),
         "queries": BACKEND_QUERIES,
         "top_k": TOP_K,
         "embedding": embedding_meta,

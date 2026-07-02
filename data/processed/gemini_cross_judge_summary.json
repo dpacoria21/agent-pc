@@ -1,0 +1,80 @@
+[
+  {
+    "Modo":"Overall",
+    "Métrica":"Faithfulness",
+    "n":16,
+    "Umbral":0.8,
+    "Promedio juez original":0.8719,
+    "Promedio Gemini":0.7063,
+    "Desviación Gemini":0.2893,
+    "% Gemini >= umbral":56.25,
+    "MAE entre jueces":0.2469,
+    "Correlación de Pearson":-0.211,
+    "Acuerdo de clasificación":56.25
+  },
+  {
+    "Modo":"Overall",
+    "Métrica":"Answer Relevancy",
+    "n":16,
+    "Umbral":0.85,
+    "Promedio juez original":0.8938,
+    "Promedio Gemini":0.9406,
+    "Desviación Gemini":0.0852,
+    "% Gemini >= umbral":81.25,
+    "MAE entre jueces":0.0906,
+    "Correlación de Pearson":-0.2635,
+    "Acuerdo de clasificación":81.25
+  },
+  {
+    "Modo":"Page Nodes",
+    "Métrica":"Faithfulness",
+    "n":8,
+    "Umbral":0.8,
+    "Promedio juez original":0.8938,
+    "Promedio Gemini":0.6375,
+    "Desviación Gemini":0.356,
+    "% Gemini >= umbral":50.0,
+    "MAE entre jueces":0.3438,
+    "Correlación de Pearson":-0.3849,
+    "Acuerdo de clasificación":50.0
+  },
+  {
+    "Modo":"Page Nodes",
+    "Métrica":"Answer Relevancy",
+    "n":8,
+    "Umbral":0.85,
+    "Promedio juez original":0.8938,
+    "Promedio Gemini":0.9187,
+    "Desviación Gemini":0.0933,
+    "% Gemini >= umbral":75.0,
+    "MAE entre jueces":0.0875,
+    "Correlación de Pearson":-0.329,
+    "Acuerdo de clasificación":75.0
+  },
+  {
+    "Modo":"PageIndex Chunks",
+    "Métrica":"Faithfulness",
+    "n":8,
+    "Umbral":0.8,
+    "Promedio juez original":0.85,
+    "Promedio Gemini":0.775,
+    "Desviación Gemini":0.1768,
+    "% Gemini >= umbral":62.5,
+    "MAE entre jueces":0.15,
+    "Correlación de Pearson":0.0,
+    "Acuerdo de clasificación":62.5
+  },
+  {
+    "Modo":"PageIndex Chunks",
+    "Métrica":"Answer Relevancy",
+    "n":8,
+    "Umbral":0.85,
+    "Promedio juez original":0.8938,
+    "Promedio Gemini":0.9625,
+    "Desviación Gemini":0.0696,
+    "% Gemini >= umbral":87.5,
+    "MAE entre jueces":0.0937,
+    "Correlación de Pearson":-0.2037,
+    "Acuerdo de clasificación":87.5
+  }
+]

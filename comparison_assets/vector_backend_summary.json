@@ -1,9 +1,10 @@
 {
-  "nodes_indexed": 95,
+  "nodes_indexed": 1191,
+  "nodes_path": "C:\\Users\\Asus\\Desktop\\agent-pc\\data\\processed\\cp_pageindex_ready_nodes.csv",
   "queries": [
     {
       "query_id": "binary_quadratic_time",
-      "query": "binary search maximum x quadratic inequality contest time",
+      "query": "binary search maximum x quadratic inequality contest time monotonic predicate approach",
       "expected_problem_ids": [
         "codeforces_750_A"
       ],
@@ -11,31 +12,37 @@
         "STATEMENT",
         "EDITORIAL_ALGORITHM",
         "EDITORIAL_OBSERVATION",
-        "EDITORIAL_PROOF"
+        "EDITORIAL_PROOF",
+        "APPROACH",
+        "TECHNIQUE"
       ]
     },
     {
       "query_id": "integer_square_root",
-      "query": "integer square root perfect square sum",
+      "query": "integer square root perfect square formula precision overflow risk",
       "expected_problem_ids": [
         "codeforces_1915_C"
       ],
       "preferred_node_types": [
         "STATEMENT",
         "EDITORIAL_ALGORITHM",
-        "COMMON_MISTAKES"
+        "COMMON_MISTAKES",
+        "APPROACH",
+        "RISK"
       ]
     },
     {
       "query_id": "triangular_discriminant",
-      "query": "triangular numbers discriminant formula binary search",
+      "query": "triangular numbers discriminant formula binary search alternative approaches",
       "expected_problem_ids": [
         "codeforces_192_A"
       ],
       "preferred_node_types": [
         "EDITORIAL_ALGORITHM",
         "EDITORIAL_OBSERVATION",
-        "EDITORIAL_PROOF"
+        "EDITORIAL_PROOF",
+        "APPROACH",
+        "TECHNIQUE"
       ]
     },
     {
@@ -69,25 +76,25 @@
   "embedding": {
     "embedding_backend": "tfidf_svd_normalized",
     "tfidf_shape": [
-      95,
-      2957
+      1191,
+      17207
     ],
-    "embedding_dim": 94,
-    "n_components": 94,
+    "embedding_dim": 128,
+    "n_components": 128,
     "normalization": "l2"
   },
   "backend_status": {
     "local_matrix": {
       "status": "ok",
-      "elapsed_seconds": 0.00028149998979642987
+      "elapsed_seconds": 0.05138700013048947
     },
     "faiss": {
       "status": "ok",
-      "elapsed_seconds": 0.07543110000551678
+      "elapsed_seconds": 0.37125450000166893
     },
     "chromadb": {
       "status": "ok",
-      "elapsed_seconds": 2.5456082000164315
+      "elapsed_seconds": 8.648351000156254
     }
   },
   "why_results_match": "All backends receive the same L2-normalized TF-IDF+SVD vectors and use cosine-equivalent similarity. Local matrix and FAISS IndexFlatIP are exact under this setup; ChromaDB also returns the same top-k on this small dataset. Differences should mainly appear with larger datasets, approximate indexes, different embedding models, filtering, persistence settings, or backend-specific indexing parameters.",
@@ -99,25 +106,25 @@
   },
   "mean_metrics": {
     "chromadb": {
-      "precision_at_k": 0.225,
-      "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.3667,
-      "avg_score": 0.3887,
-      "latency_ms_per_query": 509.122
+      "precision_at_k": 0.05,
+      "recall_at_k": 0.04,
+      "reciprocal_rank": 0.1667,
+      "avg_score": 0.6619,
+      "latency_ms_per_query": 1729.67
     },
     "faiss": {
-      "precision_at_k": 0.225,
-      "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.3667,
-      "avg_score": 0.3887,
-      "latency_ms_per_query": 15.086
+      "precision_at_k": 0.05,
+      "recall_at_k": 0.04,
+      "reciprocal_rank": 0.1667,
+      "avg_score": 0.6619,
+      "latency_ms_per_query": 74.251
     },
     "local_matrix": {
-      "precision_at_k": 0.225,
-      "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.3667,
-      "avg_score": 0.3887,
-      "latency_ms_per_query": 0.056
+      "precision_at_k": 0.05,
+      "recall_at_k": 0.04,
+      "reciprocal_rank": 0.1667,
+      "avg_score": 0.6619,
+      "latency_ms_per_query": 10.277
     }
   }
 }

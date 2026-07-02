@@ -27,21 +27,21 @@ RANDOM_SEED = 42
 BACKEND_QUERIES = [
     {
         "query_id": "binary_quadratic_time",
-        "query": "binary search maximum x quadratic inequality contest time",
+        "query": "binary search maximum x quadratic inequality contest time monotonic predicate approach",
         "expected_problem_ids": ["codeforces_750_A"],
-        "preferred_node_types": ["STATEMENT", "EDITORIAL_ALGORITHM", "EDITORIAL_OBSERVATION", "EDITORIAL_PROOF"],
+        "preferred_node_types": ["STATEMENT", "EDITORIAL_ALGORITHM", "EDITORIAL_OBSERVATION", "EDITORIAL_PROOF", "APPROACH", "TECHNIQUE"],
     },
     {
         "query_id": "integer_square_root",
-        "query": "integer square root perfect square sum",
+        "query": "integer square root perfect square formula precision overflow risk",
         "expected_problem_ids": ["codeforces_1915_C"],
-        "preferred_node_types": ["STATEMENT", "EDITORIAL_ALGORITHM", "COMMON_MISTAKES"],
+        "preferred_node_types": ["STATEMENT", "EDITORIAL_ALGORITHM", "COMMON_MISTAKES", "APPROACH", "RISK"],
     },
     {
         "query_id": "triangular_discriminant",
-        "query": "triangular numbers discriminant formula binary search",
+        "query": "triangular numbers discriminant formula binary search alternative approaches",
         "expected_problem_ids": ["codeforces_192_A"],
-        "preferred_node_types": ["EDITORIAL_ALGORITHM", "EDITORIAL_OBSERVATION", "EDITORIAL_PROOF"],
+        "preferred_node_types": ["EDITORIAL_ALGORITHM", "EDITORIAL_OBSERVATION", "EDITORIAL_PROOF", "APPROACH", "TECHNIQUE"],
     },
     {
         "query_id": "dp_transition",
@@ -79,6 +79,16 @@ def parse_listish(value: Any) -> list[str]:
 
 def load_nodes(nodes_path: Path) -> pd.DataFrame:
     nodes = pd.read_csv(nodes_path)
+    if "node_text" not in nodes.columns and "text" in nodes.columns:
+        nodes = nodes.rename(columns={"text": "node_text"})
+    if "node_title" not in nodes.columns and "title" in nodes.columns:
+        nodes = nodes.rename(columns={"title": "node_title"})
+    if "global_problem_id" not in nodes.columns:
+        nodes["global_problem_id"] = ""
+    if "normalized_tags" not in nodes.columns:
+        nodes["normalized_tags"] = "[]"
+    if "topic_group" not in nodes.columns:
+        nodes["topic_group"] = "[]"
     nodes["node_text"] = nodes["node_text"].fillna("").astype(str)
     nodes["node_title"] = nodes["node_title"].fillna("").astype(str)
     nodes["normalized_tags_list"] = nodes["normalized_tags"].apply(parse_listish)

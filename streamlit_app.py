@@ -273,7 +273,12 @@ def load_problems() -> pd.DataFrame:
 
 @st.cache_data(show_spinner=False)
 def load_units(index_source: str) -> pd.DataFrame:
-    filename = "cp_pageindex_ready_chunks.csv" if index_source == "pageindex_chunks" else "cp_page_nodes_dataset.csv"
+    filenames = {
+        "page_nodes": "cp_page_nodes_dataset.csv",
+        "pageindex_nodes": "cp_pageindex_ready_nodes.csv",
+        "pageindex_chunks": "cp_pageindex_ready_chunks.csv",
+    }
+    filename = filenames.get(index_source, "cp_page_nodes_dataset.csv")
     path = PROCESSED / filename
     if not path.exists():
         return pd.DataFrame()
@@ -400,8 +405,12 @@ def main() -> None:
         model = st.text_input("Modelo OpenAI", value=DEFAULT_OPENAI_MODEL)
         index_source = st.radio(
             "Unidad de recuperacion",
-            options=["page_nodes", "pageindex_chunks"],
-            format_func=lambda x: "Page Nodes" if x == "page_nodes" else "PageIndex-ready chunks",
+            options=["pageindex_nodes", "pageindex_chunks", "page_nodes"],
+            format_func=lambda x: {
+                "page_nodes": "Page Nodes planos",
+                "pageindex_nodes": "PageIndex-ready nodes + grafo pedagogico",
+                "pageindex_chunks": "PageIndex-ready chunks",
+            }[x],
         )
         top_k = st.slider("Top-k contextos", min_value=3, max_value=12, value=DEFAULT_TOP_K, step=1)
         scoped = st.checkbox("Restringir busqueda al problema seleccionado", value=True)

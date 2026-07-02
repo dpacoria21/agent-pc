@@ -1,0 +1,7 @@
+Modo,Métrica,n,Umbral,Promedio juez original,Promedio Gemini,Desviación Gemini,% Gemini >= umbral,MAE entre jueces,Correlación de Pearson,Acuerdo de clasificación
+Overall,Faithfulness,16,0.8,0.8719,0.7063,0.2893,56.25,0.2469,-0.211,56.25
+Overall,Answer Relevancy,16,0.85,0.8938,0.9406,0.0852,81.25,0.0906,-0.2635,81.25
+Page Nodes,Faithfulness,8,0.8,0.8938,0.6375,0.356,50.0,0.3438,-0.3849,50.0
+Page Nodes,Answer Relevancy,8,0.85,0.8938,0.9187,0.0933,75.0,0.0875,-0.329,75.0
+PageIndex Chunks,Faithfulness,8,0.8,0.85,0.775,0.1768,62.5,0.15,-0.0,62.5
+PageIndex Chunks,Answer Relevancy,8,0.85,0.8938,0.9625,0.0696,87.5,0.0937,-0.2037,87.5

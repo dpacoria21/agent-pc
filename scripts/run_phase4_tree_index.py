@@ -15,10 +15,8 @@ if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from indexing.pageindex_adapter import (
-    build_pageindex_chunks,
-    build_pageindex_edges,
-    build_pageindex_ready_nodes,
-    save_phase4_outputs,
+    build_pageindex_ready_graph,
+    save_phase4_graph_outputs,
 )
 
 
@@ -33,10 +31,13 @@ def main() -> None:
     llm_nodes = pd.read_csv(llm_nodes_path) if llm_nodes_path.exists() else pd.DataFrame()
     llm_edges = pd.read_csv(llm_edges_path) if llm_edges_path.exists() else pd.DataFrame()
 
-    nodes = build_pageindex_ready_nodes(problems, page_nodes, llm_nodes=llm_nodes)
-    edges = build_pageindex_edges(nodes, llm_edges=llm_edges)
-    chunks = build_pageindex_chunks(nodes)
-    paths = save_phase4_outputs(nodes, edges, chunks, PROCESSED)
+    nodes, edges, chunks, pedagogy_nodes, pedagogy_edges, signals = build_pageindex_ready_graph(
+        problems,
+        page_nodes,
+        llm_nodes=llm_nodes,
+        llm_edges=llm_edges,
+    )
+    paths = save_phase4_graph_outputs(nodes, edges, chunks, pedagogy_nodes, pedagogy_edges, signals, PROCESSED)
 
     report = {
         "phase": "phase4_tree_index",
@@ -44,6 +45,9 @@ def main() -> None:
         "problem_count": int(len(problems)),
         "page_node_count": int(len(page_nodes)),
         "llm_node_count": int(len(llm_nodes)),
+        "pedagogical_node_count": int(len(pedagogy_nodes)),
+        "pedagogical_edge_count": int(len(pedagogy_edges)),
+        "problem_signal_count": int(len(signals)),
         "pageindex_ready_node_count": int(len(nodes)),
         "pageindex_ready_edge_count": int(len(edges)),
         "pageindex_ready_chunk_count": int(len(chunks)),

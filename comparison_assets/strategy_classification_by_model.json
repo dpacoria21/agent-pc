@@ -98,11 +98,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":4,
-    "formula_score":12,
-    "top_problem_ids":"[\"codeforces_750_A\", \"codeforces_750_A\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_ALGORITHM\", \"EDITORIAL_FULL\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.678393, 0.541463, 0.336306]"
+    "binary_score":29,
+    "formula_score":0,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2044_E\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.887655, 0.848588, 0.846897]"
   },
   {
     "model":"local_matrix",
@@ -113,11 +113,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":1,
-    "formula_score":9,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.827428, 0.561879, 0.441701]"
+    "binary_score":27,
+    "formula_score":2,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2094_H\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.677051, 0.641159, 0.635817]"
   },
   {
     "model":"local_matrix",
@@ -128,11 +128,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":3,
-    "formula_score":6,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_192_A\", \"codeforces_192_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"OUTPUT\"]",
-    "top_scores":"[0.860413, 0.635832, 0.467406]"
+    "binary_score":28,
+    "formula_score":0,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2009_G1\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.846346, 0.816413, 0.798537]"
   },
   {
     "model":"local_matrix",
@@ -144,10 +144,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":18,
-    "top_problem_ids":"[\"codeforces_2219_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_FULL\", \"COMMON_MISTAKES\"]",
-    "top_scores":"[0.562974, 0.371254, 0.298519]"
+    "formula_score":16,
+    "top_problem_ids":"[\"codeforces_2094_H\", \"codeforces_2185_A\", \"codeforces_2009_D\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.780884, 0.76434, 0.726622]"
   },
   {
     "model":"local_matrix",
@@ -159,10 +159,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":11,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_ALGORITHM\", \"NOTES\"]",
-    "top_scores":"[0.829468, 0.418174, 0.386759]"
+    "formula_score":16,
+    "top_problem_ids":"[\"codeforces_2185_A\", \"codeforces_2185_A\", \"codeforces_2185_A\"]",
+    "top_node_types":"[\"PROBLEM\", \"NOTES\", \"EDITORIAL_FULL\"]",
+    "top_scores":"[0.766133, 0.740706, 0.739253]"
   },
   {
     "model":"local_matrix",
@@ -173,11 +173,11 @@
     "expected_strategy":"MATH_FORMULA",
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
-    "binary_score":1,
-    "formula_score":8,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_192_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"COMMON_MISTAKES\"]",
-    "top_scores":"[0.688852, 0.617239, 0.209414]"
+    "binary_score":0,
+    "formula_score":9,
+    "top_problem_ids":"[\"codeforces_2167_A\", \"codeforces_2167_A\", \"codeforces_2167_A\"]",
+    "top_node_types":"[\"PROBLEM\", \"EDITORIAL_FULL\", \"STATEMENT\"]",
+    "top_scores":"[0.724153, 0.716852, 0.69658]"
   },
   {
     "model":"faiss",
@@ -188,11 +188,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":4,
-    "formula_score":12,
-    "top_problem_ids":"[\"codeforces_750_A\", \"codeforces_750_A\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_ALGORITHM\", \"EDITORIAL_FULL\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.678393, 0.541463, 0.336306]"
+    "binary_score":29,
+    "formula_score":0,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2044_E\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.887655, 0.848588, 0.846897]"
   },
   {
     "model":"faiss",
@@ -203,11 +203,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":1,
-    "formula_score":9,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.827428, 0.561879, 0.441701]"
+    "binary_score":27,
+    "formula_score":2,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2094_H\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.677051, 0.641159, 0.635817]"
   },
   {
     "model":"faiss",
@@ -218,11 +218,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":3,
-    "formula_score":6,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_192_A\", \"codeforces_192_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"OUTPUT\"]",
-    "top_scores":"[0.860413, 0.635832, 0.467406]"
+    "binary_score":28,
+    "formula_score":0,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2009_G1\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.846346, 0.816413, 0.798537]"
   },
   {
     "model":"faiss",
@@ -234,10 +234,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":18,
-    "top_problem_ids":"[\"codeforces_2219_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_FULL\", \"COMMON_MISTAKES\"]",
-    "top_scores":"[0.562974, 0.371254, 0.298519]"
+    "formula_score":16,
+    "top_problem_ids":"[\"codeforces_2094_H\", \"codeforces_2185_A\", \"codeforces_2009_D\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.780884, 0.76434, 0.726622]"
   },
   {
     "model":"faiss",
@@ -249,10 +249,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":11,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_ALGORITHM\", \"NOTES\"]",
-    "top_scores":"[0.829468, 0.418174, 0.386759]"
+    "formula_score":16,
+    "top_problem_ids":"[\"codeforces_2185_A\", \"codeforces_2185_A\", \"codeforces_2185_A\"]",
+    "top_node_types":"[\"PROBLEM\", \"NOTES\", \"EDITORIAL_FULL\"]",
+    "top_scores":"[0.766133, 0.740706, 0.739253]"
   },
   {
     "model":"faiss",
@@ -263,11 +263,11 @@
     "expected_strategy":"MATH_FORMULA",
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
-    "binary_score":1,
-    "formula_score":8,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_192_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"COMMON_MISTAKES\"]",
-    "top_scores":"[0.688852, 0.617239, 0.209414]"
+    "binary_score":0,
+    "formula_score":9,
+    "top_problem_ids":"[\"codeforces_2167_A\", \"codeforces_2167_A\", \"codeforces_2167_A\"]",
+    "top_node_types":"[\"PROBLEM\", \"EDITORIAL_FULL\", \"STATEMENT\"]",
+    "top_scores":"[0.724153, 0.716852, 0.69658]"
   },
   {
     "model":"chromadb",
@@ -278,11 +278,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":4,
-    "formula_score":12,
-    "top_problem_ids":"[\"codeforces_750_A\", \"codeforces_750_A\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_ALGORITHM\", \"EDITORIAL_FULL\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.678393, 0.541463, 0.336306]"
+    "binary_score":29,
+    "formula_score":0,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2044_E\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.887655, 0.848588, 0.846897]"
   },
   {
     "model":"chromadb",
@@ -293,11 +293,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":1,
-    "formula_score":9,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_750_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"EDITORIAL_FULL\"]",
-    "top_scores":"[0.827429, 0.561879, 0.441701]"
+    "binary_score":27,
+    "formula_score":2,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2094_H\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.677051, 0.641159, 0.635817]"
   },
   {
     "model":"chromadb",
@@ -308,11 +308,11 @@
     "expected_strategy":"BINARY_SEARCH",
     "predicted_strategy":"BINARY_SEARCH",
     "is_correct":true,
-    "binary_score":3,
-    "formula_score":6,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_192_A\", \"codeforces_192_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"COMMON_MISTAKES\", \"OUTPUT\"]",
-    "top_scores":"[0.860413, 0.635832, 0.467406]"
+    "binary_score":28,
+    "formula_score":0,
+    "top_problem_ids":"[\"codeforces_1985_F\", \"codeforces_2148_E\", \"codeforces_2009_G1\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.846346, 0.816413, 0.798537]"
   },
   {
     "model":"chromadb",
@@ -324,10 +324,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":18,
-    "top_problem_ids":"[\"codeforces_2219_A\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_FULL\", \"COMMON_MISTAKES\"]",
-    "top_scores":"[0.562974, 0.371254, 0.298519]"
+    "formula_score":16,
+    "top_problem_ids":"[\"codeforces_2094_H\", \"codeforces_2185_A\", \"codeforces_2009_D\"]",
+    "top_node_types":"[\"APPROACH\", \"APPROACH\", \"APPROACH\"]",
+    "top_scores":"[0.780884, 0.76434, 0.726622]"
   },
   {
     "model":"chromadb",
@@ -339,10 +339,10 @@
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
     "binary_score":0,
-    "formula_score":11,
-    "top_problem_ids":"[\"codeforces_1915_C\", \"codeforces_1915_C\", \"codeforces_1915_C\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"EDITORIAL_ALGORITHM\", \"NOTES\"]",
-    "top_scores":"[0.829468, 0.418174, 0.386759]"
+    "formula_score":16,
+    "top_problem_ids":"[\"codeforces_2185_A\", \"codeforces_2185_A\", \"codeforces_2185_A\"]",
+    "top_node_types":"[\"PROBLEM\", \"NOTES\", \"EDITORIAL_FULL\"]",
+    "top_scores":"[0.766133, 0.740706, 0.739253]"
   },
   {
     "model":"chromadb",
@@ -353,10 +353,10 @@
     "expected_strategy":"MATH_FORMULA",
     "predicted_strategy":"MATH_FORMULA",
     "is_correct":true,
-    "binary_score":1,
-    "formula_score":8,
-    "top_problem_ids":"[\"codeforces_192_A\", \"codeforces_1915_C\", \"codeforces_192_A\"]",
-    "top_node_types":"[\"EDITORIAL_FULL\", \"OUTPUT\", \"COMMON_MISTAKES\"]",
-    "top_scores":"[0.688852, 0.61724, 0.209414]"
+    "binary_score":0,
+    "formula_score":9,
+    "top_problem_ids":"[\"codeforces_2167_A\", \"codeforces_2167_A\", \"codeforces_2167_A\"]",
+    "top_node_types":"[\"PROBLEM\", \"EDITORIAL_FULL\", \"STATEMENT\"]",
+    "top_scores":"[0.724153, 0.716852, 0.69658]"
   }
 ]

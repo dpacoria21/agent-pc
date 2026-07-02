@@ -4,12 +4,12 @@
     "query":"I understand the grid equation but I cannot prove why the construction condition is sufficient",
     "stage":"PROOF",
     "approaches":[
-      "FORMULA",
+      "MATH_FORMULA",
       "CONSTRUCTIVE"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.3602,
-    "top_result":"content::codeforces_2219_A_09_EDITORIAL_PROOF"
+    "elapsed_seconds":3.2351,
+    "top_result":"problem::codeforces_1985_D"
   },
   {
     "query_id":"unique_values_formula",
@@ -17,12 +17,12 @@
     "stage":"ALGORITHM",
     "approaches":[
       "BINARY_SEARCH",
-      "FORMULA",
+      "MATH_FORMULA",
       "MATH"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.3369,
-    "top_result":"problem::codeforces_2219_B1"
+    "elapsed_seconds":3.1009,
+    "top_result":"topic::codeforces::techniques"
   },
   {
     "query_id":"tree_mex_implementation",
@@ -32,8 +32,8 @@
       "GRAPH"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.3417,
-    "top_result":"problem::codeforces_2219_D"
+    "elapsed_seconds":2.8432,
+    "top_result":"problem::codeforces_2009_G3"
   },
   {
     "query_id":"weird_chessboard_proof",
@@ -44,7 +44,7 @@
       "CONSTRUCTIVE"
     ],
     "enough_information":true,
-    "elapsed_seconds":0.3075,
-    "top_result":"problem::codeforces_2219_E"
+    "elapsed_seconds":3.0632,
+    "top_result":"approach::codeforces_2148_F::constructive"
   }
 ]

@@ -6,22 +6,22 @@
   "strategy_classification_rows": 24,
   "mean_backend_metrics": {
     "chromadb": {
-      "precision_at_k": 0.225,
-      "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.3667,
-      "latency_ms_per_query": 509.122
+      "precision_at_k": 0.05,
+      "recall_at_k": 0.04,
+      "reciprocal_rank": 0.1667,
+      "latency_ms_per_query": 1729.67
     },
     "faiss": {
-      "precision_at_k": 0.225,
-      "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.3667,
-      "latency_ms_per_query": 15.086
+      "precision_at_k": 0.05,
+      "recall_at_k": 0.04,
+      "reciprocal_rank": 0.1667,
+      "latency_ms_per_query": 74.251
     },
     "local_matrix": {
-      "precision_at_k": 0.225,
-      "recall_at_k": 0.4583,
-      "reciprocal_rank": 0.3667,
-      "latency_ms_per_query": 0.056
+      "precision_at_k": 0.05,
+      "recall_at_k": 0.04,
+      "reciprocal_rank": 0.1667,
+      "latency_ms_per_query": 10.277
     }
   },
   "strategy_accuracy": {

@@ -1,5 +1,5 @@
 query_id,query,stage,approaches,enough_information,elapsed_seconds,top_result
-grid_l_proof,I understand the grid equation but I cannot prove why the construction condition is sufficient,PROOF,"[""FORMULA"", ""CONSTRUCTIVE""]",True,0.3602,content::codeforces_2219_A_09_EDITORIAL_PROOF
-unique_values_formula,I need a formula or binary search style strategy for the Unique Values interactive math problem,ALGORITHM,"[""BINARY_SEARCH"", ""FORMULA"", ""MATH""]",True,0.3369,problem::codeforces_2219_B1
-tree_mex_implementation,"I get wrong answer on tree implementation, maybe edge cases or data structure update is wrong",EDGE_CASES,"[""GRAPH""]",True,0.3417,problem::codeforces_2219_D
-weird_chessboard_proof,I need the proof idea for a constructive math pattern on a chessboard,PROOF,"[""MATH"", ""CONSTRUCTIVE""]",True,0.3075,problem::codeforces_2219_E
+grid_l_proof,I understand the grid equation but I cannot prove why the construction condition is sufficient,PROOF,"[""MATH_FORMULA"", ""CONSTRUCTIVE""]",True,3.2351,problem::codeforces_1985_D
+unique_values_formula,I need a formula or binary search style strategy for the Unique Values interactive math problem,ALGORITHM,"[""BINARY_SEARCH"", ""MATH_FORMULA"", ""MATH""]",True,3.1009,topic::codeforces::techniques
+tree_mex_implementation,"I get wrong answer on tree implementation, maybe edge cases or data structure update is wrong",EDGE_CASES,"[""GRAPH""]",True,2.8432,problem::codeforces_2009_G3
+weird_chessboard_proof,I need the proof idea for a constructive math pattern on a chessboard,PROOF,"[""MATH"", ""CONSTRUCTIVE""]",True,3.0632,approach::codeforces_2148_F::constructive

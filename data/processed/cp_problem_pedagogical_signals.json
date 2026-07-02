@@ -1,0 +1,802 @@
+[
+  {
+    "global_problem_id":"codeforces_2218_G",
+    "title":"The 67th Iteration of \"Counting is Fun\"",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"techniques\"]",
+    "techniques":"[\"constructive\", \"number_theory\", \"prefix_sums\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"divisibility\", \"modular_arithmetic\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"indexing_bug\", \"off_by_one\", \"tle\"]",
+    "difficulty":1800.0
+  },
+  {
+    "global_problem_id":"codeforces_2218_F",
+    "title":"The 67th Tree Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"graphs\", \"dynamic_programming\"]",
+    "techniques":"[\"constructive\", \"graphs\", \"dynamic_programming\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"state_design\", \"transition_reasoning\", \"base_cases\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"tle\"]",
+    "difficulty":1500.0
+  },
+  {
+    "global_problem_id":"codeforces_2218_E",
+    "title":"The 67th XOR Problem",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\", \"implementation_constructive\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"brute_force\", \"data_structures\", \"greedy\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"constraint_reading\", \"complexity_estimation\", \"operation_invariants\", \"complexity_tradeoffs\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"tle\", \"bad_complexity\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\"]",
+    "difficulty":1200.0
+  },
+  {
+    "global_problem_id":"codeforces_2218_D",
+    "title":"The 67th OEIS Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"math\"]",
+    "techniques":"[\"greedy\", \"number_theory\", \"constructive\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"divisibility\", \"modular_arithmetic\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"invalid_construction\", \"proof_gap\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_2218_C",
+    "title":"The 67th Permutation Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"math\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"constructive\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2218_B",
+    "title":"The 67th 6-7 Integer Problem",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"math\"]",
+    "techniques":"[\"greedy\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2218_A",
+    "title":"The 67th Integer Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"brute_force\", \"constructive\", \"greedy\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_H",
+    "title":"BattleCows 2",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"implementation_constructive\", \"data_structures\", \"dynamic_programming\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"brute_force\", \"data_structures\", \"dynamic_programming\", \"greedy\", \"prefix_sums\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"constraint_reading\", \"complexity_estimation\", \"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"range_aggregation\", \"index_boundaries\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"tle\", \"bad_complexity\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"indexing_bug\", \"tie_handling\", \"wrong_ordering\", \"precision_error\"]",
+    "difficulty":2500.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_G",
+    "title":"Mixing MEXes",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"data_structures\", \"constructive\", \"greedy\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"tle\"]",
+    "difficulty":1800.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_F",
+    "title":"BattleCows",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"techniques\", \"implementation_constructive\", \"greedy\"]",
+    "techniques":"[\"data_structures\", \"constructive\", \"greedy\", \"prefix_sums\", \"sorting\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"range_aggregation\", \"index_boundaries\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"indexing_bug\", \"off_by_one\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_E",
+    "title":"The Robotic Rush",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"greedy\", \"implementation_constructive\"]",
+    "techniques":"[\"binary_search\", \"greedy\", \"constructive\", \"two_pointers\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"monotonic_window\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"pointer_invariant_bug\", \"tle\", \"precision_error\"]",
+    "difficulty":1500.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_D",
+    "title":"OutOfMemoryError",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"implementation_constructive\", \"math\", \"techniques\", \"graphs\"]",
+    "techniques":"[\"data_structures\", \"constructive\", \"two_pointers\", \"graphs\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"monotonic_window\", \"invariant_reasoning\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"pointer_invariant_bug\", \"off_by_one\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_C",
+    "title":"Shifted MEX",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"techniques\"]",
+    "techniques":"[\"constructive\", \"sorting\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"tie_handling\", \"wrong_ordering\", \"tle\", \"bad_complexity\"]",
+    "difficulty":900.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_B",
+    "title":"Prefix Max",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"prefix_sums\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"indexing_bug\", \"off_by_one\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2185_A",
+    "title":"Perfect Root",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\"]",
+    "techniques":"[\"direct_formula\"]",
+    "prerequisites":"[\"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\"]",
+    "risks":"[\"precision_error\", \"overflow\", \"invalid_integer_root\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_G",
+    "title":"Mukhammadali and the Smooth Array",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"dynamic_programming\"]",
+    "techniques":"[\"data_structures\", \"dynamic_programming\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"tle\"]",
+    "difficulty":1600.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_F",
+    "title":"Tree, TREE!!!",
+    "primary_topic":"graphs",
+    "topics":"[\"graphs\", \"dynamic_programming\", \"math\", \"greedy\", \"techniques\"]",
+    "techniques":"[\"dynamic_programming\", \"graphs\", \"direct_formula\", \"greedy\", \"sorting\"]",
+    "prerequisites":"[\"state_design\", \"transition_reasoning\", \"base_cases\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"precision_error\", \"overflow\", \"invalid_integer_root\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1600.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_E",
+    "title":"khba Loves to Sleep!",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\", \"math\", \"greedy\", \"implementation_constructive\"]",
+    "techniques":"[\"binary_search\", \"data_structures\", \"greedy\", \"constructive\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"operation_invariants\", \"complexity_tradeoffs\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1600.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_D",
+    "title":"Yet Another Array Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"brute_force\", \"constructive\", \"number_theory\", \"greedy\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"divisibility\", \"modular_arithmetic\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"wrong_proof\", \"hidden_counterexample\", \"off_by_one\"]",
+    "difficulty":1000.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_C",
+    "title":"Isamatdin and His Magic Wand!",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"constructive\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_B",
+    "title":"Your Name",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"strings\", \"implementation_constructive\"]",
+    "techniques":"[\"brute_force\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\"]",
+    "risks":"[\"tle\", \"bad_complexity\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2167_A",
+    "title":"Square?",
+    "primary_topic":"math",
+    "topics":"[\"math\", \"techniques\", \"implementation_constructive\"]",
+    "techniques":"[\"brute_force\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\"]",
+    "risks":"[\"tle\", \"bad_complexity\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_G",
+    "title":"Farmer John's Last Wish",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\", \"math\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"data_structures\", \"number_theory\", \"direct_formula\", \"greedy\", \"prefix_sums\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"operation_invariants\", \"complexity_tradeoffs\", \"divisibility\", \"modular_arithmetic\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"precision_error\", \"invalid_integer_root\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"indexing_bug\", \"tle\"]",
+    "difficulty":1900.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_F",
+    "title":"Gravity Falls",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"implementation_constructive\", \"techniques\", \"math\"]",
+    "techniques":"[\"greedy\", \"constructive\", \"direct_formula\", \"prefix_sums\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"range_aggregation\", \"index_boundaries\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"precision_error\", \"overflow\", \"invalid_integer_root\", \"indexing_bug\", \"off_by_one\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1800.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_E",
+    "title":"Split",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\", \"math\", \"dynamic_programming\"]",
+    "techniques":"[\"binary_search\", \"data_structures\", \"two_pointers\", \"direct_formula\", \"dynamic_programming\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"operation_invariants\", \"complexity_tradeoffs\", \"monotonic_window\", \"invariant_reasoning\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"pointer_invariant_bug\", \"precision_error\", \"overflow\", \"invalid_integer_root\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"tie_handling\", \"wrong_ordering\", \"tle\", \"edge_cases\"]",
+    "difficulty":1200.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_D",
+    "title":"Destruction of the Dandelion Fields",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"techniques\", \"dynamic_programming\"]",
+    "techniques":"[\"greedy\", \"dynamic_programming\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1000.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_C",
+    "title":"Pacer",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"math\"]",
+    "techniques":"[\"greedy\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":900.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_B",
+    "title":"Lasers",
+    "primary_topic":"math",
+    "topics":"[\"math\", \"greedy\", \"graphs\"]",
+    "techniques":"[\"greedy\", \"graphs\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2148_A",
+    "title":"Sublime Sequence",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"data_structures\", \"math\"]",
+    "techniques":"[\"brute_force\", \"data_structures\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"operation_invariants\", \"complexity_tradeoffs\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_H",
+    "title":"La Vaca Saturno Saturnita",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"implementation_constructive\", \"math\"]",
+    "techniques":"[\"binary_search\", \"brute_force\", \"number_theory\", \"direct_formula\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"constraint_reading\", \"complexity_estimation\", \"divisibility\", \"modular_arithmetic\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"tle\", \"bad_complexity\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"precision_error\", \"invalid_integer_root\", \"tie_handling\", \"wrong_ordering\"]",
+    "difficulty":1900.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_G",
+    "title":"Chimpanzini Bananini",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"implementation_constructive\", \"math\", \"dynamic_programming\", \"techniques\"]",
+    "techniques":"[\"data_structures\", \"constructive\", \"dynamic_programming\", \"sorting\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_F",
+    "title":"Trulimero Trulicina",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tie_handling\", \"wrong_ordering\", \"tle\", \"off_by_one\"]",
+    "difficulty":1600.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_E",
+    "title":"Boneca Ambalabu",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"greedy\"]",
+    "techniques":"[\"data_structures\", \"greedy\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":1200.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_D",
+    "title":"Tung Tung Sahur",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"strings\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"two_pointers\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"monotonic_window\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"pointer_invariant_bug\", \"off_by_one\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_C",
+    "title":"Brr Brrr Patapim",
+    "primary_topic":"math",
+    "topics":"[\"math\", \"greedy\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":900.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_B",
+    "title":"Bobritto Bandito",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\"]",
+    "techniques":"[\"brute_force\", \"greedy\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2094_A",
+    "title":"Trippi Troppi",
+    "primary_topic":"strings",
+    "topics":"[\"strings\", \"graphs\"]",
+    "techniques":"[\"graphs\"]",
+    "prerequisites":"[\"graph_modeling\", \"dfs_bfs\", \"tree_invariants\"]",
+    "risks":"[\"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"tle\", \"edge_cases\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_H",
+    "title":"Bro Thinks He's Him",
+    "primary_topic":"math",
+    "topics":"[\"math\", \"data_structures\", \"techniques\", \"dynamic_programming\"]",
+    "techniques":"[\"data_structures\", \"dynamic_programming\", \"number_theory\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"divisibility\", \"modular_arithmetic\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"tle\", \"edge_cases\"]",
+    "difficulty":2200.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_G",
+    "title":"Skibidus and Capping",
+    "primary_topic":"math",
+    "topics":"[\"math\"]",
+    "techniques":"[\"number_theory\"]",
+    "prerequisites":"[\"divisibility\", \"modular_arithmetic\"]",
+    "risks":"[\"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_F",
+    "title":"Skibidus and Slay",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"graphs\", \"greedy\"]",
+    "techniques":"[\"data_structures\", \"graphs\", \"greedy\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_E",
+    "title":"Skibidus and Rizz",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"strings\"]",
+    "techniques":"[\"greedy\", \"constructive\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"tle\"]",
+    "difficulty":1600.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_D",
+    "title":"Skibidus and Sigma",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1200.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_C2",
+    "title":"Skibidus and Fanum Tax (hard version)",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"greedy\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1300.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_C1",
+    "title":"Skibidus and Fanum Tax (easy version)",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"dynamic_programming\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"dynamic_programming\", \"greedy\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_B",
+    "title":"Skibidus and Ohio",
+    "primary_topic":"strings",
+    "topics":"[\"strings\", \"greedy\"]",
+    "techniques":"[\"greedy\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2065_A",
+    "title":"Skibidus and Amog'u",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"strings\"]",
+    "techniques":"[\"brute_force\", \"greedy\", \"constructive\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_H",
+    "title":"Hard Demon Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"data_structures\", \"dynamic_programming\", \"math\", \"techniques\"]",
+    "techniques":"[\"data_structures\", \"dynamic_programming\", \"constructive\", \"prefix_sums\", \"sorting\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"range_aggregation\", \"index_boundaries\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"indexing_bug\", \"off_by_one\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":2100.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_G2",
+    "title":"Medium Demon Problem (hard version)",
+    "primary_topic":"graphs",
+    "topics":"[\"graphs\", \"dynamic_programming\", \"data_structures\", \"implementation_constructive\", \"greedy\", \"techniques\"]",
+    "techniques":"[\"dynamic_programming\", \"graphs\", \"constructive\", \"data_structures\", \"greedy\", \"sorting\"]",
+    "prerequisites":"[\"state_design\", \"transition_reasoning\", \"base_cases\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"operation_invariants\", \"complexity_tradeoffs\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_proof\", \"hidden_counterexample\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1900.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_G1",
+    "title":"Medium Demon Problem (easy version)",
+    "primary_topic":"graphs",
+    "topics":"[\"graphs\", \"graph_matchings\", \"implementation_constructive\", \"greedy\"]",
+    "techniques":"[\"graphs\", \"constructive\", \"greedy\"]",
+    "prerequisites":"[\"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_F",
+    "title":"Easy Demon Problem",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"implementation_constructive\", \"data_structures\", \"math\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"brute_force\", \"data_structures\", \"number_theory\", \"direct_formula\", \"greedy\", \"constructive\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"constraint_reading\", \"complexity_estimation\", \"operation_invariants\", \"complexity_tradeoffs\", \"divisibility\", \"modular_arithmetic\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"tle\", \"bad_complexity\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"precision_error\", \"invalid_integer_root\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\"]",
+    "difficulty":1900.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_E",
+    "title":"Insane Problem",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"greedy\", \"implementation_constructive\", \"math\"]",
+    "techniques":"[\"binary_search\", \"greedy\", \"constructive\", \"number_theory\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"divisibility\", \"modular_arithmetic\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"tle\", \"bad_complexity\"]",
+    "difficulty":1300.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_D",
+    "title":"Harder Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"math\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"constructive\", \"prefix_sums\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"indexing_bug\", \"off_by_one\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_C",
+    "title":"Hard Problem",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"math\"]",
+    "techniques":"[\"greedy\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_B",
+    "title":"Normal Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"strings\", \"techniques\"]",
+    "techniques":"[\"constructive\", \"sorting\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2044_A",
+    "title":"Easy Problem",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\"]",
+    "techniques":"[\"brute_force\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"off_by_one\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_G3",
+    "title":"Yunli's Subarray Queries (extreme version)",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"dynamic_programming\", \"implementation_constructive\", \"techniques\", \"graphs\"]",
+    "techniques":"[\"data_structures\", \"dynamic_programming\", \"constructive\", \"binary_search\", \"graphs\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"tle\", \"precision_error\"]",
+    "difficulty":2700.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_G2",
+    "title":"Yunli's Subarray Queries (hard version)",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\", \"dynamic_programming\", \"graphs\"]",
+    "techniques":"[\"binary_search\", \"data_structures\", \"dynamic_programming\", \"graphs\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":2200.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_G1",
+    "title":"Yunli's Subarray Queries (easy version)",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\"]",
+    "techniques":"[\"binary_search\", \"data_structures\", \"two_pointers\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"operation_invariants\", \"complexity_tradeoffs\", \"monotonic_window\", \"invariant_reasoning\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"pointer_invariant_bug\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1900.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_F",
+    "title":"Firefly's Queries",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"graphs\", \"math\", \"techniques\"]",
+    "techniques":"[\"data_structures\", \"graphs\", \"number_theory\", \"prefix_sums\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"divisibility\", \"modular_arithmetic\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"indexing_bug\", \"off_by_one\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_E",
+    "title":"Klee's SUPER DUPER LARGE Array!!!",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"math\", \"ternary_search\", \"greedy\"]",
+    "techniques":"[\"binary_search\", \"direct_formula\", \"greedy\", \"prefix_sums\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"range_aggregation\", \"index_boundaries\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"precision_error\", \"overflow\", \"invalid_integer_root\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"indexing_bug\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1400.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_D",
+    "title":"Satyam and Counting",
+    "primary_topic":"math",
+    "topics":"[\"math\", \"greedy\"]",
+    "techniques":"[\"direct_formula\", \"greedy\"]",
+    "prerequisites":"[\"algebraic_modeling\", \"integer_square_root\", \"overflow_awareness\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"precision_error\", \"overflow\", \"invalid_integer_root\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"tle\"]",
+    "difficulty":1400.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_C",
+    "title":"The Legend of Freya the Frog",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"constructive\", \"greedy\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_B",
+    "title":"osu!mania",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"greedy\", \"techniques\"]",
+    "techniques":"[\"brute_force\", \"constructive\", \"greedy\", \"sorting\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"tie_handling\", \"wrong_ordering\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_2009_A",
+    "title":"Minimize!",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"brute_force\", \"greedy\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_G2",
+    "title":"Ruler (hard version)",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"interactive\", \"ternary_search\"]",
+    "techniques":"[\"binary_search\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"tle\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_G1",
+    "title":"Ruler (easy version)",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"interactive\"]",
+    "techniques":"[\"binary_search\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"tle\"]",
+    "difficulty":1500.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_F",
+    "title":"Expected Median",
+    "primary_topic":"math",
+    "topics":"[\"math\", \"techniques\"]",
+    "techniques":"[\"number_theory\", \"sorting\"]",
+    "prerequisites":"[\"divisibility\", \"modular_arithmetic\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"tie_handling\", \"wrong_ordering\", \"tle\", \"edge_cases\"]",
+    "difficulty":1500.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_E",
+    "title":"Triple Operations",
+    "primary_topic":"dynamic_programming",
+    "topics":"[\"dynamic_programming\", \"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"dynamic_programming\", \"constructive\", \"greedy\"]",
+    "prerequisites":"[\"state_design\", \"transition_reasoning\", \"base_cases\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"tle\", \"off_by_one\"]",
+    "difficulty":1300.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_D",
+    "title":"Slavic's Exam",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"implementation_constructive\", \"strings\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"constructive\", \"sorting\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"tie_handling\", \"wrong_ordering\", \"tle\"]",
+    "difficulty":1100.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_C",
+    "title":"Showering",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"implementation_constructive\"]",
+    "techniques":"[\"greedy\", \"constructive\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"invalid_construction\", \"proof_gap\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_B",
+    "title":"Card Game",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\"]",
+    "techniques":"[\"brute_force\", \"constructive\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\"]",
+    "difficulty":1000.0
+  },
+  {
+    "global_problem_id":"codeforces_1999_A",
+    "title":"A+B Again?",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\"]",
+    "techniques":"[\"constructive\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"tle\"]",
+    "difficulty":800.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_H2",
+    "title":"Maximize the Largest Component (Hard Version)",
+    "primary_topic":"data_structures",
+    "topics":"[\"data_structures\", \"graphs\", \"dynamic_programming\", \"implementation_constructive\", \"techniques\"]",
+    "techniques":"[\"data_structures\", \"dynamic_programming\", \"constructive\", \"graphs\", \"prefix_sums\"]",
+    "prerequisites":"[\"operation_invariants\", \"complexity_tradeoffs\", \"state_design\", \"transition_reasoning\", \"base_cases\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"wrong_state\", \"missing_base_case\", \"bad_complexity\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"indexing_bug\", \"off_by_one\", \"tle\"]",
+    "difficulty":2200.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_H1",
+    "title":"Maximize the Largest Component (Easy Version)",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"data_structures\", \"graphs\", \"techniques\"]",
+    "techniques":"[\"brute_force\", \"data_structures\", \"graphs\", \"constructive\", \"prefix_sums\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"operation_invariants\", \"complexity_tradeoffs\", \"graph_modeling\", \"dfs_bfs\", \"tree_invariants\", \"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"visited_state_bug\", \"recursion_depth\", \"wrong_tree_root\", \"invalid_construction\", \"edge_cases\", \"proof_gap\", \"indexing_bug\", \"off_by_one\"]",
+    "difficulty":1700.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_G",
+    "title":"D-Function",
+    "primary_topic":"math",
+    "topics":"[\"math\"]",
+    "techniques":"[\"number_theory\"]",
+    "prerequisites":"[\"divisibility\", \"modular_arithmetic\"]",
+    "risks":"[\"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"tle\", \"edge_cases\", \"off_by_one\"]",
+    "difficulty":1600.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_F",
+    "title":"Final Boss",
+    "primary_topic":"techniques",
+    "topics":"[\"techniques\", \"data_structures\"]",
+    "techniques":"[\"binary_search\", \"data_structures\", \"sorting\"]",
+    "prerequisites":"[\"monotonic_predicate\", \"bounds_reasoning\", \"integer_overflow_awareness\", \"operation_invariants\", \"complexity_tradeoffs\", \"ordering_argument\", \"tie_handling\"]",
+    "risks":"[\"wrong_bounds\", \"off_by_one\", \"missing_monotonicity_proof\", \"stale_update\", \"wrong_query_range\", \"complexity_bug\", \"tie_handling\", \"wrong_ordering\", \"tle\", \"overflow\"]",
+    "difficulty":1500.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_E",
+    "title":"Secret Box",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"brute_force\", \"greedy\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\"]",
+    "difficulty":1200.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_D",
+    "title":"Manhattan Circle",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"constructive\", \"greedy\"]",
+    "prerequisites":"[\"pattern_recognition\", \"case_splitting\", \"validity_proof\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"invalid_construction\", \"edge_cases\", \"proof_gap\", \"wrong_proof\", \"hidden_counterexample\", \"tle\"]",
+    "difficulty":900.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_C",
+    "title":"Good Prefixes",
+    "primary_topic":"greedy",
+    "topics":"[\"greedy\", \"techniques\"]",
+    "techniques":"[\"greedy\", \"prefix_sums\"]",
+    "prerequisites":"[\"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\", \"range_aggregation\", \"index_boundaries\"]",
+    "risks":"[\"wrong_proof\", \"hidden_counterexample\", \"edge_cases\", \"indexing_bug\", \"off_by_one\", \"tle\"]",
+    "difficulty":1000.0
+  },
+  {
+    "global_problem_id":"codeforces_1985_B",
+    "title":"Maximum Multiple Sum",
+    "primary_topic":"implementation_constructive",
+    "topics":"[\"implementation_constructive\", \"math\", \"greedy\"]",
+    "techniques":"[\"brute_force\", \"number_theory\", \"greedy\"]",
+    "prerequisites":"[\"constraint_reading\", \"complexity_estimation\", \"divisibility\", \"modular_arithmetic\", \"exchange_argument\", \"invariant_reasoning\", \"counterexample_testing\"]",
+    "risks":"[\"tle\", \"bad_complexity\", \"modulo_bug\", \"overflow\", \"divisibility_edge_case\", \"wrong_proof\", \"hidden_counterexample\", \"edge_cases\"]",
+    "difficulty":800.0
+  }
+]

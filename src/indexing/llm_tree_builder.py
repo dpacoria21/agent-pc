@@ -10,6 +10,7 @@ from typing import Any
 import pandas as pd
 
 from dataset.schema import parse_listish
+from indexing.pedagogical_graph import PREREQUISITES_BY_TECHNIQUE, RISKS_BY_TECHNIQUE, any_keyword_matches, keyword_matches
 from llm.gpt_client import GPTClient
 from llm.prompts import LLM_TREE_SCHEMA, SYSTEM_PROMPT, build_problem_tree_prompt
 from llm.structured_outputs import normalize_llm_tree_output
@@ -52,7 +53,7 @@ def detect_strategies(text: str) -> list[str]:
         "data_structure": ["data structure", "segment tree", "fenwick", "set"],
     }
     for label, keywords in keyword_map.items():
-        if any(keyword in lower for keyword in keywords):
+        if any_keyword_matches(lower, keywords):
             strategies.append(label)
     return list(dict.fromkeys(strategies or ["unknown"]))
 
@@ -70,7 +71,7 @@ def detect_skills(text: str) -> list[str]:
         "edge_cases": ["edge", "corner", "-1", "positive integer"],
     }
     for label, keywords in checks.items():
-        if any(keyword in lower for keyword in keywords):
+        if any_keyword_matches(lower, keywords):
             skills.append(label)
     return list(dict.fromkeys(skills or ["problem_understanding"]))
 
@@ -80,7 +81,7 @@ def evidence_sentence(text: str, keywords: list[str], fallback: str = "") -> str
     sentences = re.split(r"(?<=[.!?])\s+|\n+", cleaned)
     for keyword in keywords:
         for sentence in sentences:
-            if keyword.lower() in sentence.lower() and len(sentence.strip()) > 20:
+            if keyword_matches(sentence.lower(), keyword) and len(sentence.strip()) > 20:
                 return sentence.strip()[:420]
     return fallback[:420] if fallback else summarize(cleaned, 420)
 
@@ -129,7 +130,7 @@ def heuristic_problem_analysis(problem: pd.Series, status: str = "heuristic_fall
         },
     ]
 
-    if any(word in combined.lower() for word in ["equation", "formula", "quadratic", "sqrt", "mod", "claim"]):
+    if any_keyword_matches(combined.lower(), ["equation", "formula", "quadratic", "sqrt", "mod", "claim"]):
         nodes.append(
             {
                 "node_key": "math_model",
@@ -145,7 +146,55 @@ def heuristic_problem_analysis(problem: pd.Series, status: str = "heuristic_fall
             }
         )
 
-    if any(word in combined.lower() for word in ["observation", "claim", "key"]):
+    for strategy in [item for item in strategies if item != "unknown"]:
+        prereqs = PREREQUISITES_BY_TECHNIQUE.get(strategy, [])
+        risks = RISKS_BY_TECHNIQUE.get(strategy, [])
+        nodes.append(
+            {
+                "node_key": f"approach_{strategy}",
+                "parent_node_key": "problem",
+                "node_type": "APPROACH",
+                "title": f"Approach: {strategy.replace('_', ' ')}",
+                "summary": f"Problem-specific route based on {strategy.replace('_', ' ')}.",
+                "evidence_text": evidence_sentence(combined, [strategy.replace("_", " "), *strategy.split("_")], summarize(editorial or statement)),
+                "source_section": "official_editorial" if editorial else "statement",
+                "skills": prereqs or ["algorithm_design"],
+                "strategies": [strategy],
+                "confidence": 0.61,
+            }
+        )
+        for prereq in prereqs[:3]:
+            nodes.append(
+                {
+                    "node_key": f"prereq_{strategy}_{prereq}",
+                    "parent_node_key": f"approach_{strategy}",
+                    "node_type": "PREREQUISITE",
+                    "title": f"Prerequisite: {prereq.replace('_', ' ')}",
+                    "summary": f"The {strategy.replace('_', ' ')} approach depends on {prereq.replace('_', ' ')}.",
+                    "evidence_text": evidence_sentence(combined, [strategy.replace("_", " "), prereq.replace("_", " ")], summarize(editorial or statement)),
+                    "source_section": "derived_from_editorial",
+                    "skills": [prereq],
+                    "strategies": [strategy],
+                    "confidence": 0.54,
+                }
+            )
+        for risk in risks[:3]:
+            nodes.append(
+                {
+                    "node_key": f"risk_{strategy}_{risk}",
+                    "parent_node_key": f"approach_{strategy}",
+                    "node_type": "RISK",
+                    "title": f"Risk: {risk.replace('_', ' ')}",
+                    "summary": f"Likely failure mode for this route: {risk.replace('_', ' ')}.",
+                    "evidence_text": evidence_sentence(combined, [risk.replace("_", " "), "edge", "overflow", "proof"], summarize(editorial or statement)),
+                    "source_section": "derived_from_editorial",
+                    "skills": ["debugging", "edge_cases"],
+                    "strategies": [strategy],
+                    "confidence": 0.5,
+                }
+            )
+
+    if any_keyword_matches(combined.lower(), ["observation", "claim", "key"]):
         nodes.append(
             {
                 "node_key": "observation",
@@ -161,7 +210,7 @@ def heuristic_problem_analysis(problem: pd.Series, status: str = "heuristic_fall
             }
         )
 
-    if "proof" in " ".join(strategies) or any(word in editorial.lower() for word in ["proof", "necessity", "sufficiency"]):
+    if "proof" in " ".join(strategies) or any_keyword_matches(editorial.lower(), ["proof", "necessity", "sufficiency"]):
         nodes.append(
             {
                 "node_key": "proof",
@@ -192,7 +241,7 @@ def heuristic_problem_analysis(problem: pd.Series, status: str = "heuristic_fall
         }
     )
 
-    if any(word in combined.lower() for word in ["o(", "sqrt", "complexity"]):
+    if any_keyword_matches(combined.lower(), ["o(", "sqrt", "complexity"]):
         nodes.append(
             {
                 "node_key": "complexity",
@@ -254,6 +303,42 @@ def heuristic_problem_analysis(problem: pd.Series, status: str = "heuristic_fall
             "confidence": 0.56,
         }
     )
+    for strategy in [item for item in strategies if item != "unknown"]:
+        approach_key = f"approach_{strategy}"
+        if approach_key in node_keys and "algorithm" in node_keys:
+            edges.append(
+                {
+                    "source_node_key": approach_key,
+                    "target_node_key": "algorithm",
+                    "edge_type": "HAS_APPROACH",
+                    "reason": "The algorithm can be reached through this problem-specific approach.",
+                    "confidence": 0.58,
+                }
+            )
+        for prereq in PREREQUISITES_BY_TECHNIQUE.get(strategy, [])[:3]:
+            key = f"prereq_{strategy}_{prereq}"
+            if key in node_keys and approach_key in node_keys:
+                edges.append(
+                    {
+                        "source_node_key": key,
+                        "target_node_key": approach_key,
+                        "edge_type": "PREREQUISITE_OF",
+                        "reason": "The prerequisite supports the selected approach.",
+                        "confidence": 0.52,
+                    }
+                )
+        for risk in RISKS_BY_TECHNIQUE.get(strategy, [])[:3]:
+            key = f"risk_{strategy}_{risk}"
+            if key in node_keys and approach_key in node_keys:
+                edges.append(
+                    {
+                        "source_node_key": approach_key,
+                        "target_node_key": key,
+                        "edge_type": "HAS_RISK",
+                        "reason": "This approach may fail through the listed risk.",
+                        "confidence": 0.5,
+                    }
+                )
 
     return {
         "problem_id": problem_id,

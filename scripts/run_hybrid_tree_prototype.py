@@ -224,6 +224,26 @@ def generate_recommendation_image(recs: pd.DataFrame, path: Path) -> None:
     plt.close(fig)
 
 
+def generate_pedagogical_graph_image(nodes: pd.DataFrame, edges: pd.DataFrame, path: Path) -> None:
+    if nodes.empty or edges.empty:
+        return
+    node_counts = nodes["node_type"].value_counts().head(12).sort_values()
+    edge_counts = edges["edge_type"].value_counts().head(12).sort_values()
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5.8))
+    node_counts.plot(kind="barh", ax=axes[0], color="#2563eb")
+    axes[0].set_title("Nodos pedagogicos por tipo", fontweight="bold")
+    axes[0].set_xlabel("cantidad")
+    axes[0].grid(axis="x", alpha=0.25)
+    edge_counts.plot(kind="barh", ax=axes[1], color="#14b8a6")
+    axes[1].set_title("Relaciones pedagogicas por tipo", fontweight="bold")
+    axes[1].set_xlabel("cantidad")
+    axes[1].grid(axis="x", alpha=0.25)
+    fig.suptitle("Capa pedagogica: topics, tecnicas, enfoques, riesgos y prerequisitos", fontsize=15, fontweight="bold")
+    fig.tight_layout()
+    fig.savefig(path, dpi=170, bbox_inches="tight")
+    plt.close(fig)
+
+
 def table_html(df: pd.DataFrame, columns: list[str], max_rows: int = 10) -> str:
     if df.empty:
         return "<p>No hay resultados.</p>"
@@ -264,6 +284,10 @@ def write_dashboard(summary: dict[str, Any], result_df: pd.DataFrame, rec_df: pd
     <div class="card">
       <h2>Estructura del arbol</h2>
       <img src="comparison_assets/hybrid_tree_structure.png" alt="Estructura del arbol">
+    </div>
+    <div class="card">
+      <h2>Grafo pedagogico conectado</h2>
+      <img src="comparison_assets/pedagogical_graph_overview.png" alt="Grafo pedagogico">
     </div>
     <div class="card">
       <h2>Componentes del score</h2>
@@ -341,17 +365,25 @@ def main() -> None:
     tree_structure_path = ASSETS / "hybrid_tree_structure.png"
     score_path = ASSETS / "hybrid_tree_score_components.png"
     rec_path = ASSETS / "hybrid_tree_recommendations.png"
+    pedagogical_path = ASSETS / "pedagogical_graph_overview.png"
     generate_architecture_image(architecture_path)
     generate_tree_structure_image(tree_nodes, tree_structure_path)
     first_query_results = result_df[result_df["query_id"] == DEMO_QUERIES[0]["query_id"]] if not result_df.empty else pd.DataFrame()
     generate_score_image(first_query_results, score_path)
     generate_recommendation_image(rec_df, rec_path)
+    ped_nodes_path = DATA / "cp_pedagogical_graph_nodes.csv"
+    ped_edges_path = DATA / "cp_pedagogical_graph_edges.csv"
+    ped_nodes = pd.read_csv(ped_nodes_path) if ped_nodes_path.exists() else pd.DataFrame()
+    ped_edges = pd.read_csv(ped_edges_path) if ped_edges_path.exists() else pd.DataFrame()
+    generate_pedagogical_graph_image(ped_nodes, ped_edges, pedagogical_path)
 
     summary = {
         "problems": int(len(problems)),
         "page_nodes": int(len(page_nodes)),
         "tree_nodes": int(len(tree_nodes)),
         "chunks": int(len(chunks)),
+        "pedagogical_nodes": int(len(ped_nodes)),
+        "pedagogical_edges": int(len(ped_edges)),
         "queries": len(DEMO_QUERIES),
         "embedding": embedding_meta,
         "tree_paths": tree_paths,

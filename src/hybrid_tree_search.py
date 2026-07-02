@@ -27,21 +27,29 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize
 
 from text_formatting import normalize_math_text
+from indexing.pedagogical_graph import (
+    PREREQUISITES_BY_TECHNIQUE,
+    RISKS_BY_TECHNIQUE,
+    TECHNIQUE_TO_TOPIC,
+    TOPIC_DESCRIPTIONS,
+    infer_problem_signals,
+)
 
 
 STAGE_NODE_TYPES = {
-    "PROOF": {"EDITORIAL_PROOF", "EDITORIAL_OBSERVATION"},
-    "ALGORITHM": {"EDITORIAL_ALGORITHM", "EDITORIAL_OBSERVATION", "EDITORIAL_COMPLEXITY"},
-    "IMPLEMENTATION": {"IMPLEMENTATION_HINTS", "COMMON_MISTAKES", "INPUT", "OUTPUT"},
-    "EDGE_CASES": {"COMMON_MISTAKES", "CONSTRAINTS", "EXAMPLES"},
-    "UNDERSTANDING": {"STATEMENT", "CONSTRAINTS", "EXAMPLES"},
-    "COMPLEXITY": {"EDITORIAL_COMPLEXITY", "EDITORIAL_ALGORITHM"},
+    "PROOF": {"EDITORIAL_PROOF", "EDITORIAL_OBSERVATION", "PROOF", "PREREQUISITE", "APPROACH"},
+    "ALGORITHM": {"EDITORIAL_ALGORITHM", "EDITORIAL_OBSERVATION", "EDITORIAL_COMPLEXITY", "APPROACH", "TECHNIQUE"},
+    "IMPLEMENTATION": {"IMPLEMENTATION_HINTS", "COMMON_MISTAKES", "INPUT", "OUTPUT", "RISK"},
+    "EDGE_CASES": {"COMMON_MISTAKES", "CONSTRAINTS", "EXAMPLES", "RISK"},
+    "UNDERSTANDING": {"STATEMENT", "CONSTRAINTS", "EXAMPLES", "TOPIC", "TECHNIQUE"},
+    "COMPLEXITY": {"EDITORIAL_COMPLEXITY", "EDITORIAL_ALGORITHM", "RISK", "PREREQUISITE"},
+    "IDEA_ANALYSIS": {"APPROACH", "TECHNIQUE", "PREREQUISITE", "RISK", "EDITORIAL_OBSERVATION"},
 }
 
 
 APPROACH_KEYWORDS = {
     "BINARY_SEARCH": {"binary search", "bisect", "search on answer", "lower_bound", "upper_bound"},
-    "FORMULA": {"formula", "equation", "quadratic", "discriminant", "sqrt", "closed form"},
+    "MATH_FORMULA": {"formula", "equation", "quadratic", "discriminant", "sqrt", "closed form", "square root"},
     "MATH": {"math", "gcd", "prime", "mod", "number theory", "claim", "proof"},
     "DP": {"dp", "dynamic programming", "state", "transition"},
     "GRAPH": {"graph", "tree", "dfs", "bfs"},
@@ -119,6 +127,9 @@ def node_tags(node: pd.Series) -> list[str]:
         parse_listish(node.get("normalized_tags"))
         + parse_listish(node.get("topic_group"))
         + parse_listish(node.get("original_tags"))
+        + parse_listish(node.get("strategies"))
+        + parse_listish(node.get("prerequisites"))
+        + parse_listish(node.get("risks"))
     )
 
 
@@ -132,6 +143,8 @@ def summarize_text(text: str, max_words: int = 34) -> str:
 def infer_query_intent(query: str) -> dict[str, Any]:
     lower = query.lower()
     stage = "UNDERSTANDING"
+    if any(word in lower for word in ["i think", "my idea", "could", "can i", "would this", "strategy"]):
+        stage = "IDEA_ANALYSIS"
     if any(word in lower for word in ["prove", "proof", "why", "correct", "invariant", "claim"]):
         stage = "PROOF"
     elif any(word in lower for word in ["edge", "corner", "n=1", "case"]):
@@ -147,6 +160,8 @@ def infer_query_intent(query: str) -> dict[str, Any]:
     for label, keywords in APPROACH_KEYWORDS.items():
         if any(keyword in lower for keyword in keywords):
             approaches.append(label)
+    if "FORMULA" in approaches:
+        approaches = ["MATH_FORMULA" if item == "FORMULA" else item for item in approaches]
     if not approaches:
         approaches = ["UNKNOWN"]
 
@@ -201,6 +216,81 @@ def build_tree_nodes(problems: pd.DataFrame, page_nodes: pd.DataFrame) -> pd.Dat
             "metadata": {},
         }
     )
+    add(
+        {
+            "tree_node_id": "knowledge::pedagogy",
+            "parent_tree_node_id": "root::competitive_programming",
+            "global_problem_id": "",
+            "node_role": "PEDAGOGY_ROOT",
+            "node_type": "PEDAGOGY_ROOT",
+            "title": "Pedagogical Knowledge Layer",
+            "summary": "Topics, techniques, prerequisites, risks, and problem-specific approaches.",
+            "node_text": "Pedagogical graph for tutoring: topic to technique to approach, with risks and prerequisites.",
+            "depth": 1,
+            "order": 0,
+            "source": "",
+            "normalized_difficulty": np.nan,
+            "difficulty_bucket": "all",
+            "original_tags": [],
+            "normalized_tags": [],
+            "topic_group": [],
+            "strategies": [],
+            "prerequisites": [],
+            "risks": [],
+            "url": "",
+            "metadata": {"layer": "pedagogical_graph"},
+        }
+    )
+    add(
+        {
+            "tree_node_id": "knowledge::prerequisites",
+            "parent_tree_node_id": "knowledge::pedagogy",
+            "global_problem_id": "",
+            "node_role": "PREREQUISITE_GROUP",
+            "node_type": "PREREQUISITE_GROUP",
+            "title": "Prerequisites",
+            "summary": "Reusable skills needed before an approach is reliable.",
+            "node_text": "Prerequisites connect student gaps with problem approaches.",
+            "depth": 2,
+            "order": 1,
+            "source": "",
+            "normalized_difficulty": np.nan,
+            "difficulty_bucket": "all",
+            "original_tags": [],
+            "normalized_tags": [],
+            "topic_group": [],
+            "strategies": [],
+            "prerequisites": [],
+            "risks": [],
+            "url": "",
+            "metadata": {"layer": "pedagogical_graph"},
+        }
+    )
+    add(
+        {
+            "tree_node_id": "knowledge::risks",
+            "parent_tree_node_id": "knowledge::pedagogy",
+            "global_problem_id": "",
+            "node_role": "RISK_GROUP",
+            "node_type": "RISK_GROUP",
+            "title": "Common Risks",
+            "summary": "Reusable error modes used for hints and answer checking.",
+            "node_text": "Common risks include overflow, precision, wrong proof, off by one, and edge cases.",
+            "depth": 2,
+            "order": 2,
+            "source": "",
+            "normalized_difficulty": np.nan,
+            "difficulty_bucket": "all",
+            "original_tags": [],
+            "normalized_tags": [],
+            "topic_group": [],
+            "strategies": [],
+            "prerequisites": [],
+            "risks": [],
+            "url": "",
+            "metadata": {"layer": "pedagogical_graph"},
+        }
+    )
 
     page_nodes_by_problem = {key: frame.copy() for key, frame in page_nodes.groupby("global_problem_id")}
     for problem_order, (_, problem) in enumerate(problems.iterrows(), start=1):
@@ -215,6 +305,8 @@ def build_tree_nodes(problems: pd.DataFrame, page_nodes: pd.DataFrame) -> pd.Dat
         tags = parse_listish(problem.get("normalized_tags"))
         original_tags = parse_listish(problem.get("original_tags"))
         topic_group = parse_listish(problem.get("topic_group"))
+        problem_page_nodes = page_nodes_by_problem.get(global_problem_id, pd.DataFrame()).copy()
+        signals = infer_problem_signals(problem, problem_page_nodes)
         problem_text = clean_text(
             "\n\n".join(
                 [
@@ -309,6 +401,9 @@ def build_tree_nodes(problems: pd.DataFrame, page_nodes: pd.DataFrame) -> pd.Dat
                 "original_tags": original_tags,
                 "normalized_tags": tags,
                 "topic_group": topic_group,
+                "strategies": signals["techniques"],
+                "prerequisites": signals["prerequisites"],
+                "risks": signals["risks"],
                 "url": problem.get("url", ""),
                 "metadata": {
                     "rating": problem.get("rating"),
@@ -318,7 +413,154 @@ def build_tree_nodes(problems: pd.DataFrame, page_nodes: pd.DataFrame) -> pd.Dat
             }
         )
 
-        problem_page_nodes = page_nodes_by_problem.get(global_problem_id, pd.DataFrame()).copy()
+        for signal_topic in signals["topics"]:
+            signal_topic_id = stable_id("knowledge", "topic", signal_topic)
+            add(
+                {
+                    "tree_node_id": signal_topic_id,
+                    "parent_tree_node_id": "knowledge::pedagogy",
+                    "global_problem_id": "",
+                    "node_role": "TOPIC",
+                    "node_type": "TOPIC",
+                    "title": signal_topic.replace("_", " ").title(),
+                    "summary": TOPIC_DESCRIPTIONS.get(signal_topic, f"Topic {signal_topic}."),
+                    "node_text": TOPIC_DESCRIPTIONS.get(signal_topic, signal_topic.replace("_", " ")),
+                    "depth": 2,
+                    "order": problem_order,
+                    "source": "",
+                    "normalized_difficulty": np.nan,
+                    "difficulty_bucket": "all",
+                    "original_tags": [],
+                    "normalized_tags": [signal_topic],
+                    "topic_group": [signal_topic],
+                    "strategies": [],
+                    "prerequisites": [],
+                    "risks": [],
+                    "url": "",
+                    "metadata": {"layer": "pedagogical_graph", "topic": signal_topic},
+                }
+            )
+
+        for technique in signals["techniques"]:
+            technique_topic = TECHNIQUE_TO_TOPIC.get(technique, signals["primary_topic"])
+            technique_id = stable_id("knowledge", "technique", technique)
+            add(
+                {
+                    "tree_node_id": technique_id,
+                    "parent_tree_node_id": stable_id("knowledge", "topic", technique_topic),
+                    "global_problem_id": "",
+                    "node_role": "TECHNIQUE",
+                    "node_type": "TECHNIQUE",
+                    "title": technique.replace("_", " ").title(),
+                    "summary": f"Technique used across problems: {technique.replace('_', ' ')}.",
+                    "node_text": (
+                        f"Technique {technique.replace('_', ' ')}. "
+                        f"Prerequisites: {', '.join(PREREQUISITES_BY_TECHNIQUE.get(technique, []))}. "
+                        f"Common risks: {', '.join(RISKS_BY_TECHNIQUE.get(technique, []))}."
+                    ),
+                    "depth": 3,
+                    "order": problem_order,
+                    "source": "",
+                    "normalized_difficulty": np.nan,
+                    "difficulty_bucket": "all",
+                    "original_tags": [],
+                    "normalized_tags": [technique, technique_topic],
+                    "topic_group": [technique_topic],
+                    "strategies": [technique],
+                    "prerequisites": PREREQUISITES_BY_TECHNIQUE.get(technique, []),
+                    "risks": RISKS_BY_TECHNIQUE.get(technique, []),
+                    "url": "",
+                    "metadata": {"layer": "pedagogical_graph", "technique": technique},
+                }
+            )
+
+            approach_id = stable_id("approach", global_problem_id, technique)
+            evidence = signals["evidence_by_technique"].get(technique, "")
+            add(
+                {
+                    "tree_node_id": approach_id,
+                    "parent_tree_node_id": problem_id,
+                    "global_problem_id": global_problem_id,
+                    "node_role": "APPROACH",
+                    "node_type": "APPROACH",
+                    "title": f"{problem.get('title')} - {technique.replace('_', ' ').title()} Approach",
+                    "summary": f"Problem-specific route using {technique.replace('_', ' ')}.",
+                    "node_text": (
+                        f"Approach for {problem.get('title')}: {technique.replace('_', ' ')}. "
+                        f"Evidence: {evidence}. "
+                        f"Prerequisites: {', '.join(PREREQUISITES_BY_TECHNIQUE.get(technique, []))}. "
+                        f"Risks: {', '.join(RISKS_BY_TECHNIQUE.get(technique, []))}."
+                    ),
+                    "depth": 5,
+                    "order": problem_order,
+                    "source": source,
+                    "normalized_difficulty": problem.get("normalized_difficulty"),
+                    "difficulty_bucket": bucket,
+                    "original_tags": original_tags,
+                    "normalized_tags": list(dict.fromkeys(tags + [technique])),
+                    "topic_group": signals["topics"],
+                    "strategies": [technique],
+                    "prerequisites": PREREQUISITES_BY_TECHNIQUE.get(technique, []),
+                    "risks": RISKS_BY_TECHNIQUE.get(technique, []),
+                    "url": problem.get("url", ""),
+                    "metadata": {"layer": "pedagogical_graph", "evidence": evidence},
+                }
+            )
+
+        for prereq in signals["prerequisites"]:
+            add(
+                {
+                    "tree_node_id": stable_id("knowledge", "prerequisite", prereq),
+                    "parent_tree_node_id": "knowledge::prerequisites",
+                    "global_problem_id": "",
+                    "node_role": "PREREQUISITE",
+                    "node_type": "PREREQUISITE",
+                    "title": prereq.replace("_", " ").title(),
+                    "summary": f"Prerequisite skill: {prereq.replace('_', ' ')}.",
+                    "node_text": f"Prerequisite skill for solving competitive programming problems: {prereq.replace('_', ' ')}.",
+                    "depth": 3,
+                    "order": problem_order,
+                    "source": "",
+                    "normalized_difficulty": np.nan,
+                    "difficulty_bucket": "all",
+                    "original_tags": [],
+                    "normalized_tags": [prereq],
+                    "topic_group": signals["topics"],
+                    "strategies": [],
+                    "prerequisites": [prereq],
+                    "risks": [],
+                    "url": "",
+                    "metadata": {"layer": "pedagogical_graph", "prerequisite": prereq},
+                }
+            )
+
+        for risk in signals["risks"]:
+            add(
+                {
+                    "tree_node_id": stable_id("knowledge", "risk", risk),
+                    "parent_tree_node_id": "knowledge::risks",
+                    "global_problem_id": "",
+                    "node_role": "RISK",
+                    "node_type": "RISK",
+                    "title": risk.replace("_", " ").title(),
+                    "summary": f"Common risk: {risk.replace('_', ' ')}.",
+                    "node_text": f"Common risk for hints and answer validation: {risk.replace('_', ' ')}.",
+                    "depth": 3,
+                    "order": problem_order,
+                    "source": "",
+                    "normalized_difficulty": np.nan,
+                    "difficulty_bucket": "all",
+                    "original_tags": [],
+                    "normalized_tags": [risk],
+                    "topic_group": signals["topics"],
+                    "strategies": [],
+                    "prerequisites": [],
+                    "risks": [risk],
+                    "url": "",
+                    "metadata": {"layer": "pedagogical_graph", "risk": risk},
+                }
+            )
+
         for group_order, group in enumerate(["UNDERSTANDING", "EDITORIAL_REASONING", "IMPLEMENTATION_RISKS"], start=1):
             group_id = stable_id("group", global_problem_id, group)
             add(
@@ -519,6 +761,7 @@ class HybridTreeSearcher:
                 [
                     str(node.get("title", "")),
                     str(node.get("summary", "")),
+                    summarize_text(str(node.get("node_text", "")), max_words=55),
                     str(node.get("node_type", "")),
                     " ".join(node_tags(node)),
                 ]
@@ -534,8 +777,10 @@ class HybridTreeSearcher:
                 score += 0.12
             if "BINARY_SEARCH" in approaches and "binary" in haystack:
                 score += 0.25
-            if "FORMULA" in approaches and any(term in haystack for term in ["formula", "quadratic", "sqrt", "equation"]):
+            if "MATH_FORMULA" in approaches and any(term in haystack for term in ["formula", "quadratic", "sqrt", "equation", "direct formula"]):
                 score += 0.25
+            if node.get("node_type") in {"APPROACH", "TECHNIQUE", "PREREQUISITE", "RISK"}:
+                score += 0.1
             if "PROOF" == intent["stage"] and any(term in haystack for term in ["proof", "claim", "observation"]):
                 score += 0.2
             if "EDGE_CASES" == intent["stage"] and any(term in haystack for term in ["mistake", "edge", "corner", "example"]):
@@ -565,6 +810,13 @@ class HybridTreeSearcher:
         normalized_query = intent["query"].lower().replace("_", " ")
         if tags.intersection(query_terms) or any(tag.lower() in normalized_query for tag in tags):
             bonus += 0.1
+        approaches = set(intent.get("approaches", []))
+        if "BINARY_SEARCH" in approaches and any(tag in {"binary_search", "monotonic_predicate"} for tag in tags):
+            bonus += 0.12
+        if "MATH_FORMULA" in approaches and any(tag in {"direct_formula", "algebraic_modeling", "integer_square_root"} for tag in tags):
+            bonus += 0.12
+        if node.get("node_type") in {"APPROACH", "TECHNIQUE"}:
+            bonus += 0.05
         if filters:
             difficulty = node.get("normalized_difficulty")
             if pd.notna(difficulty):
@@ -676,7 +928,7 @@ def enough_information(results: pd.DataFrame, intent: dict[str, Any]) -> bool:
     preferred = set(intent.get("preferred_node_types", []))
     top = results.head(6)
     has_preferred = bool(set(top["node_type"]).intersection(preferred))
-    has_content = bool((top["node_role"] == "CONTENT").any())
+    has_content = bool(top["node_role"].isin(["CONTENT", "APPROACH", "TECHNIQUE", "PREREQUISITE", "RISK"]).any())
     return has_preferred and has_content and float(top["hybrid_score"].max()) > 0.2
 
 

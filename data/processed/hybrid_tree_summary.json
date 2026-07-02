@@ -1,12 +1,14 @@
 {
-  "problems": 10,
-  "page_nodes": 130,
-  "tree_nodes": 186,
-  "chunks": 207,
+  "problems": 80,
+  "page_nodes": 1040,
+  "tree_nodes": 1715,
+  "chunks": 1819,
+  "pedagogical_nodes": 322,
+  "pedagogical_edges": 2244,
   "queries": 4,
   "embedding": {
     "embedding_backend": "tfidf_svd_l2",
-    "chunks_indexed": 207,
+    "chunks_indexed": 1819,
     "embedding_dim": 96
   },
   "tree_paths": {

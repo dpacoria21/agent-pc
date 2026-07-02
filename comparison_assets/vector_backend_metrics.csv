@@ -1,16 +1,16 @@
 backend,query_id,query,precision_at_k,recall_at_k,reciprocal_rank,avg_score,latency_ms_per_query,relevant_count
-local_matrix,binary_quadratic_time,binary search maximum x quadratic inequality contest time,0.25,1.0,0.5,0.3489,0.056,2
-local_matrix,integer_square_root,integer square root perfect square sum,0.25,0.6667,0.3333,0.345,0.056,3
-local_matrix,triangular_discriminant,triangular numbers discriminant formula binary search,0.625,0.625,1.0,0.4188,0.056,8
-local_matrix,dp_transition,dp state transition editorial algorithm,0.0,0.0,0.0,0.4208,0.056,2
-local_matrix,greedy_proof_edges,greedy proof edge cases common mistakes,0.0,0.0,0.0,0.4101,0.056,1
-faiss,binary_quadratic_time,binary search maximum x quadratic inequality contest time,0.25,1.0,0.5,0.3489,15.086,2
-faiss,integer_square_root,integer square root perfect square sum,0.25,0.6667,0.3333,0.345,15.086,3
-faiss,triangular_discriminant,triangular numbers discriminant formula binary search,0.625,0.625,1.0,0.4188,15.086,8
-faiss,dp_transition,dp state transition editorial algorithm,0.0,0.0,0.0,0.4208,15.086,2
-faiss,greedy_proof_edges,greedy proof edge cases common mistakes,0.0,0.0,0.0,0.4101,15.086,1
-chromadb,binary_quadratic_time,binary search maximum x quadratic inequality contest time,0.25,1.0,0.5,0.3489,509.122,2
-chromadb,integer_square_root,integer square root perfect square sum,0.25,0.6667,0.3333,0.345,509.122,3
-chromadb,triangular_discriminant,triangular numbers discriminant formula binary search,0.625,0.625,1.0,0.4188,509.122,8
-chromadb,dp_transition,dp state transition editorial algorithm,0.0,0.0,0.0,0.4208,509.122,2
-chromadb,greedy_proof_edges,greedy proof edge cases common mistakes,0.0,0.0,0.0,0.4101,509.122,1
+local_matrix,binary_quadratic_time,binary search maximum x quadratic inequality contest time monotonic predicate approach,0.0,0.0,0.0,0.8492,10.277,0
+local_matrix,integer_square_root,integer square root perfect square formula precision overflow risk,0.0,0.0,0.0,0.6,10.277,0
+local_matrix,triangular_discriminant,triangular numbers discriminant formula binary search alternative approaches,0.0,0.0,0.0,0.7848,10.277,0
+local_matrix,dp_transition,dp state transition editorial algorithm,0.125,0.1,0.3333,0.6066,10.277,10
+local_matrix,greedy_proof_edges,greedy proof edge cases common mistakes,0.125,0.1,0.5,0.4687,10.277,10
+faiss,binary_quadratic_time,binary search maximum x quadratic inequality contest time monotonic predicate approach,0.0,0.0,0.0,0.8492,74.251,0
+faiss,integer_square_root,integer square root perfect square formula precision overflow risk,0.0,0.0,0.0,0.6,74.251,0
+faiss,triangular_discriminant,triangular numbers discriminant formula binary search alternative approaches,0.0,0.0,0.0,0.7848,74.251,0
+faiss,dp_transition,dp state transition editorial algorithm,0.125,0.1,0.3333,0.6066,74.251,10
+faiss,greedy_proof_edges,greedy proof edge cases common mistakes,0.125,0.1,0.5,0.4687,74.251,10
+chromadb,binary_quadratic_time,binary search maximum x quadratic inequality contest time monotonic predicate approach,0.0,0.0,0.0,0.8492,1729.67,0
+chromadb,integer_square_root,integer square root perfect square formula precision overflow risk,0.0,0.0,0.0,0.6,1729.67,0
+chromadb,triangular_discriminant,triangular numbers discriminant formula binary search alternative approaches,0.0,0.0,0.0,0.7848,1729.67,0
+chromadb,dp_transition,dp state transition editorial algorithm,0.125,0.1,0.3333,0.6066,1729.67,10
+chromadb,greedy_proof_edges,greedy proof edge cases common mistakes,0.125,0.1,0.5,0.4687,1729.67,10

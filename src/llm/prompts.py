@@ -40,6 +40,12 @@ LLM_TREE_SCHEMA: dict[str, Any] = {
                             "HINT",
                             "EDGE_CASE",
                             "PREREQUISITE",
+                            "TOPIC",
+                            "TECHNIQUE",
+                            "APPROACH",
+                            "RISK",
+                            "MISCONCEPTION",
+                            "STUDENT_IDEA_PATTERN",
                             "UNKNOWN",
                         ],
                     },
@@ -82,6 +88,10 @@ LLM_TREE_SCHEMA: dict[str, Any] = {
                             "SAME_STRATEGY",
                             "PROOF_DEPENDS_ON",
                             "IMPLEMENTATION_DEPENDS_ON",
+                            "HAS_APPROACH",
+                            "HAS_RISK",
+                            "SIMILAR_TO",
+                            "NEXT_PRACTICE_STEP",
                         ],
                     },
                     "reason": {"type": "string"},
@@ -113,6 +123,8 @@ Reglas obligatorias:
 - No inventes contenido que no aparezca en el statement o editorial.
 - No escribas solucion nueva si no esta soportada por evidence_text.
 - Separa observacion, modelo matematico, prueba, algoritmo, complejidad, implementacion y errores comunes si existen.
+- Cuando sea posible, extrae enfoques alternativos, prerequisitos, riesgos y patrones de ideas de estudiante.
+- Si el mismo problema se puede resolver por rutas distintas, usa nodos APPROACH separados.
 - Usa evidence_text corto y literal/parafraseado desde los textos dados.
 - Si falta informacion, deja warnings.
 - Devuelve solo JSON que cumpla el esquema.
@@ -155,5 +167,6 @@ Devuelve un arbol en formato plano:
 - Los demas nodos deben apuntar a parent_node_key de otro nodo.
 - Usa node_key corto y estable, por ejemplo "problem", "model", "proof", "algorithm".
 - Incluye edge_type solo cuando la relacion sea clara.
+- Usa APPROACH para rutas de solucion, TECHNIQUE para tecnica reutilizable, PREREQUISITE para habilidad necesaria y RISK para errores probables.
+- Si hay dos rutas validas para el mismo problema, conectalas con ALTERNATIVE_APPROACH.
 """
-
